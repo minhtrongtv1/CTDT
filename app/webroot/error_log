@@ -1,0 +1,418 @@
+[05-Aug-2017 07:02:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/imagick.so' - libMagickCore-6.Q16.so.2: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/dom.so' - /opt/alt/php56/usr/lib64/php/modules/dom.so: cannot map zero-fill pages: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/gd.so' - /opt/alt/php56/usr/lib64/php/modules/gd.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/imagick.so' - /opt/alt/php56/usr/lib64/php/modules/imagick.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/imap.so' - /opt/alt/php56/usr/lib64/php/modules/imap.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/intl.so' - /opt/alt/php56/usr/lib64/php/modules/intl.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/json.so' - /opt/alt/php56/usr/lib64/php/modules/json.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mbstring.so' - /opt/alt/php56/usr/lib64/php/modules/mbstring.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mcrypt.so' - /opt/alt/php56/usr/lib64/php/modules/mcrypt.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysql.so' - /opt/alt/php56/usr/lib64/php/modules/mysql.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysqli.so' - /opt/alt/php56/usr/lib64/php/modules/mysqli.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysqlnd.so' - /opt/alt/php56/usr/lib64/php/modules/mysqlnd.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/pdo.so' - /opt/alt/php56/usr/lib64/php/modules/pdo.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/pdo_mysql.so' - /opt/alt/php56/usr/lib64/php/modules/pdo_mysql.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/pdo_sqlite.so' - /opt/alt/php56/usr/lib64/php/modules/pdo_sqlite.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/phar.so' - /opt/alt/php56/usr/lib64/php/modules/phar.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/posix.so' - /opt/alt/php56/usr/lib64/php/modules/posix.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/soap.so' - /opt/alt/php56/usr/lib64/php/modules/soap.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/sockets.so' - /opt/alt/php56/usr/lib64/php/modules/sockets.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/tidy.so' - /opt/alt/php56/usr/lib64/php/modules/tidy.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/wddx.so' - /opt/alt/php56/usr/lib64/php/modules/wddx.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlreader.so' - /opt/alt/php56/usr/lib64/php/modules/xmlreader.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlrpc.so' - /opt/alt/php56/usr/lib64/php/modules/xmlrpc.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlwriter.so' - /opt/alt/php56/usr/lib64/php/modules/xmlwriter.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xsl.so' - /opt/alt/php56/usr/lib64/php/modules/xsl.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[05-Aug-2017 12:48:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/zip.so' - /opt/alt/php56/usr/lib64/php/modules/zip.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[06-Aug-2017 07:21:11 UTC] PHP Fatal error:  Call to undefined function var_dum() in /home/toaf28f1/public_html/app/Plugin/Blog/View/BlogPosts/admin_index.ctp on line 22
+[06-Aug-2017 07:21:21 UTC] PHP Fatal error:  Call to undefined function var_dum() in /home/toaf28f1/public_html/app/Plugin/Blog/View/BlogPosts/admin_index.ctp on line 22
+[06-Aug-2017 07:21:38 UTC] PHP Fatal error:  Call to undefined function var_dum() in /home/toaf28f1/public_html/app/Plugin/Blog/View/BlogPosts/admin_index.ctp on line 22
+[06-Aug-2017 07:26:21 UTC] PHP Fatal error:  Class 'Configuration' not found in /home/toaf28f1/public_html/app/Plugin/Blog/View/BlogPosts/admin_index.ctp on line 22
+[06-Aug-2017 14:09:33 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 51
+[06-Aug-2017 14:26:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/toaf28f1/public_html/app/Plugin/Blog/View/Helper/BlogHelper.php on line 219
+[06-Aug-2017 14:26:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/toaf28f1/public_html/app/Plugin/Blog/View/Helper/BlogHelper.php on line 219
+[11-Aug-2017 07:16:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/soap.so' - /opt/alt/php56/usr/lib64/php/modules/soap.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 07:22:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysql.so' - libmysqlclient.so.18: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 13:11:06 UTC] PHP Parse error:  syntax error, unexpected '$helpers' (T_VARIABLE), expecting identifier (T_STRING) in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 20
+[11-Aug-2017 13:58:10 UTC] PHP Fatal error:  Call to a member function read() on null in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 13:58:11 UTC] PHP Fatal error:  Call to a member function read() on null in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 13:58:29 UTC] PHP Fatal error:  Call to a member function read() on null in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 13:58:30 UTC] PHP Fatal error:  Call to a member function read() on null in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 14:20:47 UTC] PHP Fatal error:  Call to undefined method DashboardsController::_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 14:20:58 UTC] PHP Fatal error:  Call to undefined method DashboardsController::_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 27
+[11-Aug-2017 14:22:59 UTC] PHP Fatal error:  Call to undefined method DashboardsController::_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 28
+[11-Aug-2017 14:23:16 UTC] PHP Fatal error:  Call to undefined method DashboardsController::_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 28
+[11-Aug-2017 14:23:49 UTC] PHP Fatal error:  Call to undefined method DashboardsController::_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 28
+[11-Aug-2017 14:25:12 UTC] PHP Fatal error:  Call to undefined method DashboardsController::default_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 28
+[11-Aug-2017 14:26:23 UTC] PHP Fatal error:  Call to undefined method DashboardsController::default_home() in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 28
+[11-Aug-2017 14:37:42 UTC] PHP Warning:  Unterminated comment starting line 284 in /home/toaf28f1/public_html/app/Config/core.php on line 284
+[11-Aug-2017 14:39:06 UTC] PHP Fatal error:  Cannot redeclare DATABASE_CONFIG::$development in /home/toaf28f1/public_html/app/Config/database.php on line 107
+[11-Aug-2017 14:39:07 UTC] PHP Fatal error:  Cannot redeclare DATABASE_CONFIG::$development in /home/toaf28f1/public_html/app/Config/database.php on line 107
+[11-Aug-2017 14:48:04 UTC] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 16
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysqlnd.so' - /opt/alt/php56/usr/lib64/php/modules/mysqlnd.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/pdo_sqlite.so' - libsqlite3.so.0: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/phar.so' - /opt/alt/php56/usr/lib64/php/modules/phar.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/soap.so' - /opt/alt/php56/usr/lib64/php/modules/soap.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/sockets.so' - /opt/alt/php56/usr/lib64/php/modules/sockets.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/tidy.so' - /opt/alt/php56/usr/lib64/php/modules/tidy.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/wddx.so' - /opt/alt/php56/usr/lib64/php/modules/wddx.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlreader.so' - /opt/alt/php56/usr/lib64/php/modules/xmlreader.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlrpc.so' - /opt/alt/php56/usr/lib64/php/modules/xmlrpc.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xmlwriter.so' - /opt/alt/php56/usr/lib64/php/modules/xmlwriter.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/xsl.so' - /opt/alt/php56/usr/lib64/php/modules/xsl.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/zip.so' - /opt/alt/php56/usr/lib64/php/modules/zip.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Aug-2017 15:10:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/imagick.so' - libexpat.so.1: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[12-Aug-2017 03:57:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/mysql.so' - libmysqlclient.so.18: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[13-Aug-2017 01:23:11 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/alt/php56/usr/lib64/php/modules/gd.so' - libvpx.so.1: cannot map zero-fill pages: Cannot allocate memory in Unknown on line 0
+[16-Aug-2017 07:46:29 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:46:50 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:47:34 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:47:41 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:48:20 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:48:24 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:48:28 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:49:09 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:49:43 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:50:55 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 07:51:05 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:04:23 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:14:53 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:14:57 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:16:48 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:22:13 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:23:01 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:28:11 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:28:18 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:42:14 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:49:37 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[16-Aug-2017 08:53:09 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 257
+[19-Aug-2017 06:18:23 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 78
+[19-Aug-2017 06:18:23 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 78
+[19-Aug-2017 06:18:38 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 78
+[19-Aug-2017 06:18:38 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 78
+[19-Aug-2017 06:19:16 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[19-Aug-2017 06:19:16 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[19-Aug-2017 06:19:21 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[19-Aug-2017 06:19:21 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[19-Aug-2017 06:34:40 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/toaf28f1/public_html/app/Controller/AppController.php on line 170
+[19-Aug-2017 06:34:42 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/toaf28f1/public_html/app/Controller/AppController.php on line 170
+[19-Aug-2017 06:40:18 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[19-Aug-2017 06:40:18 UTC] PHP Fatal error:  Call to undefined method SecurityComponent::config() in /home/toaf28f1/public_html/app/Controller/AppController.php on line 77
+[21-Aug-2017 14:45:51 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ';' in /home/toaf28f1/public_html/app/Plugin/Blog/Controller/BlogPostsController.php on line 68
+[21-Aug-2017 14:46:56 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/toaf28f1/public_html/app/Plugin/Blog/Controller/BlogPostsController.php on line 199
+[23-Aug-2017 15:27:57 UTC] PHP Warning:  Unterminated comment starting line 141 in /home/toaf28f1/public_html/app/Config/core.php on line 141
+[23-Aug-2017 15:27:57 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/toaf28f1/public_html/app/Config/core.php on line 150
+[26-Aug-2017 00:28:10 UTC] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[26-Aug-2017 00:28:18 UTC] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[26-Aug-2017 00:28:27 UTC] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[26-Aug-2017 00:28:29 UTC] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[26-Aug-2017 00:28:29 UTC] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[26-Aug-2017 00:28:48 UTC] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[05-Sep-2017 21:41:47 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/CathinhanhsController.php on line 21
+[05-Sep-2017 21:42:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/CathinhanhsController.php on line 21
+[05-Sep-2017 21:43:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/CathinhanhsController.php on line 21
+[05-Sep-2017 21:58:44 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function hasField() on null in /home/toaf28f1/public_html/app/Model/Behavior/SluggableBehavior.php on line 36
+[05-Sep-2017 21:59:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function hasField() on null in /home/toaf28f1/public_html/app/Model/Behavior/SluggableBehavior.php on line 36
+[05-Sep-2017 22:32:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/HinhanhsController.php on line 52
+[06-Sep-2017 19:59:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/HinhanhsController.php on line 52
+[06-Sep-2017 20:01:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/HinhanhsController.php on line 52
+[06-Sep-2017 20:02:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/HinhanhsController.php on line 49
+[06-Sep-2017 20:25:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/HinhanhsController.php on line 178
+[06-Sep-2017 21:03:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[07-Sep-2017 10:08:22 Asia/Ho_Chi_Minh] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 215483 bytes) in /home/toaf28f1/public_html/lib/Cake/Utility/CakeText.php on line 241
+[07-Sep-2017 10:40:48 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function exists() on null in /home/toaf28f1/public_html/app/Controller/EnrollmentsController.php on line 433
+[07-Sep-2017 10:41:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function exists() on null in /home/toaf28f1/public_html/app/Controller/EnrollmentsController.php on line 433
+[07-Sep-2017 10:42:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function exists() on null in /home/toaf28f1/public_html/app/Controller/EnrollmentsController.php on line 433
+[07-Sep-2017 10:42:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function exists() on null in /home/toaf28f1/public_html/app/Controller/EnrollmentsController.php on line 433
+[07-Sep-2017 10:43:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function exists() on null in /home/toaf28f1/public_html/app/Controller/EnrollmentsController.php on line 433
+[09-Sep-2017 06:58:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[09-Sep-2017 06:59:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[09-Sep-2017 06:59:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 77
+[09-Sep-2017 06:59:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[09-Sep-2017 07:00:31 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[09-Sep-2017 07:00:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[09-Sep-2017 07:00:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[09-Sep-2017 11:00:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:14:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:14:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:15:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:16:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:16:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:16:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:17:00 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:18:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:18:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:19:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:24:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:24:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:25:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 07:25:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 10:31:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 10:31:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 15:27:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[10-Sep-2017 17:28:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Cannot redeclare BlogPost::_findForFeature() in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 515
+[10-Sep-2017 17:28:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Cannot redeclare BlogPost::_findForFeature() in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 515
+[10-Sep-2017 17:28:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Cannot redeclare BlogPost::_findForFeature() in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 515
+[10-Sep-2017 17:29:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Cannot redeclare BlogPost::_findForFeature() in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 515
+[10-Sep-2017 17:29:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Cannot redeclare BlogPost::_findForFeature() in /home/toaf28f1/public_html/app/Plugin/Blog/Model/BlogPost.php on line 515
+[12-Sep-2017 21:52:53 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 338
+[12-Sep-2017 21:53:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 338
+[16-Sep-2017 17:33:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:06:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:07:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:08:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:08:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:10:47 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:11:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:11:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:11:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:11:53 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:12:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:13:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:14:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:14:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:14:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:22:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:22:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:22:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:22:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:33:48 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:38:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:38:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:50:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[16-Sep-2017 19:50:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Sep-2017 19:50:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 258
+[23-Sep-2017 07:25:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:27:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:27:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[23-Sep-2017 07:27:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:27:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:27:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:28:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:29:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:29:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[23-Sep-2017 07:29:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:29:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:30:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:30:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[23-Sep-2017 07:30:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:30:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:30:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:30:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[23-Sep-2017 07:30:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:32:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:32:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[23-Sep-2017 07:32:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[23-Sep-2017 07:33:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[27-Sep-2017 21:16:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function getGroupIdByAlias() on null in /home/toaf28f1/public_html/app/Model/DangKyHoc.php on line 101
+[30-Sep-2017 08:21:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[30-Sep-2017 08:36:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[30-Sep-2017 08:36:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[30-Sep-2017 08:36:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[30-Sep-2017 08:36:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 08:19:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[01-Oct-2017 16:50:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:52:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:52:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[01-Oct-2017 16:52:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:52:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[01-Oct-2017 16:54:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[01-Oct-2017 16:57:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:57:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[01-Oct-2017 16:57:44 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:57:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[01-Oct-2017 16:58:02 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[02-Oct-2017 18:46:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[02-Oct-2017 18:46:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[03-Oct-2017 10:49:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[03-Oct-2017 13:12:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[06-Oct-2017 16:32:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[13-Oct-2017 19:52:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[15-Oct-2017 16:13:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[15-Oct-2017 16:13:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[16-Oct-2017 11:10:15 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[19-Oct-2017 19:58:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 350
+[20-Oct-2017 22:24:36 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/toaf28f1/public_html/app/View/Enrollments/ke_thu_hoc_phi.ctp on line 85
+[20-Oct-2017 22:24:54 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/toaf28f1/public_html/app/View/Enrollments/ke_thu_hoc_phi.ctp on line 85
+[20-Oct-2017 22:25:19 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/toaf28f1/public_html/app/View/Enrollments/ke_thu_hoc_phi.ctp on line 85
+[30-Oct-2017 21:38:03 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:38:13 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:38:23 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:38:33 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:38:43 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:38:53 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:39:07 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:39:18 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:39:27 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:39:38 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:39:47 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'array_push' (T_STRING) in /home/toaf28f1/public_html/app/View/DiemDanhs/ajax/bao_vang.ctp on line 8
+[30-Oct-2017 21:54:14 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}' in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 397
+[30-Oct-2017 22:04:59 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}' in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 49
+[30-Oct-2017 22:42:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function delete() on null in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 139
+[30-Oct-2017 22:42:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function delete() on null in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 139
+[30-Oct-2017 22:42:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function delete() on null in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 139
+[30-Oct-2017 22:42:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function delete() on null in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 139
+[31-Oct-2017 21:43:39 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 418
+[31-Oct-2017 21:43:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 418
+[02-Nov-2017 03:19:55 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected end of file in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 176
+[02-Nov-2017 03:38:55 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}' in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 429
+[02-Nov-2017 03:38:58 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}' in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 429
+[02-Nov-2017 03:52:50 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}' in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 139
+[02-Nov-2017 03:59:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function user() on null in /home/toaf28f1/public_html/app/Model/DiemDanh.php on line 137
+[02-Nov-2017 23:46:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[02-Nov-2017 23:46:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[06-Nov-2017 22:11:12 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected 'between' (T_STRING), expecting ')' in /home/toaf28f1/public_html/app/View/Departments/manager_add.ctp on line 19
+[14-Nov-2017 15:32:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[14-Nov-2017 15:32:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[14-Nov-2017 15:32:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[14-Nov-2017 15:35:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[18-Nov-2017 08:44:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[18-Nov-2017 08:44:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[18-Nov-2017 08:44:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[18-Nov-2017 08:45:02 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[18-Nov-2017 08:45:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[19-Nov-2017 09:27:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[19-Nov-2017 09:29:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[19-Nov-2017 09:29:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 269
+[19-Nov-2017 09:30:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: Error in /home/toaf28f1/public_html/lib/Cake/Core/Configure.php on line 108
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: Exception in /home/toaf28f1/public_html/lib/Cake/Core/Configure.php on line 109
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: cookieTimeout in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 523
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: cookie in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 527
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: timeout in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 540
+[19-Nov-2017 13:43:55 UTC] PHP Warning:  ini_set(): session.name cannot be a numeric or empty '' in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 553
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: cookieTimeout in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 523
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: cookie in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 527
+[19-Nov-2017 13:43:55 UTC] PHP Notice:  Undefined index: timeout in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 540
+[19-Nov-2017 13:43:55 UTC] PHP Warning:  ini_set(): session.name cannot be a numeric or empty '' in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php on line 553
+[19-Nov-2017 13:43:55 UTC] PHP Fatal error:  [CakeSessionException] Unable to configure the session, setting session.name failed.
+#0 /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php(588): CakeSession::_configureSession()
+#1 /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php(599): CakeSession::_cookieName()
+#2 /home/toaf28f1/public_html/lib/Cake/Model/Datasource/CakeSession.php(233): CakeSession::_hasSession()
+#3 /home/toaf28f1/public_html/lib/Cake/View/Helper/SessionHelper.php(134): CakeSession::check('Message.flash')
+#4 /home/toaf28f1/public_html/app/View/Layouts/error.ctp(44): SessionHelper->flash()
+#5 /home/toaf28f1/public_html/lib/Cake/View/View.php(971): include('/home/toaf28f1/...')
+#6 /home/toaf28f1/public_html/lib/Cake/View/View.php(933): View->_evaluate('/home/toaf28f1/...', Array)
+#7 /home/toaf28f1/public_html/lib/Cake/View/View.php(546): View->_render('/home/toaf28f1/...')
+#8 /home/toaf28f1/public_html/lib/Cake/View/View.php(481): View->renderLayout('', 'error')
+#9 /home/toaf28f1/public_html/lib/Cake/Erro in /home/toaf28f1/public_html/lib/Cake/Error/ErrorHandler.php on line 138
+[06-Dec-2017 22:36:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/AppController.php on line 72
+[06-Dec-2017 22:36:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function find() on null in /home/toaf28f1/public_html/app/Controller/AppController.php on line 72
+[08-Dec-2017 22:13:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function add() on string in /home/toaf28f1/public_html/app/Controller/AppController.php on line 100
+[08-Dec-2017 22:13:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function add() on string in /home/toaf28f1/public_html/app/Controller/AppController.php on line 100
+[15-Dec-2017 22:24:11 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 126
+[15-Dec-2017 22:24:11 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 126
+[19-Dec-2017 02:25:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function beginTransaction() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 2379
+[19-Dec-2017 02:25:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 14:06:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:09:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:09:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:53 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:56 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:10:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:11:01 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:12 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:11:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:11:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:53 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:11:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:12:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:12:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:12:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 16
+[19-Dec-2017 14:12:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:22 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:12:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 11
+[19-Dec-2017 14:12:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:00 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:22 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:22 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 16
+[19-Dec-2017 14:13:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DashboardsController.php on line 16
+[19-Dec-2017 14:13:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:13:56 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:14:00 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 14:14:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Class 'AppController' not found in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 11
+[19-Dec-2017 21:06:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:06:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:18:44 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:18:44 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:30:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:30:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:39:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:39:14 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function quote() on null in /home/toaf28f1/public_html/lib/Cake/Model/Datasource/DboSource.php on line 355
+[19-Dec-2017 21:50:19 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 108
+[19-Dec-2017 21:50:19 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 108
+[19-Dec-2017 21:50:46 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 108
+[19-Dec-2017 21:50:46 Asia/Ho_Chi_Minh] PHP Fatal error:  __clone method called on non-object in /home/toaf28f1/public_html/app/Controller/AppController.php on line 108
+[26-Dec-2017 22:00:18 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '$courses' (T_VARIABLE), expecting function (T_FUNCTION) in /home/toaf28f1/public_html/app/Controller/CoursesController.php on line 643
+[22-Jan-2018 18:11:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function modify() on boolean in /home/toaf28f1/public_html/app/Controller/BuoiHocsController.php on line 103
+[22-Jan-2018 18:11:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[22-Jan-2018 18:14:09 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[22-Jan-2018 18:14:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[22-Jan-2018 18:44:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[29-Jan-2018 19:30:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[29-Jan-2018 19:31:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[30-Jan-2018 18:06:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[30-Jan-2018 18:06:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[30-Jan-2018 18:08:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[30-Jan-2018 18:10:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271
+[30-Jan-2018 18:10:23 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/Controller/DiemDanhsController.php on line 352
+[30-Jan-2018 18:14:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function format() on boolean in /home/toaf28f1/public_html/app/View/Helper/CommonHelper.php on line 271

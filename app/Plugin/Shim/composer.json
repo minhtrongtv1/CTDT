@@ -1,0 +1,28 @@
+{
+	"name": "dereuromark/cakephp-shim",
+	"type": "cakephp-plugin",
+	"description": "A CakePHP plugin to shim applications between major framework versions.",
+	"keywords": ["cakephp", "plugin", "shim", "helpers"],
+	"homepage": "https://github.com/dereuromark/cakephp-shim",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mark Scherer",
+			"homepage": "http://www.dereuromark.de",
+			"role": "Maintainer"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"composer/installers": "*"
+	},
+	"suggest": {
+		"ircmaxell/password-compat": "PHP5.4 compatability for the PHP5.5 password hashing functionality."
+	},
+	"support": {
+		"source": "https://github.com/dereuromark/cakephp-shim"
+	},
+	"extra": {
+		"installer-name": "Shim"
+	}
+}

@@ -1,0 +1,24 @@
+[05-Aug-2017 22:23:27 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/sinh-trac-van-tay-2.jpg is missing or invalid' in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php:346
+Stack trace:
+#0 /home/toaf28f1/public_html/app/webroot/filemanager/include/utils.php(218): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/toaf28f1/public_html/app/webroot/filemanager/upload.php(93): create_img('../upload/image...', '../thumbs/image...', 122, 91)
+#2 {main}
+  thrown in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php on line 346
+[05-Aug-2017 22:23:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/sinh-trac-van-tay-2_1.jpg is missing or invalid' in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php:346
+Stack trace:
+#0 /home/toaf28f1/public_html/app/webroot/filemanager/include/utils.php(218): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/toaf28f1/public_html/app/webroot/filemanager/upload.php(93): create_img('../upload/image...', '../thumbs/image...', 122, 91)
+#2 {main}
+  thrown in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php on line 346
+[05-Aug-2017 22:24:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/images/sinh-trac-van-tay-2.jpg is missing or invalid' in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php:346
+Stack trace:
+#0 /home/toaf28f1/public_html/app/webroot/filemanager/include/utils.php(218): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/toaf28f1/public_html/app/webroot/filemanager/upload.php(93): create_img('../upload/image...', '../thumbs/image...', 122, 91)
+#2 {main}
+  thrown in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php on line 346
+[19-Aug-2017 12:49:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught exception 'Exception' with message 'file ../upload/anh bai viet/xay-dung-nhan-cach-cho-tre-2.gif is missing or invalid' in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php:346
+Stack trace:
+#0 /home/toaf28f1/public_html/app/webroot/filemanager/include/utils.php(218): imageLib->resizeImage(122, 91, 'crop')
+#1 /home/toaf28f1/public_html/app/webroot/filemanager/upload.php(93): create_img('../upload/anh b...', '../thumbs/anh b...', 122, 91)
+#2 {main}
+  thrown in /home/toaf28f1/public_html/app/webroot/filemanager/include/php_image_magician.php on line 346

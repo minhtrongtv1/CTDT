@@ -1,0 +1,107 @@
+/* import google font */
+
+
+body {
+    background-color: #f4f4f4;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 56px; /* add some space for fixed-top navbar */
+}
+
+/* your-btn-primary */
+.your-btn-primary {
+    display: inline-block;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0 40px;
+    background: #008080;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #cce5e5;
+    line-height: 40px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: all 0.4s ease !important;
+}
+.your-btn-primary:hover,
+.your-btn-primary:focus,
+.your-btn-primary:active,
+.your-btn-primary:active:focus,
+.your-btn-primary.btn-primary:not(:disabled):not(.disabled):active,
+.your-btn-primary.btn-primary:not(:disabled):not(.disabled):active:focus {
+    background: #008080;
+    outline: 0;
+    color: #ffffff;
+    box-shadow: none;
+    opacity: 1;
+}
+
+/* your-btn-primary-outer */
+.your-btn-primary-outer {
+    background-color: #008080;
+    border-color: #008080;
+    color: #cce5e5;
+    transition: all 0.4s ease !important;
+}
+.your-btn-primary-outer:hover,
+.your-btn-primary-outer:focus,
+.your-btn-primary-outer:active,
+.your-btn-primary-outer:active:focus,
+.your-btn-primary-outer.btn-primary:not(:disabled):not(.disabled):active,
+#yourServices
+.your-btn-primary-outer.btn-primary:not(:disabled):not(.disabled):active:focus {
+    background-color: #006767;
+    border-color: #006767;
+    color: #ffffff;
+}
+
+/* yourNavbar */
+#yourNavbar {
+    background-color: #008080; /* For browsers that do not support gradients */
+    background-image: linear-gradient(135deg, #003434, #008080, #00cdcd);
+}
+
+/* yourHeader */
+#yourHeader {
+    background-image:  url("../img/decoration-with-puzzle-pieces-yellow-background_23-2148427655.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    height: 500px;
+    text-align: center;
+
+}
+#yourHeader .your-header-text h1,
+#yourHeader .your-header-text p {
+    text-shadow: 2px 2px 4px #000;
+    padding-top: 50px;
+}
+
+/* yourContact */
+#yourContact {
+    background: url("https://images.pexels.com/photos/3693231/pexels-photo-3693231.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+#yourContact .your-contact-text h2,
+#yourContact .your-contact-text p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+
+.bgimage {
+    width:100%;
+    height:500px;
+    background: url('https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.bgimage h5 {
+    color:white;
+    text-shadow:2px 2px #333;
+}

@@ -1,0 +1,51 @@
+<?php
+App::uses('MonHoc', 'Model');
+
+/**
+ * MonHoc Test Case
+ */
+class MonHocTest extends CakeTestCase {
+
+/**
+ * Fixtures
+ *
+ * @var array
+ */
+	public $fixtures = array(
+		'app.mon_hoc',
+		'app.department',
+		'app.department_type',
+		'app.user',
+		'app.province',
+		'app.hoc_ham',
+		'app.hoc_vi',
+		'app.notification',
+		'app.subject',
+		'app.message',
+		'app.messages_user',
+		'app.group',
+		'app.users_group'
+	);
+
+/**
+ * setUp method
+ *
+ * @return void
+ */
+	public function setUp() {
+		parent::setUp();
+		$this->MonHoc = ClassRegistry::init('MonHoc');
+	}
+
+/**
+ * tearDown method
+ *
+ * @return void
+ */
+	public function tearDown() {
+		unset($this->MonHoc);
+
+		parent::tearDown();
+	}
+
+}
