@@ -60,7 +60,7 @@ class AppController extends Controller {
     );
     public $loggedInUser = NULL;
     public $helpers = array(
-        'Notification.Notification',
+        //'Notification.Notification',
         'Common',
         'TinyMCE.TinyMCE'
     );

@@ -17,9 +17,10 @@ class User extends AppModel {
     public $actsAs = array(
         'Acl' => array('type' => 'requester'),
         'Containable',
+        /*
         'Notification.Notifiable' => array(
             'subjects' => array('User', 'Message')
-        ),
+        ),*/
         'Upload.Upload' => array(
             'avatar' => array(
                 'fields' => array(

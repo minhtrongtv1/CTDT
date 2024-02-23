@@ -130,7 +130,7 @@
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/subjects/index", data, function (response) {
+        $.post("http://ctdt.tvu.edu.local/admin/subjects/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -150,7 +150,7 @@
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/subjects/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://ctdt.tvu.edu.local/admin/subjects/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');
