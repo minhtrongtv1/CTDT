@@ -24,7 +24,7 @@ $this->Paginator->options(array(
                 <div class="col-md-12">
 
                     <?php //echo $this->Form->input('requester_id', array('empty' => '-- Chọn người gửi yêu cầu --', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('status', array('empty' => '-- Chọn tình trạng --','options'=>array(YEU_CAU_HO_TRO_CHO_XU_LY=>'Đang chờ xử lý',YEU_CAU_HO_TRO_DA_XU_LY=>'Đã xử lý'), 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('status', array('empty' => '-- Chọn tình trạng --', 'options' => array(YEU_CAU_HO_TRO_CHO_XU_LY => 'Đang chờ xử lý', YEU_CAU_HO_TRO_DA_XU_LY => 'Đã xử lý'), 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php //echo $this->Form->input('supporter_id', array('empty' => '-- Chọn người hỗ trợ --', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
@@ -73,9 +73,9 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($supportingRequest['SupportingRequest']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php if ($supportingRequest['SupportingRequest']['status'] == YEU_CAU_HO_TRO_CHO_XU_LY): ?>
-                                       <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $supportingRequest['SupportingRequest']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $supportingRequest['SupportingRequest']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                     <?php endif; ?>
-                                    
+
                                 </td>
                                 <td>
                                     <?php if ($supportingRequest['SupportingRequest']['status'] == YEU_CAU_HO_TRO_CHO_XU_LY): ?>

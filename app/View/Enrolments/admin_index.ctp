@@ -77,7 +77,7 @@ $this->Paginator->options(array(
                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/admin/enrolments/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        
 
                         <?php echo $this->Html->link(__('ĐẠT'), "#", ['id' => 'result_pass', 'class' => 'result btn btn-success btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Đánh giá đạt các dòng chọn']); ?>                        
-                        <?php echo $this->Html->link(__('KHÔNG ĐẠT'), "#", ['id'=>'result_fail', 'class' => 'result btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Đánh giá không đạt các dòng chọn']); ?>                        
+                        <?php echo $this->Html->link(__('KHÔNG ĐẠT'), "#", ['id' => 'result_fail', 'class' => 'result btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Đánh giá không đạt các dòng chọn']); ?>                        
 
                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>

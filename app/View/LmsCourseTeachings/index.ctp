@@ -1,12 +1,12 @@
 <?php
-                        $this->Paginator->options(array(
-                            'url' => array('action' => 'index'),
-                            'update' => '#datarows',
-                            'evalScripts' => true,
-                            'data' => http_build_query($this->request->data),
-                            'method' => 'POST'
-                        ));
-                        ?><div class="col-md-12 col-sm-12 col-xs-12">
+$this->Paginator->options(array(
+    'url' => array('action' => 'index'),
+    'update' => '#datarows',
+    'evalScripts' => true,
+    'data' => http_build_query($this->request->data),
+    'method' => 'POST'
+));
+?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
             <h2><?php echo __('Lms Course Teachings'); ?></h2>
@@ -15,20 +15,20 @@
 
         <div class="x_content"> 
             <div class="row">
-                <?php echo $this->Form->create('LmsCourseTeaching',array('url'=>array('action'=>'index'),'id'=>'filter-form','class'=>'form-inline','role'=>'form','novalidate'));?>
+                <?php echo $this->Form->create('LmsCourseTeaching', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                                                                        <?php echo $this->Form->input('lms_course_id',array('placeholder'=>'lms_course_id','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('teacher_email',array('placeholder'=>'teacher_email','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('teacher_name',array('placeholder'=>'teacher_name','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('teacher_id',array('placeholder'=>'teacher_id','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                            
+                    <?php echo $this->Form->input('lms_course_id', array('placeholder' => 'lms_course_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('teacher_email', array('placeholder' => 'teacher_email', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('teacher_name', array('placeholder' => 'teacher_name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('teacher_id', array('placeholder' => 'teacher_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
                     <div class="form-group">
-                        <?php echo $this->Form->button('Lọc',array('type'=>'submit','class'=>'btn btn-primary btn-xs'));?>
-                        <?php echo $this->Html->link('Bỏ lọc',array('action'=>'index'),array('class'=>'btn btn-warning btn-xs'));?>
+                        <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
+                        <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
                     </div>
                 </div>
-                <?php echo $this->Form->end();?>            </div>
+                <?php echo $this->Form->end(); ?>            </div>
             <div class="table-responsive" id="datarows">
 
 
@@ -38,49 +38,49 @@
                         <tr class="headings">
                             <th>#</th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('lms_course_id'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('teacher_email'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('lms_course_id'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('teacher_name'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('teacher_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('teacher_email'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                                                        <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('teacher_name'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('teacher_id'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
+
+                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php $stt = (($this->Paginator->params['paging']['LmsCourseTeaching']['page'] - 1) * $this->Paginator->params['paging']['LmsCourseTeaching']['limit']) + 1; ?>
-<?php foreach ($lmsCourseTeachings as $lmsCourseTeaching): ?>
-<tr id="row-<?php echo $lmsCourseTeaching['LmsCourseTeaching']['id'] ?>">
-                        		<td><?php echo $stt++;?></td>
+                        <?php foreach ($lmsCourseTeachings as $lmsCourseTeaching): ?>
+                            <tr id="row-<?php echo $lmsCourseTeaching['LmsCourseTeaching']['id'] ?>">
+                                <td><?php echo $stt++; ?></td>
 
-                        		<td class="">
-			<?php echo $this->Html->link($lmsCourseTeaching['LmsCourse']['fullname'], array('controller' => 'lms_courses', 'action' => 'view', $lmsCourseTeaching['LmsCourse']['id'])); ?>
-		</td>
-		<td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['teacher_email']); ?>&nbsp;</td>
-		<td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['teacher_name']); ?>&nbsp;</td>
-		<td class="">
-			<?php echo $this->Html->link($lmsCourseTeaching['Teacher']['name'], array('controller' => 'users', 'action' => 'view', $lmsCourseTeaching['Teacher']['id'])); ?>
-		</td>
-		<td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $lmsCourseTeaching['LmsCourseTeaching']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-		</td>
-                    <td>
-                        <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $lmsCourseTeaching['LmsCourseTeaching']['id'] ?>">
-                    </td>
-                    	</tr>
-<?php endforeach; ?>
+                                <td class="">
+                                    <?php echo $this->Html->link($lmsCourseTeaching['LmsCourse']['fullname'], array('controller' => 'lms_courses', 'action' => 'view', $lmsCourseTeaching['LmsCourse']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['teacher_email']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['teacher_name']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($lmsCourseTeaching['Teacher']['name'], array('controller' => 'users', 'action' => 'view', $lmsCourseTeaching['Teacher']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($lmsCourseTeaching['LmsCourseTeaching']['id']); ?>&nbsp;</td>
+                                <td>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $lmsCourseTeaching['LmsCourseTeaching']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                </td>
+                                <td>
+                                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $lmsCourseTeaching['LmsCourseTeaching']['id'] ?>">
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
@@ -145,4 +145,5 @@
     });
 
 </script>
-<?php echo $this->Js->writeBuffer();
+<?php
+echo $this->Js->writeBuffer();

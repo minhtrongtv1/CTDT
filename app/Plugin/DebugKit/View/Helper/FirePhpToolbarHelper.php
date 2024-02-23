@@ -19,6 +19,7 @@ App::uses('FireCake', 'DebugKit.Lib');
  * FirePHP Toolbar Helper
  *
  * Injects the toolbar elements into non-HTML layouts via FireCake.
+ *
  */
 class FirePhpToolbarHelper extends ToolbarHelper {
 
@@ -40,11 +41,11 @@ class FirePhpToolbarHelper extends ToolbarHelper {
 	}
 
 /**
- * Make neat array
+ * makeNeatArray.
  *
- * Wraps FireCake::dump() allowing panel elements to continue functioning.
+ * wraps FireCake::dump() allowing panel elements to continue functioning
  *
- * @param string $values The values.
+ * @param string $values
  * @return void
  */
 	public function makeNeatArray($values) {
@@ -85,8 +86,8 @@ class FirePhpToolbarHelper extends ToolbarHelper {
 /**
  * Start a panel which is a 'Group' in FirePHP
  *
- * @param string $title The panel tile.
- * @param string $anchor The panel anchor (unused).
+ * @param $title
+ * @param $anchor
  * @return void
  */
 	public function panelStart($title, $anchor) {

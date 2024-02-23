@@ -45,7 +45,7 @@ $this->Paginator->options(array(
                             <th class="column-title">Số lượng đăng ký</th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('status', 'Tình trạng'); ?></th>
-                            
+
                             <th></th>
 
 
@@ -99,7 +99,7 @@ $this->Paginator->options(array(
 
 
                                 <td><?php echo $this->Common->showStatus($workshop['Workshop']['status']) ?></td>
-                                
+
                                 <td class="">
                                     <?php echo $this->Html->link('Xem chi tiết', array('teacher' => false, 'controller' => 'workshops', 'action' => 'view', $workshop['Workshop']['id']), array('class' => 'btn btn-xs btn-info'));
                                     ?>

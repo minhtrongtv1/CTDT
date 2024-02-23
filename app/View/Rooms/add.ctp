@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Thêm mới phòng'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Add Room'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,9 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã phòng']); ?>
-    <?php echo $this->Form->input('name', ['label' => 'Tên phòng']); ?>
-<?php echo $this->Form->input('acreage', ['label' => 'Diện tích phòng (m²)']); ?>
+    <?php echo $this->Form->input('code'); ?>
+    <?php echo $this->Form->input('name'); ?>
+<?php echo $this->Form->input('acreage'); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

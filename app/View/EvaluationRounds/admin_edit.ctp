@@ -17,10 +17,10 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('title',['label'=>'Tên đợt']); ?>
-    <?php echo $this->Form->input('scholastic',['label'=>'Năm học']); ?>
-    <?php echo $this->Form->input('semester',['label'=>'Học kỳ']); ?>
-    <?php echo $this->Form->input('isCompleted',['label'=>'Đã hoàn thành']); ?>
+    <?php echo $this->Form->input('title', ['label' => 'Tên đợt']); ?>
+    <?php echo $this->Form->input('scholastic', ['label' => 'Năm học']); ?>
+    <?php echo $this->Form->input('semester', ['label' => 'Học kỳ']); ?>
+    <?php echo $this->Form->input('isCompleted', ['label' => 'Đã hoàn thành']); ?>
     <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

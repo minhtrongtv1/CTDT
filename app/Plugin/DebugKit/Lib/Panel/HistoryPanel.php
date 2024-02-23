@@ -1,5 +1,11 @@
 <?php
 /**
+ * History Panel
+ *
+ * Provides debug information on previous requests.
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -9,12 +15,13 @@
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
+ **/
 
 App::uses('DebugPanel', 'DebugKit.Lib');
 
 /**
- * Provides debug information on previous requests.
+ * Class HistoryPanel
+ *
  */
 class HistoryPanel extends DebugPanel {
 
@@ -22,7 +29,7 @@ class HistoryPanel extends DebugPanel {
  * Number of history elements to keep
  *
  * @var string
- */
+ **/
 	public $history = 5;
 
 /**
@@ -40,7 +47,7 @@ class HistoryPanel extends DebugPanel {
 /**
  * beforeRender callback function
  *
- * @param Controller $controller The controller.
+ * @param Controller $controller
  * @return array contents for panel
  */
 	public function beforeRender(Controller $controller) {

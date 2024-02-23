@@ -46,74 +46,74 @@
             <!-- /.box -->
         </div>
     </div>
-    <?php if(!empty($courseKhongCoGV)):?>
-    <div class="row">
-        <h2>Các khóa chưa phân công GV (<?php echo count($courseKhongCoGV)?>)</h2>
-        <table>
-            <thead>
-            <th>Tên khóa</th>
-            <th>ID đơn vị</th>
-            </thead>
-            <tbody>
-                <?php foreach ($courseKhongCoGV as $row): ?>
-                    <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
-                <?php endforeach; ?>
-            </tbody>
+    <?php if (!empty($courseKhongCoGV)): ?>
+        <div class="row">
+            <h2>Các khóa chưa phân công GV (<?php echo count($courseKhongCoGV) ?>)</h2>
+            <table>
+                <thead>
+                <th>Tên khóa</th>
+                <th>ID đơn vị</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($courseKhongCoGV as $row): ?>
+                        <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
+                    <?php endforeach; ?>
+                </tbody>
 
-        </table>
-    </div>
-     <?php endif;?>
-     <?php if(!empty($courseDataFail)):?>
-    <div class="row">
-        <h2>Các khóa lỗi data</h2>
-        <table>
-            <thead>
-            <th>Tên khóa</th>
-            <th>ID đơn vị</th>
-            </thead>
-            <tbody>
-                <?php foreach ($courseDataFail as $row): ?>
-                    <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
-                <?php endforeach; ?>
-            </tbody>
+            </table>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty($courseDataFail)): ?>
+        <div class="row">
+            <h2>Các khóa lỗi data</h2>
+            <table>
+                <thead>
+                <th>Tên khóa</th>
+                <th>ID đơn vị</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($courseDataFail as $row): ?>
+                        <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
+                    <?php endforeach; ?>
+                </tbody>
 
-        </table>
-    </div>
-     <?php endif;?>
-     <?php if(!empty($fail)):?>
-    <div class="row">
-        <h2>Các khóa lỗi lưu</h2>
-        <table>
-            <thead>
-            <th>Tên khóa</th>
-            <th>ID đơn vị</th>
-            </thead>
-            <tbody>
-                <?php foreach ($fail as $row): ?>
-                    <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
-                <?php endforeach; ?>
-            </tbody>
+            </table>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty($fail)): ?>
+        <div class="row">
+            <h2>Các khóa lỗi lưu</h2>
+            <table>
+                <thead>
+                <th>Tên khóa</th>
+                <th>ID đơn vị</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($fail as $row): ?>
+                        <tr><td><?php echo $row['fullname'] ?></td><td><?php echo $row['department'] ?></td></tr>
+                    <?php endforeach; ?>
+                </tbody>
 
-        </table>
-    </div>
-    <?php endif;?>
-     <?php if(!empty($existed)):?>
-    <div class="row">
-        <h2>Các khóa trùng tên (<?php echo count($existed)?>)</h2>
-        <table>
-            <thead>
-            <th>Tên khóa</th>
-            
-            </thead>
-            <tbody>
-                <?php foreach ($existed as $row): ?>
-                    <tr><td><?php echo $row ?></td></tr>
-                <?php endforeach; ?>
-            </tbody>
+            </table>
+        </div>
+    <?php endif; ?>
+    <?php if (!empty($existed)): ?>
+        <div class="row">
+            <h2>Các khóa trùng tên (<?php echo count($existed) ?>)</h2>
+            <table>
+                <thead>
+                <th>Tên khóa</th>
 
-        </table>
-    </div>
-    <!-- /.row -->
-<?php endif;?>
+                </thead>
+                <tbody>
+                    <?php foreach ($existed as $row): ?>
+                        <tr><td><?php echo $row ?></td></tr>
+                    <?php endforeach; ?>
+                </tbody>
+
+            </table>
+        </div>
+        <!-- /.row -->
+    <?php endif; ?>
 </section>
 

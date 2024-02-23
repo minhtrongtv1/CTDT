@@ -21,6 +21,7 @@ App::uses('Security', 'Utility');
  * Injects the toolbar elements into HTML layouts.
  * Contains helper methods for
  *
+ *
  * @since         DebugKit 0.1
  */
 class HtmlToolbarHelper extends ToolbarHelper {
@@ -43,9 +44,9 @@ class HtmlToolbarHelper extends ToolbarHelper {
  * Recursively goes through an array and makes neat HTML out of it.
  *
  * @param mixed $values Array to make pretty.
- * @param int $openDepth Depth to add open class
- * @param int $currentDepth current depth.
- * @param bool $doubleEncode Whether to do double encoding, defaults to false.
+ * @param integer $openDepth Depth to add open class
+ * @param integer $currentDepth current depth.
+ * @param boolean $doubleEncode
  * @return string
  */
 	public function makeNeatArray($values, $openDepth = 0, $currentDepth = 0, $doubleEncode = false) {
@@ -71,7 +72,7 @@ class HtmlToolbarHelper extends ToolbarHelper {
 			$values[] = '(empty)';
 		}
 		foreach ($values as $key => $value) {
-			$out .= '<li><strong>' . h($key, $doubleEncode) . '</strong>';
+			$out .= '<li><strong>' . $key . '</strong>';
 			if (is_array($value) && count($value) > 0) {
 				$out .= '(array)';
 			} elseif (is_object($value)) {
@@ -133,12 +134,11 @@ class HtmlToolbarHelper extends ToolbarHelper {
 	}
 
 /**
- * Start a panel
- *
+ * Start a panel.
  * Make a link and anchor.
  *
- * @param string $title The panel title.
- * @param string $anchor The panel anchor.
+ * @param $title
+ * @param $anchor
  * @return string
  */
 	public function panelStart($title, $anchor) {
@@ -188,16 +188,12 @@ class HtmlToolbarHelper extends ToolbarHelper {
 				}
 			}
 		}
-		$search = '</head>';
-		$pos = strpos($view->output, $search);
-		if ($pos !== false) {
-			$view->output = substr_replace($view->output, $head . "\n</head>", $pos, strlen($search));
+		if (preg_match('#</head>#', $view->output)) {
+			$view->output = preg_replace('#</head>#', $head . "\n</head>", $view->output, 1);
 		}
 		$toolbar = $view->element('debug_toolbar', array('disableTimer' => true), array('plugin' => 'DebugKit'));
-		$search = '</body>';
-		$pos = strrpos($view->output, $search);
-		if ($pos !== false) {
-			$view->output = substr_replace($view->output, $toolbar . "\n</body>", $pos, strlen($search));
+		if (preg_match('#</body>#', $view->output)) {
+			$view->output = preg_replace('#</body>#', $toolbar . "\n</body>", $view->output, 1);
 		}
 	}
 
@@ -205,14 +201,13 @@ class HtmlToolbarHelper extends ToolbarHelper {
  * Generates a SQL explain link for a given query
  *
  * @param string $sql SQL query string you want an explain link for.
- * @param string $connection The connection.
+ * @param $connection
  * @return string Rendered Html link or '' if the query is not a select/describe
  */
 	public function explainLink($sql, $connection) {
 		if (!preg_match('/^[\s()]*SELECT/i', $sql)) {
 			return '';
 		}
-		$sql = str_replace(array("\n", "\t"), ' ', $sql);
 		$hash = Security::hash($sql . $connection, 'sha1', true);
 		$url = array(
 			'plugin' => 'debug_kit',

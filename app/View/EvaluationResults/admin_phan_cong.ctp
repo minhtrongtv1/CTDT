@@ -10,7 +10,7 @@
         Phân công đánh giá khóa học
 
     </h1>
-    
+
 </section>
 
 <!-- Main content -->
@@ -21,17 +21,18 @@
             <div class="box box-primary">
                 <!-- /.box-header -->
                 <!-- form start -->
-                <?php echo $this->Form->create(null, array(
-        'role' => 'form',
-        'class' => 'form-horizontal',
-        'inputDefaults' => array(
-            'class' => 'form-control',
-        )
-            )); ?>
+                <?php
+                echo $this->Form->create(null, array(
+                    'role' => 'form',
+                    'class' => 'form-horizontal',
+                    'inputDefaults' => array(
+                        'class' => 'form-control',
+                    )
+                ));
+                ?>
                 <div class="box-body">
                     <?php
                     echo $this->Form->input('evaluation_round_id', ['options' => $evaluationRounds, 'label' => 'Chọn Đợt:']);
-                    
                     ?>
                 </div>
                 <!-- /.box-body -->
@@ -40,7 +41,7 @@
 
                 <?php echo $this->Form->button('Thực hiện', ['type' => 'submit', 'name' => 'action', 'value' => 'do_it']); ?>
 
-                <?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
             </div>
             <!-- /.box -->
         </div>

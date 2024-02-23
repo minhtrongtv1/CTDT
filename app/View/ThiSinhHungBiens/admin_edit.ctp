@@ -23,7 +23,7 @@
     echo $this->Form->input('so_bao_danh', array('label' => 'Số báo danh'));
     echo $this->Form->input('so_dien_thoai', array('label' => 'Số điện thoại'));
     echo $this->Form->input('email', array('label' => 'Email'));
-    echo $this->Form->input('nam_du_thi',array('label'=>'Năm dự thi'));
+    echo $this->Form->input('nam_du_thi', array('label' => 'Năm dự thi'));
     echo $this->Form->input('khoa', array('label' => 'Khoa'));
     echo $this->Form->input('vao_chung_ket', array('label' => 'Vào chung kết'));
     echo $this->Form->input('anh_dai_dien', array('type' => 'file', 'label' => 'Ảnh đại diện:'));

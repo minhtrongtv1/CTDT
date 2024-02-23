@@ -72,7 +72,7 @@ echo $this->Html->css('/select2-4.0.3/css/select2-bootstrap.min', array('block' 
         echo $this->Form->input('so_dien_thoai', array('label' => 'Số điện thoại'));
         echo $this->Form->input('email', array('label' => 'Email', 'class' => 'form-control'));
         ?>
-        
+
     </fieldset>
     <div class="btn-toolbar" style="text-align: center;
          ">

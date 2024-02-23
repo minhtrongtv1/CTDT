@@ -97,7 +97,7 @@ echo $this->Form->create('User', array(
 
     <?php echo $this->Form->end(); ?>
 </div>
-    
+
 
 
 <script>

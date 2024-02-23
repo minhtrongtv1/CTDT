@@ -9,17 +9,17 @@ $chuyen_de = $workshop['Chapter']['name'];
 $schedules = $workshop['Scheduling'];
 $teachers = $workshop['Enrolment'];
 $so_buoi = count($schedules);
-if($so_buoi>=3){
-    die('Vui lòng liên hệ Ban E-Learning bổ sung chức năng in danh sách khóa tập huấn có '.$so_buoi.' buổi.');
+if ($so_buoi >= 3) {
+    die('Vui lòng liên hệ Ban E-Learning bổ sung chức năng in danh sách khóa tập huấn có ' . $so_buoi . ' buổi.');
 }
 
 
-$this->PHPWord->loadTemplate('report/danh_sach_ky_ten_'.$so_buoi.'.docx');
-$buoi_1='Buổi 1';
-$buoi_2='Buổi 2';
-$i=1;
+$this->PHPWord->loadTemplate('report/danh_sach_ky_ten_' . $so_buoi . '.docx');
+$buoi_1 = 'Buổi 1';
+$buoi_2 = 'Buổi 2';
+$i = 1;
 foreach ($schedules as $schedule):
-    
+
     $buoi = "";
 
     $time = new DateTime($schedule['start_time']);
@@ -29,13 +29,11 @@ foreach ($schedules as $schedule):
     } else {
         $buoi = "Sáng ";
     }
-    
+
     $buoi .= $time->format('d/m/Y');
-    $this->PHPWord->setValue("buoi_".$i++, htmlspecialchars($buoi));
-    
+    $this->PHPWord->setValue("buoi_" . $i++, htmlspecialchars($buoi));
 
 endforeach;
-
 
 $thoi_gian = "";
 $j = 1;
@@ -63,7 +61,6 @@ foreach ($schedules as $schedule):
     }
 
 endforeach;
-
 
 $rowCount = count($teachers);
 $this->PHPWord->setValue('chapter', htmlspecialchars($chuyen_de)); // On section/content

@@ -7,34 +7,35 @@
     <div class="hr hr-18 dotted hr-double"></div>
 
 
-    <?php echo $this->Form->create('Book', array(
-            'role'=>'form',
-            'class' => 'form-horizontal',
-            'inputDefaults' => array(
-                
-                'class' => 'form-control',
-               )
+    <?php
+    echo $this->Form->create('Book', array(
+        'role' => 'form',
+        'class' => 'form-horizontal',
+        'inputDefaults' => array(
+            'class' => 'form-control',
+        )
             )
-        ); ?>
-    						<?php echo $this->Form->input('Mã tài liệu'); ?>
-						<?php echo $this->Form->input('Tên tài liệu'); ?>
-						<?php echo $this->Form->input('Tên tác giả'); ?>
-						<?php echo $this->Form->input('Nhà xuất bản'); ?>
-						<?php echo $this->Form->input('Năm xuất bản'); ?>
-						<?php echo $this->Form->input('Mã định danh'); ?>
-						<?php echo $this->Form->input('Ghi chú'); ?>
-						<?php echo $this->Form->input('Học phần');?>
+    );
+    ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã tài liệu']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên tài liệu']); ?>
+    <?php echo $this->Form->input('author_name', ['label' => 'Tên tác giả']); ?>
+    <?php echo $this->Form->input('publisher', ['label' => 'Nhà xuất bản']); ?>
+    <?php echo $this->Form->input('publishing_year', ['label' => 'Năm xuất bản']); ?>
+    <?php echo $this->Form->input('link_libary', ['label' => 'Số định danh']); ?>
+    <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
+    <?php echo $this->Form->input('subject', ['label' => 'Tên môn học']); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
-            					<?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info','type'=>'submit')); ?>
+            <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            					<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác',array('action'=>'index') ,array('class' => 'btn btn-warning','escape'=>false)); ?>
+            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-    			<?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->end(); ?>
 
 </div>
 

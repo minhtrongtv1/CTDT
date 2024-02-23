@@ -91,7 +91,7 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($evaluationResult['Course']['fullname'], array('controller' => 'courses', 'action' => 'view', $evaluationResult['Course']['id'])); ?>
                                 </td>
-                                 <td class="">
+                                <td class="">
                                     <?php echo $evaluationResult['Course']['startdate']; ?>
                                 </td>
                                 <td class="">

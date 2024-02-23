@@ -1,5 +1,11 @@
 <?php
 /**
+ * Session Panel
+ *
+ * Provides debug information on the Session contents.
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -14,14 +20,15 @@
 App::uses('DebugPanel', 'DebugKit.Lib');
 
 /**
- * Provides debug information on the Session contents.
+ * Class SessionPanel
+ *
  */
 class SessionPanel extends DebugPanel {
 
 /**
  * beforeRender callback
  *
- * @param Controller $controller Controller object.
+ * @param \Controller|object $controller
  * @return array
  */
 	public function beforeRender(Controller $controller) {

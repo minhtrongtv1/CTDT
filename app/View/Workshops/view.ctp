@@ -3,8 +3,8 @@
     .nav-tabs > li > a {
         background-color: #f5f5f5 !important;
     }
-    
-    
+
+
 
     /* Active tab color */
     .nav-tabs > li.active > a {

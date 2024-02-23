@@ -18,10 +18,8 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('SubjectsUser', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('user_id', array('placeholder' => 'user_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'subject_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('room_id', array('placeholder' => 'room_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name', array('placeholder' => 'name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('user_id', array('placeholder' => 'Tên giáo viên', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -39,16 +37,12 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('user_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('Tên giáo viên'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('room_id'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('name'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -70,10 +64,7 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsUser['Subject']['id'], array('controller' => 'subjects', 'action' => 'view', $subjectsUser['Subject']['id'])); ?>
                                 </td>
-                                <td class="">
-                                    <?php echo $this->Html->link($subjectsUser['Room']['name'], array('controller' => 'rooms', 'action' => 'view', $subjectsUser['Room']['id'])); ?>
-                                </td>
-                                <td class=""><?php echo h($subjectsUser['SubjectsUser']['name']); ?>&nbsp;</td>
+
                                 <td class=""><?php echo h($subjectsUser['SubjectsUser']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsUser['SubjectsUser']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

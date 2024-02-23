@@ -17,9 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('name',array('label'=>'Tên động từ')); ?>
-    <?php echo $this->Form->input('english_name',array('label'=>'Tên động từ bằng Tiếng Anh')); ?>
-    <?php echo $this->Form->input('muc_do_nhan_thuc_id',array('label'=>'Mức độ nhận thức')); ?>
+    <?php echo $this->Form->input('name', array('label' => 'Tên động từ')); ?>
+    <?php echo $this->Form->input('english_name', array('label' => 'Tên động từ bằng Tiếng Anh')); ?>
+    <?php echo $this->Form->input('muc_do_nhan_thuc_id', array('label' => 'Mức độ nhận thức')); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

@@ -424,7 +424,6 @@ class UsersController extends AppController {
         if ($this->request->isPost()) {
             $this->User->set($this->request->data);
 
-
             if (!$this->User->verifies()) {
                 $this->Flash->error('Mật khẩu không khớp!');
             } else
@@ -518,5 +517,4 @@ class UsersController extends AppController {
 
         $this->set('authors', $this->paginate());
     }
-
 }

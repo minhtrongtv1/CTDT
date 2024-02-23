@@ -1,5 +1,9 @@
 <?php
 /**
+ * A CakeLog listener which saves having to munge files or other configured loggers.
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -12,7 +16,8 @@
  */
 
 /**
- * A CakeLog listener which saves having to munge files or other configured loggers.
+ * Class DebugKitLog
+ *
  */
 class DebugKitLog implements CakeLogInterface {
 
@@ -26,7 +31,7 @@ class DebugKitLog implements CakeLogInterface {
 /**
  * Makes the reverse link needed to get the logs later.
  *
- * @param array $options Options.
+ * @param $options
  * @return \DebugKitLog
  */
 	public function __construct($options) {
@@ -36,14 +41,14 @@ class DebugKitLog implements CakeLogInterface {
 /**
  * Captures log messages in memory
  *
- * @param string $type Type of log message.
- * @param string $message The log message.
+ * @param $type
+ * @param $message
  * @return void
  */
 	public function write($type, $message) {
 		if (!isset($this->logs[$type])) {
 			$this->logs[$type] = array();
 		}
-		$this->logs[$type][] = array(date('Y-m-d H:i:s'), (string)$message);
+		$this->logs[$type][] = array(date('Y-m-d H:i:s'), $message);
 	}
 }

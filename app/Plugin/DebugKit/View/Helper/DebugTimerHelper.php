@@ -20,6 +20,7 @@ App::uses('Helper', 'View');
  * Class DebugTimerHelper
  *
  * Tracks time and memory usage while rendering view.
+ *
  */
 class DebugTimerHelper extends Helper {
 
@@ -27,15 +28,15 @@ class DebugTimerHelper extends Helper {
  * Set to true when rendering is complete.
  * Used to not add timers for rendering the toolbar.
  *
- * @var bool
+ * @var boolean
  */
 	protected $_renderComplete = false;
 
 /**
  * Constructor
  *
- * @param View $View The view.
- * @param array $settings The settings.
+ * @param View $View
+ * @param array $settings
  */
 	public function __construct(View $View, $settings = array()) {
 		parent::__construct($View, $settings);
@@ -48,8 +49,7 @@ class DebugTimerHelper extends Helper {
 /**
  * Sets a timer point before rendering a file.
  *
- * @param string $viewFile The view being rendered.
- * @return void
+ * @param string $viewFile The view being rendered
  */
 	public function beforeRenderFile($viewFile) {
 		if ($this->_renderComplete) {
@@ -67,7 +67,6 @@ class DebugTimerHelper extends Helper {
  *
  * @param string $viewFile The view being rendered
  * @param string $content The contents of the view.
- * @return void
  */
 	public function afterRenderFile($viewFile, $content) {
 		if ($this->_renderComplete) {
@@ -79,8 +78,7 @@ class DebugTimerHelper extends Helper {
 /**
  * Stop timers for rendering.
  *
- * @param string $layoutFile The layout file.
- * @return void
+ * @param string $layoutFile
  */
 	public function afterLayout($layoutFile) {
 		DebugTimer::stop('viewRender');

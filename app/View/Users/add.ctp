@@ -112,9 +112,9 @@ echo $this->Html->css('/select2-4.0.3/css/select2.min', array('block' => 'script
     $(document).ready(function () {
         $("#UserLastName").focus();
         $("#UserSchoolId").select2({
-                    placeholder: "--chọn trường học--",
-                    allowClear: true
-                });
+            placeholder: "--chọn trường học--",
+            allowClear: true
+        });
     });
 
 </script>

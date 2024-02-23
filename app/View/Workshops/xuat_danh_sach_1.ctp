@@ -13,13 +13,12 @@ $so_buoi = count($schedules);
 $thoi_gian = "";
 $j = 1;
 
-
-$this->PHPWord->loadTemplate('report/danh_sach_ky_ten_'.$so_buoi.'.docx');
-$buoi_1='Buổi 1';
-$buoi_2='Buổi 2';
-$i=1;
+$this->PHPWord->loadTemplate('report/danh_sach_ky_ten_' . $so_buoi . '.docx');
+$buoi_1 = 'Buổi 1';
+$buoi_2 = 'Buổi 2';
+$i = 1;
 foreach ($schedules as $schedule):
-    
+
     $buoi = "";
 
     $time = new DateTime($schedule['start_time']);
@@ -29,15 +28,14 @@ foreach ($schedules as $schedule):
     } else {
         $buoi = "Sáng ";
     }
-    
+
     $buoi .= $time->format('d/m/Y');
-    $this->PHPWord->setValue("buoi_".$i++, htmlspecialchars($buoi));
-    
+    $this->PHPWord->setValue("buoi_" . $i++, htmlspecialchars($buoi));
 
 endforeach;
 
 foreach ($schedules as $schedule):
-    $i=1;
+    $i = 1;
     $buoi = "";
 
     $time = new DateTime($schedule['start_time']);
@@ -47,18 +45,15 @@ foreach ($schedules as $schedule):
     } else {
         $buoi = "Sáng ";
     }
-    
+
     $buoi .= $time->format('d/m/Y');
-    $this->PHPWord->setValue("buoi_".$i, htmlspecialchars($buoi));
-    
+    $this->PHPWord->setValue("buoi_" . $i, htmlspecialchars($buoi));
 
 endforeach;
-
 
 $rowCount = count($teachers);
 $this->PHPWord->setValue('chapter', htmlspecialchars($chuyen_de)); // On section/content
 $this->PHPWord->setValue("thoi_gian", htmlspecialchars($thoi_gian));
-
 
 if ($rowCount > 0) {
 

@@ -6,7 +6,7 @@
             <div class="well" id="login">
 
                 <?php
-                echo $this->Form->create('User', array('url'=>array('action' => 'changePassword'), 'inputDefaults' => array(
+                echo $this->Form->create('User', array('url' => array('action' => 'changePassword'), 'inputDefaults' => array(
                         'div' => 'form-group',
                         'wrapInput' => false,
                         'class' => 'form-control'

@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2><?php echo __('Thiết bị'); ?></h2>
+            <h2><?php echo __('Devices'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -18,12 +18,11 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Device', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã thiết bị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên thiết bị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('quantity', array('placeholder' => 'Số lượng thiết bị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('used', array('placeholder' => 'Sử dụng cho học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('note', array('placeholder' => 'Ghi chú', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('room_id', array('placeholder' => 'Tên phòng', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('code', array('placeholder' => 'code', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('name', array('placeholder' => 'name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('quantity', array('placeholder' => 'quantity', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('used', array('placeholder' => 'used', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('note', array('placeholder' => 'note', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -41,22 +40,19 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Số lượng thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('quantity'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Sử dụng cho học phần'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('used'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Ghi chú'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên phòng'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('note'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -77,9 +73,6 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($device['Device']['quantity']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($device['Device']['used']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($device['Device']['note']); ?>&nbsp;</td>
-                                <td class="">
-                                    <?php echo $this->Html->link($device['Room']['name'], array('controller' => 'rooms', 'action' => 'view', $device['Room']['id'])); ?>
-                                </td>
                                 <td class=""><?php echo h($device['Device']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $device['Device']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -92,7 +85,7 @@ $this->Paginator->options(array(
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/devices/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/admin/devices/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
                 <?php echo $this->element("pagination"); ?>  
@@ -112,7 +105,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/devices/index", data, function (response) {
+        $.post("http://ctdt.tvu.edu.local/admin/devices/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -132,7 +125,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/devices/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://ctdt.tvu.edu.local/admin/devices/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

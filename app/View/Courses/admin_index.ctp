@@ -127,15 +127,13 @@ $this->Paginator->options(array(
                                     endforeach;
                                     echo $kq;
                                     ?>
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>Cập nhật KQ'), array('admin' => true,'controller'=>'evaluation_results', 'action' => 'edit', $ketqua['id']), array('class' => 'btn btn-success btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit'));
-                                    
-
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>Cập nhật KQ'), array('admin' => true, 'controller' => 'evaluation_results', 'action' => 'edit', $ketqua['id']), array('class' => 'btn btn-success btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit'));
                                     ?>
                                 </td>
                                 <td class=""><?php echo h($course['Course']['id']); ?>&nbsp;</td>
                                 <td>
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye"></i> Xem'), array('action' => 'view', $course['Course']['id']), array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xem')); ?>
-    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye"></i> Xem'), array('action' => 'view', $course['Course']['id']), array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xem')); ?>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                 </td>
                                 <td>
                                     <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $course['Course']['id'] ?>">

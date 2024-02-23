@@ -7,30 +7,31 @@
     <div class="hr hr-18 dotted hr-double"></div>
 
 
-    <?php echo $this->Form->create('LmsCourseTeaching', array(
-            'role'=>'form',
-            'class' => 'form-horizontal',
-            'inputDefaults' => array(
-                
-                'class' => 'form-control',
-               )
+    <?php
+    echo $this->Form->create('LmsCourseTeaching', array(
+        'role' => 'form',
+        'class' => 'form-horizontal',
+        'inputDefaults' => array(
+            'class' => 'form-control',
+        )
             )
-        ); ?>
-    						<?php echo $this->Form->input('lms_course_id'); ?>
-						<?php echo $this->Form->input('teacher_email'); ?>
-						<?php echo $this->Form->input('teacher_name'); ?>
-						<?php echo $this->Form->input('teacher_id'); ?>
+    );
+    ?>
+    <?php echo $this->Form->input('lms_course_id'); ?>
+    <?php echo $this->Form->input('teacher_email'); ?>
+    <?php echo $this->Form->input('teacher_name'); ?>
+<?php echo $this->Form->input('teacher_id'); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
-            					<?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info','type'=>'submit')); ?>
+            <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            					<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác',array('action'=>'index') ,array('class' => 'btn btn-warning','escape'=>false)); ?>
+<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-    			<?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
 
 </div>
 

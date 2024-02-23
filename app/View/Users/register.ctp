@@ -73,7 +73,7 @@
                         <?php echo $this->Form->input('username', array('label' => 'Tên đăng nhập', 'class' => 'form-control', 'required')); ?>
                         <?php echo $this->Form->input('password', array('label' => 'Mật khẩu', 'class' => 'form-control', 'required')); ?>
                         <?php echo $this->Form->input('cpassword', array('label' => 'Nhập lại mật khẩu', 'class' => 'form-control', 'type' => 'password', 'required')); ?>
-                        <div class="g-recaptcha" data-sitekey="<?php echo Configure::read('Recaptcha.SiteKey')?>"></div>
+                        <div class="g-recaptcha" data-sitekey="<?php echo Configure::read('Recaptcha.SiteKey') ?>"></div>
 
                         <input type="submit" class="btnRegister"  value="Đăng ký"/>
                     </div>

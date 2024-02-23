@@ -1,5 +1,4 @@
 <?php
-
 $this->Paginator->options(array(
     'url' => array('action' => 'my', 'teacher' => false),
     'update' => '#datarows',
@@ -46,7 +45,7 @@ $this->Paginator->options(array(
                             <th class="column-title">Kết quả</th>
                             <th class="column-title">Số QĐ cấp CN</th>
                             <th class="column-title">Ngày ký</th>
-                             <th class="column-title">File QĐ</th>
+                            <th class="column-title">File QĐ</th>
                             <th class="column-title"><?php echo $this->Paginator->sort('status', 'Tình trạng'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('lms_course_link', 'Link E-Learning'); ?></th>
                             <th></th>
@@ -66,7 +65,7 @@ $this->Paginator->options(array(
 
 
                                 <td class="">
-                                    <?php echo $this->Html->link($workshop['Workshop']['name'], array('teacher'=>false,'controller' => 'workshops', 'action' => 'view', $workshop['Workshop']['id'])); ?>
+                                    <?php echo $this->Html->link($workshop['Workshop']['name'], array('teacher' => false, 'controller' => 'workshops', 'action' => 'view', $workshop['Workshop']['id'])); ?>
 
 
                                 </td>
@@ -95,27 +94,26 @@ $this->Paginator->options(array(
                                     </ul>
 
                                 </td>
-                                
+
                                 <td><?php echo $workshop['Workshop']['enrolledno'] ?>/<?php echo $workshop['Workshop']['so_luong_dang_ky_toi_da'] ?></td>
                                 <td><?php echo $this->Common->showPass($workshop['Enrolment'][0]['result']) ?></td>
                                 <td><?php echo ($workshop['Enrolment'][0]['so_qd']) ?></td>
                                 <td><?php echo ($workshop['Enrolment'][0]['ngay_qd']) ?></td>
-                                <td><?php if(!empty($workshop['Enrolment'][0]['link_file_qd'])) echo $this->Html->link('Tải về',$workshop['Enrolment'][0]['link_file_qd']); ?></td>
+                                <td><?php if (!empty($workshop['Enrolment'][0]['link_file_qd'])) echo $this->Html->link('Tải về', $workshop['Enrolment'][0]['link_file_qd']); ?></td>
                                 <td><?php echo $this->Common->showStatus($workshop['Workshop']['status']) ?></td>
                                 <td class=""><?php echo h($workshop['Workshop']['lms_course_link']); ?>&nbsp;</td>
                                 <td class=""><?php
-                                    if ($workshop['Workshop']['status'] == WORKSHOP_DANG_DANG_KY) {
-                                        $text = '<button class="btn btn-info btn-xs">Hủy đăng ký</button>';
-                                        echo $this->Form->postLink($text,array('action'=>'huy_dang_ky', $workshop['Workshop']['id']),array('escape'=>false,'confirm' => 'Bạn chắc chắn muốn hủy đăng ký?'));
-                                        
-                                    }
-                                    ?></td>
+                                        if ($workshop['Workshop']['status'] == WORKSHOP_DANG_DANG_KY) {
+                                            $text = '<button class="btn btn-info btn-xs">Hủy đăng ký</button>';
+                                            echo $this->Form->postLink($text, array('action' => 'huy_dang_ky', $workshop['Workshop']['id']), array('escape' => false, 'confirm' => 'Bạn chắc chắn muốn hủy đăng ký?'));
+                                        }
+                                        ?></td>
 
 
                             </tr>
 <?php endforeach; ?>
                     </tbody>
-                    
+
                 </table>
 <?php echo $this->element("pagination"); ?>  
             </div>

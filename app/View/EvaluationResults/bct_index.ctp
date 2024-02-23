@@ -51,7 +51,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('course_id', 'Khóa học'); ?></th>
 
 
-  
+
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('pass', 'Kết quả'); ?></th>
@@ -79,7 +79,7 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $evaluationResult['Course']['fullname']; ?>
                                 </td>
-                                
+
                                 <td class=""><?php echo h($evaluationResult['EvaluationResult']['pass']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($evaluationResult['EvaluationResult']['reason']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($evaluationResult['EvaluationResult']['id']); ?>&nbsp;</td>

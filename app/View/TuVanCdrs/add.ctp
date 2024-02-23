@@ -16,15 +16,15 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('prompt',array('label'=>'CĐR:')); ?>
-    
-   
+    <?php echo $this->Form->input('prompt', array('label' => 'CĐR:')); ?>
+
+
 
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Kiểm tra', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            <?php echo $this->Form->button('<i class="ace-icon fa fa-undo bigger-110"></i>Reset', array('class' => 'btn btn-warning','type' => 'reset', 'escape' => false)); ?>
+            <?php echo $this->Form->button('<i class="ace-icon fa fa-undo bigger-110"></i>Reset', array('class' => 'btn btn-warning', 'type' => 'reset', 'escape' => false)); ?>
 
         </div>
     </div>

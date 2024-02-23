@@ -1,5 +1,11 @@
 <?php
 /**
+ * Variables Panel
+ *
+ * Provides debug information on the View variables.
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -14,23 +20,18 @@
 App::uses('DebugPanel', 'DebugKit.Lib');
 
 /**
- * Provides debug information on the View variables.
+ * Class VariablesPanel
+ *
  */
 class VariablesPanel extends DebugPanel {
 
 /**
  * beforeRender callback
  *
- * @param Controller $controller Controller object.
+ * @param Controller $controller
  * @return array
  */
 	public function beforeRender(Controller $controller) {
-		$viewVars = $controller->viewVars;
-		unset(
-			$viewVars['debugToolbarPanels'],
-			$viewVars['debugToolbarJavascript'],
-			$viewVars['debugToolbarCss']
-		);
-		return array_merge($viewVars, array('$request->data' => $controller->request->data));
+		return array_merge($controller->viewVars, array('$request->data' => $controller->request->data));
 	}
 }

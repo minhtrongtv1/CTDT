@@ -13,8 +13,6 @@ class DevicesControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.device',
-		'app.room',
-		'app.subjects_user',
 		'app.message',
 		'app.user',
 		'app.department',
@@ -24,8 +22,6 @@ class DevicesControllerTest extends ControllerTestCase {
 		'app.teaching',
 		'app.department_supporter',
 		'app.province',
-		'app.notification',
-		'app.subject',
 		'app.group',
 		'app.users_group',
 		'app.messages_user',

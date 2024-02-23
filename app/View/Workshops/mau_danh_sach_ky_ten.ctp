@@ -55,7 +55,6 @@ foreach ($certificates as $classroom => $students) {
         $filename = 'files/quyet_dinh/' . $classroom . '.docx';
         $this->PHPWord->saveAs($filename);
 
-
         $fileArray[] = $filename;
         //$fileArray[] = "files/quyet_dinh/mau_file/blank_page.docx";
     }
@@ -71,5 +70,4 @@ foreach ($fileArray as $file) {
 }
 
 $this->PHPWord->output($out);
-
 

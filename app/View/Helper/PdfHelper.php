@@ -28,10 +28,11 @@ class PdfHelper extends AppHelper {
         $this->core = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
     }
 
-    public function addTTFfont($fontpath,$type='TrueTypeUnicode') {
+    public function addTTFfont($fontpath, $type = 'TrueTypeUnicode') {
         //debug(APP.'Vendor/tcpdf/fonts/'.$fontpath);die;
-       return $this->core->addTTFfont(APP.'Vendor/tcpdf/fonts/'.$fontpath, $type);
+        return $this->core->addTTFfont(APP . 'Vendor/tcpdf/fonts/' . $fontpath, $type);
     }
+
     /**
      * Output file to browser
      */
@@ -60,5 +61,4 @@ class PdfHelper extends AppHelper {
             throw new CakeException('Vendor class TCPDF not found!');
         }
     }
-
 }

@@ -2,7 +2,6 @@
 <?php
 $this->Html->addCrumb('Học viên', '/users/index', array('prepend' => true));
 $this->Html->addCrumb('Xem học viên', array('controller' => 'users', 'action' => 'xem_hoc_vien', $hoc_vien['User']['id']));
-
 ?>
 <div id="user-profile-2" class="user-profile">
     <h1><?php echo $hoc_vien['User']['name'] ?></h1>
@@ -189,8 +188,12 @@ $this->Html->addCrumb('Xem học viên', array('controller' => 'users', 'action'
     </div>
 </div>
 <style>
-    .dong-hoc-phi { cursor: pointer; }
-    .huy-dong-hoc-phi { cursor: pointer; }
+    .dong-hoc-phi {
+        cursor: pointer;
+    }
+    .huy-dong-hoc-phi {
+        cursor: pointer;
+    }
 </style>
 <script>
     $(function () {

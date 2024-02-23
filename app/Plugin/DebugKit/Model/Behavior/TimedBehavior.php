@@ -12,7 +12,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-App::uses('DebugTimer', 'DebugKit.Lib');
+App::uses('DebugKitDebugger', 'DebugKit.Lib');
 
 /**
  * Class TimedBehavior
@@ -53,50 +53,49 @@ class TimedBehavior extends ModelBehavior {
 /**
  * beforeFind, starts a timer for a find operation.
  *
- * @param Model $Model The model.
+ * @param Model $Model
  * @param array $queryData Array of query data (not modified)
- * @return bool true
+ * @return boolean true
  */
 	public function beforeFind(Model $Model, $queryData) {
-		DebugTimer::start($Model->alias . '_find', $Model->alias . '->find()');
+		DebugKitDebugger::startTimer($Model->alias . '_find', $Model->alias . '->find()');
 		return true;
 	}
 
 /**
  * afterFind, stops a timer for a find operation.
  *
- * @param Model $Model The mdoel.
+ * @param Model $Model
  * @param array $results Array of results
- * @param bool $primary Whether this model is being queried directly (vs. being queried as an association)
- * @return bool true.
+ * @param $primary
+ * @return boolean true.
  */
 	public function afterFind(Model $Model, $results, $primary = false) {
-		DebugTimer::stop($Model->alias . '_find');
+		DebugKitDebugger::stopTimer($Model->alias . '_find');
 		return true;
 	}
 
 /**
  * beforeSave, starts a time before a save is initiated.
  *
- * @param Model $Model The model.
- * @param array $options The options.
- * @return bool Always true.
+ * @param Model $Model
+ * @param array $options
+ * @return boolean true
  */
 	public function beforeSave(Model $Model, $options = array()) {
-		DebugTimer::start($Model->alias . '_save', $Model->alias . '->save()');
+		DebugKitDebugger::startTimer($Model->alias . '_save', $Model->alias . '->save()');
 		return true;
 	}
 
 /**
  * afterSave, stop the timer started from a save.
  *
- * @param \Model $Model The model.
- * @param string $created True if this save created a new record.
- * @param array $options The options.
- * @return bool Always true.
+ * @param \Model $Model
+ * @param string $created
+ * @return boolean Always true
  */
 	public function afterSave(Model $Model, $created, $options = array()) {
-		DebugTimer::stop($Model->alias . '_save');
+		DebugKitDebugger::stopTimer($Model->alias . '_save');
 		return true;
 	}
 

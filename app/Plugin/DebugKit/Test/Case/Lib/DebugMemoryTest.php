@@ -19,6 +19,7 @@ App::uses('DebugMemory', 'DebugKit.Lib');
 
 /**
  * Class DebugMemoryTest
+ *
  */
 class DebugMemoryTest extends CakeTestCase {
 

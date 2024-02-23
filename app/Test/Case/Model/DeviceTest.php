@@ -12,9 +12,7 @@ class DeviceTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.device',
-		'app.room',
-		'app.subjects_user'
+		'app.device'
 	);
 
 /**

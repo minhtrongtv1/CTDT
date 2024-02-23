@@ -20,7 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã mục tiêu đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên mục tiêu đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('curriculumns_id', array('placeholder' => 'Tên chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Tên chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -67,7 +67,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
                                 <td class="">
-                                    <?php echo $this->Html->link($programOutcome['Curriculumns']['id'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumns']['id'])); ?>
+                                    <?php echo $this->Html->link($programOutcome['Curriculumn']['id'], array('controller' => 'curriculumn', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
                                 </td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['id']); ?>&nbsp;</td>
                                 <td>

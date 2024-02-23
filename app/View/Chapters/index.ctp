@@ -1,12 +1,12 @@
 <?php
-                        $this->Paginator->options(array(
-                            'url' => array('action' => 'index'),
-                            'update' => '#datarows',
-                            'evalScripts' => true,
-                            'data' => http_build_query($this->request->data),
-                            'method' => 'POST'
-                        ));
-                        ?><div class="col-md-12 col-sm-12 col-xs-12">
+$this->Paginator->options(array(
+    'url' => array('action' => 'index'),
+    'update' => '#datarows',
+    'evalScripts' => true,
+    'data' => http_build_query($this->request->data),
+    'method' => 'POST'
+));
+?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
             <h2><?php echo __('Chapters'); ?></h2>
@@ -15,19 +15,19 @@
 
         <div class="x_content"> 
             <div class="row">
-                <?php echo $this->Form->create('Chapter',array('url'=>array('action'=>'index'),'id'=>'filter-form','class'=>'form-inline','role'=>'form','novalidate'));?>
+                <?php echo $this->Form->create('Chapter', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                                                                        <?php echo $this->Form->input('name',array('placeholder'=>'name','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('field_id',array('placeholder'=>'field_id','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('published',array('placeholder'=>'published','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                            
+                    <?php echo $this->Form->input('name', array('placeholder' => 'name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('field_id', array('placeholder' => 'field_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('published', array('placeholder' => 'published', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
                     <div class="form-group">
-                        <?php echo $this->Form->button('Lọc',array('type'=>'submit','class'=>'btn btn-primary btn-xs'));?>
-                        <?php echo $this->Html->link('Bỏ lọc',array('action'=>'index'),array('class'=>'btn btn-warning btn-xs'));?>
+                        <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
+                        <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
                     </div>
                 </div>
-                <?php echo $this->Form->end();?>            </div>
+                <?php echo $this->Form->end(); ?>            </div>
             <div class="table-responsive" id="datarows">
 
 
@@ -37,43 +37,43 @@
                         <tr class="headings">
                             <th>#</th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('name'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('field_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('published'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('field_id'); ?></th>
 
-                                                        <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('published'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
+
+                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php $stt = (($this->Paginator->params['paging']['Chapter']['page'] - 1) * $this->Paginator->params['paging']['Chapter']['limit']) + 1; ?>
-<?php foreach ($chapters as $chapter): ?>
-<tr id="row-<?php echo $chapter['Chapter']['id'] ?>">
-                        		<td><?php echo $stt++;?></td>
+                        <?php foreach ($chapters as $chapter): ?>
+                            <tr id="row-<?php echo $chapter['Chapter']['id'] ?>">
+                                <td><?php echo $stt++; ?></td>
 
-                        		<td class=""><?php echo h($chapter['Chapter']['name']); ?>&nbsp;</td>
-		<td class="">
-			<?php echo $this->Html->link($chapter['Field']['name'], array('controller' => 'fields', 'action' => 'view', $chapter['Field']['id'])); ?>
-		</td>
-		<td class=""><?php echo h($chapter['Chapter']['published']); ?>&nbsp;</td>
-		<td class=""><?php echo h($chapter['Chapter']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $chapter['Chapter']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-		</td>
-                    <td>
-                        <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $chapter['Chapter']['id'] ?>">
-                    </td>
-                    	</tr>
-<?php endforeach; ?>
+                                <td class=""><?php echo h($chapter['Chapter']['name']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($chapter['Field']['name'], array('controller' => 'fields', 'action' => 'view', $chapter['Field']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($chapter['Chapter']['published']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($chapter['Chapter']['id']); ?>&nbsp;</td>
+                                <td>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $chapter['Chapter']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                </td>
+                                <td>
+                                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $chapter['Chapter']['id'] ?>">
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
@@ -138,4 +138,5 @@
     });
 
 </script>
-<?php echo $this->Js->writeBuffer();
+<?php
+echo $this->Js->writeBuffer();

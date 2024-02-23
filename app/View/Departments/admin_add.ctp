@@ -18,7 +18,7 @@
     );
     ?>
 
-    <?php echo $this->Form->input('title',array('label'=>'Tên')); ?>
+    <?php echo $this->Form->input('title', array('label' => 'Tên')); ?>
 
 
     <div class="clearfix form-actions">

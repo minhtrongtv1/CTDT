@@ -100,7 +100,7 @@ class MyCommonHelper extends AppHelper {
 
     function formatVietnameseMoney($value = 0) {
         setlocale(LC_ALL, "Vietnamese");
-        return number_format($value, 0, ',', '.').' đ';
+        return number_format($value, 0, ',', '.') . ' đ';
     }
 
     function tienBangChu($number) {
@@ -291,7 +291,7 @@ class MyCommonHelper extends AppHelper {
             $so = substr($amount, $length - $i - 1, 1);
 
             if (($so == 0) && ($i % 3 == 0) && ($unread[$i] == 0)) {
-                for ($j = $i + 1; $j < $length; $j ++) {
+                for ($j = $i + 1; $j < $length; $j++) {
                     $so1 = substr($amount, $length - $j - 1, 1);
                     if ($so1 != 0)
                         break;
@@ -333,5 +333,4 @@ class MyCommonHelper extends AppHelper {
 
         return ucfirst($textnumber . " đồng");
     }
-
 }

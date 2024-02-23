@@ -388,17 +388,15 @@ class CommonHelper extends AppHelper {
             echo '<span class="text-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>';
         }
     }
-    
+
     function showTrueFalseAsCheckNotTitle($value = true) {
-    if ($value == ""||is_null($value)) {
-        echo "Chưa đánh giá";
-    } else
-    if ($value) {
-        echo '<span class="text-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>';
-    } else {
-        echo '<span class="text-danger"><i class="fa fa-times" aria-hidden="true"></i></span>';
+        if ($value == "" || is_null($value)) {
+            echo "Chưa đánh giá";
+        } else
+        if ($value) {
+            echo '<span class="text-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>';
+        } else {
+            echo '<span class="text-danger"><i class="fa fa-times" aria-hidden="true"></i></span>';
+        }
     }
 }
-
-}
-

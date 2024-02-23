@@ -3,7 +3,6 @@
 App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,9 +22,9 @@ class HTMLtoOpenXMLHelper extends AppHelper {
     public function __construct() {
         $this->loadEssentials();
     }
+
     public function html2Text($html) {
 
         return htmlentities(HTMLtoOpenXML::getInstance()->fromHTML($html));
     }
-
 }

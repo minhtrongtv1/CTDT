@@ -64,7 +64,7 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($workshop['Workshop']['name'], array('teacher' => true, 'controller' => 'workshops', 'action' => 'view', $workshop['Workshop']['id'])); ?>
                                     <button class="toggle-muc-tieu-btn">Hiện/Ẩn mục tiêu</button>
-                                    
+
                                     <span class="muc-tieu">
                                         <hr>
                                         <?php
@@ -75,28 +75,28 @@ $this->Paginator->options(array(
 
                                 </td>
                                 <td>
-                                    <?php 
-                                    $start_date=new DateTime($workshop['Workshop']['start_date']);
-                                    echo $start_date->format('d/m/Y')?>
+                                    <?php
+                                    $start_date = new DateTime($workshop['Workshop']['start_date']);
+                                    echo $start_date->format('d/m/Y')
+                                    ?>
                                 </td>
                                 <td class="">
-                                    <?php echo $workshop['Chapter']['Field']['name']; ?>
+    <?php echo $workshop['Chapter']['Field']['name']; ?>
                                 </td>
                                 <td>
 
                                     <?php foreach ($workshop['Intrustor'] as $intrustor): ?>
                                         <?php echo ($intrustor['User']['name']); ?>
                                         <br>
-                                    <?php endforeach; ?>
+    <?php endforeach; ?>
 
                                 </td>
 
                                 <td>
                                     <ul>
                                         <?php
-                                        
-                                        $workshop['Scheduling']=Hash::sort($workshop['Scheduling'], '{n}.start_time');
-                                        
+                                        $workshop['Scheduling'] = Hash::sort($workshop['Scheduling'], '{n}.start_time');
+
                                         foreach ($workshop['Scheduling'] as $scheduling):
                                             $bat_dau = new DateTime($scheduling['start_time']);
                                             $ket_thuc = new DateTime($scheduling['end_time']);
@@ -107,7 +107,7 @@ $this->Paginator->options(array(
                                     </ul>
 
                                 </td>
-                                <td><?php echo $workshop['Workshop']['enrolledno'].'/'.$workshop['Workshop']['so_luong_dang_ky_toi_da'] ?></td>
+                                <td><?php echo $workshop['Workshop']['enrolledno'] . '/' . $workshop['Workshop']['so_luong_dang_ky_toi_da'] ?></td>
                                 <td><?php echo $this->Common->showStatus($workshop['Workshop']['status']) ?></td>
                                 <td class=""><?php echo h($workshop['Workshop']['lms_course_link']); ?>&nbsp;</td>
                                 <td class=""><?php
@@ -138,7 +138,7 @@ $this->Paginator->options(array(
 
     $(".toggle-muc-tieu-btn").click(function () {
         $(this).siblings('.muc-tieu').toggle();
-        
+
     });
 
 

@@ -1,5 +1,9 @@
 <?php
 /**
+ * Contains methods for Profiling memory usage.
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -15,7 +19,9 @@
 App::uses('Debugger', 'Utility');
 
 /**
- * Contains methods for Profiling memory usage.
+ * Class DebugMemory
+ *
+ * @since         DebugKit 2.0
  */
 class DebugMemory {
 
@@ -29,7 +35,7 @@ class DebugMemory {
 /**
  * Get current memory usage
  *
- * @return int number of bytes ram currently in use. 0 if memory_get_usage() is not available.
+ * @return integer number of bytes ram currently in use. 0 if memory_get_usage() is not available.
  */
 	public static function getCurrent() {
 		return memory_get_usage();
@@ -38,7 +44,7 @@ class DebugMemory {
 /**
  * Get peak memory use
  *
- * @return int peak memory use (in bytes). Returns 0 if memory_get_peak_usage() is not available
+ * @return integer peak memory use (in bytes). Returns 0 if memory_get_peak_usage() is not available
  */
 	public static function getPeak() {
 		return memory_get_peak_usage();
@@ -50,11 +56,12 @@ class DebugMemory {
  * If no message is supplied a debug_backtrace will be done to identify the memory point.
  *
  * @param string $message Message to identify this memory point.
- * @return bool
+ * @return boolean
  */
 	public static function record($message = null) {
 		$memoryUse = self::getCurrent();
 		if (!$message) {
+			$named = false;
 			$trace = debug_backtrace();
 			$message = Debugger::trimpath($trace[0]['file']) . ' line ' . $trace[0]['line'];
 		}
@@ -73,7 +80,7 @@ class DebugMemory {
 /**
  * Get all the stored memory points
  *
- * @param bool $clear Whether you want to clear the memory points as well. Defaults to false.
+ * @param boolean $clear Whether you want to clear the memory points as well. Defaults to false.
  * @return array Array of memory marks stored so far.
  */
 	public static function getAll($clear = false) {

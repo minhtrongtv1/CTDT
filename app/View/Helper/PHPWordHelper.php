@@ -56,10 +56,9 @@ class PHPWordHelper extends AppHelper {
             $html = ($this->parser->fromHTML($value));
 
             $html = html_entity_decode($html, ENT_QUOTES, 'UTF-8');
-            
-            $html = str_replace(array("<i>","<w:b/>",'</h2>',"<w:pStyle w:val='BulletStyle'/>",
-                '<strong>','</w:rPr>',"<w:u w:val='single'/>","<w:i/>","<w:rPr>","<w:t xml:space='preserve'>","</w:t>","</w:r>","</w:p>","<w:p>","<w:pPr>","<w:pStyle w:val='OurStyle2'/>","</w:pPr>","<w:r>","<w:t xml:space='preserve'></w:t>","</w:r></w:p>"), '', $html);
-            
+
+            $html = str_replace(array("<i>", "<w:b/>", '</h2>', "<w:pStyle w:val='BulletStyle'/>",
+                '<strong>', '</w:rPr>', "<w:u w:val='single'/>", "<w:i/>", "<w:rPr>", "<w:t xml:space='preserve'>", "</w:t>", "</w:r>", "</w:p>", "<w:p>", "<w:pPr>", "<w:pStyle w:val='OurStyle2'/>", "</w:pPr>", "<w:r>", "<w:t xml:space='preserve'></w:t>", "</w:r></w:p>"), '', $html);
 
             $this->template->setValue($search_term, $html);
             \PhpOffice\PhpWord\Settings::setOutputEscapingEnabled(false);
@@ -118,5 +117,4 @@ class PHPWordHelper extends AppHelper {
         ($dm->merge($file_array, $final->path));
         return $final->path;
     }
-
 }

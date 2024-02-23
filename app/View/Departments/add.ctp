@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="hr hr-24"></div>
-            <?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->end(); ?>
 
 </div>
 

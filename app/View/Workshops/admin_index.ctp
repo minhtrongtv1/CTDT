@@ -20,7 +20,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chuyên đề', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <?php echo $this->Form->input('chapter_id', array('empty' => '-- Chuyên đề --', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('status', array('empty' => '-- Tình trạng --', 'options'=>$this->Common->getStatus(),'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('status', array('empty' => '-- Tình trạng --', 'options' => $this->Common->getStatus(), 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -87,7 +87,7 @@ $this->Paginator->options(array(
                                 <td>
                                     <ul>
                                         <?php
-                                        $workshop['Scheduling']=Hash::sort($workshop['Scheduling'], '{n}.start_time');
+                                        $workshop['Scheduling'] = Hash::sort($workshop['Scheduling'], '{n}.start_time');
                                         foreach ($workshop['Scheduling'] as $scheduling):
                                             $bat_dau = new DateTime($scheduling['start_time']);
                                             $ket_thuc = new DateTime($scheduling['end_time']);
@@ -101,37 +101,39 @@ $this->Paginator->options(array(
                                 <td><?php echo $workshop['Workshop']['enrolledno'] ?></td>
                                 <td><?php echo $this->Common->showStatus($workshop['Workshop']['status']) ?></td>
 
-                                
+
                                 <td>
-                                    
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), 
-                                            array('action' => 'edit', $workshop['Workshop']['id']), 
-                                            array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Cập nhật')); 
+
+                                    <?php
+                                    echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'),
+                                            array('action' => 'edit', $workshop['Workshop']['id']),
+                                            array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Cập nhật'));
                                     ?>
-                                    
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-duplicate"></i>'), 
-                                            array('action' => 'copy', $workshop['Workshop']['id'],'admin'=>false), 
-                                            array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Nhân bản')); 
+
+                                    <?php
+                                    echo $this->Html->link(__('<i class="glyphicon glyphicon-duplicate"></i>'),
+                                            array('action' => 'copy', $workshop['Workshop']['id'], 'admin' => false),
+                                            array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Nhân bản'));
                                     ?>
-                                
+
                                 </td>
-                                
+
                                 <td class=""><?php echo h($workshop['Workshop']['id']); ?>&nbsp;</td>
 
                                 <td>
                                     <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $workshop['Workshop']['id'] ?>">
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+<?php endforeach; ?>
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/admin/workshops/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        
-                            <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/admin/workshops/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        
+<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
-                <p>Số lượt đăng ký: <?php echo $so_luong_hoc_vien;?></p>
-                <?php echo $this->element("pagination"); ?>  
+                <p>Số lượt đăng ký: <?php echo $so_luong_hoc_vien; ?></p>
+<?php echo $this->element("pagination"); ?>  
             </div>
         </div>
     </div>

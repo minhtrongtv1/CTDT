@@ -14,23 +14,22 @@ $rowCount = count($teachers);
 $this->PHPWord->setValue('chapter', htmlspecialchars($chuyen_de)); // On section/content
 if ($rowCount > 0) {
 
-    
+
     //setup data
     $this->PHPWord->cloneRow('stt', $rowCount);
     $i = 1;
     foreach ($teachers as $student) {
         if ($i == 1) {
             $this->PHPWord->setValue('department', htmlspecialchars($student['Department']['name'])); // On footer
-            
         }
 
         $this->PHPWord->setValue("stt#$i", htmlspecialchars($i));
-        
+
         $this->PHPWord->setValue("name#$i", htmlspecialchars($student['name']));
         $birthday = ($this->MyCommon->show_date($student['ngay_sinh']));
         $this->PHPWord->setValue("birthday#$i", htmlspecialchars($birthday));
         $this->PHPWord->setValue("birthplace#$i", htmlspecialchars($student['NoiSinh']['name']));
-        
+
         $i++;
     }
 
@@ -38,7 +37,6 @@ if ($rowCount > 0) {
     $filename = 'files/danh_sach_ky_ten/' . $workshop['name'] . '.docx';
     $this->PHPWord->saveAs($filename);
 
- 
     //$fileArray[] = "files/quyet_dinh/mau_file/blank_page.docx";
 }
 

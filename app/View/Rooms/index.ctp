@@ -20,7 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã phòng', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên phòng', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('acreage', array('placeholder' => 'Diện tích phòng (m²)', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('acreage', array('placeholder' => 'Diện tích(m²)', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -44,7 +44,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên phòng'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Diện tích phòng (m²)'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('Diện tích (m²)'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -95,7 +95,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/rooms/index", data, function (response) {
+        $.post("http://ctdt.tvu.edu.local/admin/rooms/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -115,7 +115,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/rooms/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://ctdt.tvu.edu.local/admin/rooms/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

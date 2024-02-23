@@ -95,7 +95,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL?>/departments/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/departments/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -115,7 +115,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('<?php echo BASE_URL?>/departments/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('<?php echo BASE_URL ?>/departments/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

@@ -36,8 +36,7 @@ class SubjectsUsersController extends AppController {
         if (!$this->request->is('ajax')) {
             $users = $this->SubjectsUser->User->find('list');
             $subjects = $this->SubjectsUser->Subject->find('list');
-            $rooms = $this->SubjectsUser->Room->find('list');
-            $this->set(compact('users', 'subjects', 'rooms'));
+            $this->set(compact('users', 'subjects'));
         }
     }
 
@@ -74,8 +73,7 @@ class SubjectsUsersController extends AppController {
         }
         $users = $this->SubjectsUser->User->find('list');
         $subjects = $this->SubjectsUser->Subject->find('list');
-        $rooms = $this->SubjectsUser->Room->find('list');
-        $this->set(compact('users', 'subjects', 'rooms'));
+        $this->set(compact('users', 'subjects'));
     }
 
     /**
@@ -103,8 +101,7 @@ class SubjectsUsersController extends AppController {
         }
         $users = $this->SubjectsUser->User->find('list');
         $subjects = $this->SubjectsUser->Subject->find('list');
-        $rooms = $this->SubjectsUser->Room->find('list');
-        $this->set(compact('users', 'subjects', 'rooms'));
+        $this->set(compact('users', 'subjects'));
     }
 
     /**

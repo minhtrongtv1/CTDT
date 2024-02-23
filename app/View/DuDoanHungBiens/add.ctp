@@ -44,7 +44,7 @@
                         ?>
                         <tr>
                             <?php
-                            for ($j = 2*$i; ($j <= 2*$i+1)&&($j<$n); $j++):
+                            for ($j = 2 * $i; ($j <= 2 * $i + 1) && ($j < $n); $j++):
                                 ?>
                                 <td class="profile-picture">
                                     <?php
@@ -62,14 +62,13 @@
                                 </td>
                                 <?php
                             endfor;
-                            
                             ?>
                         </tr><!-- comment -->
                     <?php endfor; ?>
                 </table>
 
 
-                <?php //echo $this->Form->input('thi_sinh_id', array('label' => 'Chọn thí sinh'));   ?>
+                <?php //echo $this->Form->input('thi_sinh_id', array('label' => 'Chọn thí sinh'));    ?>
                 <br>
                 <?php echo $this->Form->input('so_du_doan', array('label' => 'Dự đoán số người tham gia dự đoán')); ?>
 

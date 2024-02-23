@@ -39,12 +39,12 @@ $this->Paginator->options(array(
 
                         <tr class="headings">
                             <th>#</th>
-                            <th class="column-title"><?php echo $this->Paginator->sort('teacher_id','Họ và tên GV'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('teacher_id', 'Họ và tên GV'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('workshop_id', 'Tên workshop'); ?></th>
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('result','Kết quả'); ?></th>
-                            <th class="column-title"><?php echo $this->Paginator->sort('so_qd','Số QĐ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('result', 'Kết quả'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('so_qd', 'Số QĐ'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('ngay_qd', 'Ngày ký'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 

@@ -23,24 +23,24 @@
     <?php echo $this->Form->input('course_id'); ?>
     <?php echo $this->Form->input('supporter_id'); ?>
     <?php echo $this->Form->input('pass'); ?>
-<?php echo $this->Form->input('reason'); ?>
+    <?php echo $this->Form->input('reason'); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-<?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->end(); ?>
 
 </div>
 
 <script>
-$(function(){
-    $("#EvaluationResultCourseId").select2();
-    
-});
+    $(function () {
+        $("#EvaluationResultCourseId").select2();
+
+    });
 </script>

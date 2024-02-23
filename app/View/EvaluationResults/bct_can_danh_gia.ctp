@@ -57,16 +57,16 @@ $this->Paginator->options(array(
                         <?php
                         foreach ($evaluationResults as $ketQuaDanhGia):
                             $start_date = new DateTimeImmutable($ketQuaDanhGia['Course']['startdate']);
-                            $tr_bgcolor="";
-                            $now=new DateTime();
-                            $start_date=$start_date->modify('+7 day');
-                            
-                            if($start_date<=$now&& is_null($ketQuaDanhGia['EvaluationResult']['pass'])){
-                                $tr_bgcolor="yellow";
+                            $tr_bgcolor = "";
+                            $now = new DateTime();
+                            $start_date = $start_date->modify('+7 day');
+
+                            if ($start_date <= $now && is_null($ketQuaDanhGia['EvaluationResult']['pass'])) {
+                                $tr_bgcolor = "yellow";
                             }
                             //debug($ketQuaDanhGia);die;
                             ?>
-                            <tr id="row-<?php echo $ketQuaDanhGia['EvaluationResult']['id'] ?>" bgcolor="<?php echo $tr_bgcolor;?>">
+                            <tr id="row-<?php echo $ketQuaDanhGia['EvaluationResult']['id'] ?>" bgcolor="<?php echo $tr_bgcolor; ?>">
                                 <td><?php echo $stt++; ?></td>
 
                                 <td class="">
@@ -83,10 +83,9 @@ $this->Paginator->options(array(
                                     ?>
                                 </td>
                                 <td><?php echo $ketQuaDanhGia['Course']['startdate'];
-                                 
-                                ?>
-                                
-                                
+                                    ?>
+
+
                                 </td>
                                 <td class=""><?php echo h($ketQuaDanhGia['EvaluationResult']['pass']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($ketQuaDanhGia['EvaluationResult']['not_exist']); ?>&nbsp;</td>

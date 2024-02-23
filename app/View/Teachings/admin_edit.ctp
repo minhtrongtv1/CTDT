@@ -39,7 +39,7 @@
 </div>
 
 <script>
-$(function(){
-    $("#TeachingUserId").select2();
-});
+    $(function () {
+        $("#TeachingUserId").select2();
+    });
 </script>

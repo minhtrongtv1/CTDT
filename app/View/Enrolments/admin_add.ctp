@@ -25,7 +25,7 @@
     <?php echo $this->Form->input('vang_khong_phep'); ?>
     <?php echo $this->Form->input('vang_co_phep'); ?>
     <?php echo $this->Form->input('so_qd'); ?>
-    <?php echo $this->Form->input('ngay_qd',array('class'=>false)); ?>
+    <?php echo $this->Form->input('ngay_qd', array('class' => false)); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

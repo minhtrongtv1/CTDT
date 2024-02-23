@@ -19,7 +19,7 @@
             <th>Email</th>
             <th>Kết quả</th>
             <th>Số QĐ</th>
-            
+
             <th>Ngày ký QĐ</th>
             <th >Vắng có phép</th>
             <th >Vắng không phép</th>            
@@ -45,7 +45,7 @@
                         <td class="vang_khong_phep_td"><?php echo $this->Common->showTrueFalseAsCheckOrEmpty($student['vang_khong_phep']); ?></td>
 
                         <td><?php echo $student['ly_do_vang']; ?></td>
-                        <td><?php if(!empty($student['link_file_qd']))echo $this->Html->link('Xem QĐ',$student['link_file_qd']); ?></td>
+                        <td><?php if (!empty($student['link_file_qd'])) echo $this->Html->link('Xem QĐ', $student['link_file_qd']); ?></td>
                         <td>
                             <?php if (!$student['vang_co_phep']): ?>
                                 <button class="btn btn-xs btn-success danh-dau-vang-btn" value="<?php echo $student['id'] ?>">
@@ -60,7 +60,7 @@
                     </tr>
                 <?php endforeach; ?>
             </tbody>
-            
+
             <tfoot>
                 <tr cols="2"><td>Số lượng HV: </td>
                     <td cols="6"><b><?php echo $stt - 1; ?></b>
@@ -79,7 +79,7 @@
                     </td>
                 </tr>
             </tfoot>
-            
+
         </table>
     </div>
 
@@ -109,7 +109,7 @@
 
                 <span class="bigger-110 no-text-shadow">Vắng không phép</span>
             </button><!-- comment -->
-            <a href="<?php echo BASE_URL?>teacher/enrolments/add/<?php echo $workshop_id?>">
+            <a href="<?php echo BASE_URL ?>teacher/enrolments/add/<?php echo $workshop_id ?>">
                 <button class="btn btn-sm btn-info"><span class="bigger-110 no-text-shadow">Thêm học viên</span></button><!-- comment -->
             </a>
         </div>
@@ -296,13 +296,13 @@
                     var link_file_qd = $("#EnrolmentLinkFileQd").val();
 
 
-                    
 
-                    
+
+
 
                     var qd_data = $("#filter-form").serializeArray();
                     //Dùng ajax post du lieu len server xu ly
-                    $.post("<?php echo BASE_URL ?>/teacher/enrolments/cap_nhat_qd", {id: data, so_qd: so_qd, ngay_qd: ngay_qd,link_file_qd}, function (response) {
+                    $.post("<?php echo BASE_URL ?>/teacher/enrolments/cap_nhat_qd", {id: data, so_qd: so_qd, ngay_qd: ngay_qd, link_file_qd}, function (response) {
                         reloadGrid();
                     });
                 }

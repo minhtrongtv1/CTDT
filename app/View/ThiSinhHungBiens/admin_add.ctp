@@ -10,7 +10,7 @@
     <?php
     echo $this->Form->create('ThiSinhHungBien', array(
         'role' => 'form',
-        'type'=>'file',
+        'type' => 'file',
         'class' => 'form-horizontal',
         'inputDefaults' => array(
             'class' => 'form-control',
@@ -18,14 +18,14 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('ho_va_ten',array('label'=>'Họ và tên')); ?>
+    <?php echo $this->Form->input('ho_va_ten', array('label' => 'Họ và tên')); ?>
     <?php
-    echo $this->Form->input('so_bao_danh',array('label'=>'Số báo danh'));
-    echo $this->Form->input('so_dien_thoai',array('label'=>'Số điện thoại'));
-    echo $this->Form->input('email',array('label'=>'Email'));
-    echo $this->Form->input('khoa',array('label'=>'Khoa'));
-    echo $this->Form->input('nam_du_thi',array('label'=>'Năm dự thi'));
-    echo $this->Form->input('vao_chung_ket',array('label'=>'Vào chung kết'));
+    echo $this->Form->input('so_bao_danh', array('label' => 'Số báo danh'));
+    echo $this->Form->input('so_dien_thoai', array('label' => 'Số điện thoại'));
+    echo $this->Form->input('email', array('label' => 'Email'));
+    echo $this->Form->input('khoa', array('label' => 'Khoa'));
+    echo $this->Form->input('nam_du_thi', array('label' => 'Năm dự thi'));
+    echo $this->Form->input('vao_chung_ket', array('label' => 'Vào chung kết'));
     echo $this->Form->input('anh_dai_dien', array('type' => 'file', 'label' => 'Ảnh đại diện:'));
     echo $this->Form->input('anh_dai_dien_path', array('type' => 'hidden'));
     ?>

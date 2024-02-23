@@ -1,6 +1,6 @@
 <?php $this->Js->JqueryEngine->jQueryObject = 'jQuery'; ?>
 <?php echo $this->Html->css('/select2-4.0.3/css/select2.min'); ?>
-<?php #echo $this->Html->css('select2-bootstrap');  ?>
+<?php #echo $this->Html->css('select2-bootstrap');   ?>
 <?php echo $this->Html->script('/select2-4.0.3/js/select2.min'); ?>
 
 
@@ -23,14 +23,14 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('workshop_id',array('label'=>'Workshop','readonly')); ?>
-    <?php echo $this->Form->input('user_id',array('label'=>'Tập huấn viên')); ?>
+    <?php echo $this->Form->input('workshop_id', array('label' => 'Workshop', 'readonly')); ?>
+    <?php echo $this->Form->input('user_id', array('label' => 'Tập huấn viên')); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('controller'=>'workshops','action' => 'view',$workshop_id), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('controller' => 'workshops', 'action' => 'view', $workshop_id), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>

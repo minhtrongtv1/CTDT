@@ -76,12 +76,13 @@ $this->Paginator->options(array(
 
                                 <td>
 
-                                    <?php 
-                                    $workshop['Scheduling']=Hash::sort($workshop['Scheduling'], '{n}.start_time');
-                                    foreach ($workshop['Intrustor'] as $intrustor): ?>
+                                    <?php
+                                    $workshop['Scheduling'] = Hash::sort($workshop['Scheduling'], '{n}.start_time');
+                                    foreach ($workshop['Intrustor'] as $intrustor):
+                                        ?>
                                         <?php echo ($intrustor['User']['name']); ?>
                                         <br>
-                                    <?php endforeach; ?>
+    <?php endforeach; ?>
 
                                 </td>
 
@@ -95,7 +96,7 @@ $this->Paginator->options(array(
                                             ?>
                                             <li><b><?php echo ($scheduling['name']); ?></b>: Từ <?php echo $bat_dau->format('H:i') ?> - <?php echo $ket_thuc->format('H:i d/m/Y') ?>, Phòng: <?php echo $scheduling['room'] ?>
                                             </li>
-                                        <?php endforeach; ?>
+    <?php endforeach; ?>
                                     </ul>
 
                                 </td>
@@ -107,11 +108,11 @@ $this->Paginator->options(array(
 
 
                             </tr>
-                        <?php endforeach; ?>
+<?php endforeach; ?>
                     </tbody>
 
                 </table>
-                <?php echo $this->element("pagination"); ?>  
+<?php echo $this->element("pagination"); ?>  
             </div>
         </div>
     </div>

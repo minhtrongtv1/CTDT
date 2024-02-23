@@ -1,5 +1,14 @@
 <?php
 /**
+ * FirePHP Class for CakePHP
+ *
+ * Provides most of the functionality offered by FirePHPCore
+ * Interoperates with FirePHP extension for Firefox
+ *
+ * For more information see: http://www.firephp.org/
+ *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -19,9 +28,8 @@ if (!function_exists('firecake')) {
 /**
  * Procedural version of FireCake::log()
  *
- * @param string $message The message.
- * @param null $label The label.
- * @return void
+ * @param $message
+ * @param null $label
  */
 	function firecake($message, $label = null) {
 		FireCake::fb($message, $label, 'log');
@@ -30,12 +38,9 @@ if (!function_exists('firecake')) {
 }
 
 /**
- * FirePHP Class for CakePHP
+ * Class FireCake
  *
- * Provides most of the functionality offered by FirePHPCore
- * Interoperates with FirePHP extension for Firefox
- *
- * For more information see: http://www.firephp.org/
+ * @since         DebugKit 0.1
  */
 class FireCake {
 
@@ -87,7 +92,7 @@ class FireCake {
 /**
  * internal messageIndex counter
  *
- * @var int
+ * @var integer
  */
 	protected $_messageIndex = 1;
 
@@ -108,8 +113,8 @@ class FireCake {
 /**
  * FireCake output status
  *
- * @var bool
- */
+ * @var boolean
+ **/
 	protected $_enabled = true;
 
 /**
@@ -149,9 +154,9 @@ class FireCake {
 	}
 
 /**
- * Return bool based on presence of FirePHP extension
+ * Return boolean based on presence of FirePHP extension
  *
- * @return bool
+ * @return boolean
  */
 	public static function detectClientExtension() {
 		$ua = FireCake::getUserAgent();
@@ -285,6 +290,7 @@ class FireCake {
  * Convenience wrapper for GROUPEND messages
  * Closes a group block
  *
+ * @internal param string $label Label for group (optional)
  * @return void
  */
 	public static function groupEnd() {
@@ -300,7 +306,7 @@ class FireCake {
  * fb($message, $label, $type) - Send a message with a custom label and type.
  *
  * @param mixed $message Message to output. For other parameters see usage above.
- * @return bool Success
+ * @return boolean Success
  */
 	public static function fb($message) {
 		$_this = FireCake::getInstance();
@@ -314,7 +320,7 @@ class FireCake {
 		}
 
 		$args = func_get_args();
-		$label = null;
+		$type = $label = null;
 		switch (count($args)) {
 			case 1:
 				$type = $_this->_levels['log'];
@@ -417,7 +423,7 @@ class FireCake {
  * Parse a debug backtrace
  *
  * @param array $trace Debug backtrace output
- * @param string $messageName The nae of the message.
+ * @param $messageName
  * @return array
  */
 	protected static function _parseTrace($trace, $messageName) {
@@ -465,8 +471,8 @@ class FireCake {
  * Filter out recursion, so no errors are raised by json_encode or $javascript->object()
  *
  * @param mixed $object Object or variable to encode to string.
- * @param int $objectDepth Current Depth in object chains.
- * @param int $arrayDepth Current Depth in array chains.
+ * @param integer $objectDepth Current Depth in object chains.
+ * @param integer $arrayDepth Current Depth in array chains.
  * @return string|Object
  */
 	public static function stringEncode($object, $objectDepth = 1, $arrayDepth = 1) {
@@ -511,10 +517,13 @@ class FireCake {
  * Encode an object into JSON
  *
  * @param mixed $object Object or array to json encode
- * @param bool $skipEncode Skip encoding, defaults to false.
- * @return string JSON encoded object.
+ * @param boolean $skipEncode
+ * @internal param bool $doIt
+ * @static
+ * @return string
  */
 	public static function jsonEncode($object, $skipEncode = false) {
+		$_this = FireCake::getInstance();
 		if (!$skipEncode) {
 			$object = FireCake::stringEncode($object);
 		}
@@ -524,8 +533,8 @@ class FireCake {
 /**
  * Send Headers - write headers.
  *
- * @param string $name Name of the header.
- * @param string $value The value of the header.
+ * @param $name
+ * @param $value
  * @return void
  */
 	protected function _sendHeader($name, $value) {

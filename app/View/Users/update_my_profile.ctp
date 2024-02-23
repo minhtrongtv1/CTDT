@@ -29,7 +29,7 @@ echo $this->Form->input('ngay_sinh', array('label' => 'Ngày sinh (*)', 'type' =
 ?>  
 <?php
 //debug($noiSinhs);
-echo $this->Form->input('noi_sinh', array('label' => 'Nơi sinh (*)','options'=>$noiSinhs, 'empty' => '-- Chọn nơi sinh -- ', 'required' => false));
+echo $this->Form->input('noi_sinh', array('label' => 'Nơi sinh (*)', 'options' => $noiSinhs, 'empty' => '-- Chọn nơi sinh -- ', 'required' => false));
 ?> 
 <?php
 echo $this->Form->input('so_cmnd', array('label' => 'Số CMND/CCCD', 'type' => 'text', 'required' => false));

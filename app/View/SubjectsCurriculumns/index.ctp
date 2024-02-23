@@ -55,10 +55,10 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Học phần tự chọn'); ?></th>
 
-                            
+
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần chương trình đào tạo'); ?></th>
-                            
-                            
+
+
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>

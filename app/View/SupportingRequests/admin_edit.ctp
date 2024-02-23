@@ -24,9 +24,9 @@
     <?php //echo $this->Form->input('requested_time'); ?>
     <?php echo $this->Form->input('status', array('options' => array(YEU_CAU_HO_TRO_CHO_XU_LY => 'Chờ xử lý', YEU_CAU_HO_TRO_DA_XU_LY => 'Đã xử lý'))); ?>
     <?php echo $this->Form->input('approved', array('options' => array(0 => 'Chưa xong', 1 => 'Đã xong'))); ?>
-    
-    
-        <?php //echo $this->Form->input('supporter_id'); ?>
+
+
+    <?php //echo $this->Form->input('supporter_id'); ?>
     <?php echo $this->Form->input('responsing', array('label' => 'Phản hồi:')); ?>
     <?php //echo $this->Form->input('responded_time'); ?>
 

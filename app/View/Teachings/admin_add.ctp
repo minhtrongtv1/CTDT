@@ -23,7 +23,7 @@
     ?>
     <?php echo $this->Form->input('course_id'); ?>
     <?php echo $this->Form->input('user_id'); ?>
-    
+
 
     <div class="clearfix form-actions">
         <div class="pull-right">
@@ -39,8 +39,8 @@
 </div>
 
 <script>
-$(function(){
-    $("#TeachingUserId").select2();
-    $("#TeachingCourseId").select2();
-});
+    $(function () {
+        $("#TeachingUserId").select2();
+        $("#TeachingCourseId").select2();
+    });
 </script>

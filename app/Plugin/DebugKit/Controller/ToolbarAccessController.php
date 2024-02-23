@@ -78,7 +78,7 @@ class ToolbarAccessController extends DebugKitAppController {
 /**
  * Get a stored history state from the toolbar cache.
  *
- * @param null $key The key.
+ * @param null $key
  * @return void
  */
 	public function history_state($key = null) {
@@ -88,8 +88,6 @@ class ToolbarAccessController extends DebugKitAppController {
 		$oldState = $this->Toolbar->loadState($key);
 		$this->set('toolbarState', $oldState);
 		$this->set('debugKitInHistoryMode', true);
-		$this->viewClass = null;
-		$this->layout = null;
 	}
 
 /**

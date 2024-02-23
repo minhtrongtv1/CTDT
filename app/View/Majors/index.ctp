@@ -38,13 +38,13 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('department_id','Tên đơn vị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Tên đơn vị'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>

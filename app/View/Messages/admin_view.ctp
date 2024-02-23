@@ -60,7 +60,7 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                
+
 
                                 <th class="text-center"><?php echo __('Name'); ?></th>
                                 <th class="text-center"><?php echo __('Username'); ?></th>

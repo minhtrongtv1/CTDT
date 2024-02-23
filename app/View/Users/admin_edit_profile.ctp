@@ -3,8 +3,8 @@
 <?php echo $this->Html->script('plugins/select2/select2'); ?>
 <div class="container">
     <?php
-   /* $this->Html->addCrumb('User', '/manager/teachers');
-    $this->Html->addCrumb('Cập nhật user ' . $this->Form->value('User.name'));*/
+    /* $this->Html->addCrumb('User', '/manager/teachers');
+      $this->Html->addCrumb('Cập nhật user ' . $this->Form->value('User.name')); */
     ?>
     <?php
     echo $this->Form->create('User', array(
@@ -34,12 +34,12 @@
             'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>Thêm mới', '/departments/add', array('escape' => false,
                 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
         echo $this->Form->input('email');
-        $today=new DateTime();
-        echo $this->Form->input('birthday', array('class' => false, 'label' => 'Ngày sinh ', 'dateFormat' => 'DMY', 'monthNames' => false, 'minYear' => '1950','maxYear'=>$today->format('Y')));
+        $today = new DateTime();
+        echo $this->Form->input('birthday', array('class' => false, 'label' => 'Ngày sinh ', 'dateFormat' => 'DMY', 'monthNames' => false, 'minYear' => '1950', 'maxYear' => $today->format('Y')));
         echo $this->Form->input('birthplace', array('label' => 'Nơi sinh'));
         echo $this->Form->input('so_dien_thoai', array('label' => 'Số điện thoại'));
         echo $this->Form->input('address', array('label' => 'Địa chỉ'));
-        echo $this->Form->input('avatar', array('type' => 'file', 'class' => false, 'label' => 'Ảnh','required'=>FALSE));
+        echo $this->Form->input('avatar', array('type' => 'file', 'class' => false, 'label' => 'Ảnh', 'required' => FALSE));
         echo $this->Form->value('avatar');
         echo $this->Form->input('avatar_path', array('type' => 'hidden'));
         ?>
@@ -51,7 +51,7 @@
 
 </div>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#UserDepartmentId").select2();
 
     });

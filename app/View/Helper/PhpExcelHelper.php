@@ -89,7 +89,7 @@ class PhpExcelHelper extends AppHelper {
     public function writeDataToCell($row, $column, $value) {
         $this->xls->getActiveSheet()
                 ->setCellValue($column . '' . $row, $value);
-        $this->row ++;
+        $this->row++;
     }
 
     /**
@@ -125,10 +125,10 @@ class PhpExcelHelper extends AppHelper {
     public function wrapTextInCell($cell) {
         $this->xls->getActiveSheet()->getStyle($cell)->getAlignment()->setWrapText(true);
     }
-    
+
     public function wrapTextInColumn($col) {
-        $this->xls->getActiveSheet()->getStyle($col.'1:'.$col.''.$this->xls->getActiveSheet()->getHighestRow())
-    ->getAlignment()->setWrapText(true); 
+        $this->xls->getActiveSheet()->getStyle($col . '1:' . $col . '' . $this->xls->getActiveSheet()->getHighestRow())
+                ->getAlignment()->setWrapText(true);
     }
 
     /**
@@ -207,7 +207,7 @@ class PhpExcelHelper extends AppHelper {
             $this->xls->getActiveSheet()->setCellValueByColumnAndRow($offset++, $this->row, $d);
         }
         $this->row++;
-        $this->tableParams['row_count'] ++;
+        $this->tableParams['row_count']++;
     }
 
     /**
@@ -288,5 +288,4 @@ class PhpExcelHelper extends AppHelper {
     protected function setTitle($newTitle) {
         $this->xls->getActiveSheet()->setTitle($newTitle);
     }
-
 }

@@ -29,7 +29,7 @@
     <br>
     <div class="box-footer">
         <div class="box-tools">
-<?php echo $this->Html->link('Sửa', array('admin' => true, 'controller' => 'users', 'action' => 'edit_profile', $user['User']['id']), array('class' => 'btn btn-info')); ?>
+            <?php echo $this->Html->link('Sửa', array('admin' => true, 'controller' => 'users', 'action' => 'edit_profile', $user['User']['id']), array('class' => 'btn btn-info')); ?>
 
         </div>
 

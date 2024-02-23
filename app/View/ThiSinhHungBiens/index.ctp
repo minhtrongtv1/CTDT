@@ -1,12 +1,12 @@
 <?php
-                        $this->Paginator->options(array(
-                            'url' => array('action' => 'index'),
-                            'update' => '#datarows',
-                            'evalScripts' => true,
-                            'data' => http_build_query($this->request->data),
-                            'method' => 'POST'
-                        ));
-                        ?><div class="col-md-12 col-sm-12 col-xs-12">
+$this->Paginator->options(array(
+    'url' => array('action' => 'index'),
+    'update' => '#datarows',
+    'evalScripts' => true,
+    'data' => http_build_query($this->request->data),
+    'method' => 'POST'
+));
+?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
             <h2><?php echo __('Thi Sinh Hung Biens'); ?></h2>
@@ -15,18 +15,18 @@
 
         <div class="x_content"> 
             <div class="row">
-                <?php echo $this->Form->create('ThiSinhHungBien',array('url'=>array('action'=>'index'),'id'=>'filter-form','class'=>'form-inline','role'=>'form','novalidate'));?>
+                <?php echo $this->Form->create('ThiSinhHungBien', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                                                                        <?php echo $this->Form->input('ho_va_ten',array('placeholder'=>'ho_va_ten','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                <?php echo $this->Form->input('so_bao_danh',array('placeholder'=>'so_bao_danh','class'=>'form-control','div' => 'form-group','label'=>array('class'=>'sr-only')));?>
-                                                                                                            
+                    <?php echo $this->Form->input('ho_va_ten', array('placeholder' => 'ho_va_ten', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('so_bao_danh', array('placeholder' => 'so_bao_danh', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
                     <div class="form-group">
-                        <?php echo $this->Form->button('Lọc',array('type'=>'submit','class'=>'btn btn-primary btn-xs'));?>
-                        <?php echo $this->Html->link('Bỏ lọc',array('action'=>'index'),array('class'=>'btn btn-warning btn-xs'));?>
+                        <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
+                        <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
                     </div>
                 </div>
-                <?php echo $this->Form->end();?>            </div>
+                <?php echo $this->Form->end(); ?>            </div>
             <div class="table-responsive" id="datarows">
 
 
@@ -36,37 +36,37 @@
                         <tr class="headings">
                             <th>#</th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('ho_va_ten'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('so_bao_danh'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('ho_va_ten'); ?></th>
 
-                            
-                                <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                                                        <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('so_bao_danh'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
+
+                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php $stt = (($this->Paginator->params['paging']['ThiSinhHungBien']['page'] - 1) * $this->Paginator->params['paging']['ThiSinhHungBien']['limit']) + 1; ?>
-<?php foreach ($thiSinhHungBiens as $thiSinhHungBien): ?>
-<tr id="row-<?php echo $thiSinhHungBien['ThiSinhHungBien']['id'] ?>">
-                        		<td><?php echo $stt++;?></td>
+                        <?php foreach ($thiSinhHungBiens as $thiSinhHungBien): ?>
+                            <tr id="row-<?php echo $thiSinhHungBien['ThiSinhHungBien']['id'] ?>">
+                                <td><?php echo $stt++; ?></td>
 
-                        		<td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['ho_va_ten']); ?>&nbsp;</td>
-		<td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['so_bao_danh']); ?>&nbsp;</td>
-		<td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['id']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $thiSinhHungBien['ThiSinhHungBien']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle'=>'tooltip', 'title' => 'edit')); ?>
-		</td>
-                    <td>
-                        <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $thiSinhHungBien['ThiSinhHungBien']['id'] ?>">
-                    </td>
-                    	</tr>
-<?php endforeach; ?>
+                                <td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['ho_va_ten']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['so_bao_danh']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($thiSinhHungBien['ThiSinhHungBien']['id']); ?>&nbsp;</td>
+                                <td>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $thiSinhHungBien['ThiSinhHungBien']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                </td>
+                                <td>
+                                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $thiSinhHungBien['ThiSinhHungBien']['id'] ?>">
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
@@ -131,4 +131,5 @@
     });
 
 </script>
-<?php echo $this->Js->writeBuffer();
+<?php
+echo $this->Js->writeBuffer();

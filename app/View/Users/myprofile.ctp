@@ -207,97 +207,97 @@
     <div class="row">
 
 
-            <!-- User profile -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Hồ sơ của tôi</h4>
-                </div>
-                <div class="panel-body">
-                    <div class="profile__avatar">
-                        <?php
-                        echo $this->Html->image('/files/user/avatar/' . $user['User']['id'] . '/' . $user['User']['avatar'], array(
-                            "class" => "editable img-responsive", "alt" => "{$user['User']['name']} Avatar", "id" => "avatar2"))
-                        ?>
+        <!-- User profile -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Hồ sơ của tôi</h4>
+            </div>
+            <div class="panel-body">
+                <div class="profile__avatar">
+                    <?php
+                    echo $this->Html->image('/files/user/avatar/' . $user['User']['id'] . '/' . $user['User']['avatar'], array(
+                        "class" => "editable img-responsive", "alt" => "{$user['User']['name']} Avatar", "id" => "avatar2"))
+                    ?>
 
-                    </div>
-                    <div class="profile__header">
-                        <h4><?php echo $user['User']['name'] ?> </h4>
-
-                        <p>Ngày tham gia <?php echo $this->Time->niceShort($user['User']['created']) ?>; Lần đăng nhập cuối <?php echo $this->Time->niceShort($user['User']['last_login']) ?></p>
-                    </div>
                 </div>
-                <div class="panel-footer" style="float: right;">
-                    <?php echo $this->Html->link('<i class="ace-icon fa fa-pencil"></i>
+                <div class="profile__header">
+                    <h4><?php echo $user['User']['name'] ?> </h4>
+
+                    <p>Ngày tham gia <?php echo $this->Time->niceShort($user['User']['created']) ?>; Lần đăng nhập cuối <?php echo $this->Time->niceShort($user['User']['last_login']) ?></p>
+                </div>
+            </div>
+            <div class="panel-footer" style="float: right;">
+                <?php echo $this->Html->link('<i class="ace-icon fa fa-pencil"></i>
                                 <span class="bigger-110">Cập nhật</span>', '/update_my_profile', array('class' => "btn btn-sm btn-success", 'escape' => false)) ?>
 
-                </div>
             </div>
+        </div>
 
-            <!-- User info -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Thông tin cơ bản</h4>
-                </div>
-                <div class="panel-body">
-                    <table class="table profile__table">
-                        <tbody>
-                            <tr>
-                                <th><strong>Họ và tên</strong></th>
-                                <td><?php echo $user['User']['name'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Ngày sinh</strong></th>
-                                <td><?php echo $user['User']['ngay_sinh'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Nơi sinh</strong></th>
-                                <td><?php echo $user['NoiSinh']['name'] ?></td>
-                            </tr>
-                            
-                            <tr>
-                                <th><strong>Số điện thoại</strong></th>
-                                <td><?php echo $user['User']['so_dien_thoai'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Email</strong></th>
-                                <td><?php echo $user['User']['email'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Số CMND/CCCD</strong></th>
-                                <td><?php echo $user['User']['so_cmnd'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Ngày cấp</strong></th>
-                                <td><?php echo $user['User']['ngay_cap'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Nơi cấp</strong></th>
-                                <td><?php echo $user['User']['noi_cap'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Số tài khoản</strong></th>
-                                <td><?php echo $user['User']['so_tai_khoan'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Ngân hàng</strong></th>
-                                <td><?php echo $user['User']['ngan_hang'] ?></td>
-                            </tr>
-                            <tr>
-                                <th><strong>Mã số thuế</strong></th>
-                                <td><?php echo $user['User']['ma_so_thue'] ?></td>
-                            </tr>
-                            
-
-                        </tbody>
-                    </table>
-                </div>
+        <!-- User info -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Thông tin cơ bản</h4>
             </div>
+            <div class="panel-body">
+                <table class="table profile__table">
+                    <tbody>
+                        <tr>
+                            <th><strong>Họ và tên</strong></th>
+                            <td><?php echo $user['User']['name'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Ngày sinh</strong></th>
+                            <td><?php echo $user['User']['ngay_sinh'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Nơi sinh</strong></th>
+                            <td><?php echo $user['NoiSinh']['name'] ?></td>
+                        </tr>
+
+                        <tr>
+                            <th><strong>Số điện thoại</strong></th>
+                            <td><?php echo $user['User']['so_dien_thoai'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Email</strong></th>
+                            <td><?php echo $user['User']['email'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Số CMND/CCCD</strong></th>
+                            <td><?php echo $user['User']['so_cmnd'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Ngày cấp</strong></th>
+                            <td><?php echo $user['User']['ngay_cap'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Nơi cấp</strong></th>
+                            <td><?php echo $user['User']['noi_cap'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Số tài khoản</strong></th>
+                            <td><?php echo $user['User']['so_tai_khoan'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Ngân hàng</strong></th>
+                            <td><?php echo $user['User']['ngan_hang'] ?></td>
+                        </tr>
+                        <tr>
+                            <th><strong>Mã số thuế</strong></th>
+                            <td><?php echo $user['User']['ma_so_thue'] ?></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
 
 
 
-        
+
     </div>
 </div>
 

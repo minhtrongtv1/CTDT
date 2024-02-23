@@ -60,7 +60,7 @@ $this->Paginator->options(array(
                                     <?php echo $this->Html->link($enrolment['Teacher']['name'], array('controller' => 'users', 'action' => 'view', $enrolment['Teacher']['id'])); ?>
                                 </td>
                                 <td class="">
-                                    <?php debug($enrolment);?>
+                                    <?php debug($enrolment); ?>
                                     <?php echo $enrolment['Teacher']['Department']['title']; ?>
                                 </td>
                                 <td class="">

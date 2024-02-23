@@ -9,11 +9,10 @@
                     if (!empty($user['User']['avatar']))
                         echo $this->Html->image('/files/user/avatar/' . $user['User']['id'] . '/' . $user['User']['avatar'], array(
                             "class" => "editable img-responsive", "alt" => "{$user['User']['name']} Avatar", "id" => "avatar2"));
-                            
-                            else
-                                echo $this->Html->image('no-avatar.png', array(
+                    else
+                        echo $this->Html->image('no-avatar.png', array(
                             "class" => "editable img-responsive", "alt" => "{$user['User']['name']} Avatar", "id" => "avatar2"));
-                        ?>
+                    ?>
 
 
                 </div>
@@ -97,9 +96,9 @@
                                 </div>
                                 <div class="col-md-2">
                                     <label><?php
-                                        $created = new DateTime($propose['created']);
-                                        echo $created->format('d/m/Y');
-                                        ?>
+                        $created = new DateTime($propose['created']);
+                        echo $created->format('d/m/Y');
+                            ?>
                                     </label>
                                 </div>
                             </div>
@@ -121,9 +120,9 @@
                                 <div class="col-md-3">
                                     <label><?php echo $this->element('role', array('role' => $project['role'])) ?></label> - 
                                     <label><?php
-                                        $created = new DateTime($project['Project']['created']);
-                                        echo $created->format('d/m/Y');
-                                        ?></label>
+                        $created = new DateTime($project['Project']['created']);
+                        echo $created->format('d/m/Y');
+                            ?></label>
                                 </div>
                             </div>
                         <?php endforeach; ?>

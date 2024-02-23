@@ -13,7 +13,6 @@ echo $this->Html->css('login')
                 <h2 class="text-center">Đăng nhập</h2>
                 <div class="d-flex justify-content-center align-items-center mt-3 mb-3"> 
                     <?php
-                    
                     echo $this->Flash->render();
                     echo $this->Flash->render('auth');
                     ?>

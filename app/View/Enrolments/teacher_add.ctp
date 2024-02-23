@@ -1,6 +1,6 @@
 <?php $this->Js->JqueryEngine->jQueryObject = 'jQuery'; ?>
 <?php echo $this->Html->css('/select2-4.0.3/css/select2.min'); ?>
-<?php #echo $this->Html->css('select2-bootstrap');  ?>
+<?php #echo $this->Html->css('select2-bootstrap');   ?>
 <?php echo $this->Html->script('/select2-4.0.3/js/select2.min'); ?>
 
 

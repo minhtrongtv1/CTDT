@@ -17,11 +17,11 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('level',array('label'=>'Mức (Số nguyên)')); ?>
-    <?php echo $this->Form->input('name',array('label'=>'Tên mức')); ?>
-    <?php echo $this->Form->input('english_name',array('label'=>'Tên mức bằng Tiếng Anh')); ?>
-    <?php echo $this->Form->input('describe',array('label'=>'Miêu tả')); ?>
-    <?php echo $this->Form->input('linh_vuc_nhan_thuc_id',array('label'=>'Lĩnh vực nhận thức')); ?>
+    <?php echo $this->Form->input('level', array('label' => 'Mức (Số nguyên)')); ?>
+    <?php echo $this->Form->input('name', array('label' => 'Tên mức')); ?>
+    <?php echo $this->Form->input('english_name', array('label' => 'Tên mức bằng Tiếng Anh')); ?>
+    <?php echo $this->Form->input('describe', array('label' => 'Miêu tả')); ?>
+    <?php echo $this->Form->input('linh_vuc_nhan_thuc_id', array('label' => 'Lĩnh vực nhận thức')); ?>
     <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

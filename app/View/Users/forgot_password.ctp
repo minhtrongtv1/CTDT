@@ -16,7 +16,7 @@
                             <div class="panel-body">
 
 
-                                <?php echo $this->Form->create('User', array('url'=>array('action' => 'forgotPassword'),array('id' => 'forgot-form', "class" => "form"))); ?>
+                                <?php echo $this->Form->create('User', array('url' => array('action' => 'forgotPassword'), array('id' => 'forgot-form', "class" => "form"))); ?>
                                 <!--start form--><!--add form action as needed-->
                                 <fieldset>
                                     <div class="form-group">
@@ -28,7 +28,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="g-recaptcha" data-sitekey="<?php echo Configure::read('Recaptcha.SiteKey')?>"></div>
+                                        <div class="g-recaptcha" data-sitekey="<?php echo Configure::read('Recaptcha.SiteKey') ?>"></div>
                                     </div>
                                     <div class="form-group">
                                         <input class="btn btn-lg btn-primary btn-block" value="Gửi mật khẩu cho tôi" type="submit">

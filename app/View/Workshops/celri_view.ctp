@@ -154,13 +154,13 @@
                             <p>
                                 <?php
                                 foreach ($workshop['Enrolment'] as $enrolment):
-                                echo $enrolment['Teacher']['email'].';';
+                                    echo $enrolment['Teacher']['email'] . ';';
                                     ?>
-                                
-                                <?php endforeach;?>
+
+                                <?php endforeach; ?>
                             </p>
-                                
-                                <?php echo $this->Html->link('Xuất danh sách', array('admin' => false, 'controller' => 'workshops', 'action' => 'xuat_danh_sach', $workshop['Workshop']['id']), array('escape' => false, 'class' => 'btn btn-info btn-xs')); ?>
+
+                            <?php echo $this->Html->link('Xuất danh sách', array('admin' => false, 'controller' => 'workshops', 'action' => 'xuat_danh_sach', $workshop['Workshop']['id']), array('escape' => false, 'class' => 'btn btn-info btn-xs')); ?>
                         </div><!-- /.table-responsive -->
 
                     <?php endif; ?>
