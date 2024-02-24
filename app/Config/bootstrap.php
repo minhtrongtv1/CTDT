@@ -31,7 +31,7 @@ Cache::config('default', array('engine' => 'File'));
 //define("BASE_URL", "https://celri.tvu.edu.vn/quan_ly_phong_video");
 
 /* ############################################################### */
-define("BASE_URL", "http://ctdt.tvu.edu.local");
+define("BASE_URL", "http://celri.tvu.edu.local");
 //define("BASE_URL", "https://celri.tvu.edu.vn/cds/");
 
 
