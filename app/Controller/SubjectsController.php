@@ -1,7 +1,7 @@
 <?php
 
 App::uses('AppController', 'Controller');
-App::uses('Subject', 'Model');
+
 /**
  * Subjects Controller
  *
@@ -16,7 +16,6 @@ class SubjectsController extends AppController {
      * @var array
      */
     public $components = array('Paginator');
-    public $uses = array('Subject', 'Book', 'Curriculumn', 'User');
 
     /**
      * index method
@@ -32,13 +31,14 @@ class SubjectsController extends AppController {
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
-        //debug($this->Subject);die;
+
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
+            $semesters = $this->Subject->Semester->find('list');
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
             $users = $this->Subject->User->find('list');
-            $this->set(compact('books', 'curriculumns', 'users'));
+            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
         }
     }
 
@@ -64,8 +64,6 @@ class SubjectsController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
-            
-           // debug($this->request->data);die;
             $this->Subject->create();
             if ($this->Subject->save($this->request->data)) {
                 $this->Flash->success(__('The subject has been saved'));
@@ -75,10 +73,11 @@ class SubjectsController extends AppController {
                 $this->Flash->error(__('The subject could not be saved. Please, try again.'));
             }
         }
+        $semesters = $this->Subject->Semester->find('list');
         $books = $this->Subject->Book->find('list');
         $curriculumns = $this->Subject->Curriculumn->find('list');
         $users = $this->Subject->User->find('list');
-        $this->set(compact('books', 'curriculumns', 'users'));
+        $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
     }
 
     /**
@@ -104,10 +103,11 @@ class SubjectsController extends AppController {
             $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
             $this->request->data = $this->Subject->find('first', $options);
         }
+        $semesters = $this->Subject->Semester->find('list');
         $books = $this->Subject->Book->find('list');
         $curriculumns = $this->Subject->Curriculumn->find('list');
         $users = $this->Subject->User->find('list');
-        $this->set(compact('books', 'curriculumns', 'users'));
+        $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
     }
 
     /**
@@ -119,133 +119,6 @@ class SubjectsController extends AppController {
      * @return void
      */
     public function delete($id = null) {
-        if ($this->request->is('ajax')) {
-            $this->autoRender = false;
-            if (!empty($this->request->data)) {
-                $requestDeleteId = Set::classicExtract($this->request->data['selectedRecord'], '{n}.value');
-                if ($this->Subject->deleteAll(array('Subject.id' => $requestDeleteId))) {
-                    echo json_encode($requestDeleteId);
-                } else {
-                    echo json_encode(array());
-                }
-            }
-            exit();
-        }
-        if (!$this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }
-        $this->Subject->id = $id;
-        if (!$this->Subject->exists()) {
-            throw new NotFoundException(__('Invalid subject'));
-        }
-        if ($this->Subject->delete()) {
-            $this->Flash->success(__('Subject đã xóa'));
-            $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Flash->error(__('Subject xóa không thành công'));
-            $this->redirect(array('action' => 'index'));
-        }
-    }
-
-    /**
-     * admin_index method
-     *
-     * @return void
-     */
-    public function admin_index() {
-        $conditions = array();
-        $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Subject.fieldName' => $value));
-        }
-        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
-        $this->Paginator->settings = $settings;
-
-        $this->set('subjects', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $books = $this->Subject->Book->find('list');
-            $curriculumns = $this->Subject->Curriculumn->find('list');
-            $users = $this->Subject->User->find('list');
-            $this->set(compact('books', 'curriculumns', 'users'));
-        }
-    }
-
-    /**
-     * admin_view method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
-    public function admin_view($id = null) {
-        if (!$this->Subject->exists($id)) {
-            throw new NotFoundException(__('Invalid subject'));
-        }
-        $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
-        $this->set('subject', $this->Subject->find('first', $options));
-    }
-
-    /**
-     * admin_add method
-     *
-     * @return void
-     */
-    public function admin_add() {
-        if ($this->request->is('post')) {
-            $this->Subject->create();
-            if ($this->Subject->save($this->request->data)) {
-                $this->Flash->success(__('The subject has been saved'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-
-                $this->Flash->error(__('The subject could not be saved. Please, try again.'));
-            }
-        }
-        $books = $this->Subject->Book->find('list');
-        $curriculumns = $this->Subject->Curriculumn->find('list');
-        $users = $this->Subject->User->find('list');
-        $this->set(compact('books', 'curriculumns', 'users'));
-    }
-
-    /**
-     * admin_edit method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
-    public function admin_edit($id = null) {
-        $this->Subject->id = $id;
-        if (!$this->Subject->exists($id)) {
-            throw new NotFoundException(__('Invalid subject'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->Subject->save($this->request->data)) {
-                $this->Flash->success(__('subject đã được lưu'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Flash->error(__('subject lưu không thành công, vui lòng thử lại.'));
-            }
-        } else {
-            $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
-            $this->request->data = $this->Subject->find('first', $options);
-        }
-        $books = $this->Subject->Book->find('list');
-        $curriculumns = $this->Subject->Curriculumn->find('list');
-        $users = $this->Subject->User->find('list');
-        $this->set(compact('books', 'curriculumns', 'users'));
-    }
-
-    /**
-     * admin_delete method
-     *
-     * @throws NotFoundException
-     * @throws MethodNotAllowedException
-     * @param string $id
-     * @return void
-     */
-    public function admin_delete($id = null) {
         if ($this->request->is('ajax')) {
             $this->autoRender = false;
             if (!empty($this->request->data)) {

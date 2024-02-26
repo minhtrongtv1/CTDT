@@ -15,7 +15,6 @@ class InfrastructureTest extends CakeTestCase {
 		'app.infrastructure',
 		'app.device',
 		'app.room',
-		'app.subjects_users',
 		'app.curriculumn',
 		'app.level',
 		'app.major',

@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Major'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin ngành'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,9 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('department_id'); ?>
-    <?php echo $this->Form->input('code'); ?>
-    <?php echo $this->Form->input('name'); ?>
+    <?php echo $this->Form->input('department_id', ['label' => 'Tên đơn vị']); ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã ngành']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên ngành']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

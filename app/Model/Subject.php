@@ -5,18 +5,14 @@ App::uses('AppModel', 'Model');
 /**
  * Subject Model
  *
+ * @property Semester $Semester
  * @property Book $Book
  * @property Curriculumn $Curriculumn
  * @property User $User
  */
 class Subject extends AppModel {
 
-    /**
-     * Use database config
-     *
-     * @var string
-     */
-    public $useDbConfig = 'offline';
+
 
     /**
      * Display field
@@ -24,16 +20,6 @@ class Subject extends AppModel {
      * @var string
      */
     public $displayField = 'name';
-    public $actsAs = array(
-        'Upload.Upload' => array(
-            'syllabus_filename' => array(
-                'fields' => array(
-                    'dir' => 'syllabus_path',
-                    'maxSize' => 50
-                )
-            )
-        )
-    );
 
     /**
      * Validation rules
@@ -45,14 +31,6 @@ class Subject extends AppModel {
             'notBlank' => array(
                 'rule' => array('notBlank'),
             //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            'isUnique' => array(
-                'rule' => array('isUnique'),
-                'message' => 'Đã có mã môn này trong cơ sở dữ liệu môn học',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -139,7 +117,7 @@ class Subject extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'outline' => array(
+        'syllabus_filename' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
             //'message' => 'Your custom message here',
@@ -149,13 +127,44 @@ class Subject extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'syllabus_filename' => array(
-            'rule' => array('isValidMimeType', array('application/pdf'), false),
-            'message' => 'Bạn phải nhập file PDF'
-        )
+        'syllabus_path' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'semester_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
+
+    /**
+     * belongsTo associations
+     *
+     * @var array
+     */
+    public $belongsTo = array(
+        'Semester' => array(
+            'className' => 'Semester',
+            'foreignKey' => 'semester_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
 
     /**
      * hasAndBelongsToMany associations

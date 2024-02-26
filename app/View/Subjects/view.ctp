@@ -58,9 +58,19 @@
                                 <?php echo h($subject['Subject']['describe']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Outline'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Syllabus Filename'); ?></strong></td>
                             <td>
-                                <?php echo h($subject['Subject']['outline']); ?>
+                                <?php echo h($subject['Subject']['syllabus_filename']); ?>
+                                &nbsp;
+                            </td>
+                        </tr><tr>		<td><strong><?php echo __('Syllabus Path'); ?></strong></td>
+                            <td>
+                                <?php echo h($subject['Subject']['syllabus_path']); ?>
+                                &nbsp;
+                            </td>
+                        </tr><tr>		<td><strong><?php echo __('Semester'); ?></strong></td>
+                            <td>
+                                <?php echo $this->Html->link($subject['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subject['Semester']['id']), array('class' => '')); ?>
                                 &nbsp;
                             </td>
                         </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>

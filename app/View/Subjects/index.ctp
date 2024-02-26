@@ -20,15 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('theory_credit', array('placeholder' => 'Số tín chỉ lý thuyết', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('practice_credit', array('placeholder' => 'Tín chỉ thực hành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('theory_hour', array('placeholder' => 'Số giờ lý thuyết', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('practice_hour', array('placeholder' => 'Số giờ thực hành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('self_learning_time', array('placeholder' => 'Số giờ tự học', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('note', array('placeholder' => 'Ghi chú', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('describe', array('placeholder' => 'Miêu tả', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('outline', array('placeholder' => 'Đề cương chi tiết', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-
+                    
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -72,7 +64,13 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Đề cương chi tiết'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('syllabus_filename'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('syllabus_path'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('Học kì'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -97,7 +95,11 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($subject['Subject']['self_learning_time']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['note']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['describe']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subject['Subject']['outline']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($subject['Subject']['syllabus_filename']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($subject['Subject']['syllabus_path']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($subject['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subject['Semester']['id'])); ?>
+                                </td>
                                 <td class=""><?php echo h($subject['Subject']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subject['Subject']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -130,7 +132,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://ctdt.tvu.edu.local/admin/subjects/index", data, function (response) {
+        $.post("http://celri.tvu.edu.local/admin/subjects/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -150,7 +152,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://ctdt.tvu.edu.local/admin/subjects/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/admin/subjects/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

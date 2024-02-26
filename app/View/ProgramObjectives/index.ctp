@@ -21,9 +21,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('group_type', array('placeholder' => 'Loại nhóm chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('category', array('placeholder' => 'Thể loại', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('describe', array('placeholder' => 'Miêu tả', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('level', array('placeholder' => 'Trình độ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-
+                   
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>

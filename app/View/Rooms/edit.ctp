@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Room'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin thiết bị'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 

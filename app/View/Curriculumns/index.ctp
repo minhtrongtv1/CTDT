@@ -22,15 +22,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('level_id', array('placeholder' => 'Trình độ đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('major_id', array('placeholder' => 'Ngành đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('form_of_trainning_id', array('placeholder' => 'Hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name_vn', array('placeholder' => 'Tên tiếng Việt', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name_eng', array('placeholder' => 'Tên tiếng Anh', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('credit', array('placeholder' => 'Số tín chỉ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('trainning_time', array('placeholder' => 'Thời gian đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('enrollment_subject', array('placeholder' => 'Đối tượng tuyển sinh', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('point_ladder', array('placeholder' => 'Thang điểm', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('graduation_condition', array('placeholder' => 'Điều kiện tốt nghiệp', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('diploma', array('placeholder' => 'Văn bằng tốt nghiệp', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-
+                 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>

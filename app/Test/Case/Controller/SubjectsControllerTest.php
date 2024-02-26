@@ -13,6 +13,7 @@ class SubjectsControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.subject',
+		'app.semester',
 		'app.book',
 		'app.subjects_book',
 		'app.curriculumn',
@@ -24,7 +25,6 @@ class SubjectsControllerTest extends ControllerTestCase {
 		'app.evaluation_round',
 		'app.user',
 		'app.province',
-		'app.notification',
 		'app.group',
 		'app.users_group',
 		'app.message',
@@ -85,51 +85,6 @@ class SubjectsControllerTest extends ControllerTestCase {
  */
 	public function testDelete() {
 		$this->markTestIncomplete('testDelete not implemented.');
-	}
-
-/**
- * testAdminIndex method
- *
- * @return void
- */
-	public function testAdminIndex() {
-		$this->markTestIncomplete('testAdminIndex not implemented.');
-	}
-
-/**
- * testAdminView method
- *
- * @return void
- */
-	public function testAdminView() {
-		$this->markTestIncomplete('testAdminView not implemented.');
-	}
-
-/**
- * testAdminAdd method
- *
- * @return void
- */
-	public function testAdminAdd() {
-		$this->markTestIncomplete('testAdminAdd not implemented.');
-	}
-
-/**
- * testAdminEdit method
- *
- * @return void
- */
-	public function testAdminEdit() {
-		$this->markTestIncomplete('testAdminEdit not implemented.');
-	}
-
-/**
- * testAdminDelete method
- *
- * @return void
- */
-	public function testAdminDelete() {
-		$this->markTestIncomplete('testAdminDelete not implemented.');
 	}
 
 }

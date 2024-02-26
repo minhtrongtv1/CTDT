@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Device'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin thiết bị'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,11 +17,11 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code'); ?>
-    <?php echo $this->Form->input('name'); ?>
-    <?php echo $this->Form->input('quantity'); ?>
-    <?php echo $this->Form->input('used'); ?>
-    <?php echo $this->Form->input('note'); ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã thiết bị']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên thiết bị']); ?>
+    <?php echo $this->Form->input('quantity', ['label' => 'Số lượng']); ?>
+    <?php echo $this->Form->input('used', ['label' => 'Được sử dụng']); ?>
+    <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

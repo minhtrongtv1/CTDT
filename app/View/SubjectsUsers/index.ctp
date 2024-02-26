@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2><?php echo __('Subjects Users'); ?></h2>
+            <h2><?php echo __('Giảng dạy'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -43,8 +43,6 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần'); ?></th>
 
 
-
-
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
@@ -62,9 +60,8 @@ $this->Paginator->options(array(
                                     <?php echo $this->Html->link($subjectsUser['User']['ho_va_ten_khoa_code'], array('controller' => 'users', 'action' => 'view', $subjectsUser['User']['id'])); ?>
                                 </td>
                                 <td class="">
-                                    <?php echo $this->Html->link($subjectsUser['Subject']['id'], array('controller' => 'subjects', 'action' => 'view', $subjectsUser['Subject']['id'])); ?>
+                                    <?php echo $this->Html->link($subjectsUser['Subject']['name'], array('controller' => 'subjects', 'action' => 'view', $subjectsUser['Subject']['id'])); ?>
                                 </td>
-
                                 <td class=""><?php echo h($subjectsUser['SubjectsUser']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsUser['SubjectsUser']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

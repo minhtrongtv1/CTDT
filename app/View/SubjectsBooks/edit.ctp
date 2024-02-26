@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Subjects Book'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin Tài liệu học phần'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,9 +17,8 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('subject_id'); ?>
-    <?php echo $this->Form->input('book_id'); ?>
-    <?php echo $this->Form->input('name'); ?>
+    <?php echo $this->Form->input('subject_id', ['label' => 'Tên học phần']); ?>
+    <?php echo $this->Form->input('book_id', ['label' => 'Tên tài liệu']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

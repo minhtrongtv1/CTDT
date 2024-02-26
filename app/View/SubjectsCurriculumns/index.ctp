@@ -18,13 +18,10 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('SubjectsCurriculumn', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Tên chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('knowledge_id', array('placeholder' => 'Tên khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('obligatory', array('placeholder' => 'Học phần bắt buộc', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('elective', array('placeholder' => 'Học phần tự chọn', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên học phần chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-
+                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('knowledge_id', array('placeholder' => 'Khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -41,22 +38,19 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Khối kiến thức'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Học phần bắt buộc'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('obligatory'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Học phần tự chọn'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('elective'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -76,7 +70,7 @@ $this->Paginator->options(array(
                                     <?php echo $this->Html->link($subjectsCurriculumn['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $subjectsCurriculumn['Curriculumn']['id'])); ?>
                                 </td>
                                 <td class="">
-                                    <?php echo $this->Html->link($subjectsCurriculumn['Subject']['id'], array('controller' => 'subjects', 'action' => 'view', $subjectsCurriculumn['Subject']['id'])); ?>
+                                    <?php echo $this->Html->link($subjectsCurriculumn['Subject']['name'], array('controller' => 'subjects', 'action' => 'view', $subjectsCurriculumn['Subject']['id'])); ?>
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsCurriculumn['Knowledge']['name'], array('controller' => 'knowledges', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
@@ -84,7 +78,6 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['obligatory']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['elective']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['id']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['name']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsCurriculumn['SubjectsCurriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                 </td>

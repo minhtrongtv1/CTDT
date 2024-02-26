@@ -16,7 +16,7 @@ class InfrastructureFixture extends CakeTestFixture {
 		'curriculumn_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 			'code' => array('column' => 'code', 'unique' => 1),
@@ -38,8 +38,8 @@ class InfrastructureFixture extends CakeTestFixture {
 			'device_id' => 1,
 			'room_id' => 1,
 			'curriculumn_id' => 1,
-			'created' => '2024-02-23 16:03:34',
-			'modified' => '2024-02-23 16:03:34',
+			'created' => '2024-02-26 09:25:16',
+			'modified' => '2024-02-26 09:25:16',
 			'id' => 1
 		),
 	);

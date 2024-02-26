@@ -17,11 +17,11 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code'); ?>
-    <?php echo $this->Form->input('name'); ?>
-    <?php echo $this->Form->input('quantity'); ?>
-    <?php echo $this->Form->input('used'); ?>
-<?php echo $this->Form->input('note'); ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã thiết bị']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên thiết bị']); ?>
+    <?php echo $this->Form->input('quantity', ['label' => 'Số lượng thiết bị']); ?>
+    <?php echo $this->Form->input('used', ['label' => 'Được sử dụng']); ?>
+<?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

@@ -12,7 +12,6 @@ class SubjectsBookFixture extends CakeTestFixture {
 	public $fields = array(
 		'subject_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'book_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
-		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
@@ -33,9 +32,8 @@ class SubjectsBookFixture extends CakeTestFixture {
 		array(
 			'subject_id' => 1,
 			'book_id' => 1,
-			'name' => 'Lorem ipsum dolor sit amet',
-			'created' => '2024-02-22 12:46:10',
-			'modified' => '2024-02-22 12:46:10',
+			'created' => '2024-02-26 11:33:12',
+			'modified' => '2024-02-26 11:33:12',
 			'id' => 1
 		),
 	);

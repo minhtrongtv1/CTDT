@@ -9,6 +9,12 @@ App::uses('AppModel', 'Model');
  */
 class Infrastructure extends AppModel {
 
+/**
+ * Use database config
+ *
+ * @var string
+ */
+	public $useDbConfig = 'offline';
 
 /**
  * Validation rules

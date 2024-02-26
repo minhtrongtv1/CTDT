@@ -67,7 +67,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
                                 <td class="">
-                                    <?php echo $this->Html->link($programOutcome['Curriculumn']['id'], array('controller' => 'curriculumn', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
+                                    <?php echo $this->Html->link($programOutcome['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
                                 </td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['id']); ?>&nbsp;</td>
                                 <td>

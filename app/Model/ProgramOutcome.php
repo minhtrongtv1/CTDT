@@ -5,9 +5,11 @@ App::uses('AppModel', 'Model');
 /**
  * ProgramOutcome Model
  *
- * @property Curriculumns $Curriculumns
+ * @property Curriculumn $Curriculumn
  */
 class ProgramOutcome extends AppModel {
+
+
 
     /**
      * Display field
@@ -52,7 +54,7 @@ class ProgramOutcome extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'curriculumns_id' => array(
+        'curriculumn_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
             //'message' => 'Your custom message here',

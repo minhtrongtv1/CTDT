@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  *
  * @property SubjectsCurriculumn $SubjectsCurriculumn
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class SubjectsCurriculumnsController extends AppController {
 
@@ -17,7 +15,7 @@ class SubjectsCurriculumnsController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator', 'Session', 'Flash');
+    public $components = array('Paginator');
 
     /**
      * index method

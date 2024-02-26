@@ -20,7 +20,6 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã phòng', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên phòng', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('acreage', array('placeholder' => 'Diện tích(m²)', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>

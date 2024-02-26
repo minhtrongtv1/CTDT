@@ -25,7 +25,6 @@ class SubjectsBookTest extends CakeTestCase {
 		'app.evaluation_round',
 		'app.user',
 		'app.province',
-		'app.notification',
 		'app.group',
 		'app.users_group',
 		'app.message',

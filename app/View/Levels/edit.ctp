@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> Sửa trình độ </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin trình độ đào tạo'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -18,8 +18,8 @@
     );
     ?>
     <?php echo $this->Form->input('id'); ?>
-    <?php echo $this->Form->input('name', array('label' => 'Tên')); ?>
-    <?php echo $this->Form->input('code', array('label' => 'Mã')); ?>
+    <?php echo $this->Form->input('code', array('label' => 'Mã trình độ đào tạo')); ?>
+    <?php echo $this->Form->input('name', array('label' => 'Tên trình độ đào tạo')); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

@@ -28,6 +28,11 @@
                                 <?php echo h($programOutcome['ProgramOutcome']['content']); ?>
                                 &nbsp;
                             </td>
+                        </tr><tr>		<td><strong><?php echo __('Curriculumn'); ?></strong></td>
+                            <td>
+                                <?php echo $this->Html->link($programOutcome['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumn']['id']), array('class' => '')); ?>
+                                &nbsp;
+                            </td>
                         </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
                             <td>
                                 <?php echo h($programOutcome['ProgramOutcome']['created']); ?>
@@ -36,11 +41,6 @@
                         </tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
                             <td>
                                 <?php echo h($programOutcome['ProgramOutcome']['modified']); ?>
-                                &nbsp;
-                            </td>
-                        </tr><tr>		<td><strong><?php echo __('Curriculumn'); ?></strong></td>
-                            <td>
-                                <?php echo $this->Html->link($programOutcome['Curriculumn']['id'], array('controller' => 'curriculumn', 'action' => 'view', $programOutcome['Curriculumn']['id']), array('class' => '')); ?>
                                 &nbsp;
                             </td>
                         </tr><tr>		<td><strong><?php echo __('Id'); ?></strong></td>

@@ -13,6 +13,7 @@ class SubjectTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.subject',
+		'app.semester',
 		'app.book',
 		'app.subjects_book',
 		'app.curriculumn',
@@ -24,7 +25,6 @@ class SubjectTest extends CakeTestCase {
 		'app.evaluation_round',
 		'app.user',
 		'app.province',
-		'app.notification',
 		'app.group',
 		'app.users_group',
 		'app.message',

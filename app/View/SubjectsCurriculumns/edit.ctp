@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Subjects Curriculumn'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin học phần chương trình đào tạo'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,13 +17,12 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('curriculumn_id'); ?>
-    <?php echo $this->Form->input('subject_id'); ?>
-    <?php echo $this->Form->input('knowledge_id'); ?>
-    <?php echo $this->Form->input('obligatory'); ?>
-    <?php echo $this->Form->input('elective'); ?>
-    <?php echo $this->Form->input('id'); ?>
-<?php echo $this->Form->input('name'); ?>
+    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Tên chương trình đào tạo']); ?>
+    <?php echo $this->Form->input('subject_id', ['label' => 'Tên học phần']); ?>
+    <?php echo $this->Form->input('knowledge_id', ['label' => 'Khối kiến thức']); ?>
+    <?php echo $this->Form->input('obligatory', ['label' => 'Học phần bắt buộc']); ?>
+    <?php echo $this->Form->input('elective', ['label' => 'Học phần tự chọn']); ?>
+<?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

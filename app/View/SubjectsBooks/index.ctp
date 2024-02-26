@@ -18,9 +18,8 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('SubjectsBook', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Tên học Phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('book_id', array('placeholder' => 'Tên tài liệu', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên tài liệu học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -41,10 +40,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên tài liệu'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên tài liệu học phần'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('Tên tài liệu',); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -66,7 +62,6 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsBook['Book']['name'], array('controller' => 'books', 'action' => 'view', $subjectsBook['Book']['id'])); ?>
                                 </td>
-                                <td class=""><?php echo h($subjectsBook['SubjectsBook']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subjectsBook['SubjectsBook']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsBook['SubjectsBook']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

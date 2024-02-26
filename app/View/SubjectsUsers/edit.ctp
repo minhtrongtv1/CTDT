@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Subjects User'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin giảng dạy'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,10 +17,8 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('user_id'); ?>
-    <?php echo $this->Form->input('subject_id'); ?>
-    <?php echo $this->Form->input('room_id'); ?>
-    <?php echo $this->Form->input('name'); ?>
+    <?php echo $this->Form->input('Tên giáo viên', ['label' => 'Tên giáo viên']); ?>
+    <?php echo $this->Form->input('Tên học phần', ['label' => 'Tên học phần']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">
