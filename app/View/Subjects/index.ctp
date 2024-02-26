@@ -64,15 +64,10 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('syllabus_filename'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('syllabus_path'); ?></th>
-
-
                             <th class="column-title"><?php echo $this->Paginator->sort('Học kì'); ?></th>
 
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('Đề cương chi tiết'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>

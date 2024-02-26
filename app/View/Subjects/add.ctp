@@ -26,13 +26,14 @@
     <?php echo $this->Form->input('self_learning_time', ['label' => 'Số giờ tự học']); ?>
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
-    <?php echo $this->Form->input('syllabus_filename'); ?>
-    <?php echo $this->Form->input('syllabus_path'); ?>
-    <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
-    <?php echo $this->Form->input('Book', ['label' => 'Tên tài liệu']); ?>
-    <?php echo $this->Form->input('Curriculumn', ['label' => 'Tên chương trình đào tạo']); ?>
-    <?php echo $this->Form->input('User', ['label' => 'Tên giáo viên']); ?>
 
+    <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
+
+
+
+    <?php
+    echo $this->Form->input('syllabus_filename', array('type' => 'file', 'label' => 'File đề cương:')); 
+    echo $this->Form->input('syllabus_path', array('type' => 'hidden')); ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
