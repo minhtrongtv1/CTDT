@@ -614,7 +614,7 @@ class UploadBehavior extends ModelBehavior {
         }
 
 
-
+#Trọng đã fix chỗ này
         if (!$requireUpload && isset($check[$field]['error']) && $check[$field]['error'] === UPLOAD_ERR_NO_FILE) {
             return true;
         }
@@ -634,6 +634,7 @@ class UploadBehavior extends ModelBehavior {
             if (!is_int($key)) {
                 $mimetypes = $this->settings[$model->alias][$field]['mimetypes'];
                 break;
+                
             }
         }
 
