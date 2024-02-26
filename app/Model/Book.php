@@ -93,6 +93,10 @@ class Book extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
+        'syllabus_filename' => array(
+            'rule' => array('isValidMimeType', array('application/pdf'), false),
+            'message' => 'Bạn phải nhập file PDF'
+        )
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed

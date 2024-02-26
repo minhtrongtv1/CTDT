@@ -133,7 +133,88 @@
                 </li>
             </ul>
         </li>
-        
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-book" aria-hidden="true"></i>
+                <span class="menu-text">
+                    Quản lý đào tạo
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+
+                <li class="">
+
+                    <?php echo $this->Html->link('
+                <span class="menu-text"> Chương trình đào tạo </span>', array('admin' => false, 'plugin' => false, 'controller' => 'curriculumns', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Đơn vị </span>', '/departments', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Ngành </span>', '/majors', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                  
+            
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/levels', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Hình thức đào đạo </span>', '/formoftrainnings', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Mục tiêu đào tạo </span>', '/programoutcomes', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Chương trình đào tạo tham khảo </span>', '/curriculumnsreferences', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Chuẩn đầu ra </span>', '/programobjectives', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Khối kiến thức </span>', '/knowledges', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học phần </span>', '/subjects', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Tài liệu </span>', '/books', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Cơ sở vật chất </span>', '/rooms', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                
 
 
     </ul><!-- /.nav-list -->

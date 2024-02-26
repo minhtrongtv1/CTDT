@@ -329,7 +329,7 @@
 
                 <li class="">
 
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                    <?php echo $this->Html->link('
                 <span class="menu-text"> Chương trình đào tạo </span>', array('admin' => false, 'plugin' => false, 'controller' => 'curriculumns', 'action' => 'index'), array('escape' => false)); ?>
 
                     <b class="arrow"></b>
