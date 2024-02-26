@@ -9,6 +9,7 @@
 
     <?php
     echo $this->Form->create('Subject', array(
+        'type'=>'file',
         'role' => 'form',
         'class' => 'form-horizontal',
         'inputDefaults' => array(
@@ -30,17 +31,20 @@
     <?php echo $this->Form->input('Book', ['label' => 'Tài liệu']); ?>
     <?php echo $this->Form->input('Curriculumn', ['label' => 'Chương trình đào tạo']); ?>
     <?php echo $this->Form->input('User', ['label' => 'Giáo viên']); ?>
-
+    <?php
+    echo $this->Form->input('syllabus_filename', array('type' => 'file', 'label' => 'File đề cương:'));
+    echo $this->Form->input('syllabus_path', array('type' => 'hidden'));
+    ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-    <?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
 
 </div>
 

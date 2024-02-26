@@ -314,7 +314,7 @@
         </li>
         <li class="">
             <a href="" class="dropdown-toggle">
-                <i class="menu-icon fa fa-users"></i>
+                <i class="menu-icon fa fa-book" aria-hidden="true"></i>
                 <span class="menu-text">
                     Quản lý đào tạo
                 </span>
@@ -330,7 +330,7 @@
                 <li class="">
 
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
-                <span class="menu-text"> Chương trình đào tạo </span>', array('admin' => false, 'plugin' => false, 'controller' => 'departments', 'action' => 'index'), array('escape' => false)); ?>
+                <span class="menu-text"> Chương trình đào tạo </span>', array('admin' => false, 'plugin' => false, 'controller' => 'curriculumns', 'action' => 'index'), array('escape' => false)); ?>
 
                     <b class="arrow"></b>
                 </li>
@@ -338,21 +338,22 @@
                 <li class="">
 
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
-                <span class="menu-text"> Đơn vị </span>', array('admin' => true, 'plugin' => false, 'controller' => 'users', 'action' => 'index'), array('escape' => false)); ?>
+                <span class="menu-text"> Đơn vị </span>', array('admin' => true, 'plugin' => false, 'controller' => 'departments', 'action' => 'index'), array('escape' => false)); ?>
 
                     <b class="arrow"></b>
                 </li>
-
                 <li class="">
+
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
-                <span class="menu-text"> Nghành </span>', array('admin' => true, 'plugin' => false, 'controller' => 'groups'), array('escape' => false)); ?>
+                <span class="menu-text"> Nghành </span>', array('admin' => true, 'plugin' => false, 'controller' => 'majors', 'action' => 'index'), array('escape' => false)); ?>
 
                     <b class="arrow"></b>
                 </li>
+                
 
                 <li class="">
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/admin/acl_manager/acl/update_acos', array('escape' => false)); ?>
+                    <span class="menu-text"> Trình độ đào tạo </span>', '/admin/acl_manager/acl/update_acos', array('escape' => false)); ?>
                     <b class="arrow"></b>
                 </li>
                 <li class="">
@@ -372,7 +373,7 @@
                 </li>
                  <li class="">
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
-                                                        <span class="menu-text"> CHuẩn đầu ra </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                                                        <span class="menu-text"> Chuẩn đầu ra </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
                     <b class="arrow"></b>
                 </li>
                  <li class="">

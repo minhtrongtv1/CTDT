@@ -64,6 +64,8 @@ class SubjectsController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+            
+           // debug($this->request->data);die;
             $this->Subject->create();
             if ($this->Subject->save($this->request->data)) {
                 $this->Flash->success(__('The subject has been saved'));

@@ -24,6 +24,16 @@ class Subject extends AppModel {
      * @var string
      */
     public $displayField = 'name';
+    public $actsAs = array(
+        'Upload.Upload' => array(
+            'syllabus_filename' => array(
+                'fields' => array(
+                    'dir' => 'syllabus_path',
+                    'maxSize' => 50
+                )
+            )
+        )
+    );
 
     /**
      * Validation rules
@@ -35,6 +45,14 @@ class Subject extends AppModel {
             'notBlank' => array(
                 'rule' => array('notBlank'),
             //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            'isUnique' => array(
+                'rule' => array('isUnique'),
+                'message' => 'Đã có mã môn này trong cơ sở dữ liệu môn học',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -131,6 +149,10 @@ class Subject extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
+        'syllabus_filename' => array(
+            'rule' => array('isValidMimeType', array('application/pdf'), false),
+            'message' => 'Bạn phải nhập file PDF'
+        )
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
