@@ -30,7 +30,6 @@
     <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
 
 
-
     <?php
     echo $this->Form->input('syllabus_filename', array('type' => 'file', 'label' => 'File đề cương:')); 
     echo $this->Form->input('syllabus_path', array('type' => 'hidden')); ?>
