@@ -312,7 +312,93 @@
 
             </ul>
         </li>
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-users"></i>
+                <span class="menu-text">
+                    Quản lý đào tạo
+                </span>
 
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Chương trình đào tạo </span>', array('admin' => false, 'plugin' => false, 'controller' => 'departments', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Đơn vị </span>', array('admin' => true, 'plugin' => false, 'controller' => 'users', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Nghành </span>', array('admin' => true, 'plugin' => false, 'controller' => 'groups'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/admin/acl_manager/acl/update_acos', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Hình thức đào tạo </span>', '/admin/acl_manager/acl/update_aros', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Mục tiêu đào tạo </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Chương trình đào tạo tham khảo </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> CHuẩn đầu ra </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Khối kiến thức </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Học phần </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Tài liệu </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                 <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Cơ sở vật chất </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
 
     </ul><!-- /.nav-list -->
 
