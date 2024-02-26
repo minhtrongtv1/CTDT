@@ -11,8 +11,6 @@ App::uses('AppModel', 'Model');
  */
 class SubjectsCurriculumn extends AppModel {
 
-
-
     /**
      * Validation rules
      *
@@ -22,9 +20,9 @@ class SubjectsCurriculumn extends AppModel {
         'curriculumn_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -32,9 +30,9 @@ class SubjectsCurriculumn extends AppModel {
         'subject_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -42,9 +40,9 @@ class SubjectsCurriculumn extends AppModel {
         'knowledge_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -52,9 +50,9 @@ class SubjectsCurriculumn extends AppModel {
         'obligatory' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -62,9 +60,9 @@ class SubjectsCurriculumn extends AppModel {
         'elective' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),

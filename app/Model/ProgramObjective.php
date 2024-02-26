@@ -9,7 +9,6 @@ App::uses('AppModel', 'Model');
  */
 class ProgramObjective extends AppModel {
 
-
     /**
      * Display field
      *
@@ -26,9 +25,9 @@ class ProgramObjective extends AppModel {
         'group_type' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -36,7 +35,15 @@ class ProgramObjective extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên chuẩn đầu ra này đã có',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -46,9 +53,9 @@ class ProgramObjective extends AppModel {
         'category' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -56,9 +63,9 @@ class ProgramObjective extends AppModel {
         'describe' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -66,9 +73,9 @@ class ProgramObjective extends AppModel {
         'level' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),

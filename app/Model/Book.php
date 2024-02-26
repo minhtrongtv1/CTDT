@@ -26,7 +26,15 @@ class Book extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            'isUnique' => array(
+                'rule' => array('isUnique'),
+                'message' => 'Mã này đã tồn tại',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -36,7 +44,15 @@ class Book extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên tài liệu này đã có',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -46,9 +62,9 @@ class Book extends AppModel {
         'author_name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -56,9 +72,9 @@ class Book extends AppModel {
         'publisher' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -66,9 +82,9 @@ class Book extends AppModel {
         'publishing_year' => array(
             'datetime' => array(
                 'rule' => array('datetime'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -76,9 +92,9 @@ class Book extends AppModel {
         'link_libary' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -86,16 +102,16 @@ class Book extends AppModel {
         'note' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
         'syllabus_filename' => array(
             'rule' => array('isValidMimeType', array('application/pdf'), false),
-            'message' => 'Bạn phải nhập file PDF'
+            'message' => 'Sai định dạng, vui lòng chọn file PDF !'
         )
     );
 

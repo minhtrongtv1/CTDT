@@ -26,7 +26,15 @@ class FormOfTrainning extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            'isUnique' => array(
+                'rule' => array('isUnique'),
+                'message' => 'Mã này đã tồn tại',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -36,7 +44,15 @@ class FormOfTrainning extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên hình thức này đã có',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule

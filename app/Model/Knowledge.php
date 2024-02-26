@@ -10,8 +10,6 @@ App::uses('AppModel', 'Model');
  */
 class Knowledge extends AppModel {
 
-
-
     /**
      * Display field
      *
@@ -28,9 +26,9 @@ class Knowledge extends AppModel {
         'program_objective_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -38,7 +36,15 @@ class Knowledge extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên khối kiến thức này đã có',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -48,9 +54,9 @@ class Knowledge extends AppModel {
         'describe' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),

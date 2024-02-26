@@ -12,8 +12,6 @@ App::uses('AppModel', 'Model');
  */
 class Subject extends AppModel {
 
-
-
     /**
      * Display field
      *
@@ -30,6 +28,7 @@ class Subject extends AppModel {
             )
         )
     );
+
     /**
      * Validation rules
      *
@@ -39,26 +38,33 @@ class Subject extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-        'isUnique' => array(
+            'isUnique' => array(
                 'rule' => array('isUnique'),
-                'message' => 'Đã có mã môn này trong cơ sở dữ liệu môn học',
+                'message' => 'Mã này đã tồn tại',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-        
         ),
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên học phần này đã có',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -68,9 +74,9 @@ class Subject extends AppModel {
         'theory_credit' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -78,9 +84,9 @@ class Subject extends AppModel {
         'practice_credit' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -88,9 +94,9 @@ class Subject extends AppModel {
         'theory_hour' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -98,9 +104,9 @@ class Subject extends AppModel {
         'practice_hour' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -108,9 +114,9 @@ class Subject extends AppModel {
         'self_learning_time' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -118,9 +124,9 @@ class Subject extends AppModel {
         'note' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -128,9 +134,9 @@ class Subject extends AppModel {
         'describe' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            'allowEmpty' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -138,12 +144,13 @@ class Subject extends AppModel {
         'syllabus_filename' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
+          
         ),
         'syllabus_path' => array(
             'notBlank' => array(
@@ -158,9 +165,9 @@ class Subject extends AppModel {
         'semester_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            //'required' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -169,7 +176,6 @@ class Subject extends AppModel {
             'rule' => array('isValidMimeType', array('application/pdf'), false),
             'message' => 'Bạn phải nhập file PDF'
         )
-
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
