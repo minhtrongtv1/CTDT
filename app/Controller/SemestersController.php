@@ -49,7 +49,7 @@ class SemestersController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Semester->exists($id)) {
-            throw new NotFoundException(__('Invalid semester'));
+            throw new NotFoundException(__('Học kỳ không hợp lệ'));
         }
         $options = array('conditions' => array('Semester.' . $this->Semester->primaryKey => $id));
         $this->set('semester', $this->Semester->find('first', $options));
@@ -64,11 +64,11 @@ class SemestersController extends AppController {
         if ($this->request->is('post')) {
             $this->Semester->create();
             if ($this->Semester->save($this->request->data)) {
-                $this->Flash->success(__('The semester has been saved'));
+                $this->Flash->success(__('Học kỳ được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The semester could not be saved. Please, try again.'));
+                $this->Flash->error(__('Học kỳ lưu không thành công, vui lòng thử lại.'));
             }
         }
     }
@@ -83,14 +83,14 @@ class SemestersController extends AppController {
     public function edit($id = null) {
         $this->Semester->id = $id;
         if (!$this->Semester->exists($id)) {
-            throw new NotFoundException(__('Invalid semester'));
+            throw new NotFoundException(__('Học kỳ không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Semester->save($this->request->data)) {
-                $this->Flash->success(__('semester đã được lưu'));
+                $this->Flash->success(__('Học kỳ đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('semester lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Học kỳ lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Semester.' . $this->Semester->primaryKey => $id));
@@ -124,13 +124,13 @@ class SemestersController extends AppController {
         }
         $this->Semester->id = $id;
         if (!$this->Semester->exists()) {
-            throw new NotFoundException(__('Invalid semester'));
+            throw new NotFoundException(__('Học kỳ không hợp lệ'));
         }
         if ($this->Semester->delete()) {
-            $this->Flash->success(__('Semester đã xóa'));
+            $this->Flash->success(__('Đã xóa học kỳ thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Semester xóa không thành công'));
+            $this->Flash->error(__('Xóa học kỳ không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

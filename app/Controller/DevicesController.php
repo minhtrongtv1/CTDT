@@ -47,7 +47,7 @@ class DevicesController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Device->exists($id)) {
-            throw new NotFoundException(__('Invalid device'));
+            throw new NotFoundException(__('Thiết bị không hợp lệ'));
         }
         $options = array('conditions' => array('Device.' . $this->Device->primaryKey => $id));
         $this->set('device', $this->Device->find('first', $options));
@@ -81,14 +81,14 @@ class DevicesController extends AppController {
     public function edit($id = null) {
         $this->Device->id = $id;
         if (!$this->Device->exists($id)) {
-            throw new NotFoundException(__('Invalid device'));
+            throw new NotFoundException(__('Thiết bị không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Device->save($this->request->data)) {
-                $this->Flash->success(__('device đã được lưu'));
+                $this->Flash->success(__('Thiết bị đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('device lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Thiết bị lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Device.' . $this->Device->primaryKey => $id));
@@ -122,13 +122,13 @@ class DevicesController extends AppController {
         }
         $this->Device->id = $id;
         if (!$this->Device->exists()) {
-            throw new NotFoundException(__('Invalid device'));
+            throw new NotFoundException(__('Thiết bị không hợp lê'));
         }
         if ($this->Device->delete()) {
-            $this->Flash->success(__('Device đã xóa'));
+            $this->Flash->success(__('Đã xóa thiết bị thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Device xóa không thành công'));
+            $this->Flash->error(__('Xóa thiết bị không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

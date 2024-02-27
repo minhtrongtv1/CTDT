@@ -50,7 +50,7 @@ class SubjectsCurriculumnsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->SubjectsCurriculumn->exists($id)) {
-            throw new NotFoundException(__('Invalid subjects curriculumn'));
+            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
         }
         $options = array('conditions' => array('SubjectsCurriculumn.' . $this->SubjectsCurriculumn->primaryKey => $id));
         $this->set('subjectsCurriculumn', $this->SubjectsCurriculumn->find('first', $options));
@@ -65,7 +65,7 @@ class SubjectsCurriculumnsController extends AppController {
         if ($this->request->is('post')) {
             $this->SubjectsCurriculumn->create();
             if ($this->SubjectsCurriculumn->save($this->request->data)) {
-                $this->Flash->success(__('The subjects curriculumn has been saved'));
+                $this->Flash->success(__('Học phần chương trình đào tạo được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
@@ -88,14 +88,14 @@ class SubjectsCurriculumnsController extends AppController {
     public function edit($id = null) {
         $this->SubjectsCurriculumn->id = $id;
         if (!$this->SubjectsCurriculumn->exists($id)) {
-            throw new NotFoundException(__('Invalid subjects curriculumn'));
+            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->SubjectsCurriculumn->save($this->request->data)) {
-                $this->Flash->success(__('subjects curriculumn đã được lưu'));
+                $this->Flash->success(__('Học phần chương trình đào tạo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('subjects curriculumn lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Học phần chương trình đào tạo lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('SubjectsCurriculumn.' . $this->SubjectsCurriculumn->primaryKey => $id));
@@ -133,13 +133,13 @@ class SubjectsCurriculumnsController extends AppController {
         }
         $this->SubjectsCurriculumn->id = $id;
         if (!$this->SubjectsCurriculumn->exists()) {
-            throw new NotFoundException(__('Invalid subjects curriculumn'));
+            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
         }
         if ($this->SubjectsCurriculumn->delete()) {
-            $this->Flash->success(__('Subjects curriculumn đã xóa'));
+            $this->Flash->success(__('Đã xóa học phần chương trình đào tạo thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Subjects curriculumn xóa không thành công'));
+            $this->Flash->error(__('Xóa học phần chương trình đào tạo không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

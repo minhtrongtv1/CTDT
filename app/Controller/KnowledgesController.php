@@ -50,7 +50,7 @@ class KnowledgesController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Knowledge->exists($id)) {
-            throw new NotFoundException(__('Invalid knowledge'));
+            throw new NotFoundException(__('Khối kiến thức không hợp lệ'));
         }
         $options = array('conditions' => array('Knowledge.' . $this->Knowledge->primaryKey => $id));
         $this->set('knowledge', $this->Knowledge->find('first', $options));
@@ -65,11 +65,11 @@ class KnowledgesController extends AppController {
         if ($this->request->is('post')) {
             $this->Knowledge->create();
             if ($this->Knowledge->save($this->request->data)) {
-                $this->Flash->success(__('The knowledge has been saved'));
+                $this->Flash->success(__('Tài liệu được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The knowledge could not be saved. Please, try again.'));
+                $this->Flash->error(__('Khối kiến thức lưu không thành công, vui lòng thử lại.'));
             }
         }
         $programObjectives = $this->Knowledge->ProgramObjective->find('list');
@@ -86,14 +86,14 @@ class KnowledgesController extends AppController {
     public function edit($id = null) {
         $this->Knowledge->id = $id;
         if (!$this->Knowledge->exists($id)) {
-            throw new NotFoundException(__('Invalid knowledge'));
+            throw new NotFoundException(__('Khối kiến thức không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Knowledge->save($this->request->data)) {
-                $this->Flash->success(__('knowledge đã được lưu'));
+                $this->Flash->success(__('Khối kiến thức đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('knowledge lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Khối kiến thức lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Knowledge.' . $this->Knowledge->primaryKey => $id));
@@ -129,13 +129,13 @@ class KnowledgesController extends AppController {
         }
         $this->Knowledge->id = $id;
         if (!$this->Knowledge->exists()) {
-            throw new NotFoundException(__('Invalid knowledge'));
+            throw new NotFoundException(__('Khối kiến thức không hợp lệ'));
         }
         if ($this->Knowledge->delete()) {
-            $this->Flash->success(__('Knowledge đã xóa'));
+            $this->Flash->success(__('Đã xóa khối kiến thức thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Knowledge xóa không thành công'));
+            $this->Flash->error(__('Xóa khối kiến thức không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

@@ -15,7 +15,7 @@ class UsersController extends AppController {
 
         parent::beforeFilter();
         $this->Auth->allow('register', 'login', 'logout', 'forgotPassword', 'googleLoginCalback',
-                'activatePassword','view');
+                'activatePassword', 'view');
     }
 
     private function __checkRecaptchaResponse($response) {
@@ -216,32 +216,31 @@ class UsersController extends AppController {
                         $activated = 1;
                         $email_verified = 1;
                         //$this->request->data['Group']['Group'][0] = $this->User->Group->getGroupIdByAlias('student');
-                        
-                        
-                        
-                        
-                        $allowedValues = array(
-    'tvu.edu.vn',
-    'my.tvu.edu.vn',
-    'st.tvu.edu.vn',
-    'tvu.edu.vn',
-    'online.tvu.edu.vn',
-    'rdi.edu.vn',
-    'ctec.tvu.edu.vn',
-    'vicf.tvu.edu.vn',
-    'vics.tvu.edu.vn'
-);
 
+
+
+
+                        $allowedValues = array(
+                            'tvu.edu.vn',
+                            'my.tvu.edu.vn',
+                            'st.tvu.edu.vn',
+                            'tvu.edu.vn',
+                            'online.tvu.edu.vn',
+                            'rdi.edu.vn',
+                            'ctec.tvu.edu.vn',
+                            'vicf.tvu.edu.vn',
+                            'vics.tvu.edu.vn'
+                        );
 
                         //check duoi cua email de xac dinh co phai giang vien hay khong
-                        if(in_array($username[1],$allowedValues)){
+                        if (in_array($username[1], $allowedValues)) {
                             $group = $this->User->Group->getGroupIdByAlias('teacher');
-                        }else{
+                        } else {
                             $this->Flash->error('Hệ thống chỉ cho phép GV thuc TVU đăng nhập (email có dạng @tvu.edu.vn).');
                             $this->redirect('/login');
                         }
-                        
-                        
+
+
                         $newUser = array(
                             'User' => array(
                                 'first_name' => $user['given_name'],
@@ -252,14 +251,12 @@ class UsersController extends AppController {
                                 'username' => $username[0],
                                 'activated' => $activated,
                                 'email_verified' => $email_verified,
-                                'password'=>'123456789@'
+                                'password' => '123456789@'
                             ),
                             'Group' => array(
                                 'Group' => array(0 => $group)
                             )
                         );
-
-
 
                         $this->User->create();
                         $this->User->set($newUser);
@@ -280,7 +277,8 @@ class UsersController extends AppController {
                             }
                             return $this->redirect($this->Auth->redirectUrl());
                         } else {
-                            debug($newUser);die;
+                            debug($newUser);
+                            die;
                             $this->Session->setFlash('Lưu không thành công.');
                             return $this->redirect($this->Auth->redirectUrl());
                         }
@@ -317,7 +315,7 @@ class UsersController extends AppController {
 
         $this->Session->write('LogginUserGroup', $LogginUserGroup);
     }
-    
+
     /**
      * index method
      *
@@ -325,7 +323,7 @@ class UsersController extends AppController {
      */
     public function admin_index() {
         $conditions = array();
-        $contain = array('Group','NoiSinh');
+        $contain = array('Group', 'NoiSinh');
         $order = array('User.last_login' => 'DESC');
         $settings = array('order' => $order, 'conditions' => $conditions, 'contain' => $contain);
         $page = 1;
@@ -423,7 +421,6 @@ class UsersController extends AppController {
         $this->Paginator->settings = array(
             'conditions' => $conditions,
             'order' => $order,
-
         );
         $this->set('users', $this->Paginator->paginate());
     }
@@ -449,7 +446,6 @@ class UsersController extends AppController {
         $settings = array(
             'conditions' => $conditions,
             'order' => array('User.name'),
-            
             'limit' => 5
         );
         $this->set('users', $this->User->find('all', $settings));
@@ -477,14 +473,14 @@ class UsersController extends AppController {
             }
         } else {
 
-            
+
             $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
             $this->request->data = $this->User->find('first', $options);
         }
-        $noiSinhs=$this->User->NoiSinh->find('list',array('order'=>array('name'=>'ASC')));
-        $departments=$this->User->Department->find('list',array('order'=>array('title'=>'ASC')));
+        $noiSinhs = $this->User->NoiSinh->find('list', array('order' => array('name' => 'ASC')));
+        $departments = $this->User->Department->find('list', array('order' => array('title' => 'ASC')));
         //debug($noiSinhs);die;
-        $this->set(compact('noiSinhs','departments'));
+        $this->set(compact('noiSinhs', 'departments'));
     }
 
     /**
@@ -588,7 +584,7 @@ class UsersController extends AppController {
                 $graph->setAccessToken($accessToken->getToken());
 
                 $msuser = $graph->createRequest('GET', '/me?$select=displayName,mail,mailboxSettings,userPrincipalName')
-                ->setReturnType(Model\User::class)
+                        ->setReturnType(Model\User::class)
                         ->execute();
 
                 //$tokenCache = new TokenCache();
@@ -652,21 +648,21 @@ class UsersController extends AppController {
                         $data['User']['email'] = $user['mail'];
                         $data['User']['ngay_sinh'] = "";
                         //borndate, classroom_id, bornplace                             
-                        
-                        
-                        
-                        if($domain=="st.tvu.edu.vn"){
+
+
+
+                        if ($domain == "st.tvu.edu.vn") {
                             $data['User']['user_group_id'] = STUDENT_GROUP_ID;
-                        }else
-                        if($domain=="my.tvu.edu.vn"){
+                        } else
+                        if ($domain == "my.tvu.edu.vn") {
                             $data['User']['user_group_id'] = TEACHER_GROUP_ID;
-                        }else{
+                        } else {
                             $data['User']['user_group_id'] = REGISTERED_GROUP_ID;
                         }
-                        
-                        
+
+
                         $data['User']['email_verified'] = 1;
-                        
+
                         $data['User']['active'] = 1;
 
                         $this->User->create();
@@ -675,13 +671,12 @@ class UsersController extends AppController {
                             $loginUser = $this->User->read(null, $this->User->id);
                             if ($this->UserAuth->login($loginUser)) {
                                 $this->Flash->success('Xin chào, bạn đã đăng nhập thành công.');
-                                $this->redirect(array('controller'=>'dashboards','action'=>'home'));
+                                $this->redirect(array('controller' => 'dashboards', 'action' => 'home'));
                             } else {
                                 $this->Flash->error('Error 00dn: Hệ thống gặp sự c trong khi đăng nhập tài khoản của bạn. Hãy liên hệ Trung tâm Hỗ trợ - Phát triển Dạy và Học để được giải đáp');
                                 $this->redirect(BASE_PATH . 'login');
                             }
                         }
-                    
                     } else {
                         $this->Flash->error('Đăng nhp thất bại');
                         $this->redirect(BASE_PATH . 'login');
@@ -782,16 +777,16 @@ class UsersController extends AppController {
             $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
             $this->request->data = $this->User->find('first', $options);
         }
-        
+
         $this->set(compact('user_id'));
     }
 
     public function view($id) {
-        $this->theme='Frontend';
-        if($this->Auth->user('id')){
-            $this->theme='Ace2Cake';
+        $this->theme = 'Frontend';
+        if ($this->Auth->user('id')) {
+            $this->theme = 'Ace2Cake';
         }
-        
+
         if (!$this->User->exists($id)) {
             throw new NotFoundException(__('Invalid user'));
         }
@@ -856,7 +851,7 @@ class UsersController extends AppController {
 
         $departments = $this->User->Department->find('list');
 
-        $this->set(compact('groups','departments'));
+        $this->set(compact('groups', 'departments'));
     }
 
     public function admin_view($id) {
@@ -937,7 +932,6 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->set($this->request->data);
 
-
             if (!$this->User->verifies()) {
                 $this->Flash->error('Mật khẩu không khớp!');
             } else
@@ -947,13 +941,13 @@ class UsersController extends AppController {
                 $this->User->save($user, false);
 
                 $this->Flash->success(__('Đổi password thành công.'));
-                $this->redirect(array('admin'=>true,'action' => 'index'));
+                $this->redirect(array('admin' => true, 'action' => 'index'));
             }
         } else {
             $this->User->id = $userId;
             if (!$this->User->exists()) {
                 $this->Flash->error('Không tồn tại ngưi dùng');
-                $this->redirect(array('admin'=>true,'action' => 'index'));
+                $this->redirect(array('admin' => true, 'action' => 'index'));
             } else {
                 $name = $this->User->field('name');
                 $this->set('name', $name);
@@ -970,7 +964,7 @@ class UsersController extends AppController {
     public function myprofile() {
         $userId = $this->Auth->user('id');
         $contain = array(
-            'Group','NoiSinh'
+            'Group', 'NoiSinh'
         );
         $user = $this->User->find('first', array(
             'conditions' => array(
@@ -1159,5 +1153,4 @@ class UsersController extends AppController {
         //return redirect()->away($authUrl);
         return $this->redirect($authUrl);
     }
-
 }

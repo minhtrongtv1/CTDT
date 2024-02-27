@@ -50,7 +50,7 @@ class MajorsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Major->exists($id)) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         $options = array('conditions' => array('Major.' . $this->Major->primaryKey => $id));
         $this->set('major', $this->Major->find('first', $options));
@@ -65,11 +65,11 @@ class MajorsController extends AppController {
         if ($this->request->is('post')) {
             $this->Major->create();
             if ($this->Major->save($this->request->data)) {
-                $this->Flash->success(__('The major has been saved'));
+                $this->Flash->success(__('Ngành đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The major could not be saved. Please, try again.'));
+                $this->Flash->error(__('Không thể lưu ngành. Vui lòng thử lại.'));
             }
         }
         $departments = $this->Major->Department->find('list');
@@ -86,14 +86,14 @@ class MajorsController extends AppController {
     public function edit($id = null) {
         $this->Major->id = $id;
         if (!$this->Major->exists($id)) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Major->save($this->request->data)) {
-                $this->Flash->success(__('major đã được lưu'));
+                $this->Flash->success(__('Ngành đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('major lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Ngành lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Major.' . $this->Major->primaryKey => $id));
@@ -129,13 +129,13 @@ class MajorsController extends AppController {
         }
         $this->Major->id = $id;
         if (!$this->Major->exists()) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         if ($this->Major->delete()) {
-            $this->Flash->success(__('Major đã xóa'));
+            $this->Flash->success(__('Đã xóa ngành thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Major xóa không thành công'));
+            $this->Flash->error(__('Xóa ngành không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }
@@ -172,7 +172,7 @@ class MajorsController extends AppController {
      */
     public function admin_view($id = null) {
         if (!$this->Major->exists($id)) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         $options = array('conditions' => array('Major.' . $this->Major->primaryKey => $id));
         $this->set('major', $this->Major->find('first', $options));
@@ -187,11 +187,11 @@ class MajorsController extends AppController {
         if ($this->request->is('post')) {
             $this->Major->create();
             if ($this->Major->save($this->request->data)) {
-                $this->Flash->success(__('The major has been saved'));
+                $this->Flash->success(__('Ngành đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The major could not be saved. Please, try again.'));
+                $this->Flash->error(__('Không thể lưu ngành. Vui lòng thử lại.'));
             }
         }
         $departments = $this->Major->Department->find('list');
@@ -208,14 +208,14 @@ class MajorsController extends AppController {
     public function admin_edit($id = null) {
         $this->Major->id = $id;
         if (!$this->Major->exists($id)) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Major->save($this->request->data)) {
-                $this->Flash->success(__('major đã được lưu'));
+                $this->Flash->success(__('Ngành đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('major lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Ngành lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Major.' . $this->Major->primaryKey => $id));
@@ -251,13 +251,13 @@ class MajorsController extends AppController {
         }
         $this->Major->id = $id;
         if (!$this->Major->exists()) {
-            throw new NotFoundException(__('Invalid major'));
+            throw new NotFoundException(__('Ngành không hợp lệ'));
         }
         if ($this->Major->delete()) {
-            $this->Flash->success(__('Major đã xóa'));
+            $this->Flash->success(__('Đã xóa ngành thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Major xóa không thành công'));
+            $this->Flash->error(__('Xóa ngành không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

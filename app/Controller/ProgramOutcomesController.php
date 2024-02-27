@@ -48,7 +48,7 @@ class ProgramOutcomesController extends AppController {
      */
     public function view($id = null) {
         if (!$this->ProgramOutcome->exists($id)) {
-            throw new NotFoundException(__('Invalid program outcome'));
+            throw new NotFoundException(__('Mục tiêu đào tạo không hợp lệ'));
         }
         $options = array('conditions' => array('ProgramOutcome.' . $this->ProgramOutcome->primaryKey => $id));
         $this->set('programOutcome', $this->ProgramOutcome->find('first', $options));
@@ -63,11 +63,11 @@ class ProgramOutcomesController extends AppController {
         if ($this->request->is('post')) {
             $this->ProgramOutcome->create();
             if ($this->ProgramOutcome->save($this->request->data)) {
-                $this->Flash->success(__('The program outcome has been saved'));
+                $this->Flash->success(__('Mục tiêu đào tạo được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The program outcome could not be saved. Please, try again.'));
+                $this->Flash->error(__('Mục tiêu đào tạo lưu không thành công, vui lòng thử lại.'));
             }
         }
         $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
@@ -84,14 +84,14 @@ class ProgramOutcomesController extends AppController {
     public function edit($id = null) {
         $this->ProgramOutcome->id = $id;
         if (!$this->ProgramOutcome->exists($id)) {
-            throw new NotFoundException(__('Invalid program outcome'));
+            throw new NotFoundException(__('Mục tiêu đào tạo không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->ProgramOutcome->save($this->request->data)) {
-                $this->Flash->success(__('program outcome đã được lưu'));
+                $this->Flash->success(__('Mục tiêu đào tạo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('program outcome lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Mục tiêu đào tạo lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('ProgramOutcome.' . $this->ProgramOutcome->primaryKey => $id));
@@ -127,13 +127,13 @@ class ProgramOutcomesController extends AppController {
         }
         $this->ProgramOutcome->id = $id;
         if (!$this->ProgramOutcome->exists()) {
-            throw new NotFoundException(__('Invalid program outcome'));
+            throw new NotFoundException(__('Mục tiêu đào tạo không hợp lệ'));
         }
         if ($this->ProgramOutcome->delete()) {
-            $this->Flash->success(__('Program outcome đã xóa'));
+            $this->Flash->success(__('Đã xóa mục tiêu đào tạo thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Program outcome xóa không thành công'));
+            $this->Flash->error(__('Xóa mục tiêu đào tạo không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

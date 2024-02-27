@@ -50,7 +50,7 @@ class BooksController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Book->exists($id)) {
-            throw new NotFoundException(__('Invalid book'));
+            throw new NotFoundException(__('Tài liệu không hợp lệ'));
         }
         $options = array('conditions' => array('Book.' . $this->Book->primaryKey => $id));
         $this->set('book', $this->Book->find('first', $options));
@@ -65,11 +65,11 @@ class BooksController extends AppController {
         if ($this->request->is('post')) {
             $this->Book->create();
             if ($this->Book->save($this->request->data)) {
-                $this->Flash->success(__('The book has been saved'));
+                $this->Flash->success(__('Tài liệu đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The book could not be saved. Please, try again.'));
+                $this->Flash->error(__('Không thể lưu tài liệu. Vui lòng thử lại.'));
             }
         }
         $subjects = $this->Book->Subject->find('list');
@@ -86,14 +86,14 @@ class BooksController extends AppController {
     public function edit($id = null) {
         $this->Book->id = $id;
         if (!$this->Book->exists($id)) {
-            throw new NotFoundException(__('Invalid book'));
+            throw new NotFoundException(__('Tài liệu không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Book->save($this->request->data)) {
-                $this->Flash->success(__('book đã được lưu'));
+                $this->Flash->success(__('Tài liệu được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('book lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Tài liệu lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Book.' . $this->Book->primaryKey => $id));
@@ -129,13 +129,13 @@ class BooksController extends AppController {
         }
         $this->Book->id = $id;
         if (!$this->Book->exists()) {
-            throw new NotFoundException(__('Invalid book'));
+            throw new NotFoundException(__('Tài liệu không hợp lệ'));
         }
         if ($this->Book->delete()) {
-            $this->Flash->success(__('Book đã xóa'));
+            $this->Flash->success(__('Đã xóa tài liệu thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Book xóa không thành công'));
+            $this->Flash->error(__('Xóa tài liệu không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

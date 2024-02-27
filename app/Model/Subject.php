@@ -23,7 +23,7 @@ class Subject extends AppModel {
             'syllabus_filename' => array(
                 'fields' => array(
                     'dir' => 'syllabus_path',
-                    'maxSize' => 50
+                    'maxSize' => 200
                 )
             )
         )
@@ -141,27 +141,8 @@ class Subject extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'syllabus_filename' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-          
-        ),
-        'syllabus_path' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+        
+        
         'semester_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
@@ -173,7 +154,7 @@ class Subject extends AppModel {
             ),
         ),
         'syllabus_filename' => array(
-            'rule' => array('isValidMimeType', array('application/pdf'), false),
+           'rule' => array('isValidMimeType', array('application/pdf'), false),
             'message' => 'Bạn phải nhập file PDF'
         )
     );

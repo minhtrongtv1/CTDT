@@ -9,6 +9,7 @@
 
     <?php
     echo $this->Form->create('Subject', array(
+        'type' => 'file',
         'role' => 'form',
         'class' => 'form-horizontal',
         'inputDefaults' => array(

@@ -25,10 +25,11 @@ class SubjectsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Subject.fieldName' => $value));
+        $order = array('Subject.name' => 'ASC');
+        if (!empty($this->request->data['Subject']['name'])) {
+            $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
         }
+
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
@@ -51,7 +52,7 @@ class SubjectsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Subject->exists($id)) {
-            throw new NotFoundException(__('Invalid subject'));
+            throw new NotFoundException(__('Học phần không hợp lệ'));
         }
         $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
         $this->set('subject', $this->Subject->find('first', $options));
@@ -66,11 +67,11 @@ class SubjectsController extends AppController {
         if ($this->request->is('post')) {
             $this->Subject->create();
             if ($this->Subject->save($this->request->data)) {
-                $this->Flash->success(__('The subject has been saved'));
+                $this->Flash->success(__('Học phần được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The subject could not be saved. Please, try again.'));
+                $this->Flash->error(__('Học phần lưu không thành công, vui lòng thử lại.'));
             }
         }
         $semesters = $this->Subject->Semester->find('list');
@@ -90,14 +91,16 @@ class SubjectsController extends AppController {
     public function edit($id = null) {
         $this->Subject->id = $id;
         if (!$this->Subject->exists($id)) {
-            throw new NotFoundException(__('Invalid subject'));
+            throw new NotFoundException(__('Học phần không hợp lệ'));
         }
+
         if ($this->request->is('post') || $this->request->is('put')) {
+
             if ($this->Subject->save($this->request->data)) {
-                $this->Flash->success(__('subject đã được lưu'));
+                $this->Flash->success(__('Học phần đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('subject lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Học phần lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
@@ -136,13 +139,13 @@ class SubjectsController extends AppController {
         }
         $this->Subject->id = $id;
         if (!$this->Subject->exists()) {
-            throw new NotFoundException(__('Invalid subject'));
+            throw new NotFoundException(__('Học phần không hợp lệ'));
         }
         if ($this->Subject->delete()) {
-            $this->Flash->success(__('Subject đã xóa'));
+            $this->Flash->success(__('Đã xóa học phần thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Subject xóa không thành công'));
+            $this->Flash->error(__('Xóa học phần không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

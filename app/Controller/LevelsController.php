@@ -49,7 +49,7 @@ class LevelsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Level->exists($id)) {
-            throw new NotFoundException(__('Invalid level'));
+            throw new NotFoundException(__('Trình độ không hợp lệ'));
         }
         $options = array('conditions' => array('Level.' . $this->Level->primaryKey => $id));
         $this->set('level', $this->Level->find('first', $options));
@@ -64,11 +64,11 @@ class LevelsController extends AppController {
         if ($this->request->is('post')) {
             $this->Level->create();
             if ($this->Level->save($this->request->data)) {
-                $this->Flash->success(__('The level has been saved'));
+                $this->Flash->success(__('Trình độ được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The level could not be saved. Please, try again.'));
+                $this->Flash->error(__('Trình độ lưu không thành công, vui lòng thử lại.'));
             }
         }
     }
@@ -83,14 +83,14 @@ class LevelsController extends AppController {
     public function edit($id = null) {
         $this->Level->id = $id;
         if (!$this->Level->exists($id)) {
-            throw new NotFoundException(__('Invalid level'));
+            throw new NotFoundException(__('Trình độ không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Level->save($this->request->data)) {
-                $this->Flash->success(__('level đã được lưu'));
+                $this->Flash->success(__('Trình độ đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('level lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Trình độ lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Level.' . $this->Level->primaryKey => $id));
@@ -124,13 +124,13 @@ class LevelsController extends AppController {
         }
         $this->Level->id = $id;
         if (!$this->Level->exists()) {
-            throw new NotFoundException(__('Invalid level'));
+            throw new NotFoundException(__('Trình độ không hợp lệ'));
         }
         if ($this->Level->delete()) {
-            $this->Flash->success(__('Level đã xóa'));
+            $this->Flash->success(__('Đã xóa trình độ thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Level xóa không thành công'));
+            $this->Flash->error(__('Xóa trình độ không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

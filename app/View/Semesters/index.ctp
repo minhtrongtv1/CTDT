@@ -55,7 +55,6 @@ $this->Paginator->options(array(
                         <?php foreach ($semesters as $semester): ?>
                             <tr id="row-<?php echo $semester['Semester']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
-
                                 <td class=""><?php echo h($semester['Semester']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($semester['Semester']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($semester['Semester']['id']); ?>&nbsp;</td>

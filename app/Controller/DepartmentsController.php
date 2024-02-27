@@ -27,7 +27,7 @@ class DepartmentsController extends AppController {
         $contain = array();
         $order = array('Department.title' => 'ASC');
         if (!empty($this->request->data['Department']['title'])) {
-            $conditions = Set::merge($conditions, array('Department.title like' => '%'.$this->request->data['Department']['title'].'%'));
+            $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -47,7 +47,7 @@ class DepartmentsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Department->exists($id)) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
         $this->set('department', $this->Department->find('first', $options));
@@ -62,11 +62,11 @@ class DepartmentsController extends AppController {
         if ($this->request->is('post')) {
             $this->Department->create();
             if ($this->Department->save($this->request->data)) {
-                $this->Flash->success(__('The department has been saved'));
+                $this->Flash->success(__('Đơn vị đã được lưu'));
                 $this->redirect(array('admin' => false, 'action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The department could not be saved. Please, try again.'));
+                $this->Flash->error(__('Đơn vị lưu không thành công, vui lòng thử lại.'));
             }
         }
     }
@@ -81,14 +81,14 @@ class DepartmentsController extends AppController {
     public function edit($id = null) {
         $this->Department->id = $id;
         if (!$this->Department->exists($id)) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Department->save($this->request->data)) {
-                $this->Flash->success(__('department đã được lưu'));
+                $this->Flash->success(__('Đơn vị đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('department lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Đơn vị lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
@@ -122,13 +122,13 @@ class DepartmentsController extends AppController {
         }
         $this->Department->id = $id;
         if (!$this->Department->exists()) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         if ($this->Department->delete()) {
-            $this->Flash->success(__('Department đã xóa'));
+            $this->Flash->success(__('Đã xóa đơn vị thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Department xóa không thành công'));
+            $this->Flash->error(__('Xóa đơn vị không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }
@@ -163,7 +163,7 @@ class DepartmentsController extends AppController {
      */
     public function admin_view($id = null) {
         if (!$this->Department->exists($id)) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
         $this->set('department', $this->Department->find('first', $options));
@@ -178,11 +178,11 @@ class DepartmentsController extends AppController {
         if ($this->request->is('post')) {
             $this->Department->create();
             if ($this->Department->save($this->request->data)) {
-                $this->Flash->success(__('The department has been saved'));
+                $this->Flash->success(__('Đơn vị đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The department could not be saved. Please, try again.'));
+                $this->Flash->error(__('Không thể lưu đơn vị. Vui lòng thử lại.'));
             }
         }
     }
@@ -197,14 +197,14 @@ class DepartmentsController extends AppController {
     public function admin_edit($id = null) {
         $this->Department->id = $id;
         if (!$this->Department->exists($id)) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Department->save($this->request->data)) {
-                $this->Flash->success(__('department đã được lưu'));
+                $this->Flash->success(__('Đơn vị đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('department lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Không thể lưu đơn vị. Vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
@@ -238,15 +238,14 @@ class DepartmentsController extends AppController {
         }
         $this->Department->id = $id;
         if (!$this->Department->exists()) {
-            throw new NotFoundException(__('Invalid department'));
+            throw new NotFoundException(__('Đơn vị không hợp lệ'));
         }
         if ($this->Department->delete()) {
-            $this->Flash->success(__('Department đã xóa'));
+            $this->Flash->success(__('Đã xóa đơn vị thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Department xóa không thành công'));
+            $this->Flash->error(__('Xóa đơn vị không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }
-
 }

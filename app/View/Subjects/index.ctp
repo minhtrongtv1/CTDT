@@ -20,7 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    
+
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -78,7 +78,6 @@ $this->Paginator->options(array(
                         <?php foreach ($subjects as $subject): ?>
                             <tr id="row-<?php echo $subject['Subject']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
-
                                 <td class=""><?php echo h($subject['Subject']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['theory_credit']); ?>&nbsp;</td>
@@ -88,11 +87,11 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($subject['Subject']['self_learning_time']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['note']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['describe']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subject['Subject']['syllabus_filename']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subject['Subject']['syllabus_path']); ?>&nbsp;</td>
                                 <td class="">
                                     <?php echo $this->Html->link($subject['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subject['Semester']['id'])); ?>
                                 </td>
+                                <td class=""><?php echo h($subject['Subject']['syllabus_filename']); ?>&nbsp;</td>
+
                                 <td class=""><?php echo h($subject['Subject']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subject['Subject']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -125,7 +124,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/subjects/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/subjects/index", data, function (response) {
             $("#datarows").html(response);
         });
 

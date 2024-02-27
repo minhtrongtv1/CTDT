@@ -49,7 +49,7 @@ class ProgramObjectivesController extends AppController {
      */
     public function view($id = null) {
         if (!$this->ProgramObjective->exists($id)) {
-            throw new NotFoundException(__('Invalid program objective'));
+            throw new NotFoundException(__('Chuẩn đầu ra không hợp lệ'));
         }
         $options = array('conditions' => array('ProgramObjective.' . $this->ProgramObjective->primaryKey => $id));
         $this->set('programObjective', $this->ProgramObjective->find('first', $options));
@@ -64,11 +64,11 @@ class ProgramObjectivesController extends AppController {
         if ($this->request->is('post')) {
             $this->ProgramObjective->create();
             if ($this->ProgramObjective->save($this->request->data)) {
-                $this->Flash->success(__('The program objective has been saved'));
+                $this->Flash->success(__('Chuẩn đầu ra được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The program objective could not be saved. Please, try again.'));
+                $this->Flash->error(__('Chuẩn đầu ra lưu không thành công, vui lòng thử lại.'));
             }
         }
     }
@@ -83,14 +83,14 @@ class ProgramObjectivesController extends AppController {
     public function edit($id = null) {
         $this->ProgramObjective->id = $id;
         if (!$this->ProgramObjective->exists($id)) {
-            throw new NotFoundException(__('Invalid program objective'));
+            throw new NotFoundException(__('Chuẩn đầu ra không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->ProgramObjective->save($this->request->data)) {
-                $this->Flash->success(__('program objective đã được lưu'));
+                $this->Flash->success(__('Chuẩn đầu ra đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('program objective lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Chuẩn đầu ra lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('ProgramObjective.' . $this->ProgramObjective->primaryKey => $id));
@@ -124,13 +124,13 @@ class ProgramObjectivesController extends AppController {
         }
         $this->ProgramObjective->id = $id;
         if (!$this->ProgramObjective->exists()) {
-            throw new NotFoundException(__('Invalid program objective'));
+            throw new NotFoundException(__('Chuẩn đầu ra không hợp lệ'));
         }
         if ($this->ProgramObjective->delete()) {
-            $this->Flash->success(__('Program objective đã xóa'));
+            $this->Flash->success(__('Đã xóa chuẩn đầu ra thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Program objective xóa không thành công'));
+            $this->Flash->error(__('Xóa chuẩn đầu ra không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

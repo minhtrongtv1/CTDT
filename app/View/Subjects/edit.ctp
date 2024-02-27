@@ -9,6 +9,7 @@
 
     <?php
     echo $this->Form->create('Subject', array(
+        'type' => 'file',
         'role' => 'form',
         'class' => 'form-horizontal',
         'inputDefaults' => array(
@@ -26,8 +27,6 @@
     <?php echo $this->Form->input('self_learning_time', ['label' => 'Số giờ tự học']); ?>
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
-    <?php echo $this->Form->input('syllabus_filename'); ?>
-    <?php echo $this->Form->input('syllabus_path'); ?>
     <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
     <?php
     echo $this->Form->input('syllabus_filename', array('type' => 'file', 'label' => 'File đề cương:')); 

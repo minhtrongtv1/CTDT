@@ -50,7 +50,7 @@ class CurriculumnsReferencesController extends AppController {
      */
     public function view($id = null) {
         if (!$this->CurriculumnsReference->exists($id)) {
-            throw new NotFoundException(__('Invalid curriculumns reference'));
+            throw new NotFoundException(__('Chương trình đào tạo tham khảo không hợp lệ'));
         }
         $options = array('conditions' => array('CurriculumnsReference.' . $this->CurriculumnsReference->primaryKey => $id));
         $this->set('curriculumnsReference', $this->CurriculumnsReference->find('first', $options));
@@ -65,11 +65,11 @@ class CurriculumnsReferencesController extends AppController {
         if ($this->request->is('post')) {
             $this->CurriculumnsReference->create();
             if ($this->CurriculumnsReference->save($this->request->data)) {
-                $this->Flash->success(__('The curriculumns reference has been saved'));
+                $this->Flash->success(__('Chương trình đào tạo tham khảo được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The curriculumns reference could not be saved. Please, try again.'));
+                $this->Flash->error(__('Chương trình đào tạo tham khảo lưu không thành công, vui lòng thử lại.'));
             }
         }
         $curriculumns = $this->CurriculumnsReference->Curriculumn->find('list');
@@ -86,14 +86,14 @@ class CurriculumnsReferencesController extends AppController {
     public function edit($id = null) {
         $this->CurriculumnsReference->id = $id;
         if (!$this->CurriculumnsReference->exists($id)) {
-            throw new NotFoundException(__('Invalid curriculumns reference'));
+            throw new NotFoundException(__('Chương trình đào tạo tham khảo không hợp lệ'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->CurriculumnsReference->save($this->request->data)) {
-                $this->Flash->success(__('curriculumns reference đã được lưu'));
+                $this->Flash->success(__('Chương trình đào tạo tham khảo được lưu thành công'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('curriculumns reference lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Chương trình đào tạo tham khảo lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('CurriculumnsReference.' . $this->CurriculumnsReference->primaryKey => $id));
@@ -129,13 +129,13 @@ class CurriculumnsReferencesController extends AppController {
         }
         $this->CurriculumnsReference->id = $id;
         if (!$this->CurriculumnsReference->exists()) {
-            throw new NotFoundException(__('Invalid curriculumns reference'));
+            throw new NotFoundException(__('Chương trình đào tạo tham khảo không hợp lệ'));
         }
         if ($this->CurriculumnsReference->delete()) {
-            $this->Flash->success(__('Curriculumns reference đã xóa'));
+            $this->Flash->success(__('Đã xóa chương trình đào tạo tham khảo thành công'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Curriculumns reference xóa không thành công'));
+            $this->Flash->error(__('Xóa chương trình đào tạo tham khảo không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }
