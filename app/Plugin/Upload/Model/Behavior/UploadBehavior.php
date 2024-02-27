@@ -619,7 +619,6 @@ class UploadBehavior extends ModelBehavior {
             return true;
         }
 
-
         // Non-file uploads also mean the mimetype is invalid
         if (!isset($check[$field]['type']) || !strlen($check[$field]['type'])) {
             return false;

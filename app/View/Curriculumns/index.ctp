@@ -18,7 +18,7 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Curriculumn', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('Mã chương trình đào tạo', array('placeholder' => 'Mã chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('level_id', array('placeholder' => 'Trình độ đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('major_id', array('placeholder' => 'Ngành đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('form_of_trainning_id', array('placeholder' => 'Hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
@@ -39,16 +39,16 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Ngành đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Hình thức đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id','Hình thức đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên tiếng Việt'); ?></th>
@@ -138,7 +138,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/curriculumns/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/curriculumns/index", data, function (response) {
             $("#datarows").html(response);
         });
 

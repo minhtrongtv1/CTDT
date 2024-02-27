@@ -12,24 +12,27 @@ App::uses('AppController', 'Controller');
  */
 class CurriculumnsController extends AppController {
 
-    /**
-     * Components
-     *
-     * @var array
-     */
+   
     public $components = array('Paginator', 'Session', 'Flash');
 
-    /**
-     * index method
-     *
-     * @return void
-     */
+
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Curriculumn.fieldName' => $value));
+        $order = array('Curriculumn.code' => 'ASC');
+         
+         if (!empty($this->request->data['Curriculumn']['code'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['major_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['level_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
+        }
+       
+        if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

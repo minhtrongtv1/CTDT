@@ -80,8 +80,8 @@ class Book extends AppModel {
             ),
         ),
         'publishing_year' => array(
-            'datetime' => array(
-                'rule' => array('datetime'),
+            'date' => array(
+                'rule' => array('date'),
             //'message' => 'Bạn không được bỏ trống thông tin này',
             'allowEmpty' => true,
             'required' => false,

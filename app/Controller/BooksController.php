@@ -19,17 +19,17 @@ class BooksController extends AppController {
      */
     public $components = array('Paginator', 'Session', 'Flash');
 
-    /**
-     * index method
-     *
-     * @return void
-     */
+
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Book.fieldName' => $value));
+        $order = array('Book.name' => 'ASC');
+        if (!empty($this->request->data['Book']['name'])) {
+            $conditions = Hash::merge($conditions, array('Book.name like' => '%' . trim($this->request->data['Book']['name']) . '%'));
+        }
+
+        if (!empty($this->request->data['Book']['code'])) {
+            $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

@@ -17,17 +17,18 @@ class SubjectsController extends AppController {
      */
     public $components = array('Paginator');
 
-    /**
-     * index method
-     *
-     * @return void
-     */
+
+
     public function index() {
         $conditions = array();
         $contain = array();
         $order = array('Subject.name' => 'ASC');
         if (!empty($this->request->data['Subject']['name'])) {
             $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
+        }
+        
+        if (!empty($this->request->data['Subject']['code'])) {
+            $conditions = Hash::merge($conditions, array('Subject.code like' => '%' . trim($this->request->data['Subject']['code']) . '%'));
         }
 
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
@@ -43,6 +44,72 @@ class SubjectsController extends AppController {
         }
     }
 
+    /**
+     * index method
+     *
+     * @return void
+     */
+
+    public function teacher_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Subject.name' => 'ASC');
+        
+        
+        
+        
+        
+        if (!empty($this->request->data['Subject']['name'])) {
+            $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
+        }
+        
+        if (!empty($this->request->data['Subject']['code'])) {
+            $conditions = Hash::merge($conditions, array('Subject.code like' => '%' . trim($this->request->data['Subject']['code']) . '%'));
+        }
+
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjects', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $semesters = $this->Subject->Semester->find('list');
+            $books = $this->Subject->Book->find('list');
+            $curriculumns = $this->Subject->Curriculumn->find('list');
+            $users = $this->Subject->User->find('list');
+            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+        }
+    }
+    
+    public function liet_ke() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Subject.name' => 'ASC');
+        
+        
+        
+        
+        
+        if (!empty($this->request->data['Subject']['name'])) {
+            $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
+        }
+        
+        if (!empty($this->request->data['Subject']['code'])) {
+            $conditions = Hash::merge($conditions, array('Subject.code like' => '%' . trim($this->request->data['Subject']['code']) . '%'));
+        }
+
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjects', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $semesters = $this->Subject->Semester->find('list');
+            $books = $this->Subject->Book->find('list');
+            $curriculumns = $this->Subject->Curriculumn->find('list');
+            $users = $this->Subject->User->find('list');
+            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+        }
+    }
+    
     /**
      * view method
      *
