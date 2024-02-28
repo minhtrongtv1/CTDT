@@ -9,6 +9,7 @@
 
     <?php
     echo $this->Form->create('Curriculumn', array(
+        'type' => 'file',
         'role' => 'form',
         'class' => 'form-horizontal',
         'inputDefaults' => array(
@@ -28,9 +29,11 @@
     <?php echo $this->Form->input('enrollment_subject', ['label' => 'Đối tượng tuyển sinh']); ?>
     <?php echo $this->Form->input('point_ladder', ['label' => 'Thang điểm đào tạo']); ?>
     <?php echo $this->Form->input('graduation_condition', ['label' => 'Điều kiện tốt nghiệp']); ?>
-    <?php echo $this->Form->input('diploma', ['label' => 'Văn bằng tốt nghiệp']); ?>
+   
     <?php echo $this->Form->input('Subject', ['label' => 'Học phần đào tạo']); ?>
-
+<?php
+    echo $this->Form->input('image_filename', array('type' => 'file', 'label' => 'Ảnh văn bằng tốt nghiệp:')); 
+    echo $this->Form->input('image_path', array('type' => 'hidden')); ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
