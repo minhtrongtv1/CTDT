@@ -25,9 +25,12 @@ class DevicesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Device.fieldName' => $value));
+        $order = array('Device.name' => 'ASC');
+        if (!empty($this->request->data['Device']['code'])) {
+            $conditions = Hash::merge($conditions, array('Device.code like' => '%' . trim($this->request->data['Device']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Device']['name'])) {
+            $conditions = Hash::merge($conditions, array('Device.name like' => '%' . trim($this->request->data['Device']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

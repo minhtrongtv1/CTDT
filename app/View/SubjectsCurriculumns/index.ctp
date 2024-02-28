@@ -21,7 +21,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('subject_id', array('placeholder' => 'Học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('knowledge_id', array('placeholder' => 'Khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    
+
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -38,19 +38,19 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id','Học phần'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id','Khối kiến thức'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('obligatory'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('obligatory','Học phần bắt buộc'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('elective'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('elective','Học phần tự chọn'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -75,8 +75,8 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsCurriculumn['Knowledge']['name'], array('controller' => 'knowledges', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
                                 </td>
-                                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['obligatory']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['elective']); ?>&nbsp;</td>
+                                <td class=""><?php echo $this->Common->showTrueFalseAsCheck($subjectsCurriculumn['SubjectsCurriculumn']['obligatory']); ?>&nbsp;</td>
+                                <td class=""><?php echo $this->Common->showTrueFalseAsCheck($subjectsCurriculumn['SubjectsCurriculumn']['elective']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsCurriculumn['SubjectsCurriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -109,7 +109,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/subjectsCurriculumns/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/subjectscurriculumns/index", data, function (response) {
             $("#datarows").html(response);
         });
 

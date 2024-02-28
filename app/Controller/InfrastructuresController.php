@@ -25,9 +25,12 @@ class InfrastructuresController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Infrastructure.fieldName' => $value));
+        $order = array('Infrastructure.name' => 'ASC');
+        if (!empty($this->request->data['Infrastructure']['code'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.code like' => '%' . trim($this->request->data['Infrastructure']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Infrastructure']['device_id'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.device_id like' => '%' . trim($this->request->data['Infrastructure']['device_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

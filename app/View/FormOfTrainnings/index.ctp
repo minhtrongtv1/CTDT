@@ -37,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã hình thức đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã hình thức đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên hình thức đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên hình thức đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -90,7 +90,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/formOfTrainnings/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/formoftrainnings/index", data, function (response) {
             $("#datarows").html(response);
         });
 

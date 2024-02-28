@@ -23,6 +23,11 @@
 			<?php echo $this->Html->link($subjectsUser['Subject']['name'], array('controller' => 'subjects', 'action' => 'view', $subjectsUser['Subject']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
+</tr><tr>		<td><strong><?php echo __('Curriculumn'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($subjectsUser['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $subjectsUser['Curriculumn']['id']), array('class' => '')); ?>
+			&nbsp;
+		</td>
 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
 		<td>
 			<?php echo h($subjectsUser['SubjectsUser']['created']); ?>

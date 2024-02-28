@@ -13,66 +13,66 @@
             <div class="box-body table-responsive">
                 <table id="Curriculumns" class="table table-bordered table-striped">
                     <tbody>
-                        <tr>		<td><strong><?php echo __('Code'); ?></strong></td>
+                        <tr>		<td><strong><?php echo __('Mã chương trình đào tạo'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['code']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Level'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Trình độ'); ?></strong></td>
                             <td>
                                 <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id']), array('class' => '')); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Major'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Ngành'); ?></strong></td>
                             <td>
-                                <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id']), array('class' => '')); ?>
+                                <?php echo h($curriculumn['Major']['name'] ); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Form Of Trainning'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Hình thức đào tạo'); ?></strong></td>
                             <td>
-                                <?php echo $this->Html->link($curriculumn['FormOfTrainning']['name'], array('controller' => 'form_of_trainnings', 'action' => 'view', $curriculumn['FormOfTrainning']['id']), array('class' => '')); ?>
+                                <?php echo h($curriculumn['FormOfTrainning']['name']) ; ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Name Vn'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Tên tiếng Việt'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['name_vn']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Name Eng'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Tên tiếng Anh'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['name_eng']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Credit'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Số tín chỉ'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['credit']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Trainning Time'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Thời gian đào tạo'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['trainning_time']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Enrollment Subject'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Đối tượng tuyển sinh'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['enrollment_subject']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Point Ladder'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Thang điểm'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['point_ladder']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Graduation Condition'); ?></strong></td>
+                        </tr><tr>		<td><strong><?php echo __('Điều kiện tốt nghiệp'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Diploma'); ?></strong></td>
-                            <td>
-                                <?php echo h($curriculumn['Curriculumn']['diploma']); ?>
-                                &nbsp;
-                            </td>
+                        </tr><tr>		<td><strong><?php echo __('Văn bằng tốt nghiệp'); ?></strong></td>
+                            
+                            <td class="">
+                                    <a href="/files/curriculumn/image_filename/<?php echo $curriculumn['Curriculumn']['image_path'] . "/" . $curriculumn['Curriculumn']['image_filename']; ?>">
+                                        Ảnh văn bằng </a>&nbsp;</td>
                         </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['created']); ?>
@@ -127,15 +127,15 @@
                                     <td class="text-center">
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'subjects', 'action' => 'view', $subject['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'subjects', 'action' => 'edit', $subject['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'subjects', 'action' => 'delete', $subject['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $subject['id'])); ?>
+                                        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'subjects', 'action' => 'delete', $subject['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $subject['id'])); ?>
                                     </td>
                                 </tr>
-    <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table><!-- /.table table-striped table-bordered -->
                 </div><!-- /.table-responsive -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
 

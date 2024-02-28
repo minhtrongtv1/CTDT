@@ -36,10 +36,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã thiết bị'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên thiết bị'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Số lượng'); ?></th>
@@ -101,7 +101,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://ctdt.tvu.edu.local/admin/devices/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/devices/index", data, function (response) {
             $("#datarows").html(response);
         });
 

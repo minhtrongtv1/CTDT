@@ -37,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã cơ sở vật chất'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã cơ sở vật chất'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên thiết bị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên thiết bị'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên phòng'); ?></th>
@@ -104,7 +104,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/infrastructures/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/infrastructures/index", data, function (response) {
             $("#datarows").html(response);
         });
 

@@ -27,9 +27,12 @@ class FormOfTrainningsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('FormOfTrainning.fieldName' => $value));
+        $order = array('FormOfTrainning.name' => 'ASC');
+        if (!empty($this->request->data['FormOfTrainning']['code'])) {
+            $conditions = Hash::merge($conditions, array('FormOfTrainning.code like' => '%' . trim($this->request->data['FormOfTrainning']['code']) . '%'));
+        }
+        if (!empty($this->request->data['FormOfTrainning']['name'])) {
+            $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

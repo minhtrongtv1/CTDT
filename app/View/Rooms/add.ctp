@@ -17,19 +17,13 @@
             )
     );
     ?>
-<<<<<<< HEAD
+ 
     <?php echo $this->Form->input('code', ['label' => 'Mã phòng']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên phòng']); ?>
     <?php echo $this->Form->input('acreage', ['label' => 'Diện tích(m²)']); ?>
-=======
-    <?php echo $this->Form->input('code'); ?>
-    <?php echo $this->Form->input('name'); ?>
-    <?php echo $this->Form->input('acreage'); ?>
-    <?php
-    echo $this->Form->input('syllabus_filename', array('type' => 'file', 'label' => 'File đề cương:'));
-    echo $this->Form->input('syllabus_path', array('type' => 'hidden'));
-    ?>
->>>>>>> 8ef84d1d4da18eba1302dd16bffea3059c319665
+  
+    
+    
 
     <div class="clearfix form-actions">
         <div class="pull-right">
@@ -40,11 +34,10 @@
         </div>
     </div>
     <div class="hr hr-24"></div>
-<<<<<<< HEAD
-            <?php echo $this->Form->end(); ?>
-=======
     <?php echo $this->Form->end(); ?>
->>>>>>> 8ef84d1d4da18eba1302dd16bffea3059c319665
+   
+    <?php echo $this->Form->end(); ?>
+    
 
 </div>
 

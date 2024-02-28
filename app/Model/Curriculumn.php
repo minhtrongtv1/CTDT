@@ -11,7 +11,7 @@ App::uses('AppModel', 'Model');
  * @property Subject $Subject
  */
 class Curriculumn extends AppModel {
- 
+
     /**
      * Display field
      *
@@ -162,7 +162,7 @@ class Curriculumn extends AppModel {
 //            ),
 //        ),
         'image_filename' => array(
-           'rule' => array('isValidMimeType', array('image/png','image/jpeg'), false),
+            'rule' => array('isValidMimeType', array('image/png', 'image/jpeg'), false),
             'message' => 'Bạn phải chọn ảnh định dạng PNG hoặc JPEG'
         )
     );

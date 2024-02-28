@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  *
  * @property ProgramObjective $ProgramObjective
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class ProgramObjectivesController extends AppController {
 
@@ -17,7 +15,7 @@ class ProgramObjectivesController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator', 'Session', 'Flash');
+    public $components = array('Paginator');
 
     /**
      * index method
@@ -27,9 +25,12 @@ class ProgramObjectivesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('ProgramObjective.fieldName' => $value));
+        $order = array('ProgramObjective.name' => 'ASC');
+        if (!empty($this->request->data['ProgramObjective']['group_type'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.group_type like' => '%' . trim($this->request->data['ProgramObjective']['group_type']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramObjective']['name'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.name like' => '%' . trim($this->request->data['ProgramObjective']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -64,11 +65,11 @@ class ProgramObjectivesController extends AppController {
         if ($this->request->is('post')) {
             $this->ProgramObjective->create();
             if ($this->ProgramObjective->save($this->request->data)) {
-                $this->Flash->success(__('Chuẩn đầu ra được lưu thành công'));
+                $this->Flash->success(__('Chuẩn đầu ra đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('Chuẩn đầu ra lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Không thể lưu chuẩn đầu ra. Vui lòng thử lại.'));
             }
         }
     }

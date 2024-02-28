@@ -19,7 +19,8 @@ $this->Paginator->options(array(
                 <div class="col-md-12">
 
                     <?php echo $this->Form->input('user_id', array('placeholder' => 'Tên giáo viên', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Tên học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('subject_id', array('placeholder' => 'Học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -37,10 +38,13 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên giáo viên'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('user_id','Tên giáo viên'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên học phần'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id','Học phần'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -61,6 +65,9 @@ $this->Paginator->options(array(
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsUser['Subject']['name'], array('controller' => 'subjects', 'action' => 'view', $subjectsUser['Subject']['id'])); ?>
+                                </td>
+                                <td class="">
+                                    <?php echo $this->Html->link($subjectsUser['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $subjectsUser['Curriculumn']['id'])); ?>
                                 </td>
                                 <td class=""><?php echo h($subjectsUser['SubjectsUser']['id']); ?>&nbsp;</td>
                                 <td>
@@ -94,7 +101,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/subjectsUsers/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/subjectsusers/index", data, function (response) {
             $("#datarows").html(response);
         });
 

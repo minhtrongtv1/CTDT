@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  *
  * @property Knowledge $Knowledge
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class KnowledgesController extends AppController {
 
@@ -17,7 +15,7 @@ class KnowledgesController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator', 'Session', 'Flash');
+    public $components = array('Paginator');
 
     /**
      * index method
@@ -27,9 +25,15 @@ class KnowledgesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Knowledge.fieldName' => $value));
+        $order = array('Knowledge.name' => 'ASC');
+        if (!empty($this->request->data['Knowledge']['code'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.code like' => '%' . trim($this->request->data['Knowledge']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['name'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.name like' => '%' . trim($this->request->data['Knowledge']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['program_objective_id'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.program_objective_id like' => '%' . trim($this->request->data['Knowledge']['program_objective_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -65,11 +69,11 @@ class KnowledgesController extends AppController {
         if ($this->request->is('post')) {
             $this->Knowledge->create();
             if ($this->Knowledge->save($this->request->data)) {
-                $this->Flash->success(__('Tài liệu được lưu thành công'));
+                $this->Flash->success(__('Khối kiến thức đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('Khối kiến thức lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Không thể lưu khối kiến thức. Vui lòng thử lại.'));
             }
         }
         $programObjectives = $this->Knowledge->ProgramObjective->find('list');

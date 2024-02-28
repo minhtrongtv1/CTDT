@@ -12,6 +12,7 @@ class SubjectsUserFixture extends CakeTestFixture {
 	public $fields = array(
 		'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'subject_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
+		'curriculumn_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
@@ -32,8 +33,9 @@ class SubjectsUserFixture extends CakeTestFixture {
 		array(
 			'user_id' => 1,
 			'subject_id' => 1,
-			'created' => '2024-02-26 11:11:22',
-			'modified' => '2024-02-26 11:11:22',
+			'curriculumn_id' => 1,
+			'created' => '2024-02-28 16:06:26',
+			'modified' => '2024-02-28 16:06:26',
 			'id' => 1
 		),
 	);

@@ -25,9 +25,15 @@ class SubjectsUsersController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('SubjectsUser.fieldName' => $value));
+        $order = array('SubjectsUser.user_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsUser']['user_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.user_id like' => '%' . trim($this->request->data['SubjectsUser']['user_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsUser']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.subject_id like' => '%' . trim($this->request->data['SubjectsUser']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsUser']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.curriculumn_id like' => '%' . trim($this->request->data['SubjectsUser']['curriculumn_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -36,7 +42,8 @@ class SubjectsUsersController extends AppController {
         if (!$this->request->is('ajax')) {
             $users = $this->SubjectsUser->User->find('list');
             $subjects = $this->SubjectsUser->Subject->find('list');
-            $this->set(compact('users', 'subjects'));
+            $curriculumns = $this->SubjectsUser->Curriculumn->find('list');
+            $this->set(compact('users', 'subjects', 'curriculumns'));
         }
     }
 
@@ -73,7 +80,8 @@ class SubjectsUsersController extends AppController {
         }
         $users = $this->SubjectsUser->User->find('list');
         $subjects = $this->SubjectsUser->Subject->find('list');
-        $this->set(compact('users', 'subjects'));
+        $curriculumns = $this->SubjectsUser->Curriculumn->find('list');
+        $this->set(compact('users', 'subjects', 'curriculumns'));
     }
 
     /**
@@ -101,7 +109,8 @@ class SubjectsUsersController extends AppController {
         }
         $users = $this->SubjectsUser->User->find('list');
         $subjects = $this->SubjectsUser->Subject->find('list');
-        $this->set(compact('users', 'subjects'));
+        $curriculumns = $this->SubjectsUser->Curriculumn->find('list');
+        $this->set(compact('users', 'subjects', 'curriculumns'));
     }
 
     /**

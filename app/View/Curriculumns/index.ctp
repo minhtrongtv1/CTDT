@@ -22,7 +22,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('level_id', array('placeholder' => 'Trình độ đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('major_id', array('placeholder' => 'Ngành đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('form_of_trainning_id', array('placeholder' => 'Hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                 
+
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -39,16 +39,16 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id','Hình thức đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id', 'Hình thức đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Tên tiếng Việt'); ?></th>
@@ -93,10 +93,10 @@ $this->Paginator->options(array(
                                     <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id'])); ?>
                                 </td>
                                 <td class="">
-                                    <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id'])); ?>
+                                    <?php echo h($curriculumn['Major']['name']); ?>&nbsp;</td>
                                 </td>
                                 <td class="">
-                                    <?php echo $this->Html->link($curriculumn['FormOfTrainning']['name'], array('controller' => 'form_of_trainnings', 'action' => 'view', $curriculumn['FormOfTrainning']['id'])); ?>
+                                    <?php echo h($curriculumn['FormOfTrainning']['name']); ?>&nbsp;</td>
                                 </td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_vn']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
@@ -105,7 +105,10 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['enrollment_subject']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['point_ladder']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($curriculumn['Curriculumn']['image_filename']); ?>&nbsp;</td>
+       
+                                <td class="">
+                                    <a href="/files/curriculumn/image_filename/<?php echo $curriculumn['Curriculumn']['image_path'] . "/" . $curriculumn['Curriculumn']['image_filename']; ?>">
+                                        Tải văn bằng </a>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $curriculumn['Curriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

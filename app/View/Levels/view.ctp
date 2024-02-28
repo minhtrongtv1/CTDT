@@ -68,7 +68,7 @@
                                 <th class="text-center"><?php echo __('Enrollment Subject'); ?></th>
                                 <th class="text-center"><?php echo __('Point Ladder'); ?></th>
                                 <th class="text-center"><?php echo __('Graduation Condition'); ?></th>
-                                <th class="text-center"><?php echo __('Diploma'); ?></th>
+                                <th class="text-center"><?php echo __('image_filename'); ?></th>
                                 <th class="text-center"><?php echo __('Created'); ?></th>
                                 <th class="text-center"><?php echo __('Modified'); ?></th>
                                 <th class="text-center"><?php echo __('Id'); ?></th>
@@ -92,22 +92,22 @@
                                     <td class="text-center"><?php echo $curriculumn['enrollment_subject']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['point_ladder']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['graduation_condition']; ?></td>
-                                    <td class="text-center"><?php echo $curriculumn['diploma']; ?></td>
+                                    <td class="text-center"><?php echo $curriculumn['image_filename']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['created']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['modified']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['id']; ?></td>
                                     <td class="text-center">
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'curriculumns', 'action' => 'view', $curriculumn['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'curriculumns', 'action' => 'edit', $curriculumn['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'curriculumns', 'action' => 'delete', $curriculumn['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $curriculumn['id'])); ?>
+                                        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'curriculumns', 'action' => 'delete', $curriculumn['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $curriculumn['id'])); ?>
                                     </td>
                                 </tr>
-    <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table><!-- /.table table-striped table-bordered -->
                 </div><!-- /.table-responsive -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
 

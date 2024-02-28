@@ -12,16 +12,14 @@ App::uses('AppController', 'Controller');
  */
 class CurriculumnsController extends AppController {
 
-   
     public $components = array('Paginator', 'Session', 'Flash');
-
 
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array('Curriculumn.code' => 'ASC');
-         
-         if (!empty($this->request->data['Curriculumn']['code'])) {
+        $order = array('Curriculumn.name' => 'ASC');
+
+        if (!empty($this->request->data['Curriculumn']['code'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['major_id'])) {
@@ -30,7 +28,6 @@ class CurriculumnsController extends AppController {
         if (!empty($this->request->data['Curriculumn']['level_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
         }
-       
         if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
         }

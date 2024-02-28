@@ -23,7 +23,7 @@ class Knowledge extends AppModel {
      * @var array
      */
     public $validate = array(
-        'program_objective_id' => array(
+        'code' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
             'message' => 'Bạn không được bỏ trống thông tin này',
@@ -32,13 +32,31 @@ class Knowledge extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
+            'isUnique' => array(
+                'rule' => array('isUnique'),
+                'message' => 'Mã này đã tồn tại',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'program_objective_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+            //'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
         ),
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            'required' => true,
+            //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -54,7 +72,7 @@ class Knowledge extends AppModel {
         'describe' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
+            //'message' => 'Your custom message here',
             'allowEmpty' => true,
             'required' => false,
             //'last' => false, // Stop validation after this rule

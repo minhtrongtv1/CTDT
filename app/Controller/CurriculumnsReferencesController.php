@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  *
  * @property CurriculumnsReference $CurriculumnsReference
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class CurriculumnsReferencesController extends AppController {
 
@@ -17,7 +15,7 @@ class CurriculumnsReferencesController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator', 'Session', 'Flash');
+    public $components = array('Paginator');
 
     /**
      * index method
@@ -27,9 +25,15 @@ class CurriculumnsReferencesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('CurriculumnsReference.fieldName' => $value));
+        $order = array('CurriculumnsReference.name' => 'ASC');
+        if (!empty($this->request->data['CurriculumnsReference']['code'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.code like' => '%' . trim($this->request->data['CurriculumnsReference']['code']) . '%'));
+        }
+        if (!empty($this->request->data['CurriculumnsReference']['name'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
+        }
+        if (!empty($this->request->data['CurriculumnsReference']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.curriculumn_id like' => '%' . trim($this->request->data['CurriculumnsReference']['curriculumn_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -65,11 +69,11 @@ class CurriculumnsReferencesController extends AppController {
         if ($this->request->is('post')) {
             $this->CurriculumnsReference->create();
             if ($this->CurriculumnsReference->save($this->request->data)) {
-                $this->Flash->success(__('Chương trình đào tạo tham khảo được lưu thành công'));
+                $this->Flash->success(__('Chương trình đào tạo tham khảo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('Chương trình đào tạo tham khảo lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('Không thể lưu chương trình đào tạo tham khảo. Vui lòng thử lại.'));
             }
         }
         $curriculumns = $this->CurriculumnsReference->Curriculumn->find('list');
@@ -90,7 +94,7 @@ class CurriculumnsReferencesController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->CurriculumnsReference->save($this->request->data)) {
-                $this->Flash->success(__('Chương trình đào tạo tham khảo được lưu thành công'));
+                $this->Flash->success(__('Chương trình đào tạo tham khảo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Flash->error(__('Chương trình đào tạo tham khảo lưu không thành công, vui lòng thử lại.'));

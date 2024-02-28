@@ -27,9 +27,15 @@ class MajorsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Major.fieldName' => $value));
+        $order = array('Major.name' => 'ASC');
+        if (!empty($this->request->data['Major']['department_id'])) {
+            $conditions = Hash::merge($conditions, array('Major.department_id like' => '%' . trim($this->request->data['Major']['department_id']) . '%'));
+        }
+        if (!empty($this->request->data['Major']['code'])) {
+            $conditions = Hash::merge($conditions, array('Major.code like' => '%' . trim($this->request->data['Major']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Major']['name'])) {
+            $conditions = Hash::merge($conditions, array('Major.name like' => '%' . trim($this->request->data['Major']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

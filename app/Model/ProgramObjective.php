@@ -73,7 +73,7 @@ class ProgramObjective extends AppModel {
         'level' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được trống thông tin này',
+            'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
             'required' => true,
             //'last' => false, // Stop validation after this rule

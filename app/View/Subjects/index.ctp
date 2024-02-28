@@ -92,7 +92,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($subject['Subject']['note']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($subject['Subject']['describe']); ?>&nbsp;</td>
                                 <td class="">
-                                    <?php echo $this->Html->link($subject['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subject['Semester']['id'])); ?>
+                                    <?php echo h($subject['Semester']['name']); ?>
                                 </td>
                                 <td class="">
                                     

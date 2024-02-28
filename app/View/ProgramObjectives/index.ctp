@@ -20,8 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('group_type', array('placeholder' => 'Loại nhóm chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('category', array('placeholder' => 'Thể loại', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                   
+                    
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -38,19 +37,19 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Loại nhóm chuẩn đầu ra'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('group_type','Loại nhóm chuẩn đầu ra'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên chuẩn đầu ra'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên chuẩn đầu ra'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Thể loại'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('category','Thể loại'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Trình độ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level','Trình độ'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -103,7 +102,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/programObjectives/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/programobjectives/index", data, function (response) {
             $("#datarows").html(response);
         });
 

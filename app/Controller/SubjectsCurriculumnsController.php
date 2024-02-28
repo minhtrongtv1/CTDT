@@ -25,9 +25,15 @@ class SubjectsCurriculumnsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('SubjectsCurriculumn.fieldName' => $value));
+        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -69,7 +75,7 @@ class SubjectsCurriculumnsController extends AppController {
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('The subjects curriculumn could not be saved. Please, try again.'));
+                $this->Flash->error(__('Học phần chương trình đào tạo lưu không thành công, vui lòng thử lại.'));
             }
         }
         $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');

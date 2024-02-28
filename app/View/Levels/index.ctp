@@ -90,7 +90,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/levels/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/levels/index", data, function (response) {
             $("#datarows").html(response);
         });
 

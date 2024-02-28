@@ -18,9 +18,11 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Knowledge', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
+                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                   
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('describe', array('placeholder' => 'Miêu tả', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('program_objective_id', array('placeholder' => 'Tên chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -36,17 +38,20 @@ $this->Paginator->options(array(
                         <tr class="headings">
                             <th>#</th>
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên khối kiến thức'); ?></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã khối kiến thức'); ?></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên khối kiến thức'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id', 'Tên chuẩn đầu ra'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên chuẩn đầu ra'); ?></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
-
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
@@ -59,10 +64,12 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $knowledge['Knowledge']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
+                                <td class=""><?php echo h($knowledge['Knowledge']['code']); ?>&nbsp;</td>
+
+                                <td class=""><?php echo h($knowledge['Knowledge']['name']); ?>&nbsp;</td>
                                 <td class="">
                                     <?php echo $this->Html->link($knowledge['ProgramObjective']['name'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id'])); ?>
                                 </td>
-                                <td class=""><?php echo h($knowledge['Knowledge']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['describe']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['id']); ?>&nbsp;</td>
                                 <td>
@@ -96,7 +103,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/knowledges/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/knowledges/index", data, function (response) {
             $("#datarows").html(response);
         });
 

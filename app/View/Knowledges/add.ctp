@@ -17,8 +17,10 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('Mã khối kiến thức'); ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã khối kiến thức']); ?>
+
     <?php echo $this->Form->input('name', ['label' => 'Tên khối kiến thức']); ?>
+    <?php echo $this->Form->input('program_objective_id', ['label' => 'Tên chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
 
     <div class="clearfix form-actions">

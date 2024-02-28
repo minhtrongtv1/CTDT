@@ -38,16 +38,16 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã mục tiêu đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên mục tiêu đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('Nội dung mục tiêu'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Tên chương trình đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -101,7 +101,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/programOutcomes/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/programoutcomes/index", data, function (response) {
             $("#datarows").html(response);
         });
 

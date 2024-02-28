@@ -17,8 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('Tên giáo viên', ['label' => 'Tên giáo viên']); ?>
-    <?php echo $this->Form->input('Tên học phần', ['label' => 'Tên học phần']); ?>
+    <?php echo $this->Form->input('user_id', ['label' => 'Tên giáo viên']); ?>
+    <?php echo $this->Form->input('subject_id', ['label' => 'Học phần']); ?>
+    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

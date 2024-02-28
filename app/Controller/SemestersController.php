@@ -27,9 +27,12 @@ class SemestersController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Semester.fieldName' => $value));
+        $order = array('Semester.name' => 'ASC');
+        if (!empty($this->request->data['Semester']['code'])) {
+            $conditions = Hash::merge($conditions, array('Semester.code like' => '%' . trim($this->request->data['Semester']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Semester']['name'])) {
+            $conditions = Hash::merge($conditions, array('Semester.name like' => '%' . trim($this->request->data['Semester']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

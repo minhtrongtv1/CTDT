@@ -25,9 +25,15 @@ class ProgramOutcomesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('ProgramOutcome.fieldName' => $value));
+        $order = array('ProgramOutcome.name' => 'ASC');
+        if (!empty($this->request->data['ProgramOutcome']['code'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.code like' => '%' . trim($this->request->data['ProgramOutcome']['code']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['name'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.name like' => '%' . trim($this->request->data['ProgramOutcome']['name']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.curriculumn_id like' => '%' . trim($this->request->data['ProgramOutcome']['curriculumn_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

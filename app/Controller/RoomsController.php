@@ -25,9 +25,12 @@ class RoomsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Room.fieldName' => $value));
+        $order = array('Room.name' => 'ASC');
+         if (!empty($this->request->data['Room']['code'])) {
+            $conditions = Hash::merge($conditions, array('Room.code like' => '%' . trim($this->request->data['Room']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Room']['name'])) {
+            $conditions = Hash::merge($conditions, array('Room.name like' => '%' . trim($this->request->data['Room']['name']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;

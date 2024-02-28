@@ -37,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã học kỳ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã học kỳ'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên học kỳ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên học kỳ'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -89,7 +89,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/semesters/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/semesters/index", data, function (response) {
             $("#datarows").html(response);
         });
 
