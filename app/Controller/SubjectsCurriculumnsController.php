@@ -83,6 +83,7 @@ class SubjectsCurriculumnsController extends AppController {
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $this->set(compact('curriculumns', 'subjects', 'knowledges'));
     }
+    
 
     /**
      * edit method
