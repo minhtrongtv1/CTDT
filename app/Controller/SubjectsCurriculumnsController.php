@@ -25,15 +25,24 @@ class SubjectsCurriculumnsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
-        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
-            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
+        $order = array();
+        if ($this->request->is('post')) {
+            $selectedOption = $this->request->getData('typesubject');
+
+            switch ($selectedOption) {
+                case 'option1':
+                    $message = "Bạn đã chọn: Học phần bắt buộc";
+                    break;
+                case 'option2':
+                    $message = "Bạn đã chọn: Học phần tự chọn";
+                    break; 
+                default:
+                    $message = "Vui lòng chọn một tùy chọn";
+            }
+            $this->set('message', $message);
         }
-        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
-            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
-        }
-        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
-            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
+        if (!empty($this->request->data)) {
+        //$conditions = Set::merge($conditions, array('SubjectsCurriculumn.fieldName' => $value));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -44,6 +53,7 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $this->set(compact('curriculumns', 'subjects', 'knowledges'));
+        
         }
     }
 
@@ -56,7 +66,7 @@ class SubjectsCurriculumnsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->SubjectsCurriculumn->exists($id)) {
-            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid subjects curriculumn'));
         }
         $options = array('conditions' => array('SubjectsCurriculumn.' . $this->SubjectsCurriculumn->primaryKey => $id));
         $this->set('subjectsCurriculumn', $this->SubjectsCurriculumn->find('first', $options));
@@ -71,11 +81,11 @@ class SubjectsCurriculumnsController extends AppController {
         if ($this->request->is('post')) {
             $this->SubjectsCurriculumn->create();
             if ($this->SubjectsCurriculumn->save($this->request->data)) {
-                $this->Flash->success(__('Học phần chương trình đào tạo được lưu thành công'));
+                $this->Flash->success(__('The subjects curriculumn has been saved'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('Học phần chương trình đào tạo lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('The subjects curriculumn could not be saved. Please, try again.'));
             }
         }
         $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
@@ -83,7 +93,6 @@ class SubjectsCurriculumnsController extends AppController {
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $this->set(compact('curriculumns', 'subjects', 'knowledges'));
     }
-    
 
     /**
      * edit method
@@ -95,14 +104,14 @@ class SubjectsCurriculumnsController extends AppController {
     public function edit($id = null) {
         $this->SubjectsCurriculumn->id = $id;
         if (!$this->SubjectsCurriculumn->exists($id)) {
-            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid subjects curriculumn'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->SubjectsCurriculumn->save($this->request->data)) {
-                $this->Flash->success(__('Học phần chương trình đào tạo đã được lưu'));
+                $this->Flash->success(__('subjects curriculumn đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Flash->error(__('Học phần chương trình đào tạo lưu không thành công, vui lòng thử lại.'));
+                $this->Flash->error(__('subjects curriculumn lưu không thành công, vui lòng thử lại.'));
             }
         } else {
             $options = array('conditions' => array('SubjectsCurriculumn.' . $this->SubjectsCurriculumn->primaryKey => $id));
@@ -140,13 +149,13 @@ class SubjectsCurriculumnsController extends AppController {
         }
         $this->SubjectsCurriculumn->id = $id;
         if (!$this->SubjectsCurriculumn->exists()) {
-            throw new NotFoundException(__('Học phần chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid subjects curriculumn'));
         }
         if ($this->SubjectsCurriculumn->delete()) {
-            $this->Flash->success(__('Đã xóa học phần chương trình đào tạo thành công'));
+            $this->Flash->success(__('Subjects curriculumn đã xóa'));
             $this->redirect(array('action' => 'index'));
         } else {
-            $this->Flash->error(__('Xóa học phần chương trình đào tạo không thành công'));
+            $this->Flash->error(__('Subjects curriculumn xóa không thành công'));
             $this->redirect(array('action' => 'index'));
         }
     }

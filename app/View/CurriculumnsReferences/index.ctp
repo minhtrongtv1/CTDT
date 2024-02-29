@@ -77,7 +77,7 @@ $this->Paginator->options(array(
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "curriculumnsReferences/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/curriculumnsReferences/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
                 <?php echo $this->element("pagination"); ?>  
@@ -97,7 +97,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/curriculumnsreferences/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/curriculumnsReferences/index", data, function (response) {
             $("#datarows").html(response);
         });
 

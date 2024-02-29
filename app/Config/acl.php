@@ -114,9 +114,11 @@
  * The role map defines how to resolve the user record from your application
  * to the roles you defined in the roles configuration.
  */
+
 $config['map'] = array(
 	'User' => 'User/username',
 	'Role' => 'User/group_id',
+    
 );
 
 /**

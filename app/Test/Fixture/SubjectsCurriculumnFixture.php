@@ -13,8 +13,7 @@ class SubjectsCurriculumnFixture extends CakeTestFixture {
 		'curriculumn_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'subject_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'knowledge_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
-		'obligatory' => array('type' => 'text', 'null' => false, 'default' => null, 'length' => 1),
-		'elective' => array('type' => 'text', 'null' => false, 'default' => null, 'length' => 1),
+		'typesubject' => array('type' => 'tinyinteger', 'null' => false, 'default' => '1', 'unsigned' => false),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
@@ -37,10 +36,9 @@ class SubjectsCurriculumnFixture extends CakeTestFixture {
 			'curriculumn_id' => 1,
 			'subject_id' => 1,
 			'knowledge_id' => 1,
-			'obligatory' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'elective' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2024-02-26 14:36:13',
-			'modified' => '2024-02-26 14:36:13',
+			'typesubject' => 1,
+			'created' => '2024-02-29 10:32:53',
+			'modified' => '2024-02-29 10:32:53',
 			'id' => 1
 		),
 	);

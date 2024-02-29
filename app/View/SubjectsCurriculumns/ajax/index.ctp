@@ -8,7 +8,6 @@ $this->Paginator->options(array(
 ));
 ?>
 
-
 <table class="table table-bordered table-hover has-checked-item">
     <thead>
 
@@ -16,19 +15,16 @@ $this->Paginator->options(array(
             <th>#</th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('subject_id', 'Học phần'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('subject_id', ['label' => 'Tên học phần']); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id', 'Khối kiến thức'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id', ['label' => 'Khối kiến thức']); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('obligatory', 'Học phần bắt buộc'); ?></th>
-
-
-            <th class="column-title"><?php echo $this->Paginator->sort('elective', 'Học phần tự chọn'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('typesubject', ['label' => 'Loại học phần']); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -53,8 +49,7 @@ $this->Paginator->options(array(
                 <td class="">
                     <?php echo $this->Html->link($subjectsCurriculumn['Knowledge']['name'], array('controller' => 'knowledges', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
                 </td>
-                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['obligatory']); ?>&nbsp;</td>
-                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['elective']); ?>&nbsp;</td>
+                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['typesubject']); ?>&nbsp;</td>
                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['id']); ?>&nbsp;</td>
                 <td>
                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsCurriculumn['SubjectsCurriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

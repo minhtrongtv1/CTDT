@@ -1,9 +1,11 @@
+
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"><?php echo __('Thêm mới học phần chương trình đào tạo'); ?></a>
+        <a href="#" class="blue"> <?php echo __('Thêm mới học phần chương trình đào tạo'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
+
 
     <?php
     echo $this->Form->create('SubjectsCurriculumn', array(
@@ -12,19 +14,14 @@
         'inputDefaults' => array(
             'class' => 'form-control',
         )
-    ));
+            )
+    );
     ?>
-    
-    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Tên chương trình đào tạo']); ?>
+    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
     <?php echo $this->Form->input('subject_id', ['label' => 'Tên học phần']); ?>
     <?php echo $this->Form->input('knowledge_id', ['label' => 'Khối kiến thức']); ?>
-    
-    
+    <?php echo $this->Form->radio('typesubject', ['1' => 'Học phần bắt buộc', '0' => 'Học phần tự chọn']); ?>
 
-    <?php echo $this->Form->radio('Loại học phần', [
-        '0' => 'Học phần bắc buộc',
-        '1' => 'Học phần tự chọn'
-    ]); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
@@ -36,4 +33,6 @@
     </div>
     <div class="hr hr-24"></div>
     <?php echo $this->Form->end(); ?>
+
 </div>
+
