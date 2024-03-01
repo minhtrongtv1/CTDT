@@ -143,16 +143,7 @@ class Subject extends AppModel {
         ),
         
         
-        'semester_id' => array(
-            'numeric' => array(
-                'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+        
         'syllabus_filename' => array(
            'rule' => array('isValidMimeType', array('application/pdf'), false),
             'message' => 'Bạn phải nhập file PDF'
@@ -166,15 +157,7 @@ class Subject extends AppModel {
      *
      * @var array
      */
-    public $belongsTo = array(
-        'Semester' => array(
-            'className' => 'Semester',
-            'foreignKey' => 'semester_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        )
-    );
+   
 
     /**
      * hasAndBelongsToMany associations

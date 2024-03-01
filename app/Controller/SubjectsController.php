@@ -32,11 +32,11 @@ class SubjectsController extends AppController {
 
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $semesters = $this->Subject->Semester->find('list');
+      
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
             $users = $this->Subject->User->find('list');
-            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+            $this->set(compact( 'books', 'curriculumns', 'users'));
         }
     }
 
@@ -63,11 +63,11 @@ class SubjectsController extends AppController {
 
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $semesters = $this->Subject->Semester->find('list');
+
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
             $users = $this->Subject->User->find('list');
-            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+            $this->set(compact( 'books', 'curriculumns', 'users'));
         }
     }
 
@@ -89,11 +89,11 @@ class SubjectsController extends AppController {
 
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $semesters = $this->Subject->Semester->find('list');
+           
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
             $users = $this->Subject->User->find('list');
-            $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+            $this->set(compact( 'books', 'curriculumns', 'users'));
         }
     }
 
@@ -128,11 +128,11 @@ class SubjectsController extends AppController {
                 $this->Flash->error(__('Học phần lưu không thành công, vui lòng thử lại.'));
             }
         }
-        $semesters = $this->Subject->Semester->find('list');
+
         $books = $this->Subject->Book->find('list');
         $curriculumns = $this->Subject->Curriculumn->find('list');
         $users = $this->Subject->User->find('list');
-        $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+        $this->set(compact( 'books', 'curriculumns', 'users'));
     }
 
     /**
@@ -160,11 +160,11 @@ class SubjectsController extends AppController {
             $options = array('conditions' => array('Subject.' . $this->Subject->primaryKey => $id));
             $this->request->data = $this->Subject->find('first', $options);
         }
-        $semesters = $this->Subject->Semester->find('list');
+
         $books = $this->Subject->Book->find('list');
         $curriculumns = $this->Subject->Curriculumn->find('list');
         $users = $this->Subject->User->find('list');
-        $this->set(compact('semesters', 'books', 'curriculumns', 'users'));
+        $this->set(compact( 'books', 'curriculumns', 'users'));
     }
 
     /**
