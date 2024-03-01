@@ -22,9 +22,24 @@
     <?php echo $this->Form->input('author_name', ['label' => 'Tên tác giả']); ?>
     <?php echo $this->Form->input('publisher', ['label' => 'Nhà xuất bản']); ?>
     <?php echo $this->Form->input('publishing_year', ['label' => 'Năm xuất bản']); ?>
-    <?php echo $this->Form->input('link_libary', ['label' => 'Số định danh']); ?>
+ <?php
+    echo $this->Form->input('link_library', array('type' => 'text', 'label' => 'Link thư viện:', 'id' => 'link_library'));
+    echo $this->Html->scriptBlock('
+        function showLink() {
+            var link = document.getElementById("link_library").value;
+            var iframe = document.getElementById("link_frame");
+            iframe.src = link;
+        }
+    ');
+?>
+
+
+
+
+    <?php echo $this->Form->input('pricing_code', ['label' => 'Mã xếp giá']); ?>
+    <?php echo $this->Form->input('quantity', ['label' => 'Số lượng']); ?>
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
-    <?php echo $this->Form->input('subject', ['label' => 'Tên môn học']); ?>
+    <?php echo $this->Form->input('Subject', ['label' => 'Học phần']); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

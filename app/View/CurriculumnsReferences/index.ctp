@@ -18,7 +18,6 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('CurriculumnsReference', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã chương trình đào tạo tham khảo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chương trình đào tạo tham khảo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
@@ -38,7 +37,6 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chương trình đào tạo tham khảo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chương trình đào tạo tham khảo'); ?></th>
@@ -60,7 +58,6 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $curriculumnsReference['CurriculumnsReference']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
-                                <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['name']); ?>&nbsp;</td>
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumnsReference['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $curriculumnsReference['Curriculumn']['id'])); ?>
@@ -117,7 +114,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/curriculumnsReferences/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/curriculumnsReferences/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

@@ -18,10 +18,16 @@
     );
     ?>
     <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
-    <?php echo $this->Form->input('subject_id', ['label' => 'Tên học phần']); ?>
+    <?php echo $this->Form->input('subject_id', ['label' => 'Học phần']); ?>
     <?php echo $this->Form->input('knowledge_id', ['label' => 'Khối kiến thức']); ?>
-    <?php echo $this->Form->radio('typesubject', ['1' => 'Học phần bắt buộc', '0' => 'Học phần tự chọn']); ?>
-    <?php echo $this->Form->input('id'); ?>
+    <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
+    <?php
+    echo $this->Form->radio('typesubject', [
+        'Học phần bắt buộc' => 'Học phần bắt buộc',
+        'Học phần tự chọn' => 'Học phần tự chọn'
+    ]);
+    ?>
+   
 
     <div class="clearfix form-actions">
         <div class="pull-right">

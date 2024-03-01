@@ -28,7 +28,7 @@
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
 
-    <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
+ 
 
 
     <?php

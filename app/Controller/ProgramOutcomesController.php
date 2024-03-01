@@ -25,15 +25,9 @@ class ProgramOutcomesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array('ProgramOutcome.name' => 'ASC');
-        if (!empty($this->request->data['ProgramOutcome']['code'])) {
-            $conditions = Hash::merge($conditions, array('ProgramOutcome.code like' => '%' . trim($this->request->data['ProgramOutcome']['code']) . '%'));
-        }
-        if (!empty($this->request->data['ProgramOutcome']['name'])) {
-            $conditions = Hash::merge($conditions, array('ProgramOutcome.name like' => '%' . trim($this->request->data['ProgramOutcome']['name']) . '%'));
-        }
-        if (!empty($this->request->data['ProgramOutcome']['curriculumn_id'])) {
-            $conditions = Hash::merge($conditions, array('ProgramOutcome.curriculumn_id like' => '%' . trim($this->request->data['ProgramOutcome']['curriculumn_id']) . '%'));
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('ProgramOutcome.fieldName' => $value));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -69,7 +63,7 @@ class ProgramOutcomesController extends AppController {
         if ($this->request->is('post')) {
             $this->ProgramOutcome->create();
             if ($this->ProgramOutcome->save($this->request->data)) {
-                $this->Flash->success(__('Mục tiêu đào tạo được lưu thành công'));
+                $this->Flash->success(__('Mục tiêu đào tạo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 

@@ -9,7 +9,6 @@ App::uses('AppModel', 'Model');
  */
 class Book extends AppModel {
 
-
     /**
      * Display field
      *
@@ -28,7 +27,7 @@ class Book extends AppModel {
                 'rule' => array('notBlank'),
             'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            'required' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -46,7 +45,7 @@ class Book extends AppModel {
                 'rule' => array('notBlank'),
             'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            'required' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -64,7 +63,7 @@ class Book extends AppModel {
                 'rule' => array('notBlank'),
             'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
-            'required' => true,
+            'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -82,9 +81,9 @@ class Book extends AppModel {
         'publishing_year' => array(
             'date' => array(
                 'rule' => array('date'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -92,9 +91,29 @@ class Book extends AppModel {
         'link_libary' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'pricing_code' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'quantity' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'allowEmpty' => false,
+            'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -109,10 +128,6 @@ class Book extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'syllabus_filename' => array(
-            'rule' => array('isValidMimeType', array('application/pdf'), false),
-            'message' => 'Sai định dạng, vui lòng chọn file PDF !'
-        )
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed

@@ -41,7 +41,7 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('Học kì'); ?></th>
+ 
             <th class="column-title"><?php echo $this->Paginator->sort('Đề cương chi tiết'); ?></th>
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 

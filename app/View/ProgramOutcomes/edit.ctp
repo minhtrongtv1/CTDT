@@ -20,7 +20,8 @@
     <?php echo $this->Form->input('code', ['label' => 'Mã mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('content', ['label' => 'Nội dung mục tiêu']); ?>
-    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Tên chương trình đào tạo']); ?>
+    <?php echo $this->Form->input('typeoutcome_id', ['label' => 'Loại mục tiêu']); ?>
+    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
 <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

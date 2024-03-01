@@ -10,26 +10,23 @@ class BookFixture extends CakeTestFixture {
  * @var array
  */
 	public $fields = array(
-		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-		'mon_hoc_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
-		'kind_of_book_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
-		'bat_dau_bien_soan' => array('type' => 'date', 'null' => true, 'default' => null),
-		'ket_thuc_bien_soan' => array('type' => 'date', 'null' => true, 'default' => null),
-		'bat_dau_phan_bien' => array('type' => 'date', 'null' => true, 'default' => null),
-		'ket_thuc_phan_bien' => array('type' => 'date', 'null' => true, 'default' => null),
-		'ngay_nop_tlc' => array('type' => 'date', 'null' => true, 'default' => null),
-		'truong_bo_mon_duyet' => array('type' => 'integer', 'null' => false, 'default' => '0', 'length' => 4, 'unsigned' => false),
-		'truong_bo_mon_duyet_luc' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'tlc_duyet' => array('type' => 'integer', 'null' => false, 'default' => '0', 'length' => 4, 'unsigned' => false),
-		'da_ban_hanh' => array('type' => 'integer', 'null' => false, 'default' => '0', 'length' => 4, 'unsigned' => false),
-		'trang_thai' => array('type' => 'integer', 'null' => false, 'default' => '0', 'length' => 4, 'unsigned' => false),
-		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'unsigned' => true, 'key' => 'primary'),
+		'code' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 50, 'key' => 'unique', 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'author_name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'publisher' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'publishing_year' => array('type' => 'date', 'null' => false, 'default' => null),
+		'link_libary' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'pricing_code' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'quantity' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'note' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
+		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			'PRIMARY' => array('column' => 'id', 'unique' => 1),
+			'code' => array('column' => 'code', 'unique' => 1)
 		),
-		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
+		'tableParameters' => array('charset' => 'utf8mb4', 'collate' => 'utf8mb4_unicode_ci', 'engine' => 'InnoDB')
 	);
 
 /**
@@ -39,21 +36,17 @@ class BookFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
+			'code' => 'Lorem ipsum dolor sit amet',
 			'name' => 'Lorem ipsum dolor sit amet',
-			'mon_hoc_id' => 1,
-			'kind_of_book_id' => 1,
-			'bat_dau_bien_soan' => '2017-05-04',
-			'ket_thuc_bien_soan' => '2017-05-04',
-			'bat_dau_phan_bien' => '2017-05-04',
-			'ket_thuc_phan_bien' => '2017-05-04',
-			'ngay_nop_tlc' => '2017-05-04',
-			'truong_bo_mon_duyet' => 1,
-			'truong_bo_mon_duyet_luc' => '2017-05-04 10:40:09',
-			'tlc_duyet' => 1,
-			'da_ban_hanh' => 1,
-			'trang_thai' => 1,
-			'created' => '2017-05-04 10:40:09',
-			'modified' => '2017-05-04 10:40:09',
+			'author_name' => 'Lorem ipsum dolor sit amet',
+			'publisher' => 'Lorem ipsum dolor sit amet',
+			'publishing_year' => '2024-03-01',
+			'link_libary' => 'Lorem ipsum dolor sit amet',
+			'pricing_code' => 'Lorem ipsum dolor sit amet',
+			'quantity' => 'Lorem ipsum dolor sit amet',
+			'note' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+			'created' => '2024-03-01 14:28:45',
+			'modified' => '2024-03-01 14:28:45',
 			'id' => 1
 		),
 	);

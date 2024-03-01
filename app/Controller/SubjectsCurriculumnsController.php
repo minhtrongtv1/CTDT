@@ -25,24 +25,18 @@ class SubjectsCurriculumnsController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if ($this->request->is('post')) {
-            $selectedOption = $this->request->getData('typesubject');
-
-            switch ($selectedOption) {
-                case 'option1':
-                    $message = "Bạn đã chọn: Học phần bắt buộc";
-                    break;
-                case 'option2':
-                    $message = "Bạn đã chọn: Học phần tự chọn";
-                    break; 
-                default:
-                    $message = "Vui lòng chọn một tùy chọn";
-            }
-            $this->set('message', $message);
+        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
         }
-        if (!empty($this->request->data)) {
-        //$conditions = Set::merge($conditions, array('SubjectsCurriculumn.fieldName' => $value));
+        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['semester_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.semester_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['semester_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -52,8 +46,8 @@ class SubjectsCurriculumnsController extends AppController {
             $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges'));
-        
+            $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
         }
     }
 
@@ -91,7 +85,8 @@ class SubjectsCurriculumnsController extends AppController {
         $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges'));
+        $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
     }
 
     /**
@@ -120,7 +115,8 @@ class SubjectsCurriculumnsController extends AppController {
         $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges'));
+        $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
     }
 
     /**

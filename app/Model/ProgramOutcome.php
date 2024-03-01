@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
 /**
  * ProgramOutcome Model
  *
+ * @property Typeoutcome $Typeoutcome
  * @property Curriculumn $Curriculumn
  */
 class ProgramOutcome extends AppModel {
@@ -25,9 +26,9 @@ class ProgramOutcome extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -43,9 +44,9 @@ class ProgramOutcome extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -61,9 +62,19 @@ class ProgramOutcome extends AppModel {
         'content' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            'allowEmpty' => true,
-            'required' => false,
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'typeoutcome_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -71,9 +82,9 @@ class ProgramOutcome extends AppModel {
         'curriculumn_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -88,6 +99,13 @@ class ProgramOutcome extends AppModel {
      * @var array
      */
     public $belongsTo = array(
+        'Typeoutcome' => array(
+            'className' => 'Typeoutcome',
+            'foreignKey' => 'typeoutcome_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
         'Curriculumn' => array(
             'className' => 'Curriculumn',
             'foreignKey' => 'curriculumn_id',

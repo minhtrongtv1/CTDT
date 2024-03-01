@@ -19,11 +19,14 @@
     ?>
     <?php echo $this->Form->input('code', ['label' => 'Mã tài liệu']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên tài liệu']); ?>
-    <?php echo $this->Form->input('author_name', ['label' => 'Tên tác giảa']); ?>
-    <?php echo $this->Form->input('publisher', ['label' => 'Tên nhà xuất bản']); ?>
+    <?php echo $this->Form->input('author_name', ['label' => 'Tên tác giả']); ?>
+    <?php echo $this->Form->input('publisher', ['label' => 'Nhà xuất bản']); ?>
     <?php echo $this->Form->input('publishing_year', ['label' => 'Năm xuất bản']); ?>
-    <?php echo $this->Form->input('link_libary', ['label' => 'Mã định danh']); ?>
+    <?php echo $this->Form->input('link_libary', ['label' => 'Link thư viện']); ?>
+    <?php echo $this->Form->input('pricing_code', ['label' => 'Mã xếp giá']); ?>
+    <?php echo $this->Form->input('quantity', ['label' => 'Số lượng']); ?>
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
+
     <?php echo $this->Form->input('Subject', ['label' => 'Học phần']); ?>
     <?php echo $this->Form->input('id'); ?>
 
@@ -31,12 +34,12 @@
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-<?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->end(); ?>
 
 </div>
 

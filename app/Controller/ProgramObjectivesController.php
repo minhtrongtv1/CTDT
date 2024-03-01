@@ -26,18 +26,23 @@ class ProgramObjectivesController extends AppController {
         $conditions = array();
         $contain = array();
         $order = array('ProgramObjective.name' => 'ASC');
-        if (!empty($this->request->data['ProgramObjective']['group_type'])) {
-            $conditions = Hash::merge($conditions, array('ProgramObjective.group_type like' => '%' . trim($this->request->data['ProgramObjective']['group_type']) . '%'));
-        }
         if (!empty($this->request->data['ProgramObjective']['name'])) {
             $conditions = Hash::merge($conditions, array('ProgramObjective.name like' => '%' . trim($this->request->data['ProgramObjective']['name']) . '%'));
         }
+        if (!empty($this->request->data['ProgramObjective']['group_type'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.group_type like' => '%' . trim($this->request->data['ProgramObjective']['group_type']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramObjective']['program_outcome_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.program_outcome_id like' => '%' . trim($this->request->data['ProgramObjective']['program_outcome_id']) . '%'));
+        }
+        
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
         $this->set('programObjectives', $this->paginate());
         if (!$this->request->is('ajax')) {
-            
+            $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
+            $this->set(compact('programOutcomes'));
         }
     }
 
@@ -69,9 +74,11 @@ class ProgramObjectivesController extends AppController {
                 $this->redirect(array('action' => 'index'));
             } else {
 
-                $this->Flash->error(__('Không thể lưu chuẩn đầu ra. Vui lòng thử lại.'));
+                $this->Flash->error(__('Chuẩn đầu ra lưu không thành công, vui lòng thử lại.'));
             }
         }
+        $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
+        $this->set(compact('programOutcomes'));
     }
 
     /**
@@ -97,6 +104,8 @@ class ProgramObjectivesController extends AppController {
             $options = array('conditions' => array('ProgramObjective.' . $this->ProgramObjective->primaryKey => $id));
             $this->request->data = $this->ProgramObjective->find('first', $options);
         }
+        $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
+        $this->set(compact('programOutcomes'));
     }
 
     /**

@@ -23,24 +23,7 @@ class FormOfTrainning extends AppModel {
      * @var array
      */
     public $validate = array(
-        'code' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            'isUnique' => array(
-                'rule' => array('isUnique'),
-                'message' => 'Mã này đã tồn tại',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+        
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),

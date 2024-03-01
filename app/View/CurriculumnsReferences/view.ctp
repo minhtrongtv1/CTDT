@@ -13,12 +13,7 @@
             <div class="box-body table-responsive">
                 <table id="CurriculumnsReferences" class="table table-bordered table-striped">
                     <tbody>
-                        <tr>		<td><strong><?php echo __('Code'); ?></strong></td>
-                            <td>
-                                <?php echo h($curriculumnsReference['CurriculumnsReference']['code']); ?>
-                                &nbsp;
-                            </td>
-                        </tr><tr>		<td><strong><?php echo __('Name'); ?></strong></td>
+                       <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumnsReference['CurriculumnsReference']['name']); ?>
                                 &nbsp;

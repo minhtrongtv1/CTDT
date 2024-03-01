@@ -20,7 +20,9 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã tài liệu', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên tài liệu', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-               
+
+                    <?php echo $this->Form->input('pricing_code', array('placeholder' => 'Mã xếp giá', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -37,25 +39,31 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã tài liệu'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã tài liệu'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên tài liệu'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên tài liệu'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên tác giả'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('author_name', 'Tên tác giả'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Nhà xuất bản'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('publisher', 'Nhà xuất bản'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Năm xuất bản'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('publishing_year', 'Năm xuất bản'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã định danh'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('link_libary', 'Link thư viện'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Ghi chú'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('pricing_code', 'Mã xếp giá'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('quantity', 'Số lượng'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('note', 'Ghi chú'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -76,7 +84,9 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($book['Book']['author_name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['publisher']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['publishing_year']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($book['Book']['link_libary']); ?>&nbsp;</td>
+                                <td class=""><?php echo $this->Html->link($book['Book']['link_libary']);?>&nbsp;</td>
+                                <td class=""><?php echo h($book['Book']['pricing_code']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($book['Book']['quantity']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['note']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['id']); ?>&nbsp;</td>
                                 <td>
@@ -130,7 +140,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/books/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/books/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

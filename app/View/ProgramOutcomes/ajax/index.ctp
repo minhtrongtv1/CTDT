@@ -8,6 +8,7 @@ $this->Paginator->options(array(
 ));
 ?>
 
+
 <table class="table table-bordered table-hover has-checked-item">
     <thead>
 
@@ -21,10 +22,13 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên mục tiêu đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('Nội dung mục tiêu'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('content', 'Nội dung mục tiêu đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Tên chương trình đào tạo'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id', 'Loại mục tiêu'); ?></th>
+
+
+            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -43,6 +47,7 @@ $this->Paginator->options(array(
                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['code']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
+                <td class=""><?php echo h($programOutcome['ProgramOutcome']['typeoutcome_id']); ?>&nbsp;</td>
                 <td class="">
                     <?php echo $this->Html->link($programOutcome['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
                 </td>
@@ -62,6 +67,6 @@ $this->Paginator->options(array(
 </tfoot>
 </table>
 <?php echo $this->element("pagination"); ?>  
-<
+
 <?php
 echo $this->Js->writeBuffer();

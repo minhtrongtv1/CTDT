@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
 /**
  * ProgramObjective Model
  *
+ * @property ProgramOutcome $ProgramOutcome
  * @property Knowledge $Knowledge
  */
 class ProgramObjective extends AppModel {
@@ -50,9 +51,9 @@ class ProgramObjective extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'category' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
+        'program_outcome_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
             'message' => 'Bạn không được bỏ trống thông tin này',
             //'allowEmpty' => false,
             'required' => true,
@@ -83,6 +84,21 @@ class ProgramObjective extends AppModel {
     );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
+
+    /**
+     * belongsTo associations
+     *
+     * @var array
+     */
+    public $belongsTo = array(
+        'ProgramOutcome' => array(
+            'className' => 'ProgramOutcome',
+            'foreignKey' => 'program_outcome_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
 
     /**
      * hasMany associations

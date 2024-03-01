@@ -19,7 +19,7 @@
     ?>
     <?php echo $this->Form->input('group_type', ['label' => 'Loại nhóm chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên chuẩn đầu ra']); ?>
-    <?php echo $this->Form->input('category', ['label' => 'Thể loại']); ?>
+    <?php echo $this->Form->input('program_outcome_id', ['label' => 'Mục tiêu chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
 <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>
 

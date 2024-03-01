@@ -15,7 +15,6 @@ $this->Paginator->options(array(
             <th>#</th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã chương trình đào tạo tham khảo'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên chương trình đào tạo tham khảo'); ?></th>

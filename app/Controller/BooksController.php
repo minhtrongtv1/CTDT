@@ -7,8 +7,6 @@ App::uses('AppController', 'Controller');
  *
  * @property Book $Book
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class BooksController extends AppController {
 
@@ -17,19 +15,27 @@ class BooksController extends AppController {
      *
      * @var array
      */
-    public $components = array('Paginator', 'Session', 'Flash');
+    public $components = array('Paginator');
 
-
+    /**
+     * index method
+     *
+     * @return void
+     */
+    
+    
     public function index() {
         $conditions = array();
         $contain = array();
         $order = array('Book.name' => 'ASC');
+         if (!empty($this->request->data['Book']['code'])) {
+            $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
+        }
         if (!empty($this->request->data['Book']['name'])) {
             $conditions = Hash::merge($conditions, array('Book.name like' => '%' . trim($this->request->data['Book']['name']) . '%'));
         }
-
-        if (!empty($this->request->data['Book']['code'])) {
-            $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
+        if (!empty($this->request->data['Book']['pricing_code'])) {
+            $conditions = Hash::merge($conditions, array('Book.pricing_code like' => '%' . trim($this->request->data['Book']['pricing_code']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -74,6 +80,7 @@ class BooksController extends AppController {
         }
         $subjects = $this->Book->Subject->find('list');
         $this->set(compact('subjects'));
+       
     }
 
     /**
@@ -90,7 +97,7 @@ class BooksController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Book->save($this->request->data)) {
-                $this->Flash->success(__('Tài liệu được lưu thành công'));
+                $this->Flash->success(__('Tài liệu đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Flash->error(__('Tài liệu lưu không thành công, vui lòng thử lại.'));

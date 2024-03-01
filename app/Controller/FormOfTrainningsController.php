@@ -28,9 +28,7 @@ class FormOfTrainningsController extends AppController {
         $conditions = array();
         $contain = array();
         $order = array('FormOfTrainning.name' => 'ASC');
-        if (!empty($this->request->data['FormOfTrainning']['code'])) {
-            $conditions = Hash::merge($conditions, array('FormOfTrainning.code like' => '%' . trim($this->request->data['FormOfTrainning']['code']) . '%'));
-        }
+        
         if (!empty($this->request->data['FormOfTrainning']['name'])) {
             $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
         }

@@ -7,26 +7,36 @@ App::uses('AppController', 'Controller');
  *
  * @property Curriculumn $Curriculumn
  * @property PaginatorComponent $Paginator
- * @property SessionComponent $Session
- * @property FlashComponent $Flash
  */
 class CurriculumnsController extends AppController {
 
-    public $components = array('Paginator', 'Session', 'Flash');
+    /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = array('Paginator');
 
+    /**
+     * index method
+     *
+     * @return void
+     */
     public function index() {
         $conditions = array();
         $contain = array();
         $order = array('Curriculumn.name' => 'ASC');
-
         if (!empty($this->request->data['Curriculumn']['code'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
         }
-        if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
+        if (!empty($this->request->data['Curriculumn']['name_vn'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn like' => '%' . trim($this->request->data['Curriculumn']['name_vn']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['level_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['major_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
@@ -96,7 +106,7 @@ class CurriculumnsController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Curriculumn->save($this->request->data)) {
-                $this->Flash->success(__('Chương trình đào tạo được lưu thành công'));
+                $this->Flash->success(__('Chương trình đào tạo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Flash->error(__('Chương trình đào tạo lưu không thành công, vui lòng thử lại.'));

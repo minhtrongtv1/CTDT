@@ -17,8 +17,7 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã trình độ đào tạo']); ?>
-    <?php echo $this->Form->input('name', ['label' => 'Tên trình độ đào tạo']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên hình thức đào tạo']); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

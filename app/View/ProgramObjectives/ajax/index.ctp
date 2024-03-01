@@ -8,6 +8,7 @@ $this->Paginator->options(array(
 ));
 ?>
 
+
 <table class="table table-bordered table-hover has-checked-item">
     <thead>
 
@@ -21,13 +22,13 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chuẩn đầu ra'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('category', 'Thể loại'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('Miêu tả'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('Trình độ'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('level', 'Trình độ'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -45,7 +46,9 @@ $this->Paginator->options(array(
 
                 <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['name']); ?>&nbsp;</td>
-                <td class=""><?php echo h($programObjective['ProgramObjective']['category']); ?>&nbsp;</td>
+                <td class="">
+                    <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
+                </td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['id']); ?>&nbsp;</td>

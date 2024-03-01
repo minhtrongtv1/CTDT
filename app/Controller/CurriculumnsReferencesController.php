@@ -26,9 +26,7 @@ class CurriculumnsReferencesController extends AppController {
         $conditions = array();
         $contain = array();
         $order = array('CurriculumnsReference.name' => 'ASC');
-        if (!empty($this->request->data['CurriculumnsReference']['code'])) {
-            $conditions = Hash::merge($conditions, array('CurriculumnsReference.code like' => '%' . trim($this->request->data['CurriculumnsReference']['code']) . '%'));
-        }
+        
         if (!empty($this->request->data['CurriculumnsReference']['name'])) {
             $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
         }

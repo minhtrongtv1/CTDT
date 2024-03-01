@@ -17,20 +17,19 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã chương trình đào tạo tham khảo']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên chương trình đào tạo tham khảo']); ?>
-<?php echo $this->Form->input('curriculumn_id'); ?>
+    <?php echo $this->Form->input('curriculumn_id'); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-<?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->end(); ?>
 
 </div>
 

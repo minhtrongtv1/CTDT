@@ -18,7 +18,6 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('FormOfTrainning', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
@@ -37,7 +36,6 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã hình thức đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên hình thức đào tạo'); ?></th>
@@ -56,7 +54,6 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $formOfTrainning['FormOfTrainning']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
-                                <td class=""><?php echo h($formOfTrainning['FormOfTrainning']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($formOfTrainning['FormOfTrainning']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($formOfTrainning['FormOfTrainning']['id']); ?>&nbsp;</td>
                                 <td>

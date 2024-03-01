@@ -20,7 +20,8 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('group_type', array('placeholder' => 'Loại nhóm chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    
+                    <?php echo $this->Form->input('program_outcome_id', array('placeholder' => 'Mục tiêu chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                  
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -43,7 +44,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên chuẩn đầu ra'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('category','Thể loại'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id','Mục tiêu chuẩn đầu ra'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
@@ -67,7 +68,9 @@ $this->Paginator->options(array(
 
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['name']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($programObjective['ProgramObjective']['category']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
+                                </td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['id']); ?>&nbsp;</td>
@@ -102,7 +105,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/programobjectives/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/programObjectives/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -122,7 +125,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/programObjectives/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/programObjectives/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

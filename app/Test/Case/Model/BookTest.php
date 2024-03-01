@@ -13,20 +13,33 @@ class BookTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.book',
-		'app.mon_hoc',
+		'app.subject',
+		'app.semester',
+		'app.subjects_book',
+		'app.curriculumn',
+		'app.level',
+		'app.major',
 		'app.department',
-		'app.department_type',
+		'app.course',
+		'app.evaluation_result',
+		'app.evaluation_round',
 		'app.user',
 		'app.province',
-		'app.hoc_ham',
-		'app.hoc_vi',
-		'app.notification',
-		'app.subject',
-		'app.message',
-		'app.messages_user',
 		'app.group',
 		'app.users_group',
-		'app.kind_of_book'
+		'app.message',
+		'app.messages_user',
+		'app.teaching',
+		'app.department_supporter',
+		'app.form_of_trainning',
+		'app.diploma',
+		'app.infrastructure',
+		'app.device',
+		'app.room',
+		'app.program_outcome',
+		'app.typeoutcome',
+		'app.subjects_user',
+		'app.subjects_curriculumn'
 	);
 
 /**

@@ -13,8 +13,7 @@ class ProgramObjectiveTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.program_objective',
-		'app.knowledge',
-		'app.subjects_curriculumn',
+		'app.program_outcome',
 		'app.curriculumn',
 		'app.level',
 		'app.major',
@@ -31,11 +30,17 @@ class ProgramObjectiveTest extends CakeTestCase {
 		'app.teaching',
 		'app.department_supporter',
 		'app.form_of_trainning',
+		'app.diploma',
+		'app.infrastructure',
+		'app.device',
+		'app.room',
+		'app.subjects_user',
 		'app.subject',
 		'app.semester',
 		'app.book',
 		'app.subjects_book',
-		'app.subjects_user'
+		'app.subjects_curriculumn',
+		'app.knowledge'
 	);
 
 /**

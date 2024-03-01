@@ -21,7 +21,7 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('subject_id', array('placeholder' => 'Học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('knowledge_id', array('placeholder' => 'Khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('typesubject', array('placeholder' => 'Loại học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('semester_id', array('placeholder' => 'Học kỳ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -39,19 +39,22 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id','Học phần'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('subject_id', 'Học phần'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id','Khối kiến thức'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id', 'Khối kiến thức'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('typesubject','Loại học phần'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('semester_id', 'Học kỳ'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('typesubject', 'Loại học phần'); ?></th>
+
+
+
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
@@ -73,8 +76,11 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsCurriculumn['Knowledge']['name'], array('controller' => 'knowledges', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
                                 </td>
+                                <td class="">
+                                    <?php echo $this->Html->link($subjectsCurriculumn['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subjectsCurriculumn['Semester']['id'])); ?>
+                                </td>
                                 <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['typesubject']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($subjectsCurriculumn['SubjectsCurriculumn']['id']); ?>&nbsp;</td>
+
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsCurriculumn['SubjectsCurriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                 </td>
@@ -106,7 +112,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>subjectsCurriculumns/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/subjectsCurriculumns/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -126,7 +132,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/subjectsCurriculumns/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/subjectsCurriculumns/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');
