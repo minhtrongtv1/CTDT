@@ -65,9 +65,7 @@ $this->Paginator->options(array(
                 <td class=""><?php echo h($subject['Subject']['self_learning_time']); ?>&nbsp;</td>
                 <td class=""><?php echo h($subject['Subject']['note']); ?>&nbsp;</td>
                 <td class=""><?php echo h($subject['Subject']['describe']); ?>&nbsp;</td>
-                <td class="">
-    <?php echo h($subject['Semester']['name']); ?>
-                </td>
+           
                 <td class="">
 
                     <a href="/files/subject/syllabus_filename/<?php echo $subject['Subject']['syllabus_path'] . "/" . $subject['Subject']['syllabus_filename']; ?>">
