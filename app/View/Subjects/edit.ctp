@@ -30,7 +30,7 @@ $this->Paginator->options(array(
     <?php echo $this->Form->input('name', ['label' => 'Tên học phần']); ?>
     <?php echo $this->Form->input('theory_credit', ['label' => 'Số tín chỉ lý thuyết']); ?>
     <?php echo $this->Form->input('practice_credit', ['label' => 'Số tín chỉ thực hành']); ?>
-    <?php echo $this->Form->input('theory_hour', ['label' => 'Số giờ lý thuyết']); ?>
+    <?php echo $this->Form->input('theory_hour', ['label' => 'Số giờ lý thuyết', 'readonly' => true]); ?>
     <?php echo $this->Form->input('practice_hour', ['label' => 'Số giờ thực hành']); ?>
     <?php echo $this->Form->input('self_learning_time', ['label' => 'Số giờ tự học']); ?>
     <?php echo $this->Form->input('note', ['label' => 'Ghi chú']); ?>
@@ -67,14 +67,40 @@ $this->Paginator->options(array(
             var practiceCredit = parseInt(practiceCreditInput.value);
 
 //            var theoryHour = 0;
+//           
 //            var practiceHour = 0;
+            var tongtinchi = theoryCredit + practiceCredit;
+            if (theoryCreditInput.value.trim() !== '' && practiceCreditInput.value.trim() !== '') {
+                if (tongtinchi >= 15) {
+                    alert("Tổng số tín chỉ nhỏ hơn hoặc bằng 15. Vui lòng nhập lại.");
+                    theoryCreditInput.value = '';
+                    practiceCreditInput.value = '';
+                    theoryHourInput.value = '';
+                    practiceHourInput.value = '';
+                    return;
+                }
+
+            }
+            if (theoryCredit < 0 || practiceCredit < 0) {
+                alert("Số tín chỉ phải là số âm. Vui lòng nhập lại.");
+                theoryHourInput.value = '';
+                practiceHourInput.value = '';
+                theoryCreditInput.value = '';
+                practiceCreditInput.value = '';
+                selfLearningTimeInput.value = '';
+                return;
+            }
             var theoryHour = 15;
             var practiceHour = 30;
             if (theoryCredit === parseInt(theoryCreditInput.value)) {
                 theoryHour = theoryCredit * 15;
+            } else {
+                theoryHour = '';
             }
             if (practiceCredit === parseInt(practiceCreditInput.value)) {
                 practiceHour = practiceCredit * 30;
+            } else {
+                practiceHour = '';
             }
 
             theoryHourInput.value = theoryHour;
@@ -82,6 +108,7 @@ $this->Paginator->options(array(
 
             var selfLearningTime = ((theoryCredit + practiceCredit) * 50) - ((15 * theoryCredit) + (30 * practiceCredit));
             selfLearningTimeInput.value = selfLearningTime;
+
         }
 
         theoryCreditInput.addEventListener("input", calculateSelfLearningTime);

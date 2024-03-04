@@ -51,6 +51,7 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ đào tạo'); ?></th>
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành đào tạo'); ?></th>
 
@@ -94,6 +95,9 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id'])); ?>
+                                </td>
+                                <td class="">
+                                    <?php echo $this->Html->link($curriculumn['Department']['title'], array('controller' => 'departments', 'action' => 'view', $curriculumn['Department']['id'])); ?>
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id'])); ?>

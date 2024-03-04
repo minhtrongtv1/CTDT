@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-             <h2><?php echo __('Ngành học'); ?></h2>
+            <h2><?php echo __('Ngành học'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -18,9 +18,9 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Major', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('department_id', array('placeholder' => 'Tên đơn vị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -38,13 +38,13 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('department_id','Tên đơn vị'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên ngành'); ?></th>
+
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -60,11 +60,9 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $major['Major']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
-                                <td class="">
-                                    <?php echo $this->Html->link($major['Department']['title'], array('controller' => 'departments', 'action' => 'view', $major['Department']['id'])); ?>
-                                </td>
-                                <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
+
                                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $major['Major']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

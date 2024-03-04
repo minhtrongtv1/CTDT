@@ -23,22 +23,32 @@ class ProgramObjective extends AppModel {
      * @var array
      */
     public $validate = array(
-        'group_type' => array(
+        'curriculumn_id' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'name' => array(
+        'group_type' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'code' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -54,9 +64,9 @@ class ProgramObjective extends AppModel {
         'program_outcome_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -64,9 +74,9 @@ class ProgramObjective extends AppModel {
         'describe' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -74,9 +84,9 @@ class ProgramObjective extends AppModel {
         'level' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -94,6 +104,13 @@ class ProgramObjective extends AppModel {
         'ProgramOutcome' => array(
             'className' => 'ProgramOutcome',
             'foreignKey' => 'program_outcome_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'Curriculumn' => array(
+            'className' => 'Curriculumn',
+            'foreignKey' => 'curriculumn_id',
             'conditions' => '',
             'fields' => '',
             'order' => ''
@@ -119,5 +136,6 @@ class ProgramObjective extends AppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         )
+//       
     );
 }

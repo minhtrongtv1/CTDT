@@ -41,10 +41,10 @@ class MajorsController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('majors', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $departments = $this->Major->Department->find('list');
-            $this->set(compact('departments'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $departments = $this->Major->Department->find('list');
+//            $this->set(compact('departments'));
+//        }
     }
 
     /**
@@ -78,8 +78,8 @@ class MajorsController extends AppController {
                 $this->Flash->error(__('Không thể lưu ngành. Vui lòng thử lại.'));
             }
         }
-        $departments = $this->Major->Department->find('list');
-        $this->set(compact('departments'));
+//        $departments = $this->Major->Department->find('list');
+//        $this->set(compact('departments'));
     }
 
     /**
@@ -105,8 +105,8 @@ class MajorsController extends AppController {
             $options = array('conditions' => array('Major.' . $this->Major->primaryKey => $id));
             $this->request->data = $this->Major->find('first', $options);
         }
-        $departments = $this->Major->Department->find('list');
-        $this->set(compact('departments'));
+//        $departments = $this->Major->Department->find('list');
+//        $this->set(compact('departments'));
     }
 
     /**

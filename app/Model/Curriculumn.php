@@ -32,9 +32,9 @@ class Curriculumn extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -50,9 +50,9 @@ class Curriculumn extends AppModel {
         'name_vn' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -68,9 +68,9 @@ class Curriculumn extends AppModel {
         'name_eng' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -86,9 +86,19 @@ class Curriculumn extends AppModel {
         'level_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'department_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -96,9 +106,9 @@ class Curriculumn extends AppModel {
         'major_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -106,9 +116,9 @@ class Curriculumn extends AppModel {
         'form_of_trainning_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -116,9 +126,9 @@ class Curriculumn extends AppModel {
         'credit' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -126,9 +136,9 @@ class Curriculumn extends AppModel {
         'trainning_time' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -136,9 +146,9 @@ class Curriculumn extends AppModel {
         'enrollment_subject' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -146,9 +156,9 @@ class Curriculumn extends AppModel {
         'point_ladder' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -156,9 +166,9 @@ class Curriculumn extends AppModel {
         'graduation_condition' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -166,9 +176,9 @@ class Curriculumn extends AppModel {
         'diploma_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -186,6 +196,13 @@ class Curriculumn extends AppModel {
         'Level' => array(
             'className' => 'Level',
             'foreignKey' => 'level_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'Department' => array(
+            'className' => 'Department',
+            'foreignKey' => 'department_id',
             'conditions' => '',
             'fields' => '',
             'order' => ''
