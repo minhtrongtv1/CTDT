@@ -40,6 +40,22 @@ class FormOfTrainningsController extends AppController {
             
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('FormOfTrainning.name' => 'ASC');
+        
+        if (!empty($this->request->data['FormOfTrainning']['name'])) {
+            $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('formOfTrainnings', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     /**
      * view method

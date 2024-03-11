@@ -78,8 +78,6 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
-                            <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
 
@@ -110,21 +108,14 @@ $this->Paginator->options(array(
                                 </td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['approve']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
-                                <td>
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $curriculumn['Curriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-                                </td>
-                                <td>
-                                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $curriculumn['Curriculumn']['id'] ?>">
-                                </td>
+                                
+                                
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-                    <tfoot>
-                    <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/curriculumns/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
-                    </tfoot>
+                    
                 </table>
-                <?php echo $this->element("pagination"); ?>  
+               F 
             </div>
         </div>
     </div>

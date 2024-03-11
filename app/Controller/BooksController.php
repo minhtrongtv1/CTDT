@@ -46,7 +46,29 @@ class BooksController extends AppController {
             $this->set(compact('subjects'));
         }
     }
+    
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Book.name' => 'ASC');
+         if (!empty($this->request->data['Book']['code'])) {
+            $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Book']['name'])) {
+            $conditions = Hash::merge($conditions, array('Book.name like' => '%' . trim($this->request->data['Book']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Book']['pricing_code'])) {
+            $conditions = Hash::merge($conditions, array('Book.pricing_code like' => '%' . trim($this->request->data['Book']['pricing_code']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
 
+        $this->set('books', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $subjects = $this->Book->Subject->find('list');
+            $this->set(compact('subjects'));
+        }
+    }
     /**
      * view method
      *
@@ -146,4 +168,6 @@ class BooksController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+    
+    
 }

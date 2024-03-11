@@ -390,7 +390,7 @@
                 </li>
                 <li class="">
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Cơ sở vật chất </span>', '/infrastructures', array('escape' => false)); ?>
+                                                        <span class="menu-text"> Cơ sở vật chất </span>', '/rooms', array('escape' => false)); ?>
                     <b class="arrow"></b>
                 </li>
                 

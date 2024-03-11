@@ -42,6 +42,26 @@ class SubjectsBooksController extends AppController {
             $this->set(compact('subjects', 'books'));
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('SubjectsBook.book_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsBook']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsBook.subject_id like' => '%' . trim($this->request->data['SubjectsBook']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsBook']['book_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsBook.book_id like' => '%' . trim($this->request->data['SubjectsBook']['book_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjectsBooks', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $subjects = $this->SubjectsBook->Subject->find('list');
+            $books = $this->SubjectsBook->Book->find('list');
+            $this->set(compact('subjects', 'books'));
+        }
+    }
 
     /**
      * view method

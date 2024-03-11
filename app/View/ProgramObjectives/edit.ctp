@@ -1,4 +1,3 @@
-
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
@@ -24,7 +23,11 @@
 
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
     <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>
-    <?php echo $this->Form->input('group_type', ['label' => 'Loại nhóm chuẩn đầu ra']); ?>
+    <?php
+    echo $this->Form->input('group_type', array('type' => 'select', 'options' => array('PO1' => 'PO1',
+            'PLO2' => 'PLO2',
+            'PLO3' => 'PLO3'), 'label' => 'Loại nhóm chuẩn đầu ra'));
+    ?>
     <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">
@@ -37,6 +40,4 @@
     </div>
     <div class="hr hr-24"></div>
     <?php echo $this->Form->end(); ?>
-
-</div>
 

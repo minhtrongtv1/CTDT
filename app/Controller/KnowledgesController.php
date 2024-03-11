@@ -44,6 +44,28 @@ class KnowledgesController extends AppController {
             $this->set(compact('programObjectives'));
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Knowledge.name' => 'ASC');
+        if (!empty($this->request->data['Knowledge']['code'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.code like' => '%' . trim($this->request->data['Knowledge']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['name'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.name like' => '%' . trim($this->request->data['Knowledge']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['program_objective_id'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.program_objective_id like' => '%' . trim($this->request->data['Knowledge']['program_objective_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('knowledges', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+            $this->set(compact('programObjectives'));
+        }
+    }
 
     /**
      * view method

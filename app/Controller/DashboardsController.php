@@ -80,5 +80,20 @@ class DashboardsController extends AppController {
         
         $this->redirect(array('celri' => true, 'controller' => 'workshops', 'action' => 'index'));
     }
+    
+     public function pdt_home() {
+        
+        $this->redirect(array('pdt' => false, 'controller' => 'curriculumns', 'action' => 'index'));
+    }
+
+     public function pkt_home() {
+        
+        $this->redirect(array('pkt' => false, 'controller' => 'curriculumns', 'action' => 'index'));
+    }
+
+    public function ptc_home() {
+        
+        $this->redirect(array('ptc' => false, 'controller' => 'books', 'action' => 'ptc_index'));
+    }
 
 }

@@ -39,6 +39,21 @@ class DiplomasController extends AppController {
             
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Diploma.name' => 'ASC');
+        if (!empty($this->request->data['Diploma']['name'])) {
+            $conditions = Hash::merge($conditions, array('Diploma.name like' => '%' . trim($this->request->data['Diploma']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('diplomas', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     /**
      * view method

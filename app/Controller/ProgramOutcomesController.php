@@ -39,6 +39,23 @@ class ProgramOutcomesController extends AppController {
             $this->set(compact('curriculumns', 'typeoutcomes'));
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('ProgramOutcome.fieldName' => $value));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('programOutcomes', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
+            $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
+            $this->set(compact('curriculumns', 'typeoutcomes'));
+        }
+    }
 
     /**
      * view method

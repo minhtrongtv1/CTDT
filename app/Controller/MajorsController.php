@@ -46,7 +46,28 @@ class MajorsController extends AppController {
 //            $this->set(compact('departments'));
 //        }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Major.name' => 'ASC');
+        if (!empty($this->request->data['Major']['department_id'])) {
+            $conditions = Hash::merge($conditions, array('Major.department_id like' => '%' . trim($this->request->data['Major']['department_id']) . '%'));
+        }
+        if (!empty($this->request->data['Major']['code'])) {
+            $conditions = Hash::merge($conditions, array('Major.code like' => '%' . trim($this->request->data['Major']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Major']['name'])) {
+            $conditions = Hash::merge($conditions, array('Major.name like' => '%' . trim($this->request->data['Major']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
 
+        $this->set('majors', $this->paginate());
+//        if (!$this->request->is('ajax')) {
+//            $departments = $this->Major->Department->find('list');
+//            $this->set(compact('departments'));
+//        }
+    }
     /**
      * view method
      *

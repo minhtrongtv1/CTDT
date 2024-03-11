@@ -38,6 +38,8 @@ class CoursesController extends AppController {
             $this->set(compact('departments'));
         }
     }
+    
+    
 
     /**
      * view method

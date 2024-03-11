@@ -42,6 +42,24 @@ class LevelsController extends AppController {
             
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Level.name' => 'ASC');
+        if (!empty($this->request->data['Level']['code'])) {
+            $conditions = Hash::merge($conditions, array('Level.code like' => '%' . trim($this->request->data['Level']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Level']['name'])) {
+            $conditions = Hash::merge($conditions, array('Level.name like' => '%' . trim($this->request->data['Level']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('levels', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     /**
      * view method
