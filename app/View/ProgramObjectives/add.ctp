@@ -1,41 +1,38 @@
+
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Thêm mới chuẩn đầu ra'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Add Program Objective'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
 
-    <?php
-    echo $this->Form->create('ProgramObjective', array(
-        'role' => 'form',
-        'class' => 'form-horizontal',
-        'inputDefaults' => array(
-            'class' => 'form-control',
-        )
+    <?php echo $this->Form->create('ProgramObjective', array(
+            'role'=>'form',
+            'class' => 'form-horizontal',
+            'inputDefaults' => array(
+                
+                'class' => 'form-control',
+               )
             )
-    );
-    ?>
-    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Tên chương trình']); ?>
-    <?php echo $this->Form->input('program_outcome_id', ['label' => 'Mục tiêu chuẩn đầu ra']); ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã chuẩn đầu ra']); ?>
+        ); ?>
+    						<?php echo $this->Form->input('curriculumn_id'); ?>
+						<?php echo $this->Form->input('program_outcome_id'); ?>
+						<?php echo $this->Form->input('code'); ?>
+						<?php echo $this->Form->input('describe'); ?>
+						<?php echo $this->Form->input('level'); ?>
+						<?php echo $this->Form->input('group_type'); ?>
 
-    <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
-    <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>
-    <?php
-    echo $this->Form->input('group_type', array('type' => 'select', 'options' => array('PO1' => 'PO1',
-            'PLO2' => 'PLO2',
-            'PLO3' => 'PLO3'), 'label' => 'Loại nhóm chuẩn đầu ra'));
-    ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
-            <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
+            					<?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info','type'=>'submit')); ?>
             &nbsp; &nbsp; &nbsp;
-            <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
+            					<?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác',array('action'=>'index') ,array('class' => 'btn btn-warning','escape'=>false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-    <?php echo $this->Form->end(); ?>
+    			<?php echo $this->Form->end(); ?>
 
 </div>
+
