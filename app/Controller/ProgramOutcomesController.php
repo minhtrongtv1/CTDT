@@ -35,7 +35,8 @@ class ProgramOutcomesController extends AppController {
         $this->set('programOutcomes', $this->paginate());
         if (!$this->request->is('ajax')) {
             $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
-            $this->set(compact('curriculumns'));
+            $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
+            $this->set(compact('curriculumns', 'typeoutcomes'));
         }
     }
 
@@ -62,7 +63,9 @@ class ProgramOutcomesController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->ProgramOutcome->create();
+          
             if ($this->ProgramOutcome->save($this->request->data)) {
+                
                 $this->Flash->success(__('Mục tiêu đào tạo đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -71,7 +74,8 @@ class ProgramOutcomesController extends AppController {
             }
         }
         $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
-        $this->set(compact('curriculumns'));
+        $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
+        $this->set(compact('curriculumns', 'typeoutcomes'));
     }
 
     /**
@@ -98,7 +102,8 @@ class ProgramOutcomesController extends AppController {
             $this->request->data = $this->ProgramOutcome->find('first', $options);
         }
         $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
-        $this->set(compact('curriculumns'));
+        $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
+        $this->set(compact('curriculumns', 'typeoutcomes'));
     }
 
     /**

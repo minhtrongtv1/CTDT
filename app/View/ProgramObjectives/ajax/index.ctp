@@ -44,13 +44,17 @@ $this->Paginator->options(array(
             <tr id="row-<?php echo $programObjective['ProgramObjective']['id'] ?>">
                 <td><?php echo $stt++; ?></td>
 
-                <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
-                <td class=""><?php echo h($programObjective['ProgramObjective']['name']); ?>&nbsp;</td>
+                <td class="">
+                    <?php echo $this->Html->link($programObjective['Curriculumn']['name'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['curriculumn']['id'])); ?>
+                </td>
                 <td class="">
                     <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
                 </td>
+                <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
+
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
+                <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['id']); ?>&nbsp;</td>
                 <td>
                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $programObjective['ProgramObjective']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

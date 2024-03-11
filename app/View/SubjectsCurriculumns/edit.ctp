@@ -22,12 +22,12 @@
     <?php echo $this->Form->input('knowledge_id', ['label' => 'Khối kiến thức']); ?>
     <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
     <?php
-    echo $this->Form->radio('typesubject', [
-        'Học phần bắt buộc' => 'Học phần bắt buộc',
-        'Học phần tự chọn' => 'Học phần tự chọn'
-    ]);
+    echo $this->Form->radio('typesubject', array(
+        '0' => 'Học phần bắt buộc',
+        '1' => 'Học phần tự chọn'
+            ), ['legend' => 'Loại học phần', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
     ?>
-   
+
 
     <div class="clearfix form-actions">
         <div class="pull-right">

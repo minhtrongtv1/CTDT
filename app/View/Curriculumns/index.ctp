@@ -51,6 +51,7 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ'); ?></th>
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành'); ?></th>
 
@@ -73,10 +74,15 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition','Điều kiện tốt nghiệp'); ?></th>
 
 
+
                             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id','Văn bằng tốt nghiệp'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('approve','Phê duyệt'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('approve', 'Phê duyệt'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -97,6 +103,9 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id'])); ?>
+                                </td>
+                                <td class="">
+                                    <?php echo $this->Html->link($curriculumn['Department']['title'], array('controller' => 'departments', 'action' => 'view', $curriculumn['Department']['id'])); ?>
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id'])); ?>

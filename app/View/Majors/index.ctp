@@ -18,9 +18,9 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Major', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('department_id', array('placeholder' => 'Tên đơn vị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -37,9 +37,22 @@ $this->Paginator->options(array(
                         <tr class="headings">
                             <th>#</th>
 
+<<<<<<< HEAD
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Tên đơn vị'); ?></th>
+=======
+
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
+
+
+
+
+
+>>>>>>> b18744297d7dfde696128befe928b42f55c703a0
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
@@ -56,8 +69,11 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
 
+<<<<<<< HEAD
 
                                 
+=======
+>>>>>>> b18744297d7dfde696128befe928b42f55c703a0
                                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $major['Major']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

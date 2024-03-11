@@ -57,7 +57,39 @@ $this->Paginator->options(array(
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+//    document.addEventListener("DOMContentLoaded", function () {
+//        var theoryCreditInput = document.getElementById("SubjectTheoryCredit");
+//        var practiceCreditInput = document.getElementById("SubjectPracticeCredit");
+//        var theoryHourInput = document.getElementById("SubjectTheoryHour");
+//        var practiceHourInput = document.getElementById("SubjectPracticeHour");
+//        var selfLearningTimeInput = document.getElementById("SubjectSelfLearningTime");
+//
+//        function calculateSelfLearningTime() {
+//            var theoryCredit = parseInt(theoryCreditInput.value);
+//            var practiceCredit = parseInt(practiceCreditInput.value);
+//
+////            var theoryHour = 0;
+////            var practiceHour = 0;
+//            var theoryHour = 15;
+//            var practiceHour = 30;
+//            if (theoryCredit === parseInt(theoryCreditInput.value)) {
+//                theoryHour = theoryCredit * 15;
+//            }
+//            if (practiceCredit === parseInt(practiceCreditInput.value)) {
+//                practiceHour = practiceCredit * 30;
+//            }
+//
+//            theoryHourInput.value = theoryHour;
+//            practiceHourInput.value = practiceHour;
+//
+//            var selfLearningTime = ((theoryCredit + practiceCredit) * 50) - ((15 * theoryCredit) + (30 * practiceCredit));
+//            selfLearningTimeInput.value = selfLearningTime;
+//        }
+//
+//        theoryCreditInput.addEventListener("input", calculateSelfLearningTime);
+//        practiceCreditInput.addEventListener("input", calculateSelfLearningTime);
+//    });
+ document.addEventListener("DOMContentLoaded", function () {
         var theoryCreditInput = document.getElementById("SubjectTheoryCredit");
         var practiceCreditInput = document.getElementById("SubjectPracticeCredit");
         var theoryHourInput = document.getElementById("SubjectTheoryHour");
@@ -69,14 +101,40 @@ $this->Paginator->options(array(
             var practiceCredit = parseInt(practiceCreditInput.value);
 
 //            var theoryHour = 0;
+//           
 //            var practiceHour = 0;
+            var tongtinchi = theoryCredit + practiceCredit;
+            if (theoryCreditInput.value.trim() !== '' && practiceCreditInput.value.trim() !== '') {
+                if (tongtinchi >= 15) {
+                    alert("Tổng số tín chỉ nhỏ hơn hoặc bằng 15. Vui lòng nhập lại.");
+                    theoryCreditInput.value = '';
+                    practiceCreditInput.value = '';
+                    theoryHourInput.value = '';
+                    practiceHourInput.value = '';
+                    return;
+                }
+
+            }
+            if (theoryCredit < 0 || practiceCredit < 0) {
+                alert("Số tín chỉ phải là số âm. Vui lòng nhập lại.");
+                theoryHourInput.value = '';
+                practiceHourInput.value = '';
+                theoryCreditInput.value = '';
+                practiceCreditInput.value = '';
+                selfLearningTimeInput.value = '';
+                return;
+            }
             var theoryHour = 15;
             var practiceHour = 30;
             if (theoryCredit === parseInt(theoryCreditInput.value)) {
                 theoryHour = theoryCredit * 15;
+            }else{
+                theoryHour = '';
             }
             if (practiceCredit === parseInt(practiceCreditInput.value)) {
                 practiceHour = practiceCredit * 30;
+            }else{
+                practiceHour = '';
             }
 
             theoryHourInput.value = theoryHour;
@@ -84,6 +142,7 @@ $this->Paginator->options(array(
 
             var selfLearningTime = ((theoryCredit + practiceCredit) * 50) - ((15 * theoryCredit) + (30 * practiceCredit));
             selfLearningTimeInput.value = selfLearningTime;
+
         }
 
         theoryCreditInput.addEventListener("input", calculateSelfLearningTime);

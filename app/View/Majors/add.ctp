@@ -17,9 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('department_id', ['label' => 'Tên đơn vị']); ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã ngành']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên ngành']); ?>
+    <?php echo $this->Form->input('code', ['label' => 'Mã ngành']); ?>
+
 
     <div class="clearfix form-actions">
         <div class="pull-right">

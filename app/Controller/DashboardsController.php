@@ -18,7 +18,7 @@ class DashboardsController extends AppController {
     public $uses = array('User');
 
     public function beforeFilter() {
-        
+
         parent::beforeFilter();
         if ($this->Session->check('REQUEST_PARAMS')) {
             $request_params = $this->Session->read('REQUEST_PARAMS');
@@ -27,7 +27,6 @@ class DashboardsController extends AppController {
         }
 
         $this->Auth->allow(array('contact', 'home', 'help'));
-        
     }
 
     public function home() {
@@ -40,7 +39,7 @@ class DashboardsController extends AppController {
                 return $this->redirect('/' . $this->Session->read('LAYOUT') . '/dashboards/home');
         } else {
             $this->theme = 'Frontend';
-            return $this->redirect(array('action'=>'login','controller'=>'users'));
+            return $this->redirect(array('action' => 'login', 'controller' => 'users'));
         }
     }
 
@@ -49,12 +48,12 @@ class DashboardsController extends AppController {
     }
 
     public function admin_home() {
-        
+
         $this->redirect(array('admin' => true, 'controller' => 'courses', 'action' => 'index'));
     }
-    
+
     public function khcn_home() {
-        
+
         $this->redirect(array('khcn' => true, 'controller' => 'evaluation_results', 'action' => 'index'));
     }
 
@@ -67,18 +66,22 @@ class DashboardsController extends AppController {
     }
 
     public function teacher_home() {
-        
+
         $this->redirect(array('teacher' => false, 'controller' => 'courses', 'action' => 'mycourses'));
     }
 
     public function bct_home() {
-        
+
         $this->redirect(array('bct' => true, 'controller' => 'evaluation_results', 'action' => 'can_danh_gia'));
     }
-    
+
     public function celri_home() {
-        
+
         $this->redirect(array('celri' => true, 'controller' => 'workshops', 'action' => 'index'));
     }
 
+    public function pkt_home() {
+
+        $this->redirect(array('pkt' => false, 'controller' => 'levels', 'action' => 'index_pkt'));
+    }
 }

@@ -49,11 +49,17 @@ class CurriculumnsController extends AppController {
         $this->set('curriculumns', $this->paginate());
         if (!$this->request->is('ajax')) {
             $levels = $this->Curriculumn->Level->find('list');
+            $departments = $this->Curriculumn->Department->find('list');
             $majors = $this->Curriculumn->Major->find('list');
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
+
             $this->set(compact('levels', 'majors', 'formOfTrainnings', 'diplomas', 'subjects'));
+
+            $diplomas = $this->Curriculumn->Diploma->find('list');
+
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }
 
@@ -89,11 +95,16 @@ class CurriculumnsController extends AppController {
             }
         }
         $levels = $this->Curriculumn->Level->find('list');
+        $departments = $this->Curriculumn->Department->find('list');
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
+
         $this->set(compact('levels', 'majors', 'formOfTrainnings', 'diplomas', 'subjects'));
+
+        $diplomas = $this->Curriculumn->Diploma->find('list');
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
     }
 
     /**
@@ -120,11 +131,16 @@ class CurriculumnsController extends AppController {
             $this->request->data = $this->Curriculumn->find('first', $options);
         }
         $levels = $this->Curriculumn->Level->find('list');
+        $departments = $this->Curriculumn->Department->find('list');
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
+
         $this->set(compact('levels', 'majors', 'formOfTrainnings', 'diplomas', 'subjects'));
+
+        $diplomas = $this->Curriculumn->Diploma->find('list');
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
     }
 
     /**
