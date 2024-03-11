@@ -75,7 +75,7 @@ $this->Paginator->options(array(
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
-
+                            <th class="column-title"><?php echo $this->Paginator->sort('approve', 'Phê duyệt'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
@@ -110,7 +110,10 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['enrollment_subject']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['point_ladder']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($curriculumn['Curriculumn']['diploma_id']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($curriculumn['Diploma']['name'], array('controller' => 'diplomas', 'action' => 'view', $curriculumn['Diploma']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($curriculumn['Curriculumn']['approve']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $curriculumn['Curriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

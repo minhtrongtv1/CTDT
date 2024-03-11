@@ -24,7 +24,11 @@
 
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
     <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>
-    <?php echo $this->Form->input('group_type', ['label' => 'Loại nhóm chuẩn đầu ra']); ?>
+    <?php
+    echo $this->Form->input('group_type', array('type' => 'select', 'options' => array('PO1' => 'PO1',
+            'PLO2' => 'PLO2',
+            'PLO3' => 'PLO3'), 'label' => 'Loại nhóm chuẩn đầu ra'));
+    ?>
     <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

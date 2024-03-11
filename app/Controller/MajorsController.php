@@ -163,10 +163,10 @@ class MajorsController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('majors', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $departments = $this->Major->Department->find('list');
-            $this->set(compact('departments'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $departments = $this->Major->Department->find('list');
+//            $this->set(compact('departments'));
+//        }
     }
 
     /**

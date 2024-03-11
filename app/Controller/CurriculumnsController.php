@@ -52,6 +52,7 @@ class CurriculumnsController extends AppController {
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
+            
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }

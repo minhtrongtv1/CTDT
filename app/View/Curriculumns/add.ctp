@@ -30,7 +30,12 @@
     <?php echo $this->Form->input('point_ladder', ['label' => 'Thang điểm']); ?>
     <?php echo $this->Form->input('graduation_condition', ['label' => 'Điều kiện tốt nghiệp']); ?>
     <?php echo $this->Form->input('diploma_id', ['label' => 'Văn bằng tốt nghiệp']); ?>
-    
+    <?php
+    echo $this->Form->radio('approve', [
+        'Đã duyệt' => 'Đã duyệt',
+        'Chưa duyệt' => 'Chưa duyệt'
+    ]);
+    ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

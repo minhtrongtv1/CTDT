@@ -34,7 +34,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-Configure::write('debug',2);
+Configure::write('debug',0);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
@@ -154,7 +154,7 @@ Configure::write('App.encoding', 'UTF-8');
  * 	`manager_index()` and `/manager/controller/index`
  */
 //Configure::write('Routing.prefixes', array('admin'));
-Configure::write('Routing.prefixes', array('admin', 'bct','teacher','khcn','celri'));
+Configure::write('Routing.prefixes', array('admin', 'bct','teacher','khcn','celri','pkt'));
 /**
  * Turn off all caching application-wide.
  */
