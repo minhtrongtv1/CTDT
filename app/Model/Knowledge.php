@@ -15,71 +15,7 @@ class Knowledge extends AppModel {
      *
      * @var string
      */
-    public $displayField = 'name';
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public $validate = array(
-        'code' => array(
-            'numeric' => array(
-                'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            'isUnique' => array(
-                'rule' => array('isUnique'),
-                'message' => 'Mã này đã tồn tại',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-        'program_objective_id' => array(
-            'numeric' => array(
-                'rule' => array('numeric'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-        'name' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên khối kiến thức này đã có',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-        'describe' => array(
-            'notBlank' => array(
-                'rule' => array('notBlank'),
-            //'message' => 'Your custom message here',
-            'allowEmpty' => true,
-            'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-    );
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
 

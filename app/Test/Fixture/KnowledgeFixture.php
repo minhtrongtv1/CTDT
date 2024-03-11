@@ -11,8 +11,8 @@ class KnowledgeFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'code' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'unique'),
-		'program_objective_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 100, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
+		'program_objective_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'describe' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
@@ -33,11 +33,11 @@ class KnowledgeFixture extends CakeTestFixture {
 	public $records = array(
 		array(
 			'code' => 1,
-			'program_objective_id' => 1,
 			'name' => 'Lorem ipsum dolor sit amet',
+			'program_objective_id' => 1,
 			'describe' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2024-02-28 13:45:22',
-			'modified' => '2024-02-28 13:45:22',
+			'created' => '2024-03-11 13:50:08',
+			'modified' => '2024-03-11 13:50:08',
 			'id' => 1
 		),
 	);

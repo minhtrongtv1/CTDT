@@ -18,8 +18,8 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('ProgramOutcome', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên mục tiêu đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('typeoutcome_id', array('placeholder' => 'Loại mục tiêu', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('name', array('placeholder' => 'name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('typeoutcome_id', array('placeholder' => 'Loại mục tiêu đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
@@ -44,10 +44,10 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên mục tiêu đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('content','Nội dung mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('content','Nội dung mục tiêu'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id','Loại mục tiêu'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id','Loại mục tiêu đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
@@ -69,7 +69,9 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($programOutcome['ProgramOutcome']['typeoutcome_id']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($programOutcome['Typeoutcome']['name'], array('controller' => 'typeoutcomes', 'action' => 'view', $programOutcome['Typeoutcome']['id'])); ?>
+                                </td>
                                 <td class="">
                                     <?php echo $this->Html->link($programOutcome['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
                                 </td>

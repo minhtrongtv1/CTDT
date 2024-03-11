@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('pkt' => true,'action' => 'index_pkt'),
+    'url' => array('dvcm' => true, 'action' => 'dvcm_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -45,8 +45,8 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                         
-                         
+                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
+                            <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
 
@@ -59,13 +59,18 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($level['Level']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($level['Level']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($level['Level']['id']); ?>&nbsp;</td>
-                              
-                               
+                                <td>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $level['Level']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                </td>
+                                <td>
+                                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $level['Level']['id'] ?>">
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>
-
+                    <span class="pull-right">
+                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/levels/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
                 <?php echo $this->element("pagination"); ?>  
@@ -85,7 +90,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/pkt/levels/index_pkt", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/dvcm/levels/dvcm_index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -96,34 +101,34 @@ $this->Paginator->options(array(
     });
 
 
-//    $(document).on("click", "#delete-seleted", function () {
-//        var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-//        //console.log(selectedRecord.length);return false;
-//        if (selectedRecord.length < 1) {
-//            alert("Vui lòng chọn dòng muốn xóa !");
-//            return false;
-//        }
-//        if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
-//            var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-//            $.post('http://celri.tvu.edu.local/admin/levels/delete', {selectedRecord: selectedRecord}, function (response) {
-//                if (response) {
-//                    $.each(response, function (arrayID, rowId) {
-//                        $("#row-" + rowId).fadeOutAndRemove('fast');
-//                    });
-//                    return true;
-//
-//                } else {
-//                    alert('Có lỗi trong quá trình thực hiện thao tác!!!');
-//                    return false;
-//                }
-//            }, 'json').fail(function (response) {
-//                alert('Error: ' + response.responseText);
-//            });
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    });
+    $(document).on("click", "#delete-seleted", function () {
+        var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
+        //console.log(selectedRecord.length);return false;
+        if (selectedRecord.length < 1) {
+            alert("Vui lòng chọn dòng muốn xóa !");
+            return false;
+        }
+        if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
+            var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
+            $.post('http://celri.tvu.edu.local/levels/delete', {selectedRecord: selectedRecord}, function (response) {
+                if (response) {
+                    $.each(response, function (arrayID, rowId) {
+                        $("#row-" + rowId).fadeOutAndRemove('fast');
+                    });
+                    return true;
+
+                } else {
+                    alert('Có lỗi trong quá trình thực hiện thao tác!!!');
+                    return false;
+                }
+            }, 'json').fail(function (response) {
+                alert('Error: ' + response.responseText);
+            });
+            return true;
+        } else {
+            return false;
+        }
+    });
 
 </script>
 <?php
