@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin chương trình đào tạo'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Edit Curriculumn'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,20 +17,26 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã chương trình đào tạo']); ?>
-    <?php echo $this->Form->input('name_vn', ['label' => 'Tên tiếng Việt']); ?>
-    <?php echo $this->Form->input('name_eng', ['label' => 'Tên tiếng Anh']); ?>
-    <?php echo $this->Form->input('level_id', ['label' => 'Trình độ đào tạo']); ?>
-    <?php echo $this->Form->input('major_id', ['label' => 'Ngành đào tạo']); ?>
-    <?php echo $this->Form->input('form_of_trainning_id', ['label' => 'Hình thức đào tạo']); ?>
-    <?php echo $this->Form->input('credit', ['label' => 'Số tín chỉ']); ?>
-    <?php echo $this->Form->input('trainning_time', ['label' => 'Thời gian đào tạo']); ?>
-    <?php echo $this->Form->input('enrollment_subject', ['label' => 'Đối tượng tuyển sinh']); ?>
-    <?php echo $this->Form->input('point_ladder', ['label' => 'Thang điểm']); ?>
-    <?php echo $this->Form->input('graduation_condition', ['label' => 'Điều kiện tốt nghiệp']); ?>
-    <?php echo $this->Form->input('diploma_id', ['label' => 'Văn bằng tốt nghiệp']); ?>
-    <?php echo $this->Form->input('Subject', ['label' => 'Học phần']); ?>
-
+    <?php echo $this->Form->input('code'); ?>
+    <?php echo $this->Form->input('name_vn'); ?>
+    <?php echo $this->Form->input('name_eng'); ?>
+    <?php echo $this->Form->input('level_id'); ?>
+    <?php echo $this->Form->input('major_id'); ?>
+    <?php echo $this->Form->input('form_of_trainning_id'); ?>
+    <?php echo $this->Form->input('credit'); ?>
+    <?php echo $this->Form->input('trainning_time'); ?>
+    <?php echo $this->Form->input('enrollment_subject'); ?>
+    <?php echo $this->Form->input('point_ladder'); ?>
+    <?php echo $this->Form->input('graduation_condition'); ?>
+    <?php echo $this->Form->input('diploma_id'); ?>
+ 
+    <?php echo $this->Form->input('id'); ?>
+    <?php
+    echo $this->Form->radio('approve', [
+        'Đã duyệt' => 'Đã duyệt',
+        'Chưa duyệt' => 'Chưa duyệt'
+    ]);
+    ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

@@ -1,10 +1,10 @@
 <?php
-App::uses('CurriculumnsController', 'Controller');
+App::uses('TrainningroomsController', 'Controller');
 
 /**
- * CurriculumnsController Test Case
+ * TrainningroomsController Test Case
  */
-class CurriculumnsControllerTest extends ControllerTestCase {
+class TrainningroomsControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -12,21 +12,10 @@ class CurriculumnsControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.curriculumn',
+		'app.trainningroom',
 		'app.level',
+		'app.curriculumn',
 		'app.major',
-		'app.department',
-		'app.course',
-		'app.evaluation_result',
-		'app.evaluation_round',
-		'app.user',
-		'app.province',
-		'app.group',
-		'app.users_group',
-		'app.message',
-		'app.messages_user',
-		'app.teaching',
-		'app.department_supporter',
 		'app.form_of_trainning',
 		'app.diploma',
 		'app.infrastructure',
@@ -35,6 +24,18 @@ class CurriculumnsControllerTest extends ControllerTestCase {
 		'app.program_outcome',
 		'app.typeoutcome',
 		'app.subjects_user',
+		'app.user',
+		'app.department',
+		'app.course',
+		'app.evaluation_result',
+		'app.evaluation_round',
+		'app.teaching',
+		'app.department_supporter',
+		'app.province',
+		'app.group',
+		'app.users_group',
+		'app.message',
+		'app.messages_user',
 		'app.subject',
 		'app.book',
 		'app.subjects_book',

@@ -19,9 +19,9 @@ $this->Paginator->options(array(
                 <div class="col-md-12">
 
                     <?php echo $this->Form->input('group_type', array('placeholder' => 'Loại nhóm chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('code', array('placeholder' => 'Mã chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('program_outcome_id', array('placeholder' => 'Mục tiêu chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                  
+
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -36,26 +36,14 @@ $this->Paginator->options(array(
 
                         <tr class="headings">
                             <th>#</th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('group_type','Loại nhóm chuẩn đầu ra'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên chuẩn đầu ra'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id','Mục tiêu chuẩn đầu ra'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('level','Trình độ'); ?></th>
-
-
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn', 'Tên chương trình'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chuẩn đầu ra'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level', 'Trình độ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('group_type', 'Loại nhóm chuẩn đầu ra'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
-
-                            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
+<th class="column-title no-link last"><span class="nobr">Hành động</span></th>
                             <th><input type="checkbox" id="check-all" </th>
                         </tr>
                     </thead>
@@ -65,14 +53,16 @@ $this->Paginator->options(array(
                         <?php foreach ($programObjectives as $programObjective): ?>
                             <tr id="row-<?php echo $programObjective['ProgramObjective']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
-
-                                <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($programObjective['ProgramObjective']['name']); ?>&nbsp;</td>
                                 <td class="">
-                                    <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
+                                    <?php echo $this->Html->link($programObjective['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['Curriculumn']['id'])); ?>
                                 </td>
+                                  <td class="">
+                                    <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'programoutcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programObjective['ProgramObjective']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $programObjective['ProgramObjective']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -85,7 +75,7 @@ $this->Paginator->options(array(
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/programObjectives/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/programObjectives/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
                 <?php echo $this->element("pagination"); ?>  

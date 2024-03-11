@@ -25,9 +25,9 @@ class ProgramObjectivesController extends AppController {
     public function index() {
         $conditions = array();
         $contain = array();
-        $order = array('ProgramObjective.name' => 'ASC');
-        if (!empty($this->request->data['ProgramObjective']['name'])) {
-            $conditions = Hash::merge($conditions, array('ProgramObjective.name like' => '%' . trim($this->request->data['ProgramObjective']['name']) . '%'));
+        $order = array('ProgramObjective.code' => 'ASC');
+        if (!empty($this->request->data['ProgramObjective']['code'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.code like' => '%' . trim($this->request->data['ProgramObjective']['code']) . '%'));
         }
         if (!empty($this->request->data['ProgramObjective']['group_type'])) {
             $conditions = Hash::merge($conditions, array('ProgramObjective.group_type like' => '%' . trim($this->request->data['ProgramObjective']['group_type']) . '%'));
@@ -35,14 +35,16 @@ class ProgramObjectivesController extends AppController {
         if (!empty($this->request->data['ProgramObjective']['program_outcome_id'])) {
             $conditions = Hash::merge($conditions, array('ProgramObjective.program_outcome_id like' => '%' . trim($this->request->data['ProgramObjective']['program_outcome_id']) . '%'));
         }
-        
+
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
         $this->set('programObjectives', $this->paginate());
         if (!$this->request->is('ajax')) {
             $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
-            $this->set(compact('programOutcomes'));
+            $curriculumns = $this->ProgramObjective->Curriculumn->find('list');
+            $this->set(compact('programOutcomes', 'curriculumns'));
+            // $this->set(compact('programOutcomes'));
         }
     }
 
@@ -69,16 +71,19 @@ class ProgramObjectivesController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->ProgramObjective->create();
+            debug($this->request->data);
             if ($this->ProgramObjective->save($this->request->data)) {
                 $this->Flash->success(__('Chuẩn đầu ra đã được lưu'));
                 $this->redirect(array('action' => 'index'));
             } else {
 
                 $this->Flash->error(__('Chuẩn đầu ra lưu không thành công, vui lòng thử lại.'));
-            }
+}
         }
         $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
-        $this->set(compact('programOutcomes'));
+        $curriculumns = $this->ProgramObjective->Curriculumn->find('list');
+        $this->set(compact('programOutcomes', 'curriculumns'));
+        // $this->set(compact('programOutcomes'));
     }
 
     /**
@@ -105,7 +110,9 @@ class ProgramObjectivesController extends AppController {
             $this->request->data = $this->ProgramObjective->find('first', $options);
         }
         $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
-        $this->set(compact('programOutcomes'));
+        $curriculumns = $this->ProgramObjective->Curriculumn->find('list');
+        $this->set(compact('programOutcomes', 'curriculumns'));
+        //$this->set(compact('programOutcomes'));
     }
 
     /**

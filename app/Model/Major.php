@@ -23,16 +23,7 @@ class Major extends AppModel {
      * @var array
      */
     public $validate = array(
-        'department_id' => array(
-            'numeric' => array(
-                'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+   
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
@@ -78,15 +69,8 @@ class Major extends AppModel {
      *
      * @var array
      */
-    public $belongsTo = array(
-        'Department' => array(
-            'className' => 'Department',
-            'foreignKey' => 'department_id',
-            'conditions' => '',
-            'fields' => '',
-            'order' => ''
-        )
-    );
+   
+    
 
     /**
      * hasMany associations

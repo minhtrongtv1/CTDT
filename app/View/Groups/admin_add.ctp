@@ -1,6 +1,6 @@
 <h4 class="pink">
     <i class="ace-icon fa fa-hand-o-right green"></i>
-    <a href="#" class="blue"> <?php echo __('Add Group'); ?> </a>
+    <a href="#" class="blue"> <?php echo __('Thêm nhóm người dùng mới'); ?> </a>
 </h4>
 <div class="hr hr-18 dotted hr-double"></div>
 

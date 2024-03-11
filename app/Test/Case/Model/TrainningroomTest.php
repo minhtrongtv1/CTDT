@@ -1,10 +1,10 @@
 <?php
-App::uses('Curriculumn', 'Model');
+App::uses('Trainningroom', 'Model');
 
 /**
- * Curriculumn Test Case
+ * Trainningroom Test Case
  */
-class CurriculumnTest extends CakeTestCase {
+class TrainningroomTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,21 +12,10 @@ class CurriculumnTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.curriculumn',
+		'app.trainningroom',
 		'app.level',
+		'app.curriculumn',
 		'app.major',
-		'app.department',
-		'app.course',
-		'app.evaluation_result',
-		'app.evaluation_round',
-		'app.user',
-		'app.province',
-		'app.group',
-		'app.users_group',
-		'app.message',
-		'app.messages_user',
-		'app.teaching',
-		'app.department_supporter',
 		'app.form_of_trainning',
 		'app.diploma',
 		'app.infrastructure',
@@ -35,6 +24,18 @@ class CurriculumnTest extends CakeTestCase {
 		'app.program_outcome',
 		'app.typeoutcome',
 		'app.subjects_user',
+		'app.user',
+		'app.department',
+		'app.course',
+		'app.evaluation_result',
+		'app.evaluation_round',
+		'app.teaching',
+		'app.department_supporter',
+		'app.province',
+		'app.group',
+		'app.users_group',
+		'app.message',
+		'app.messages_user',
 		'app.subject',
 		'app.book',
 		'app.subjects_book',
@@ -48,7 +49,7 @@ class CurriculumnTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Curriculumn = ClassRegistry::init('Curriculumn');
+		$this->Trainningroom = ClassRegistry::init('Trainningroom');
 	}
 
 /**
@@ -57,7 +58,7 @@ class CurriculumnTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Curriculumn);
+		unset($this->Trainningroom);
 
 		parent::tearDown();
 	}

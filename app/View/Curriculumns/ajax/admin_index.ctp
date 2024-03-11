@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('admin' => 'index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -145,7 +145,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/curriculumns/index", data, function (response) {
+        $.post("http://celri.tvu.edu.local/curriculumns/pdt_index", data, function (response) {
             $("#datarows").html(response);
         });
 

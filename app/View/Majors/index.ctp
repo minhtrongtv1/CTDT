@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-             <h2><?php echo __('Ngành học'); ?></h2>
+            <h2><?php echo __('Ngành học'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -37,16 +37,9 @@ $this->Paginator->options(array(
                         <tr class="headings">
                             <th>#</th>
 
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('department_id','Tên đơn vị'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã ngành'); ?></th>
-
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên ngành'); ?></th>
-
-
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Tên đơn vị'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
@@ -60,11 +53,11 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $major['Major']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
-                                <td class="">
-                                    <?php echo $this->Html->link($major['Department']['title'], array('controller' => 'departments', 'action' => 'view', $major['Department']['id'])); ?>
-                                </td>
-                                <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
+
+
+                                
                                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $major['Major']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
