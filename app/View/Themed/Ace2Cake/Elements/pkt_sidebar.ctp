@@ -53,6 +53,7 @@
             echo $this->Html->link('<i class="menu-icon fa fa-cloud-download"></i>Sao lưu', array('admin' => true, 'controller' => 'Mysqldumps', 'action' => 'index'), array('escape' => false));
             ?>
         </li>
+<<<<<<< HEAD
 
         <li class="">
             <a href="" class="dropdown-toggle">
@@ -312,6 +313,8 @@
 
             </ul>
         </li>
+=======
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
         <li class="">
             <a href="" class="dropdown-toggle">
                 <i class="menu-icon fa fa-book" aria-hidden="true"></i>
@@ -350,7 +353,11 @@
             
                  <li class="">
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+<<<<<<< HEAD
                                                         <span class="menu-text"> Trình độ đào tạo </span>', '/levels', array('escape' => false)); ?>
+=======
+                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/levels/index_pkt', array('escape' => false)); ?>
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
                     <b class="arrow"></b>
                 </li>
                 <li class="">

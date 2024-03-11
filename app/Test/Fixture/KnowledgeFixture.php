@@ -36,8 +36,13 @@ class KnowledgeFixture extends CakeTestFixture {
 			'name' => 'Lorem ipsum dolor sit amet',
 			'program_objective_id' => 1,
 			'describe' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
+<<<<<<< HEAD
 			'created' => '2024-03-11 16:46:06',
 			'modified' => '2024-03-11 16:46:06',
+=======
+			'created' => '2024-03-11 13:50:08',
+			'modified' => '2024-03-11 13:50:08',
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 			'id' => 1
 		),
 	);

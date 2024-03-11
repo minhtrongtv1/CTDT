@@ -68,18 +68,18 @@ class Semester extends AppModel {
      * @var array
      */
     public $hasMany = array(
-        'Subject' => array(
-            'className' => 'Subject',
-            'foreignKey' => 'semester_id',
-            'dependent' => false,
+        'SubjectsCurriculumn' => array(
+            'className' => 'SubjectsCurriculumn',
+            'joinTable' => 'subjects_curriculumns',
+            'foreignKey' => 'subject_id',
+            'associationForeignKey' => 'curriculumn_id',
+            'unique' => 'keepExisting',
             'conditions' => '',
             'fields' => '',
             'order' => '',
             'limit' => '',
             'offset' => '',
-            'exclusive' => '',
             'finderQuery' => '',
-            'counterQuery' => ''
-        )
+        ),
     );
 }

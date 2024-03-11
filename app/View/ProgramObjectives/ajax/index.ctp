@@ -8,7 +8,6 @@ $this->Paginator->options(array(
 ));
 ?>
 
-
 <table class="table table-bordered table-hover has-checked-item">
     <thead>
 
@@ -16,19 +15,22 @@ $this->Paginator->options(array(
             <th>#</th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('group_type', 'Loại nhóm chuẩn đầu ra'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chuẩn đầu ra'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id', 'Mục tiêu đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chuẩn đầu ra'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('level', 'Trình độ'); ?></th>
+
+
+            <th class="column-title"><?php echo $this->Paginator->sort('group_type', 'Loại nhóm chuẩn đầu ra'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -45,13 +47,12 @@ $this->Paginator->options(array(
                 <td><?php echo $stt++; ?></td>
 
                 <td class="">
-                    <?php echo $this->Html->link($programObjective['Curriculumn']['name'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['curriculumn']['id'])); ?>
+                    <?php echo $this->Html->link($programObjective['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['Curriculumn']['id'])); ?>
                 </td>
                 <td class="">
                     <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
                 </td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
-
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>

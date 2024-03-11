@@ -68,6 +68,9 @@ class Curriculumn extends AppModel {
         'name_eng' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
                 //'message' => 'Bạn không được bỏ trống thông tin này',
                 'allowEmpty' => true,
                 'required' => false,
@@ -176,6 +179,26 @@ class Curriculumn extends AppModel {
         'diploma_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'approve' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'approve' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
                 'message' => 'Bạn không được bỏ trống thông tin này',
                 //'allowEmpty' => false,
                 'required' => true,

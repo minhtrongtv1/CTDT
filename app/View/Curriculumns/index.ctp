@@ -49,7 +49,15 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name_eng','Tên tiếng Anh'); ?></th>
 
 
+<<<<<<< HEAD
                             <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ'); ?></th><th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành'); ?></th>
+=======
+                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ'); ?></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành'); ?></th>
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id','Hình thức đào tạo'); ?></th>
@@ -70,10 +78,20 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition','Điều kiện tốt nghiệp'); ?></th>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
                             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id','Văn bằng tốt nghiệp'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('approve','Phê duyệt'); ?></th>
+<<<<<<< HEAD
+=======
+
+
+                         
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
