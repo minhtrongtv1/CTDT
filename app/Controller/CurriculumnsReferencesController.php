@@ -141,4 +141,24 @@ class CurriculumnsReferencesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+     public function pkt_reference_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('CurriculumnsReference.name' => 'ASC');
+        
+        if (!empty($this->request->data['CurriculumnsReference']['name'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
+        }
+        if (!empty($this->request->data['CurriculumnsReference']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.curriculumn_id like' => '%' . trim($this->request->data['CurriculumnsReference']['curriculumn_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('curriculumnsReferences', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $curriculumns = $this->CurriculumnsReference->Curriculumn->find('list');
+            $this->set(compact('curriculumns'));
+        }
+    }
 }

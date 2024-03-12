@@ -42,7 +42,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã khối kiến thức'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên khối kiến thức'); ?></th>
-                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id', 'Tên chuẩn đầu ra'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id', 'Mã chuẩn đầu ra'); ?></th>
 
 
 
@@ -68,7 +68,7 @@ $this->Paginator->options(array(
 
                                 <td class=""><?php echo h($knowledge['Knowledge']['name']); ?>&nbsp;</td>
                                 <td class="">
-                                    <?php echo $this->Html->link($knowledge['ProgramObjective']['name'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id'])); ?>
+                                    <?php echo $this->Html->link($knowledge['ProgramObjective']['code'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id'])); ?>
                                 </td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['describe']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['id']); ?>&nbsp;</td>

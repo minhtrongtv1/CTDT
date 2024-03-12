@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('pkt'=>true,'action' => 'pkt_level_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -15,8 +15,7 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('code','Mã trình độ đào tạo'); ?></th>
             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên trình độ đào tạo'); ?></th>
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
-            <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
-            <th><input type="checkbox" id="check-all" </th>
+          
         </tr>
     </thead>
     <tbody>
@@ -28,18 +27,11 @@ $this->Paginator->options(array(
                 <td class=""><?php echo h($level['Level']['code']); ?>&nbsp;</td>
                 <td class=""><?php echo h($level['Level']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($level['Level']['id']); ?>&nbsp;</td>
-                <td>
-                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $level['Level']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-                </td>
-                <td>
-                    <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $level['Level']['id'] ?>">
-                </td>
+              
             </tr>
         <?php endforeach; ?>
     </tbody>
     <tfoot>
-    <span class="pull-right">
-        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/levels/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
 </tfoot>
 </table>
 <?php echo $this->element("pagination"); ?>  

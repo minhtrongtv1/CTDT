@@ -146,4 +146,26 @@ class InfrastructuresController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+
+    public function pkt_infrastructure_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Infrastructure.name' => 'ASC');
+        if (!empty($this->request->data['Infrastructure']['code'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.code like' => '%' . trim($this->request->data['Infrastructure']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Infrastructure']['device_id'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.device_id like' => '%' . trim($this->request->data['Infrastructure']['device_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('infrastructures', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $devices = $this->Infrastructure->Device->find('list');
+            $rooms = $this->Infrastructure->Room->find('list');
+            $curriculumns = $this->Infrastructure->Curriculumn->find('list');
+            $this->set(compact('devices', 'rooms', 'curriculumns'));
+        }
+    }
 }

@@ -155,4 +155,33 @@ class SubjectsCurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+
+    public function pkt_subculumn_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['semester_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.semester_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['semester_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjectsCurriculumns', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
+            $subjects = $this->SubjectsCurriculumn->Subject->find('list');
+            $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
+            $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+        }
+    }
 }

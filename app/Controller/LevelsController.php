@@ -137,7 +137,8 @@ class LevelsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-     public function index_pkt() {
+     
+       public function pkt_level_index() {
         $conditions = array();
         $contain = array();
         $order = array('Level.name' => 'ASC');

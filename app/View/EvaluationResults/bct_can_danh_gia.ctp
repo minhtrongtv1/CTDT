@@ -29,7 +29,6 @@ $this->Paginator->options(array(
                         <tr class="headings">
                             <th>#</th>
 
-
                             <th class="column-title"><?php echo $this->Paginator->sort('evaluation_round_id', 'Đợt đánh giá'); ?></th>
 
 

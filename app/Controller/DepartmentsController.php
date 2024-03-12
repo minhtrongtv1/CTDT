@@ -248,4 +248,19 @@ class DepartmentsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+    public function pkt_dpm_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['title'])) {
+            $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('departments', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 }

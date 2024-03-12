@@ -82,6 +82,6 @@ class DashboardsController extends AppController {
 
     public function pkt_home() {
 
-        $this->redirect(array('pkt' => false, 'controller' => 'levels', 'action' => 'index_pkt'));
+        $this->redirect(array('pkt' => true, 'controller' => 'levels', 'action' => 'pkt_level_index'));
     }
 }
