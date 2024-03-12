@@ -14,10 +14,13 @@ class KnowledgeTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.knowledge',
 		'app.program_objective',
-		'app.subjects_curriculumn',
+<<<<<<< HEAD
+		'app.program_outcome',
+		'app.typeoutcome',
+=======
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 		'app.curriculumn',
 		'app.level',
-		'app.major',
 		'app.department',
 		'app.course',
 		'app.evaluation_result',
@@ -30,12 +33,22 @@ class KnowledgeTest extends CakeTestCase {
 		'app.messages_user',
 		'app.teaching',
 		'app.department_supporter',
+		'app.major',
 		'app.form_of_trainning',
+		'app.diploma',
+		'app.infrastructure',
+		'app.device',
+		'app.room',
+<<<<<<< HEAD
+=======
+		'app.program_outcome',
+		'app.typeoutcome',
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
+		'app.subjects_user',
 		'app.subject',
-		'app.semester',
 		'app.book',
 		'app.subjects_book',
-		'app.subjects_user'
+		'app.subjects_curriculumn'
 	);
 
 /**

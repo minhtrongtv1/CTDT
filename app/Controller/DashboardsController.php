@@ -79,9 +79,38 @@ class DashboardsController extends AppController {
 
         $this->redirect(array('celri' => true, 'controller' => 'workshops', 'action' => 'index'));
     }
+    
+     public function pdt_home() {
+        
+        $this->redirect(array('pdt' => false, 'controller' => 'curriculumns', 'action' => 'index'));
+    }
+
+     public function pkt_home() {
+        
+        $this->redirect(array('pkt' => false, 'controller' => 'curriculumns', 'action' => 'index'));
+    }
+
+    public function ptc_home() {
+        
+        $this->redirect(array('ptc' => false, 'controller' => 'books', 'action' => 'ptc_index'));
+    }
 
     public function pkt_home() {
 
+<<<<<<< HEAD
         $this->redirect(array('pkt' => true, 'controller' => 'levels', 'action' => 'pkt_level_index'));
+=======
+        $this->redirect(array('pkt' => true, 'controller' => 'levels', 'action' => 'pkt_index'));
+    }
+    
+    public function pdt_home() {
+
+        $this->redirect(array('pdt' => true, 'controller' => 'curriculumns', 'action' => 'pdt_index'));
+    }
+    
+    public function dvcm_home() {
+
+        $this->redirect(array('dvcm' => true, 'controller' => 'curriculumns', 'action' => 'dvcm_index'));
+>>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
     }
 }

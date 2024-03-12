@@ -121,7 +121,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/subjectsUsers/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/subjectsUsers/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

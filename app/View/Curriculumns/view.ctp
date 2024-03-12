@@ -68,9 +68,14 @@
 			<?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Diploma Id'); ?></strong></td>
+</tr><tr>		<td><strong><?php echo __('Diploma'); ?></strong></td>
 		<td>
-			<?php echo h($curriculumn['Curriculumn']['diploma_id']); ?>
+			<?php echo $this->Html->link($curriculumn['Diploma']['name'], array('controller' => 'diplomas', 'action' => 'view', $curriculumn['Diploma']['id']), array('class' => '')); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong><?php echo __('Approve'); ?></strong></td>
+		<td>
+			<?php echo h($curriculumn['Curriculumn']['approve']); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
@@ -162,6 +167,7 @@
                                 		<th class="text-center"><?php echo __('Code'); ?></th>
 		<th class="text-center"><?php echo __('Name'); ?></th>
 		<th class="text-center"><?php echo __('Content'); ?></th>
+		<th class="text-center"><?php echo __('Typeoutcome Id'); ?></th>
 		<th class="text-center"><?php echo __('Curriculumn Id'); ?></th>
 		<th class="text-center"><?php echo __('Created'); ?></th>
 		<th class="text-center"><?php echo __('Modified'); ?></th>
@@ -177,6 +183,7 @@
 			<td class="text-center"><?php echo $programOutcome['code']; ?></td>
 			<td class="text-center"><?php echo $programOutcome['name']; ?></td>
 			<td class="text-center"><?php echo $programOutcome['content']; ?></td>
+			<td class="text-center"><?php echo $programOutcome['typeoutcome_id']; ?></td>
 			<td class="text-center"><?php echo $programOutcome['curriculumn_id']; ?></td>
 			<td class="text-center"><?php echo $programOutcome['created']; ?></td>
 			<td class="text-center"><?php echo $programOutcome['modified']; ?></td>
@@ -272,7 +279,6 @@
 		<th class="text-center"><?php echo __('Describe'); ?></th>
 		<th class="text-center"><?php echo __('Syllabus Filename'); ?></th>
 		<th class="text-center"><?php echo __('Syllabus Path'); ?></th>
-		<th class="text-center"><?php echo __('Semester Id'); ?></th>
 		<th class="text-center"><?php echo __('Created'); ?></th>
 		<th class="text-center"><?php echo __('Modified'); ?></th>
 		<th class="text-center"><?php echo __('Id'); ?></th>
@@ -295,7 +301,6 @@
 			<td class="text-center"><?php echo $subject['describe']; ?></td>
 			<td class="text-center"><?php echo $subject['syllabus_filename']; ?></td>
 			<td class="text-center"><?php echo $subject['syllabus_path']; ?></td>
-			<td class="text-center"><?php echo $subject['semester_id']; ?></td>
 			<td class="text-center"><?php echo $subject['created']; ?></td>
 			<td class="text-center"><?php echo $subject['modified']; ?></td>
 			<td class="text-center"><?php echo $subject['id']; ?></td>

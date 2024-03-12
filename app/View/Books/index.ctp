@@ -84,7 +84,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($book['Book']['author_name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['publisher']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['publishing_year']); ?>&nbsp;</td>
-                                <td class=""><?php echo $this->Html->link("Link tài liệu",$book['Book']['link_libary']);?>&nbsp;</td>
+                                <td class=""><?php echo $this->Html->link("Link tài liệu", $book['Book']['link_libary']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['pricing_code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['quantity']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($book['Book']['note']); ?>&nbsp;</td>

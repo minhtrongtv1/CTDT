@@ -53,6 +53,268 @@
             echo $this->Html->link('<i class="menu-icon fa fa-cloud-download"></i>Sao lưu', array('admin' => true, 'controller' => 'Mysqldumps', 'action' => 'index'), array('escape' => false));
             ?>
         </li>
+<<<<<<< HEAD
+
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text">
+                    Tập huấn
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+                <li class="">
+                    <?php echo $this->Html->link(' <i class="menu-icon fa fa-caret-right"></i>
+                        Kết quả tập huấn', array('admin' => true, 'controller' => 'enrolments', 'action' => 'index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                        Workshop', array('admin' => true, 'controller' => 'workshops', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link(' <i class="menu-icon fa fa-caret-right"></i>
+                        Chuyên đề', array('controller' => 'chapters', 'action' => 'index'), array('escape' => false)); ?>
+
+
+
+
+                    <b class="arrow"></b>
+                </li>
+
+
+                <li class="">
+                    <?php echo $this->Html->link(' <i class="menu-icon fa fa-caret-right"></i>
+                        Lĩnh vực', array('controller' => 'fields', 'action' => 'index'), array('escape' => false)); ?>
+
+
+
+
+                    <b class="arrow"></b>
+                </li>
+
+
+
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"> Đánh giá khóa học </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Phân công BCT </span>', array('admin' => true, 'plugin' => false, 'controller' => 'evaluationResults', 'action' => 'phan_cong'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-calendar-check-o"></i>
+                <span class="menu-text">Đợt đánh giá</span>', array('admin' => true, 'plugin' => false, 'controller' => 'evaluation_rounds', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-folder-open"></i>
+                <span class="menu-text"> Khóa học</span>', array('admin' => true, 'plugin' => false, 'controller' => 'courses', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa  fa-graduation-cap"></i>
+                <span class="menu-text"> Khóa học LMS</span>', array('admin' => true, 'plugin' => false, 'controller' => 'lms_courses', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-gavel"></i>
+                <span class="menu-text"> Kết quả đánh giá</span>', array('admin' => true, 'plugin' => false, 'controller' => 'evaluation_results', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-gavel"></i>
+                <span class="menu-text"> Yêu cầu hỗ trợ</span>', array('admin' => true, 'plugin' => false, 'controller' => 'supporting_requests', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
+
+
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text">
+                    Thang do Bloom
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-sort-numeric-asc"></i>
+                        Lĩnh vực nhận thức', array('admin' => false, 'controller' => 'linh_vuc_nhan_thucs', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                        Mức độ nhận thức', array('admin' => false, 'controller' => 'muc_do_nhan_thucs', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                       Động từ thể hiện', array('admin' => false, 'controller' => 'dong_tu_the_hiens', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+
+
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text">
+                    Hội thi hùng biện
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                        Thí sinh', array('admin' => true, 'controller' => 'ThiSinhHungBiens', 'action' => 'index'), array('escape' => false)); ?>
+
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link(' <i class="menu-icon fa fa-caret-right"></i>
+                        Kết quả dự đoán', array('controller' => 'DuDoanHungBiens', 'action' => 'index'), array('escape' => false)); ?>
+
+
+
+
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
+
+        <li class="">
+            <a href="" class="dropdown-toggle">
+                <i class="menu-icon fa fa-users"></i>
+                <span class="menu-text">
+                    Quản lý người dùng
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Danh sách Đơn vị </span>', array('admin' => false, 'plugin' => false, 'controller' => 'departments', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Danh sách User </span>', array('admin' => true, 'plugin' => false, 'controller' => 'users', 'action' => 'index'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-users"></i>
+                <span class="menu-text"> Danh sách nhóm </span>', array('admin' => true, 'plugin' => false, 'controller' => 'groups'), array('escape' => false)); ?>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Cập nhật ACOS </span>', '/admin/acl_manager/acl/update_acos', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Cập nhật AROS </span>', '/admin/acl_manager/acl/update_aros', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-check"></i>
+                                                        <span class="menu-text"> Phân quyền </span>', '/admin/acl_manager/acl', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+
+
+            </ul>
+        </li>
+=======
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
         <li class="">
             <a href="" class="dropdown-toggle">
                 <i class="menu-icon fa fa-book" aria-hidden="true"></i>
@@ -91,7 +353,15 @@
             
                  <li class="">
                     <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+<<<<<<< HEAD
                                                         <span class="menu-text"> Trình độ đào tạo </span>', array('pkt' => true, 'controller' => 'levels', 'action' => 'pkt_level_index'), array('escape' => false)); ?>
+=======
+<<<<<<< HEAD
+                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/levels', array('escape' => false)); ?>
+=======
+                                                        <span class="menu-text"> Trình độ đào tạo </span>', '/levels/index_pkt', array('escape' => false)); ?>
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
+>>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
                     <b class="arrow"></b>
                 </li>
                 <li class="">

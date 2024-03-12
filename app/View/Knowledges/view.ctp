@@ -18,14 +18,14 @@
 			<?php echo h($knowledge['Knowledge']['code']); ?>
 			&nbsp;
 		</td>
-</tr><tr>		<td><strong><?php echo __('Program Objective'); ?></strong></td>
-		<td>
-			<?php echo $this->Html->link($knowledge['ProgramObjective']['name'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id']), array('class' => '')); ?>
-			&nbsp;
-		</td>
 </tr><tr>		<td><strong><?php echo __('Name'); ?></strong></td>
 		<td>
 			<?php echo h($knowledge['Knowledge']['name']); ?>
+			&nbsp;
+		</td>
+</tr><tr>		<td><strong><?php echo __('Program Objective'); ?></strong></td>
+		<td>
+			<?php echo $this->Html->link($knowledge['ProgramObjective']['name'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id']), array('class' => '')); ?>
 			&nbsp;
 		</td>
 </tr><tr>		<td><strong><?php echo __('Describe'); ?></strong></td>
@@ -70,8 +70,8 @@
                                 		<th class="text-center"><?php echo __('Curriculumn Id'); ?></th>
 		<th class="text-center"><?php echo __('Subject Id'); ?></th>
 		<th class="text-center"><?php echo __('Knowledge Id'); ?></th>
-		<th class="text-center"><?php echo __('Obligatory'); ?></th>
-		<th class="text-center"><?php echo __('Elective'); ?></th>
+		<th class="text-center"><?php echo __('Semester Id'); ?></th>
+		<th class="text-center"><?php echo __('Typesubject'); ?></th>
 		<th class="text-center"><?php echo __('Created'); ?></th>
 		<th class="text-center"><?php echo __('Modified'); ?></th>
 		<th class="text-center"><?php echo __('Id'); ?></th>
@@ -86,8 +86,8 @@
 			<td class="text-center"><?php echo $subjectsCurriculumn['curriculumn_id']; ?></td>
 			<td class="text-center"><?php echo $subjectsCurriculumn['subject_id']; ?></td>
 			<td class="text-center"><?php echo $subjectsCurriculumn['knowledge_id']; ?></td>
-			<td class="text-center"><?php echo $subjectsCurriculumn['obligatory']; ?></td>
-			<td class="text-center"><?php echo $subjectsCurriculumn['elective']; ?></td>
+			<td class="text-center"><?php echo $subjectsCurriculumn['semester_id']; ?></td>
+			<td class="text-center"><?php echo $subjectsCurriculumn['typesubject']; ?></td>
 			<td class="text-center"><?php echo $subjectsCurriculumn['created']; ?></td>
 			<td class="text-center"><?php echo $subjectsCurriculumn['modified']; ?></td>
 			<td class="text-center"><?php echo $subjectsCurriculumn['id']; ?></td>

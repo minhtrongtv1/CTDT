@@ -40,8 +40,18 @@ class ProgramObjectiveFixture extends CakeTestFixture {
 			'describe' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'level' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'group_type' => 'Lorem ipsum dolor sit amet',
+<<<<<<< HEAD
 			'created' => '2024-03-11 11:15:22',
 			'modified' => '2024-03-11 11:15:22',
+=======
+<<<<<<< HEAD
+			'created' => '2024-03-11 16:54:16',
+			'modified' => '2024-03-11 16:54:16',
+=======
+			'created' => '2024-03-11 15:45:43',
+			'modified' => '2024-03-11 15:45:43',
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
+>>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 			'id' => 1
 		),
 	);

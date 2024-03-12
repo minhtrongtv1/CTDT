@@ -36,17 +36,10 @@ $this->Paginator->options(array(
 
                         <tr class="headings">
                             <th>#</th>
-
-
-
-
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
-
-
-
-
-
+                          
+                           
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
                             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
@@ -62,7 +55,7 @@ $this->Paginator->options(array(
 
                                 <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
-
+                                
                                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $major['Major']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -115,7 +108,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/majors/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/majors/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

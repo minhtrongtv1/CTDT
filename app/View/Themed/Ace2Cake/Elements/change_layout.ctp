@@ -5,16 +5,14 @@
     <select name="layout" id="layout_select_box">
         <?php
         $logginUserGroup = SessionComponent::read('LogginUserGroup');
-        
-        
-        
+
         foreach ($logginUserGroup as $group):
-            
-            if ($group['published']):
-                ?>
-                <option value="<?php echo $group['alias'] ?>"><?php echo $group['name'] ?></option>
-            <?php endif; ?>
+            ?>
+            <option value="<?php echo $group['alias'] ?>"><?php echo $group['name'] ?></option>
         <?php endforeach; ?>
+                
+           
+       
     </select>
 </div>
 

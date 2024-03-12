@@ -39,6 +39,23 @@ class TeachingsController extends AppController {
             $this->set(compact('courses', 'users'));
         }
     }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('Teaching.fieldName' => $value));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('teachings', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $courses = $this->Teaching->Course->find('list');
+            $users = $this->Teaching->User->find('list');
+            $this->set(compact('courses', 'users'));
+        }
+    }
 
     /**
      * view method

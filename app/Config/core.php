@@ -154,7 +154,11 @@ Configure::write('App.encoding', 'UTF-8');
  * 	`manager_index()` and `/manager/controller/index`
  */
 //Configure::write('Routing.prefixes', array('admin'));
-Configure::write('Routing.prefixes', array('admin', 'bct','teacher','khcn','celri','pkt'));
+<<<<<<< HEAD
+Configure::write('Routing.prefixes', array('admin', 'bct','teacher','khcn','celri','pdt','pkt','ptc',));
+=======
+Configure::write('Routing.prefixes', array('admin', 'bct','teacher','khcn','celri','pkt','pdt','ptc','dvcm'));
+>>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 /**
  * Turn off all caching application-wide.
  */
