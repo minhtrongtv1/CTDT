@@ -22,13 +22,11 @@ class BooksController extends AppController {
      *
      * @return void
      */
-    
-    
     public function index() {
         $conditions = array();
         $contain = array();
         $order = array('Book.name' => 'ASC');
-         if (!empty($this->request->data['Book']['code'])) {
+        if (!empty($this->request->data['Book']['code'])) {
             $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
         }
         if (!empty($this->request->data['Book']['name'])) {
@@ -46,12 +44,12 @@ class BooksController extends AppController {
             $this->set(compact('subjects'));
         }
     }
-    
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
         $order = array('Book.name' => 'ASC');
-         if (!empty($this->request->data['Book']['code'])) {
+        if (!empty($this->request->data['Book']['code'])) {
             $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
         }
         if (!empty($this->request->data['Book']['name'])) {
@@ -69,6 +67,7 @@ class BooksController extends AppController {
             $this->set(compact('subjects'));
         }
     }
+
     /**
      * view method
      *
@@ -102,7 +101,6 @@ class BooksController extends AppController {
         }
         $subjects = $this->Book->Subject->find('list');
         $this->set(compact('subjects'));
-       
     }
 
     /**
@@ -168,19 +166,35 @@ class BooksController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-    public function pkt_book_index() {
-=======
-<<<<<<< HEAD
-    
-    
-=======
+
+    public function pkt_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Book.name' => 'ASC');
+        if (!empty($this->request->data['Book']['code'])) {
+            $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Book']['name'])) {
+            $conditions = Hash::merge($conditions, array('Book.name like' => '%' . trim($this->request->data['Book']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Book']['pricing_code'])) {
+            $conditions = Hash::merge($conditions, array('Book.pricing_code like' => '%' . trim($this->request->data['Book']['pricing_code']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('books', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $subjects = $this->Book->Subject->find('list');
+            $this->set(compact('subjects'));
+        }
+    }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Book.name' => 'ASC');
-         if (!empty($this->request->data['Book']['code'])) {
+        if (!empty($this->request->data['Book']['code'])) {
             $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
         }
         if (!empty($this->request->data['Book']['name'])) {
@@ -198,12 +212,13 @@ class BooksController extends AppController {
             $this->set(compact('subjects'));
         }
     }
+
     public function dvcm_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
         $conditions = array();
         $contain = array();
         $order = array('Book.name' => 'ASC');
-         if (!empty($this->request->data['Book']['code'])) {
+        if (!empty($this->request->data['Book']['code'])) {
             $conditions = Hash::merge($conditions, array('Book.code like' => '%' . trim($this->request->data['Book']['code']) . '%'));
         }
         if (!empty($this->request->data['Book']['name'])) {
@@ -222,8 +237,6 @@ class BooksController extends AppController {
         }
     }
 
-<<<<<<< HEAD
-=======
     /**
      * view method
      *
@@ -257,7 +270,6 @@ class BooksController extends AppController {
         }
         $subjects = $this->Book->Subject->find('list');
         $this->set(compact('subjects'));
-       
     }
 
     /**
@@ -323,6 +335,4 @@ class BooksController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

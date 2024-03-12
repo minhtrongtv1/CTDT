@@ -42,6 +42,7 @@ class LevelsController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -155,12 +156,11 @@ class LevelsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-     
-       public function pkt_level_index() {
-=======
-     public function pkt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
+    
+
+    public function pkt_index() {
+
         $conditions = array();
         $contain = array();
         $order = array('Level.name' => 'ASC');
@@ -178,6 +178,7 @@ class LevelsController extends AppController {
             
         }
     }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
@@ -196,6 +197,7 @@ class LevelsController extends AppController {
             
         }
     }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();

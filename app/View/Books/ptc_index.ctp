@@ -1,6 +1,6 @@
  <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),

@@ -17,8 +17,9 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('name', ['label' => 'Tên ngành']); ?>
     <?php echo $this->Form->input('code', ['label' => 'Mã ngành']); ?>
+    <?php echo $this->Form->input('name', ['label' => 'Tên ngành']); ?>
+    
 
     <?php echo $this->Form->input('id'); ?>
 

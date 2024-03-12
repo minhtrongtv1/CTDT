@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -20,8 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã đơn vị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('title', array('placeholder' => 'Tên đơn vị', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('lms_id', array('placeholder' => 'lms_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-
+                   
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
                         <?php echo $this->Html->link('Bỏ lọc', array('action' => 'index'), array('class' => 'btn btn-warning btn-xs')); ?>
@@ -38,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã đơn vị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã đơn vị'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên đơn vị'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên đơn vị'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('lms_id'); ?></th>

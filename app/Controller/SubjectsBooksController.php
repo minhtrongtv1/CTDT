@@ -42,6 +42,7 @@ class SubjectsBooksController extends AppController {
             $this->set(compact('subjects', 'books'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -163,12 +164,8 @@ class SubjectsBooksController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-      public function pkt_subjectbook_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('SubjectsBook.book_id' => 'ASC');
@@ -188,8 +185,29 @@ class SubjectsBooksController extends AppController {
             $this->set(compact('subjects', 'books'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('SubjectsBook.book_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsBook']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsBook.subject_id like' => '%' . trim($this->request->data['SubjectsBook']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsBook']['book_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsBook.book_id like' => '%' . trim($this->request->data['SubjectsBook']['book_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjectsBooks', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $subjects = $this->SubjectsBook->Subject->find('list');
+            $books = $this->SubjectsBook->Book->find('list');
+            $this->set(compact('subjects', 'books'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -311,5 +329,4 @@ class SubjectsBooksController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

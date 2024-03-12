@@ -20,7 +20,6 @@
     <?php echo $this->Form->input('name_vn', ['label' => 'Tên tiếng Việt']); ?>
     <?php echo $this->Form->input('name_eng', ['label' => 'Tên tiếng Anh']); ?>
 
-    <?php echo $this->Form->input('level_id', ['label' => 'Trình độ']); ?>
 
     <?php echo $this->Form->input('level_id', ['label' => 'Trình độ đào tạo']); ?>
     <?php echo $this->Form->input('department_id', ['label' => 'Đơn vị ']); ?>
@@ -43,12 +42,6 @@
     ?>
 
 
-    <?php
-    echo $this->Form->radio('approve', [
-        'Đã duyệt' => 'Đã duyệt',
-        'Chưa duyệt' => 'Chưa duyệt'
-    ]);
-    ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>

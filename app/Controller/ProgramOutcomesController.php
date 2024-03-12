@@ -45,21 +45,28 @@ class ProgramOutcomesController extends AppController {
             $this->set(compact('typeoutcomes', 'curriculumns'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('ProgramOutcome.fieldName' => $value));
+        $order = array('ProgramOutcome.name' => 'ASC');
+        if (!empty($this->request->data['ProgramOutcome']['name'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.name like' => '%' . trim($this->request->data['ProgramOutcome']['name']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.curriculumn_id like' => '%' . trim($this->request->data['ProgramOutcome']['curriculumn_id']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['typeoutcome_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.typeoutcome_id like' => '%' . trim($this->request->data['ProgramOutcome']['typeoutcome_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
         $this->set('programOutcomes', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
             $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
-            $this->set(compact('curriculumns', 'typeoutcomes'));
+            $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
+            $this->set(compact('typeoutcomes', 'curriculumns'));
         }
     }
 
@@ -163,6 +170,7 @@ class ProgramOutcomesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
@@ -186,6 +194,7 @@ class ProgramOutcomesController extends AppController {
             $this->set(compact('typeoutcomes', 'curriculumns'));
         }
     }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -310,23 +319,28 @@ class ProgramOutcomesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-    
-    
-     public function pkt_outcome_index() {
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('ProgramOutcome.fieldName' => $value));
+        $order = array('ProgramOutcome.name' => 'ASC');
+        if (!empty($this->request->data['ProgramOutcome']['name'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.name like' => '%' . trim($this->request->data['ProgramOutcome']['name']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.curriculumn_id like' => '%' . trim($this->request->data['ProgramOutcome']['curriculumn_id']) . '%'));
+        }
+        if (!empty($this->request->data['ProgramOutcome']['typeoutcome_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramOutcome.typeoutcome_id like' => '%' . trim($this->request->data['ProgramOutcome']['typeoutcome_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
         $this->set('programOutcomes', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
             $typeoutcomes = $this->ProgramOutcome->Typeoutcome->find('list');
-            $this->set(compact('curriculumns', 'typeoutcomes'));
+            $curriculumns = $this->ProgramOutcome->Curriculumn->find('list');
+            $this->set(compact('typeoutcomes', 'curriculumns'));
         }
     }
 }

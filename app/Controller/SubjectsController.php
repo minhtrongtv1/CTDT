@@ -39,6 +39,7 @@ class SubjectsController extends AppController {
             $this->set(compact('books', 'curriculumns', 'users'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -54,11 +55,11 @@ class SubjectsController extends AppController {
 
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
-      
+
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
             $users = $this->Subject->User->find('list');
-            $this->set(compact( 'books', 'curriculumns', 'users'));
+            $this->set(compact('books', 'curriculumns', 'users'));
         }
     }
 
@@ -225,12 +226,8 @@ class SubjectsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-     public function pkt_subject_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Subject.name' => 'ASC');
@@ -245,13 +242,6 @@ class SubjectsController extends AppController {
 
         $this->set('subjects', $this->paginate());
         if (!$this->request->is('ajax')) {
-<<<<<<< HEAD
-      
-            $books = $this->Subject->Book->find('list');
-            $curriculumns = $this->Subject->Curriculumn->find('list');
-            $users = $this->Subject->User->find('list');
-            $this->set(compact( 'books', 'curriculumns', 'users'));
-=======
 
             $books = $this->Subject->Book->find('list');
             $curriculumns = $this->Subject->Curriculumn->find('list');
@@ -259,6 +249,37 @@ class SubjectsController extends AppController {
             $this->set(compact('books', 'curriculumns', 'users'));
         }
     }
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Subject.name' => 'ASC');
+        if (!empty($this->request->data['Subject']['name'])) {
+            $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Subject']['code'])) {
+            $conditions = Hash::merge($conditions, array('Subject.code like' => '%' . trim($this->request->data['Subject']['code']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjects', $this->paginate());
+        if (!$this->request->is('ajax')) {
+
+
+            $books = $this->Subject->Book->find('list');
+            $curriculumns = $this->Subject->Curriculumn->find('list');
+            $users = $this->Subject->User->find('list');
+            $this->set(compact('books', 'curriculumns', 'users'));
+
+            $books = $this->Subject->Book->find('list');
+            $curriculumns = $this->Subject->Curriculumn->find('list');
+            $users = $this->Subject->User->find('list');
+            $this->set(compact('books', 'curriculumns', 'users'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -282,7 +303,6 @@ class SubjectsController extends AppController {
         }
     }
 
-    
     public function dvcm_view($id = null) {
         if (!$this->Subject->exists($id)) {
             throw new NotFoundException(__('Học phần không hợp lệ'));
@@ -380,7 +400,6 @@ class SubjectsController extends AppController {
         } else {
             $this->Flash->error(__('Xóa học phần không thành công'));
             $this->redirect(array('action' => 'index'));
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
         }
     }
 }

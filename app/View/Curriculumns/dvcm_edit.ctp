@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Edit Curriculumn'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin chương trình đào tạo'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,21 +17,6 @@
             )
     );
     ?>
-
-    <?php echo $this->Form->input('code'); ?>
-    <?php echo $this->Form->input('name_vn'); ?>
-    <?php echo $this->Form->input('name_eng'); ?>
-    <?php echo $this->Form->input('level_id'); ?>
-    <?php echo $this->Form->input('major_id'); ?>
-    <?php echo $this->Form->input('form_of_trainning_id'); ?>
-    <?php echo $this->Form->input('credit'); ?>
-    <?php echo $this->Form->input('trainning_time'); ?>
-    <?php echo $this->Form->input('enrollment_subject'); ?>
-    <?php echo $this->Form->input('point_ladder'); ?>
-    <?php echo $this->Form->input('graduation_condition'); ?>
-    <?php echo $this->Form->input('diploma_id'); ?>
- 
-    <?php echo $this->Form->input('id'); ?>
 
     <?php echo $this->Form->input('code', ['label' => 'Mã chương trình đào tạo']); ?>
     <?php echo $this->Form->input('name_vn', ['label' => 'Tên tiếng Việt']); ?>

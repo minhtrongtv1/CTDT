@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -100,7 +100,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/dvcm/knowledges/dvcm_index", data, function (response) {/-strong/-heart:>:o:-((:-h$("#datarows").html(response);
+        $.post("<?php echo BASE_URL ?>/ptc/knowledges/ptc_index", data, function (response) {/-strong/-heart:>:o:-((:-h$("#datarows").html(response);
         });
 
     });

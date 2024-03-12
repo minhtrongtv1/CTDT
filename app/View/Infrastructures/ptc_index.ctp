@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -95,7 +95,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/infrastructures/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/ptc/infrastructures/ptc_index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -115,7 +115,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/infrastructures/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/infrastructures/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

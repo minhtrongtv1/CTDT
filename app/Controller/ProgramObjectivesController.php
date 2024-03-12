@@ -319,29 +319,27 @@ class ProgramObjectivesController extends AppController {
         }
     }
     
-      public function pkt_objective_index() {
+      public function pkt_index() {
         $conditions = array();
         $contain = array();
-        $order = array('ProgramObjective.code' => 'ASC');
-        if (!empty($this->request->data['ProgramObjective']['code'])) {
-            $conditions = Hash::merge($conditions, array('ProgramObjective.code like' => '%' . trim($this->request->data['ProgramObjective']['code']) . '%'));
-        }
-        if (!empty($this->request->data['ProgramObjective']['group_type'])) {
-            $conditions = Hash::merge($conditions, array('ProgramObjective.group_type like' => '%' . trim($this->request->data['ProgramObjective']['group_type']) . '%'));
+        $order = array('ProgramObjective.name' => 'ASC');
+        if (!empty($this->request->data['ProgramObjective']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.curriculumn_id like' => '%' . trim($this->request->data['ProgramObjective']['curriculumn_id']) . '%'));
         }
         if (!empty($this->request->data['ProgramObjective']['program_outcome_id'])) {
             $conditions = Hash::merge($conditions, array('ProgramObjective.program_outcome_id like' => '%' . trim($this->request->data['ProgramObjective']['program_outcome_id']) . '%'));
         }
-
+        if (!empty($this->request->data['ProgramObjective']['code'])) {
+            $conditions = Hash::merge($conditions, array('ProgramObjective.code like' => '%' . trim($this->request->data['ProgramObjective']['code']) . '%'));
+        }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
         $this->set('programObjectives', $this->paginate());
         if (!$this->request->is('ajax')) {
-            $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
             $curriculumns = $this->ProgramObjective->Curriculumn->find('list');
-            $this->set(compact('programOutcomes', 'curriculumns'));
-            // $this->set(compact('programOutcomes'));
+            $programOutcomes = $this->ProgramObjective->ProgramOutcome->find('list');
+            $this->set(compact('curriculumns', 'programOutcomes'));
         }
     }
 }

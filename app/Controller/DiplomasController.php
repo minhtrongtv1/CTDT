@@ -39,6 +39,7 @@ class DiplomasController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -149,13 +150,8 @@ class DiplomasController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-     public function pkt_diploma_index() {
-=======
 
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Diploma.name' => 'ASC');
@@ -170,8 +166,23 @@ class DiplomasController extends AppController {
             
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Diploma.name' => 'ASC');
+        if (!empty($this->request->data['Diploma']['name'])) {
+            $conditions = Hash::merge($conditions, array('Diploma.name like' => '%' . trim($this->request->data['Diploma']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('diplomas', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     public function dvcm_index() {
         $conditions = array();
@@ -283,5 +294,4 @@ class DiplomasController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

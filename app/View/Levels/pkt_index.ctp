@@ -1,10 +1,6 @@
 <?php
 $this->Paginator->options(array(
-<<<<<<<< HEAD:app/View/Levels/pkt_level_index.ctp
-    'url' => array('pkt'=> true,'controller' => 'levels','action' => 'pkt_level_index'),
-========
-    'url' => array('pkt' => true,'action' => 'pkt_index'),
->>>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663:app/View/Levels/pkt_index.ctp
+    'url' => array('pkt' => true, 'action' => 'pkt_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -41,15 +37,15 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên trình độ đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                          
+
                         </tr>
                     </thead>
 
@@ -62,7 +58,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($level['Level']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($level['Level']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($level['Level']['id']); ?>&nbsp;</td>
-                             
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -86,21 +82,15 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-<<<<<<<< HEAD:app/View/Levels/pkt_level_index.ctp
-        $.post("<?php echo BASE_URL ?>/pkt/levels/level_index", data, function (response) {
-========
-        $.post("<?php echo BASE_URL ?>/pkt/levels/pkt_index", data, function (response) {
->>>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663:app/View/Levels/pkt_index.ctp
+
+        $.post("<?php echo BASE_URL ?>/pkt/levels/index", data, function (response) {
+
             $("#datarows").html(response);
         });
-
     });
-
     $(document).on("click", "#check-all", function () {
         $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
     });
-
-
     $(document).on("click", "#delete-seleted", function () {
         var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
         //console.log(selectedRecord.length);return false;
@@ -110,13 +100,12 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/levels/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/levels/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');
                     });
                     return true;
-
                 } else {
                     alert('Có lỗi trong quá trình thực hiện thao tác!!!');
                     return false;

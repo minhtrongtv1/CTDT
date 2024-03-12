@@ -1,4 +1,12 @@
-
+<?php
+$this->Paginator->options(array(
+    'url' => array('pdt' => true, 'action' => 'pdt_index'),
+    'update' => '#datarows',
+    'evalScripts' => true,
+    'data' => http_build_query($this->request->data),
+    'method' => 'POST'
+));
+?>
 <table class="table table-bordered table-hover has-checked-item">
     <thead>
 

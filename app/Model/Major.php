@@ -50,14 +50,7 @@ class Major extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên ngành này đã có',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
+     
         ),
     );
 

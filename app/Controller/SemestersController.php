@@ -42,6 +42,7 @@ class SemestersController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -155,10 +156,26 @@ class SemestersController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-    public function pkt_semester_index() {
-=======
+
+    public function pkt_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('Semester.name' => 'ASC');
+        if (!empty($this->request->data['Semester']['code'])) {
+            $conditions = Hash::merge($conditions, array('Semester.code like' => '%' . trim($this->request->data['Semester']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Semester']['name'])) {
+            $conditions = Hash::merge($conditions, array('Semester.name like' => '%' . trim($this->request->data['Semester']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('semesters', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
@@ -177,8 +194,9 @@ class SemestersController extends AppController {
             
         }
     }
+
     public function dvcm_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
         $conditions = array();
         $contain = array();
         $order = array('Semester.name' => 'ASC');
@@ -197,8 +215,6 @@ class SemestersController extends AppController {
         }
     }
 
-<<<<<<< HEAD
-=======
     /**
      * view method
      *
@@ -293,5 +309,4 @@ class SemestersController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

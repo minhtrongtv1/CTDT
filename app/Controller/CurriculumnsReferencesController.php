@@ -26,7 +26,7 @@ class CurriculumnsReferencesController extends AppController {
         $conditions = array();
         $contain = array();
         $order = array('CurriculumnsReference.name' => 'ASC');
-        
+
         if (!empty($this->request->data['CurriculumnsReference']['name'])) {
             $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
         }
@@ -42,12 +42,12 @@ class CurriculumnsReferencesController extends AppController {
             $this->set(compact('curriculumns'));
         }
     }
-    
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
         $order = array('CurriculumnsReference.name' => 'ASC');
-        
+
         if (!empty($this->request->data['CurriculumnsReference']['name'])) {
             $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
         }
@@ -162,15 +162,12 @@ class CurriculumnsReferencesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-     public function pkt_reference_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('CurriculumnsReference.name' => 'ASC');
-        
+
         if (!empty($this->request->data['CurriculumnsReference']['name'])) {
             $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
         }
@@ -186,13 +183,33 @@ class CurriculumnsReferencesController extends AppController {
             $this->set(compact('curriculumns'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('CurriculumnsReference.name' => 'ASC');
+
+        if (!empty($this->request->data['CurriculumnsReference']['name'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
+        }
+        if (!empty($this->request->data['CurriculumnsReference']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('CurriculumnsReference.curriculumn_id like' => '%' . trim($this->request->data['CurriculumnsReference']['curriculumn_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('curriculumnsReferences', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $curriculumns = $this->CurriculumnsReference->Curriculumn->find('list');
+            $this->set(compact('curriculumns'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
         $order = array('CurriculumnsReference.name' => 'ASC');
-        
+
         if (!empty($this->request->data['CurriculumnsReference']['name'])) {
             $conditions = Hash::merge($conditions, array('CurriculumnsReference.name like' => '%' . trim($this->request->data['CurriculumnsReference']['name']) . '%'));
         }
@@ -307,5 +324,4 @@ class CurriculumnsReferencesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

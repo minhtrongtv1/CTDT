@@ -56,14 +56,7 @@ class Curriculumn extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên chương trình này đã có',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
+            
         ),
         'name_eng' => array(
             'notBlank' => array(
@@ -71,20 +64,11 @@ class Curriculumn extends AppModel {
                 'message' => 'Bạn không được bỏ trống thông tin này',
                 //'allowEmpty' => false,
                 'required' => true,
-                //'message' => 'Bạn không được bỏ trống thông tin này',
-                'allowEmpty' => true,
-                'required' => false,
+                
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên chương trình này đã có',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
+           
         ),
         'level_id' => array(
             'numeric' => array(

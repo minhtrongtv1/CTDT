@@ -20,9 +20,9 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name_vn', array('placeholder' => 'Tên tiếng Việt', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('level_id', array('placeholder' => 'Trình độ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('major_id', array('placeholder' => 'Ngành đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('form_of_trainning_id', array('placeholder' => 'Hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('level_id', array('empty' => '--Trình độ đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('major_id', array('empty' => 'Ngành đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('form_of_trainning_id', array('empty' => '--Hình thức đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -51,6 +51,7 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ'); ?></th>
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành'); ?></th>
 
@@ -73,11 +74,11 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition', 'Điều kiện tốt nghiệp'); ?></th>
 
 
+
                             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('approve', 'Phê duyệt'); ?></th>
-
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
@@ -95,6 +96,7 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_vn']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Level']['name']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumn['Department']['title']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Major']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['FormOfTrainning']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['credit']); ?>&nbsp;</td>
@@ -130,7 +132,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/pdt/curriculumns/pdt_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/pdt/curriculumns/index", data, function (response) {
             $("#datarows").html(response);
         });
 

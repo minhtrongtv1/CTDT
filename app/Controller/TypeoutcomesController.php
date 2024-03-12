@@ -39,6 +39,7 @@ class TypeoutcomesController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -149,11 +150,8 @@ class TypeoutcomesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-     public function pkt_typeoutcome_index() {
-=======
-     public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Typeoutcome.name' => 'ASC');
@@ -168,8 +166,24 @@ class TypeoutcomesController extends AppController {
             
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Typeoutcome.name' => 'ASC');
+        if (!empty($this->request->data['Typeoutcome']['name'])) {
+            $conditions = Hash::merge($conditions, array('Typeoutcome.name like' => '%' . trim($this->request->data['Typeoutcome']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('typeoutcomes', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -280,5 +294,4 @@ class TypeoutcomesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

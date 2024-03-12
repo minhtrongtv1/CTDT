@@ -50,28 +50,36 @@ class SubjectsCurriculumnsController extends AppController {
             $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
-        $order = array('Subject.name' => 'ASC');
-        if (!empty($this->request->data['Subject']['name'])) {
-            $conditions = Hash::merge($conditions, array('Subject.name like' => '%' . trim($this->request->data['Subject']['name']) . '%'));
+        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
         }
-        if (!empty($this->request->data['Subject']['code'])) {
-            $conditions = Hash::merge($conditions, array('Subject.code like' => '%' . trim($this->request->data['Subject']['code']) . '%'));
+        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['semester_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.semester_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['semester_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
 
-        $this->set('subjects', $this->paginate());
+        $this->set('subjectsCurriculumns', $this->paginate());
         if (!$this->request->is('ajax')) {
-      
-            $books = $this->Subject->Book->find('list');
-            $curriculumns = $this->Subject->Curriculumn->find('list');
-            $users = $this->Subject->User->find('list');
-            $this->set(compact( 'books', 'curriculumns', 'users'));
+            $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
+            $subjects = $this->SubjectsCurriculumn->Subject->find('list');
+            $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
+            $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
         }
     }
+
     /**
      * view method
      *
@@ -176,12 +184,8 @@ class SubjectsCurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
 
-    public function pkt_subculumn_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
@@ -209,8 +213,37 @@ class SubjectsCurriculumnsController extends AppController {
             $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('SubjectsCurriculumn.curriculumn_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsCurriculumn']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.curriculumn_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['curriculumn_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.subject_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['knowledge_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.knowledge_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['knowledge_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsCurriculumn']['semester_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsCurriculumn.semester_id like' => '%' . trim($this->request->data['SubjectsCurriculumn']['semester_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjectsCurriculumns', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $curriculumns = $this->SubjectsCurriculumn->Curriculumn->find('list');
+            $subjects = $this->SubjectsCurriculumn->Subject->find('list');
+            $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
+            $semesters = $this->SubjectsCurriculumn->Semester->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -344,5 +377,4 @@ class SubjectsCurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

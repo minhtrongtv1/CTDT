@@ -26,6 +26,9 @@ class DepartmentsController extends AppController {
         $conditions = array();
         $contain = array();
         $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
         if (!empty($this->request->data['Department']['title'])) {
             $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
@@ -37,11 +40,14 @@ class DepartmentsController extends AppController {
             
         }
     }
-    
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
         $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
         if (!empty($this->request->data['Department']['title'])) {
             $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
@@ -157,9 +163,12 @@ class DepartmentsController extends AppController {
     public function admin_index() {
         $conditions = array();
         $contain = array();
-        $order = array();
-        if (!empty($this->request->data)) {
-//$conditions = Set::merge($conditions, array('Department.fieldName' => $value));
+        $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
+        if (!empty($this->request->data['Department']['title'])) {
+            $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -264,15 +273,14 @@ class DepartmentsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    public function pkt_dpm_index() {
-=======
 
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
         if (!empty($this->request->data['Department']['title'])) {
             $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
@@ -284,13 +292,34 @@ class DepartmentsController extends AppController {
             
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
+        if (!empty($this->request->data['Department']['title'])) {
+            $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('departments', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
         $order = array('Department.title' => 'ASC');
+        if (!empty($this->request->data['Department']['code'])) {
+            $conditions = Set::merge($conditions, array('Department.code like' => '%' . $this->request->data['Department']['code'] . '%'));
+        }
         if (!empty($this->request->data['Department']['title'])) {
             $conditions = Set::merge($conditions, array('Department.title like' => '%' . $this->request->data['Department']['title'] . '%'));
         }
@@ -397,5 +426,4 @@ class DepartmentsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

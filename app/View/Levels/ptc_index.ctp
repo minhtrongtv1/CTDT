@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -37,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên trình độ đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -81,7 +81,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/levels/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/ptc/levels/index", data, function (response) {
             $("#datarows").html(response);
         });
 

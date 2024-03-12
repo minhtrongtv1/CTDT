@@ -17,10 +17,10 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('id'); ?>
+
     <?php echo $this->Form->input('code', array('label' => 'Mã trình độ đào tạo')); ?>
     <?php echo $this->Form->input('name', array('label' => 'Tên trình độ đào tạo')); ?>
-
+    <?php echo $this->Form->input('id'); ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>

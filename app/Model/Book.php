@@ -25,9 +25,9 @@ class Book extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => false,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -43,9 +43,9 @@ class Book extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => false,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -61,9 +61,9 @@ class Book extends AppModel {
         'author_name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => false,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -71,9 +71,9 @@ class Book extends AppModel {
         'publisher' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -81,9 +81,9 @@ class Book extends AppModel {
         'publishing_year' => array(
             'date' => array(
                 'rule' => array('date'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -91,9 +91,9 @@ class Book extends AppModel {
         'link_libary' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -101,9 +101,9 @@ class Book extends AppModel {
         'pricing_code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -111,9 +111,9 @@ class Book extends AppModel {
         'quantity' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -121,9 +121,9 @@ class Book extends AppModel {
         'note' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
-            'allowEmpty' => true,
-            'required' => false,
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),

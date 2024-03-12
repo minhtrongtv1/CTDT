@@ -40,11 +40,12 @@ class FormOfTrainningsController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
         $order = array('FormOfTrainning.name' => 'ASC');
-        
+
         if (!empty($this->request->data['FormOfTrainning']['name'])) {
             $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
         }
@@ -267,21 +268,12 @@ class FormOfTrainningsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-     public function pkt_training_index() {
-        $conditions = array();
-        $contain = array();
-        $order = array('FormOfTrainning.name' => 'ASC');
-        
-=======
 
-    public function pdt_index() {
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('FormOfTrainning.name' => 'ASC');
 
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
         if (!empty($this->request->data['FormOfTrainning']['name'])) {
             $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
         }
@@ -293,8 +285,23 @@ class FormOfTrainningsController extends AppController {
             
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array('FormOfTrainning.name' => 'ASC');
+
+        if (!empty($this->request->data['FormOfTrainning']['name'])) {
+            $conditions = Hash::merge($conditions, array('FormOfTrainning.name like' => '%' . trim($this->request->data['FormOfTrainning']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('formOfTrainnings', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     public function dvcm_index() {
         $conditions = array();
@@ -407,5 +414,4 @@ class FormOfTrainningsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

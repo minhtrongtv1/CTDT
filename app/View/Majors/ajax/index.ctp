@@ -15,9 +15,9 @@ $this->Paginator->options(array(
         <tr class="headings">
             <th>#</th>
 
-            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
-
             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
+
+            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
 
 
 
@@ -36,8 +36,8 @@ $this->Paginator->options(array(
             <tr id="row-<?php echo $major['Major']['id'] ?>">
                 <td><?php echo $stt++; ?></td>
 
-                <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
+                <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
 
                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
                 <td>

@@ -42,13 +42,6 @@
     ]);
     ?>
 
-
-    <?php
-    echo $this->Form->radio('approve', [
-        'Đã duyệt' => 'Đã duyệt',
-        'Chưa duyệt' => 'Chưa duyệt'
-    ]);
-    ?>
     <div class="clearfix form-actions">
         <div class="pull-right">
             <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>

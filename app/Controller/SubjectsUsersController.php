@@ -46,6 +46,7 @@ class SubjectsUsersController extends AppController {
             $this->set(compact('users', 'subjects', 'curriculumns'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -70,6 +71,7 @@ class SubjectsUsersController extends AppController {
             $this->set(compact('users', 'subjects', 'curriculumns'));
         }
     }
+
     /**
      * view method
      *
@@ -172,12 +174,8 @@ class SubjectsUsersController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
 
-    public function pkt_subjectuser_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('SubjectsUser.user_id' => 'ASC');
@@ -201,8 +199,33 @@ class SubjectsUsersController extends AppController {
             $this->set(compact('users', 'subjects', 'curriculumns'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('SubjectsUser.user_id' => 'ASC');
+        if (!empty($this->request->data['SubjectsUser']['user_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.user_id like' => '%' . trim($this->request->data['SubjectsUser']['user_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsUser']['subject_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.subject_id like' => '%' . trim($this->request->data['SubjectsUser']['subject_id']) . '%'));
+        }
+        if (!empty($this->request->data['SubjectsUser']['curriculumn_id'])) {
+            $conditions = Hash::merge($conditions, array('SubjectsUser.curriculumn_id like' => '%' . trim($this->request->data['SubjectsUser']['curriculumn_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('subjectsUsers', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $users = $this->SubjectsUser->User->find('list');
+            $subjects = $this->SubjectsUser->Subject->find('list');
+            $curriculumns = $this->SubjectsUser->Curriculumn->find('list');
+            $this->set(compact('users', 'subjects', 'curriculumns'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -330,5 +353,4 @@ class SubjectsUsersController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

@@ -40,6 +40,7 @@ class DevicesController extends AppController {
             
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -58,6 +59,7 @@ class DevicesController extends AppController {
             
         }
     }
+
     /**
      * view method
      *
@@ -153,11 +155,7 @@ class DevicesController extends AppController {
         }
     }
 
-<<<<<<< HEAD
-    public function pkt_device_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Device.name' => 'ASC');
@@ -175,8 +173,26 @@ class DevicesController extends AppController {
             
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Device.name' => 'ASC');
+        if (!empty($this->request->data['Device']['code'])) {
+            $conditions = Hash::merge($conditions, array('Device.code like' => '%' . trim($this->request->data['Device']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Device']['name'])) {
+            $conditions = Hash::merge($conditions, array('Device.name like' => '%' . trim($this->request->data['Device']['name']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('devices', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            
+        }
+    }
 
     public function dvcm_index() {
         $conditions = array();
@@ -291,5 +307,4 @@ class DevicesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

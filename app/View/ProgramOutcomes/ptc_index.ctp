@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -19,8 +19,8 @@ $this->Paginator->options(array(
                 <div class="col-md-12">
 
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên mục tiêu đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('typeoutcome_id', array('placeholder' => 'Loại mục tiêu', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('typeoutcome_id', array('empty' => '--Loại mục tiêu--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('empty' => '--Chương trình đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -38,24 +38,24 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã mục tiêu đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên mục tiêu đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('content','Nội dung mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('content', 'Nội dung mục tiêu đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id','Loại mục tiêu'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id', 'Loại mục tiêu'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                            
+
                         </tr>
                     </thead>
 
@@ -68,16 +68,19 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($programOutcome['ProgramOutcome']['typeoutcome_id']); ?>&nbsp;</td>
+                                <td class="">
+                                    <?php echo $this->Html->link($programOutcome['Typeoutcome']['name'], array('controller' => 'typeoutcomes', 'action' => 'view', $programOutcome['Typeoutcome']['id'])); ?>
+                                </td>
                                 <td class="">
                                     <?php echo $this->Html->link($programOutcome['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programOutcome['Curriculumn']['id'])); ?>
                                 </td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['id']); ?>&nbsp;</td>
-                               
+                                
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-                    
+
                 </table>
                 <?php echo $this->element("pagination"); ?>  
             </div>
@@ -96,7 +99,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/programOutcomes/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/ptc/programOutcomes/index", data, function (response) {
             $("#datarows").html(response);
         });
 

@@ -56,6 +56,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -89,8 +90,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }
-    
-    
+
     /**
      * view method
      *
@@ -161,9 +161,6 @@ class CurriculumnsController extends AppController {
         $diplomas = $this->Curriculumn->Diploma->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
 
-
-
-
         $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
     }
 
@@ -203,6 +200,7 @@ class CurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
@@ -216,7 +214,7 @@ class CurriculumnsController extends AppController {
         }
 
         if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Course.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
+            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['major_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
@@ -238,6 +236,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }
+
     public function admin_index() {
         $conditions = array();
         $contain = array();
@@ -251,7 +250,7 @@ class CurriculumnsController extends AppController {
         }
 
         if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Course.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
+            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['major_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
@@ -272,6 +271,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'majors', 'formOfTrainnings', 'diplomas', 'subjects'));
         }
     }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -377,9 +377,6 @@ class CurriculumnsController extends AppController {
         $diplomas = $this->Curriculumn->Diploma->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
 
-
-
-
         $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
     }
 
@@ -419,7 +416,8 @@ class CurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-    public function pkt_curriculumn_index() {
+
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Curriculumn.name' => 'ASC');
@@ -449,7 +447,7 @@ class CurriculumnsController extends AppController {
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
-            
+
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }

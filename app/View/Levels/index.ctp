@@ -37,10 +37,10 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Mã trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('Tên trình độ đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên trình độ đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>

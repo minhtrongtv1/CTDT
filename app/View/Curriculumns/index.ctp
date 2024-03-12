@@ -20,9 +20,9 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name_vn', array('placeholder' => 'Tên tiếng Việt', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('level_id', array('placeholder' => 'Trình độ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('major_id', array('placeholder' => 'Ngành đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('form_of_trainning_id', array('placeholder' => 'Hình thức đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('level_id', array('empty' => '--Trình độ đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('major_id', array('empty' => '--Ngành đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('form_of_trainning_id', array('empty' => '--Hình thức đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -40,59 +40,45 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name_vn','Tên tiếng Việt'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name_vn', 'Tên tiếng Việt'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name_eng','Tên tiếng Anh'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name_eng', 'Tên tiếng Anh'); ?></th>
 
 
-<<<<<<< HEAD
-                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ'); ?></th><th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành'); ?></th>
-=======
-                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành'); ?></th>
->>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id','Hình thức đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id', 'Hình thức đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('credit','Số tín chỉ'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('credit', 'Số tín chỉ'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('trainning_time','Thời gian đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('trainning_time', 'Thời gian đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('enrollment_subject','Đối tượng tuyển sinh'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('enrollment_subject', 'Đối tượng tuyển sinh'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('point_ladder','Thang điểm'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('point_ladder', 'Thang điểm'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition','Điều kiện tốt nghiệp'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition', 'Điều kiện tốt nghiệp'); ?></th>
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
-                            <th class="column-title"><?php echo $this->Paginator->sort('diploma_id','Văn bằng tốt nghiệp'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('approve','Phê duyệt'); ?></th>
-<<<<<<< HEAD
-=======
-
-
-                         
->>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
-
+                            <th class="column-title"><?php echo $this->Paginator->sort('approve', 'Phê duyệt'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
@@ -110,22 +96,16 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_vn']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
-                                <td class="">
-                                    <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id'])); ?>
-                                </td>
-                                <td class="">
-                                    <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id'])); ?>
-                                </td>
-                                <td class=""><?php echo $this->Html->link($curriculumn['FormOfTrainning']['name'], array('controller' => 'form_of_trainnings', 'action' => 'view', $curriculumn['FormOfTrainning']['id'])); ?>
-                                </td>
+                                <td class=""><?php echo h($curriculumn['Level']['name']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumn['Department']['title']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumn['Major']['name']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumn['FormOfTrainning']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['credit']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['trainning_time']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['enrollment_subject']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['point_ladder']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>&nbsp;</td>
-                                <td class="">
-                                    <?php echo $this->Html->link($curriculumn['Diploma']['name'], array('controller' => 'diplomas', 'action' => 'view', $curriculumn['Diploma']['id'])); ?>
-                                </td>
+                                <td class=""><?php echo h($curriculumn['Diploma']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['approve']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
                                 <td>
@@ -150,14 +130,16 @@ $this->Paginator->options(array(
 
 
 <script>
-    jQuery.fn.fadeOutAndRemove = function (speed) {
+     jQuery.fn.fadeOutAndRemove = function (speed) {
         $(this).fadeOut(speed, function () {
             $(this).remove();
         })
-    };/-strong/-heart:>:o:-((:-h$('#filter-form').on('submit', function (e) {
+    };
+
+    $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/curriculumns/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/curriculumns/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -177,7 +159,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/curriculumns/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('<?php echo BASE_URL ?>/curriculumns/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');
@@ -198,3 +180,5 @@ $this->Paginator->options(array(
     });
 
 </script>
+<?php
+echo $this->Js->writeBuffer();

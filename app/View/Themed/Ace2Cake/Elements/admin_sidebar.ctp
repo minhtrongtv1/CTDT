@@ -393,7 +393,47 @@
                                                         <span class="menu-text"> Cơ sở vật chất </span>', '/infrastructures', array('escape' => false)); ?>
                     <b class="arrow"></b>
                 </li>
-                
+
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Phòng </span>', '/rooms', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Thiết bị </span>', '/devices', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Văn bằng tốt nghiệp </span>', '/diplomas', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học kỳ </span>', '/semesters', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học phần tài liệu </span>', '/subjects_books', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Giảng dạy </span>', '/subjects_users', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Loại chuẩn đầu ra </span>', '/typeoutcomes', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học phần chương trình đào tạo </span>', '/subjectscurriculumns', array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
 
     </ul><!-- /.nav-list -->
 

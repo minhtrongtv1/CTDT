@@ -44,6 +44,7 @@ class KnowledgesController extends AppController {
             $this->set(compact('programObjectives'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -165,18 +166,8 @@ class KnowledgesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
-    
-     public function pkt_knowledge_index() {
-=======
 
-    /**
-     * pdt_index method
-     *
-     * @return void
-     */
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Knowledge.name' => 'ASC');
@@ -198,8 +189,36 @@ class KnowledgesController extends AppController {
             $this->set(compact('programObjectives'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    /**
+     * pdt_index method
+     *
+     * @return void
+     */
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Knowledge.name' => 'ASC');
+        if (!empty($this->request->data['Knowledge']['code'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.code like' => '%' . trim($this->request->data['Knowledge']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['name'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.name like' => '%' . trim($this->request->data['Knowledge']['name']) . '%'));
+        }
+        if (!empty($this->request->data['Knowledge']['program_objective_id'])) {
+            $conditions = Hash::merge($conditions, array('Knowledge.program_objective_id like' => '%' . trim($this->request->data['Knowledge']['program_objective_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('knowledges', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+            $this->set(compact('programObjectives'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -321,6 +340,4 @@ class KnowledgesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-    
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

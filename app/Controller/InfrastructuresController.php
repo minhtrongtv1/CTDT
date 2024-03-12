@@ -43,6 +43,7 @@ class InfrastructuresController extends AppController {
             $this->set(compact('devices', 'rooms', 'curriculumns'));
         }
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -167,12 +168,8 @@ class InfrastructuresController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-<<<<<<< HEAD
 
-    public function pkt_infrastructure_index() {
-=======
-    public function pdt_index() {
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
         $order = array('Infrastructure.name' => 'ASC');
@@ -193,8 +190,30 @@ class InfrastructuresController extends AppController {
             $this->set(compact('devices', 'rooms', 'curriculumns'));
         }
     }
-<<<<<<< HEAD
-=======
+
+    public function pdt_index() {
+
+        $conditions = array();
+        $contain = array();
+        $order = array('Infrastructure.name' => 'ASC');
+        if (!empty($this->request->data['Infrastructure']['code'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.code like' => '%' . trim($this->request->data['Infrastructure']['code']) . '%'));
+        }
+        if (!empty($this->request->data['Infrastructure']['device_id'])) {
+            $conditions = Hash::merge($conditions, array('Infrastructure.device_id like' => '%' . trim($this->request->data['Infrastructure']['device_id']) . '%'));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
+
+        $this->set('infrastructures', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $devices = $this->Infrastructure->Device->find('list');
+            $rooms = $this->Infrastructure->Room->find('list');
+            $curriculumns = $this->Infrastructure->Curriculumn->find('list');
+            $this->set(compact('devices', 'rooms', 'curriculumns'));
+        }
+    }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -319,5 +338,4 @@ class InfrastructuresController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 }

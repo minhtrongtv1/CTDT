@@ -1,6 +1,6 @@
 <?php
 $this->Paginator->options(array(
-    'url' => array('action' => 'index'),
+    'url' => array('ptc' => true, 'action' => 'ptc_index'),
     'update' => '#datarows',
     'evalScripts' => true,
     'data' => http_build_query($this->request->data),
@@ -17,9 +17,9 @@ $this->Paginator->options(array(
             <div class="row">
                 <?php echo $this->Form->create('Major', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
-
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên ngành', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    
 
 
                     <div class="form-group">
@@ -39,17 +39,16 @@ $this->Paginator->options(array(
 
 
 
-
-                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
                             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã ngành'); ?></th>
-
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên ngành'); ?></th>
+                            
 
 
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
-                           
+
                         </tr>
                     </thead>
 
@@ -58,16 +57,16 @@ $this->Paginator->options(array(
                         <?php foreach ($majors as $major): ?>
                             <tr id="row-<?php echo $major['Major']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
-
-                                <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($major['Major']['code']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($major['Major']['name']); ?>&nbsp;</td>
+
 
                                 <td class=""><?php echo h($major['Major']['id']); ?>&nbsp;</td>
-                                
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-                    
+
                 </table>
                 <?php echo $this->element("pagination"); ?>  
             </div>
@@ -86,7 +85,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/majors/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/ptc/majors/index", data, function (response) {
             $("#datarows").html(response);
         });
 
