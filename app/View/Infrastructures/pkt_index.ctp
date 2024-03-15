@@ -104,7 +104,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/pkt/infrastructures/pkt_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/pkt/infrastructures/index", data, function (response) {
             $("#datarows").html(response);
         });
 

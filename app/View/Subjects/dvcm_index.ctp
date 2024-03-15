@@ -96,20 +96,20 @@ $this->Paginator->options(array(
 
                                 <td class=""><?php echo h($subject['Subject']['id']); ?>&nbsp;</td>
                                 <td>
-    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subject['Subject']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subject['Subject']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                 </td>
                                 <td>
                                     <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $subject['Subject']['id'] ?>">
                                 </td>
                             </tr>
-<?php endforeach; ?>
+                        <?php endforeach; ?>
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-<?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/subjects/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/subjects/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
-                        <?php echo $this->element("pagination"); ?>  
+                <?php echo $this->element("pagination"); ?>  
             </div>
         </div>
     </div>
@@ -126,7 +126,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/dvcm/subjects/dvcm_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/dvcm/subjects/index", data, function (response) {
             $("#datarows").html(response);
         });
 

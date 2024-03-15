@@ -17,21 +17,12 @@
     );
     ?>
     <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
-    <?php echo $this->Form->input('program_outcome_id', ['label' => 'Mục tiêu đào tạo']); ?>
+    <?php echo $this->Form->input('typeoutcome_id', ['label' => 'Mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('code', ['label' => 'Mã chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
     <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>
-<<<<<<< HEAD
-    <?php
-    echo $this->Form->input('group_type', array('type' => 'select', 'options' => array('PO1' => 'PO1',
-            'PLO2' => 'PLO2',
-            'PLO3' => 'PLO3'), 'label' => 'Loại nhóm chuẩn đầu ra'));
-    ?>
-    <?php echo $this->Form->input('id'); ?>
-=======
     <?php echo $this->Form->input('group_type', ['label' => 'Loại nhóm chuẩn đầu ra']); ?>
 <?php echo $this->Form->input('id'); ?>
->>>>>>> 44514db2cc53104cda8971bc7720054e20440c14
 
     <div class="clearfix form-actions">
         <div class="pull-right">
@@ -43,4 +34,6 @@
     </div>
     <div class="hr hr-24"></div>
 <?php echo $this->Form->end(); ?>
+
+</div>
 

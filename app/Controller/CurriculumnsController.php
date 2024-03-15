@@ -27,54 +27,22 @@ class CurriculumnsController extends AppController {
         $contain = array();
         $order = array('Curriculumn.name' => 'ASC');
         if (!empty($this->request->data['Curriculumn']['code'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . $this->request->data['Curriculumn']['code'] . '%'));
-        }
-
-        if (!empty($this->request->data['Curriculumn']['name_vn'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn' => $this->request->data['Curriculumn']['name_vn']));
-        }
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
-        }
-        if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id' => $this->request->data['Curriculumn']['form_of_trainning_id']));
-        }
-        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
-        $this->Paginator->settings = $settings;
-
-        $this->set('curriculumns', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $levels = $this->Curriculumn->Level->find('list');
-            $departments = $this->Curriculumn->Department->find('list');
-            $majors = $this->Curriculumn->Major->find('list');
-            $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
-            $diplomas = $this->Curriculumn->Diploma->find('list');
-            $subjects = $this->Curriculumn->Subject->find('list');
-            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
-        }
-    }
-
-    public function ptc_index() {
-        $conditions = array();
-        $contain = array();
-        $order = array('Curriculumn.name' => 'ASC');
-        if (!empty($this->request->data['Curriculumn']['code'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['name_vn'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.name_vn like' => '%' . trim($this->request->data['Curriculumn']['name_vn']) . '%'));
         }
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
-        }
         if (!empty($this->request->data['Curriculumn']['major_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
         }
+        if (!empty($this->request->data['Curriculumn']['level_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
+        }
         if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
             $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['state_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.state_id like' => '%' . trim($this->request->data['Curriculumn']['state_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -85,9 +53,10 @@ class CurriculumnsController extends AppController {
             $departments = $this->Curriculumn->Department->find('list');
             $majors = $this->Curriculumn->Major->find('list');
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
-            $subjects = $this->Curriculumn->Subject->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
-            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+            $states = $this->Curriculumn->State->find('list');
+            $subjects = $this->Curriculumn->Subject->find('list');
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
 
@@ -100,7 +69,7 @@ class CurriculumnsController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Curriculumn->exists($id)) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
         $this->set('curriculumn', $this->Curriculumn->find('first', $options));
@@ -127,8 +96,9 @@ class CurriculumnsController extends AppController {
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
+        $states = $this->Curriculumn->State->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
-        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
     }
 
     /**
@@ -141,7 +111,7 @@ class CurriculumnsController extends AppController {
     public function edit($id = null) {
         $this->Curriculumn->id = $id;
         if (!$this->Curriculumn->exists($id)) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Curriculumn->save($this->request->data)) {
@@ -159,9 +129,9 @@ class CurriculumnsController extends AppController {
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
+        $states = $this->Curriculumn->State->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
-
-        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
     }
 
     /**
@@ -190,7 +160,7 @@ class CurriculumnsController extends AppController {
         }
         $this->Curriculumn->id = $id;
         if (!$this->Curriculumn->exists()) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         if ($this->Curriculumn->delete()) {
             $this->Flash->success(__('Curriculumn đã xóa'));
@@ -200,27 +170,12 @@ class CurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
-
     public function pdt_index() {
         $conditions = array();
         $contain = array();
-        $order = array('Curriculumn.name' => 'ASC');
-        if (!empty($this->request->data['Curriculumn']['code'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . $this->request->data['Curriculumn']['code'] . '%'));
-        }
-
-        if (!empty($this->request->data['Curriculumn']['name_vn'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn' => $this->request->data['Curriculumn']['name_vn']));
-        }
-
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
-        }
-        if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id' => $this->request->data['Curriculumn']['form_of_trainning_id']));
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('Curriculumn.fieldName' => $value));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -232,31 +187,24 @@ class CurriculumnsController extends AppController {
             $majors = $this->Curriculumn->Major->find('list');
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
+            $states = $this->Curriculumn->State->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
-            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
-
-    public function admin_index() {
+    public function pdt_view($id = null) {
+        if (!$this->Curriculumn->exists($id)) {
+            throw new NotFoundException(__('Invalid curriculumn'));
+        }
+        $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
+        $this->set('curriculumn', $this->Curriculumn->find('first', $options));
+    }
+    public function pkt_index() {
         $conditions = array();
         $contain = array();
-        $order = array('Curriculumn.name' => 'ASC');
-        if (!empty($this->request->data['Curriculumn']['code'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . $this->request->data['Curriculumn']['code'] . '%'));
-        }
-
-        if (!empty($this->request->data['Curriculumn']['name_vn'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn' => $this->request->data['Curriculumn']['name_vn']));
-        }
-
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
-        }
-        if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id' => $this->request->data['Curriculumn']['form_of_trainning_id']));
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('Curriculumn.fieldName' => $value));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -264,33 +212,72 @@ class CurriculumnsController extends AppController {
         $this->set('curriculumns', $this->paginate());
         if (!$this->request->is('ajax')) {
             $levels = $this->Curriculumn->Level->find('list');
+            $departments = $this->Curriculumn->Department->find('list');
             $majors = $this->Curriculumn->Major->find('list');
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
+            $states = $this->Curriculumn->State->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
-            $this->set(compact('levels', 'majors', 'formOfTrainnings', 'diplomas', 'subjects'));
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
+    public function pkt_view($id = null) {
+        if (!$this->Curriculumn->exists($id)) {
+            throw new NotFoundException(__('Invalid curriculumn'));
+        }
+        $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
+        $this->set('curriculumn', $this->Curriculumn->find('first', $options));
+    }
+    public function ptc_index() {
+        $conditions = array();
+        $contain = array();
+        $order = array();
+        if (!empty($this->request->data)) {
+//$conditions = Set::merge($conditions, array('Curriculumn.fieldName' => $value));
+        }
+        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
+        $this->Paginator->settings = $settings;
 
+        $this->set('curriculumns', $this->paginate());
+        if (!$this->request->is('ajax')) {
+            $levels = $this->Curriculumn->Level->find('list');
+            $departments = $this->Curriculumn->Department->find('list');
+            $majors = $this->Curriculumn->Major->find('list');
+            $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
+            $diplomas = $this->Curriculumn->Diploma->find('list');
+            $states = $this->Curriculumn->State->find('list');
+            $subjects = $this->Curriculumn->Subject->find('list');
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
+        }
+    }
+    public function ptc_view($id = null) {
+        if (!$this->Curriculumn->exists($id)) {
+            throw new NotFoundException(__('Invalid curriculumn'));
+        }
+        $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
+        $this->set('curriculumn', $this->Curriculumn->find('first', $options));
+    }
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
         $order = array('Curriculumn.name' => 'ASC');
         if (!empty($this->request->data['Curriculumn']['code'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . $this->request->data['Curriculumn']['code'] . '%'));
+            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
         }
-
         if (!empty($this->request->data['Curriculumn']['name_vn'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn' => $this->request->data['Curriculumn']['name_vn']));
-        }
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . $this->request->data['Curriculumn']['level_id'] . '%'));
+            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn like' => '%' . trim($this->request->data['Curriculumn']['name_vn']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id' => $this->request->data['Curriculumn']['major_id']));
+            $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['level_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
         }
         if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id' => $this->request->data['Curriculumn']['form_of_trainning_id']));
+            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
+        }
+        if (!empty($this->request->data['Curriculumn']['state_id'])) {
+            $conditions = Hash::merge($conditions, array('Curriculumn.state_id like' => '%' . trim($this->request->data['Curriculumn']['state_id']) . '%'));
         }
         $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
         $this->Paginator->settings = $settings;
@@ -302,8 +289,9 @@ class CurriculumnsController extends AppController {
             $majors = $this->Curriculumn->Major->find('list');
             $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
             $diplomas = $this->Curriculumn->Diploma->find('list');
+            $states = $this->Curriculumn->State->find('list');
             $subjects = $this->Curriculumn->Subject->find('list');
-            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
 
@@ -316,7 +304,7 @@ class CurriculumnsController extends AppController {
      */
     public function dvcm_view($id = null) {
         if (!$this->Curriculumn->exists($id)) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
         $this->set('curriculumn', $this->Curriculumn->find('first', $options));
@@ -343,8 +331,9 @@ class CurriculumnsController extends AppController {
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
+        $states = $this->Curriculumn->State->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
-        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
     }
 
     /**
@@ -357,7 +346,7 @@ class CurriculumnsController extends AppController {
     public function dvcm_edit($id = null) {
         $this->Curriculumn->id = $id;
         if (!$this->Curriculumn->exists($id)) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Curriculumn->save($this->request->data)) {
@@ -375,9 +364,9 @@ class CurriculumnsController extends AppController {
         $majors = $this->Curriculumn->Major->find('list');
         $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
         $diplomas = $this->Curriculumn->Diploma->find('list');
+        $states = $this->Curriculumn->State->find('list');
         $subjects = $this->Curriculumn->Subject->find('list');
-
-        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
+        $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
     }
 
     /**
@@ -406,7 +395,7 @@ class CurriculumnsController extends AppController {
         }
         $this->Curriculumn->id = $id;
         if (!$this->Curriculumn->exists()) {
-            throw new NotFoundException(__('Chương trình đào tạo không hợp lệ'));
+            throw new NotFoundException(__('Invalid curriculumn'));
         }
         if ($this->Curriculumn->delete()) {
             $this->Flash->success(__('Curriculumn đã xóa'));
@@ -414,41 +403,6 @@ class CurriculumnsController extends AppController {
         } else {
             $this->Flash->error(__('Curriculumn xóa không thành công'));
             $this->redirect(array('action' => 'index'));
-        }
-    }
-
-    public function pkt_index() {
-        $conditions = array();
-        $contain = array();
-        $order = array('Curriculumn.name' => 'ASC');
-        if (!empty($this->request->data['Curriculumn']['code'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.code like' => '%' . trim($this->request->data['Curriculumn']['code']) . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['name_vn'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.name_vn like' => '%' . trim($this->request->data['Curriculumn']['name_vn']) . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['level_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.level_id like' => '%' . trim($this->request->data['Curriculumn']['level_id']) . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['major_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.major_id like' => '%' . trim($this->request->data['Curriculumn']['major_id']) . '%'));
-        }
-        if (!empty($this->request->data['Curriculumn']['form_of_trainning_id'])) {
-            $conditions = Hash::merge($conditions, array('Curriculumn.form_of_trainning_id like' => '%' . trim($this->request->data['Curriculumn']['form_of_trainning_id']) . '%'));
-        }
-        $settings = array('conditions' => $conditions, 'contain' => $contain, 'order' => $order);
-        $this->Paginator->settings = $settings;
-
-        $this->set('curriculumns', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $levels = $this->Curriculumn->Level->find('list');
-            $departments = $this->Curriculumn->Department->find('list');
-            $majors = $this->Curriculumn->Major->find('list');
-            $formOfTrainnings = $this->Curriculumn->FormOfTrainning->find('list');
-            $subjects = $this->Curriculumn->Subject->find('list');
-            $diplomas = $this->Curriculumn->Diploma->find('list');
-
-            $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'subjects', 'diplomas'));
         }
     }
 }

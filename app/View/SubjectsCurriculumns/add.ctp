@@ -27,8 +27,8 @@
   
 
     echo $this->Form->radio('typesubject', array(
-        '0' => 'Học phần bắt buộc',
-        '1' => 'Học phần tự chọn'
+        'Học phần bắt buộc' => 'Học phần bắt buộc',
+        'Học phần tự chọn' => 'Học phần tự chọn'
     ),['legend'=>'Loại học phần','separator' => '&nbsp &nbsp &nbsp &nbsp','class' => 'kichthuocchu']);
     ?>
 

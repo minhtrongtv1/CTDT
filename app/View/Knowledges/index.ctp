@@ -38,23 +38,22 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-<<<<<<< HEAD
+
                             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã khối kiến thức'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên khối kiến thức'); ?></th>
-                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id', 'Mã chuẩn đầu ra'); ?></th>
-=======
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã khối kiến thức'); ?></th>
->>>>>>> e03f9b92fc827138169fc9a8b61d1883f5b83663
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên khối kiến thức'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id','Chuẩn đầu ra'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id', 'Chuẩn đầu ra'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>

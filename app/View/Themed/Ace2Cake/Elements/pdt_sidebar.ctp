@@ -50,138 +50,20 @@
             echo $this->Html->link('<i class="menu-icon fa fa-cloud-download"></i>Sao lưu', array('admin' => true, 'controller' => 'Mysqldumps', 'action' => 'index'), array('escape' => false));
             ?>
         </li>
-
-
         <li class="">
-            <a href="" class="dropdown-toggle">
-                <i class="menu-icon fa fa-book" aria-hidden="true"></i>
-                <span class="menu-text">
-                    Quản lý đào tạo
-                </span>
-
-                <b class="arrow fa fa-angle-down"></b>
+            <?php
+            echo $this->Html->link('<i class="menu-icon fa fa-book"></i>Chương trình đào tạo', array('pdt' => true, 'plugin' => false, 'controller' => 'curriculumns', 'action' => 'pdt_index'), array('escape' => false));
+            ?>
             </a>
-
-            <b class="arrow"></b>
-
-            <ul class="submenu">
-
-
-                <li class="">
-
-                    <?php echo $this->Html->link('
-
-                <span class="menu-text"> Chương trình đào tạo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'curriculumns', 'action' => 'pdt_index'), array('escape' => false)); ?>
-
-                    <b class="arrow"></b>
-                </li>
-
-                <li class="">
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Đơn vị </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'departments', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Ngành </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'majors', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Trình độ đào tạo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'levels', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Hình thức đào đạo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'formoftrainnings', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Mục tiêu đào tạo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'programoutcomes', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Chương trình đào tạo tham khảo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'curriculumnsreferences', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Chuẩn đầu ra </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'programobjectives', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Khối kiến thức </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'knowledges', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Học phần </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'subjects', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Tài liệu </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'books', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Cơ sở vật chất </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Phòng </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'rooms', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Thiết bị </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'devices', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Văn bằng tốt nghiệp </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'diplomas', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Học kỳ </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'semesters', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Học phần tài liệu </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'subjectsbooks', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Giảng dạy </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'subjectsusers', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Loại chuẩn đầu ra </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'typeoutcomes', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-                <li class="">
-                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
-                                                        <span class="menu-text"> Học phần chương trình đào tạo </span>', array('pdt' => true, 'plugin' => false, 'controller' => 'subjectscurriculumns', 'action' => 'pdt_index'), array('escape' => false)); ?>
-                    <b class="arrow"></b>
-                </li>
-
-
-            </ul><!-- /.nav-list -->
+        </li>
+    </ul><!-- /.nav-list -->
 
 
 
 
 
-            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-            </div>
-            </div>
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+</div>
 

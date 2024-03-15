@@ -134,9 +134,62 @@
                                                         <span class="menu-text"> Cơ sở vật chất </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
                     <b class="arrow"></b>
                 </li>
-
-
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Phòng </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Thiết bị </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Văn bằng tốt nghiệp </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học kỳ </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Học phần tài liệu </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Giảng dạy </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Loại chuẩn đầu ra </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'infrastructures', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Trạng thái </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'states', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Vai trò </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'roles', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <?php echo $this->Html->link('<i class="menu-icon fa fa-caret-right"></i>
+                                                        <span class="menu-text"> Chủ trì ngành </span>', array('dvcm' => true, 'plugin' => false, 'controller' => 'industryleaders', 'action' => 'dvcm_index'), array('escape' => false)); ?>
+                    <b class="arrow"></b>
+                </li>
+                
             </ul><!-- /.nav-list -->
+
+
+
+
 
             <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
                 <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

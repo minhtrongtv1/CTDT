@@ -28,9 +28,9 @@ class ProgramObjective extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'program_outcome_id' => array(
+        'typeoutcome_id' => array(
             'numeric' => array(
-                'rule' => array('numeric'),
+                'rule' => array('notBlank'),
             //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
@@ -95,13 +95,13 @@ class ProgramObjective extends AppModel {
             'fields' => '',
             'order' => ''
         ),
-        'ProgramOutcome' => array(
-            'className' => 'ProgramOutcome',
-            'foreignKey' => 'program_outcome_id',
+        'Typeoutcome' => array(
+            'className' => 'Typeoutcome',
+            'foreignKey' => 'typeoutcome_id',
             'conditions' => '',
             'fields' => '',
             'order' => ''
-        )
+        ),
     );
 
     /**

@@ -42,7 +42,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chương trình đào tạo tham khảo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo tham khảo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -94,7 +94,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/dvcm/curriculumnsReferences/dvcm_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/dvcm/curriculumnsReferences/index", data, function (response) {
             $("#datarows").html(response);
         });
 

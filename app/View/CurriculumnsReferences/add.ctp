@@ -18,7 +18,7 @@
     );
     ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên chương trình đào tạo tham khảo']); ?>
-    <?php echo $this->Form->input('curriculumn_id'); ?>
+    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
 
     <div class="clearfix form-actions">
         <div class="pull-right">

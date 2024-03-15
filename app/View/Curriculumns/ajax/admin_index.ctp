@@ -17,50 +17,29 @@ $this->Paginator->options(array(
 
             <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chương trình đào tạo'); ?></th>
 
+            <th class="column-title"><?php echo $this->Paginator->sort('name_vn', 'Tên chương trình đào tạo'); ?></th>
 
-            <th class="column-title"><?php echo $this->Paginator->sort('name_vn', 'Tên tiếng Việt'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ đào tạo'); ?></th>
 
-
-            <th class="column-title"><?php echo $this->Paginator->sort('name_eng', 'Tên tiếng Anh'); ?></th>
-
-
-            <th class="column-title"><?php echo $this->Paginator->sort('level_id', 'Trình độ'); ?></th>
-
-            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị'); ?></th>
-
-            <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành'); ?></th>
-
+            <th class="column-title"><?php echo $this->Paginator->sort('major_id', 'Ngành đào tạo'); ?></th>
 
             <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id', 'Hình thức đào tạo'); ?></th>
 
-
-            <th class="column-title"><?php echo $this->Paginator->sort('credit', 'Số tín chỉ'); ?></th>
-
-
-            <th class="column-title"><?php echo $this->Paginator->sort('trainning_time', 'Thời gian đào tạo'); ?></th>
-
-
-            <th class="column-title"><?php echo $this->Paginator->sort('enrollment_subject', 'Đối tượng tuyển sinh'); ?></th>
-
-
-            <th class="column-title"><?php echo $this->Paginator->sort('point_ladder', 'Thang điểm'); ?></th>
-
-
             <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition', 'Điều kiện tốt nghiệp'); ?></th>
-
-
 
             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
 
+            <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị quản lý'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('year_of_curriculumn', 'Năm bắt đầu áp dụng chương trình'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('decision_number', 'Số quyết định ban hành'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('decision_filename', 'File quyết định'); ?></th>
+
+
+            <th class="column-title"><?php echo $this->Paginator->sort('state_id', 'Trạng thái'); ?></th>
 
             <th class="column-title"><?php echo $this->Paginator->sort('approve', 'Phê duyệt'); ?></th>
 
-
-
-
-
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
-
             <th class="column-title no-link last"><span class="nobr">Hành động</span></th>
             <th><input type="checkbox" id="check-all" </th>
         </tr>
@@ -74,27 +53,16 @@ $this->Paginator->options(array(
 
                 <td class=""><?php echo h($curriculumn['Curriculumn']['code']); ?>&nbsp;</td>
                 <td class=""><?php echo h($curriculumn['Curriculumn']['name_vn']); ?>&nbsp;</td>
-                <td class=""><?php echo h($curriculumn['Curriculumn']['name_eng']); ?>&nbsp;</td>
-                <td class="">
-                    <?php echo $this->Html->link($curriculumn['Level']['name'], array('controller' => 'levels', 'action' => 'view', $curriculumn['Level']['id'])); ?>
-                </td>
-                <td class="">
-                    <?php echo $this->Html->link($curriculumn['Department']['title'], array('controller' => 'departments', 'action' => 'view', $curriculumn['Department']['id'])); ?>
-                </td>
-                <td class="">
-                    <?php echo $this->Html->link($curriculumn['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumn['Major']['id'])); ?>
-                </td>
-                <td class="">
-                    <?php echo $this->Html->link($curriculumn['FormOfTrainning']['name'], array('controller' => 'form_of_trainnings', 'action' => 'view', $curriculumn['FormOfTrainning']['id'])); ?>
-                </td>
-                <td class=""><?php echo h($curriculumn['Curriculumn']['credit']); ?>&nbsp;</td>
-                <td class=""><?php echo h($curriculumn['Curriculumn']['trainning_time']); ?>&nbsp;</td>
-                <td class=""><?php echo h($curriculumn['Curriculumn']['enrollment_subject']); ?>&nbsp;</td>
-                <td class=""><?php echo h($curriculumn['Curriculumn']['point_ladder']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Level']['name']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Major']['name']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['FormOfTrainning']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>&nbsp;</td>
-                <td class="">
-                    <?php echo $this->Html->link($curriculumn['Diploma']['name'], array('controller' => 'diplomas', 'action' => 'view', $curriculumn['Diploma']['id'])); ?>
-                </td>
+                <td class=""><?php echo h($curriculumn['Diploma']['name']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Department']['title']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Curriculumn']['year_of_curriculumn']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Curriculumn']['decision_number']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['Curriculumn']['decision_filename']); ?>&nbsp;</td>
+                <td class=""><?php echo h($curriculumn['State']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($curriculumn['Curriculumn']['approve']); ?>&nbsp;</td>
                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
                 <td>

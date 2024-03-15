@@ -31,16 +31,20 @@ class ProgramOutcomeTest extends CakeTestCase {
 		'app.major',
 		'app.form_of_trainning',
 		'app.diploma',
+		'app.state',
+		'app.industryleader',
+		'app.role',
 		'app.infrastructure',
 		'app.device',
 		'app.room',
-		'app.subjects_user',
+		'app.program_objective',
+		'app.knowledge',
+		'app.subjects_curriculumn',
 		'app.subject',
 		'app.book',
 		'app.subjects_book',
-		'app.subjects_curriculumn',
-		'app.program_objective',
-		'app.knowledge'
+		'app.subjects_user',
+		'app.semester'
 	);
 
 /**

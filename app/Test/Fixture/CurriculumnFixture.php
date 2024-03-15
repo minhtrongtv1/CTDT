@@ -14,6 +14,7 @@ class CurriculumnFixture extends CakeTestFixture {
 		'name_vn' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'name_eng' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'level_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
+		'department_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'major_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'form_of_trainning_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'credit' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
@@ -22,6 +23,7 @@ class CurriculumnFixture extends CakeTestFixture {
 		'point_ladder' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'graduation_condition' => array('type' => 'text', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'diploma_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
+		'state_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'index'),
 		'approve' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'charset' => 'utf8mb4'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
@@ -32,7 +34,9 @@ class CurriculumnFixture extends CakeTestFixture {
 			'fk_forms' => array('column' => 'form_of_trainning_id', 'unique' => 0),
 			'fk_levels' => array('column' => 'level_id', 'unique' => 0),
 			'fk_major' => array('column' => 'major_id', 'unique' => 0),
-			'fk_diploma' => array('column' => 'diploma_id', 'unique' => 0)
+			'fk_diploma' => array('column' => 'diploma_id', 'unique' => 0),
+			'fk_department' => array('column' => 'department_id', 'unique' => 0),
+			'fk_state' => array('column' => 'state_id', 'unique' => 0)
 		),
 		'tableParameters' => array('charset' => 'utf8mb4', 'collate' => 'utf8mb4_unicode_ci', 'engine' => 'InnoDB')
 	);
@@ -48,6 +52,7 @@ class CurriculumnFixture extends CakeTestFixture {
 			'name_vn' => 'Lorem ipsum dolor sit amet',
 			'name_eng' => 'Lorem ipsum dolor sit amet',
 			'level_id' => 1,
+			'department_id' => 1,
 			'major_id' => 1,
 			'form_of_trainning_id' => 1,
 			'credit' => 1,
@@ -56,9 +61,10 @@ class CurriculumnFixture extends CakeTestFixture {
 			'point_ladder' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'graduation_condition' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
 			'diploma_id' => 1,
+			'state_id' => 1,
 			'approve' => 'Lorem ipsum dolor sit amet',
-			'created' => '2024-03-04 10:18:06',
-			'modified' => '2024-03-04 10:18:06',
+			'created' => '2024-03-13 14:37:00',
+			'modified' => '2024-03-13 14:37:00',
 			'id' => 1
 		),
 	);

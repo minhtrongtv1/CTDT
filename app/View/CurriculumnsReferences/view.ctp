@@ -4,7 +4,7 @@
 
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title"><?php echo __('Curriculumns Reference'); ?></h3>
+                <h3 class="box-title"><?php echo __('Chương trình đào tạo tham khảo'); ?></h3>
                 <div class="box-tools pull-right">
                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i> Edit'), array('action' => 'edit', $curriculumnsReference['CurriculumnsReference']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
                 </div>
@@ -13,7 +13,7 @@
             <div class="box-body table-responsive">
                 <table id="CurriculumnsReferences" class="table table-bordered table-striped">
                     <tbody>
-                       <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
+                        <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumnsReference['CurriculumnsReference']['name']); ?>
                                 &nbsp;

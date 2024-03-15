@@ -19,7 +19,7 @@ $this->Paginator->options(array(
                 <div class="col-md-12">
 
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên chương trình đào tạo tham khảo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('empty' => '--Chương trình đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -42,7 +42,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chương trình đào tạo tham khảo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo tham khảo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
                           
@@ -85,7 +85,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/pkt/curriculumnsReferences/pkt_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/pkt/curriculumnsReferences/index", data, function (response) {
             $("#datarows").html(response);
         });
 

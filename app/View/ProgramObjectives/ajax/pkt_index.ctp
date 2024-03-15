@@ -22,7 +22,7 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chuẩn đầu ra'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('program_outcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
@@ -47,11 +47,8 @@ $this->Paginator->options(array(
                 <td class="">
                     <?php echo $this->Html->link($programObjective['Curriculumn']['name'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['curriculumn']['id'])); ?>
                 </td>
-                <td class="">
-                    <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id'])); ?>
-                </td>
+                <td class=""><?php echo h($programObjective['Typeoutcome']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
-
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>

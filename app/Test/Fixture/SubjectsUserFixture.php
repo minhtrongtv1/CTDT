@@ -34,8 +34,8 @@ class SubjectsUserFixture extends CakeTestFixture {
 			'user_id' => 1,
 			'subject_id' => 1,
 			'curriculumn_id' => 1,
-			'created' => '2024-02-28 16:06:26',
-			'modified' => '2024-02-28 16:06:26',
+			'created' => '2024-03-15 15:42:27',
+			'modified' => '2024-03-15 15:42:27',
 			'id' => 1
 		),
 	);

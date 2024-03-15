@@ -100,7 +100,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/ptc/knowledges/ptc_index", data, function (response) {/-strong/-heart:>:o:-((:-h$("#datarows").html(response);
+        $.post("<?php echo BASE_URL ?>/ptc/knowledges/index", data, function (response) {/-strong/-heart:>:o:-((:-h$("#datarows").html(response);
         });
 
     });

@@ -13,12 +13,7 @@
             <div class="box-body table-responsive">
                 <table id="FormOfTrainnings" class="table table-bordered table-striped">
                     <tbody>
-                        <tr>		<td><strong><?php echo __('Code'); ?></strong></td>
-                            <td>
-                                <?php echo h($formOfTrainning['FormOfTrainning']['code']); ?>
-                                &nbsp;
-                            </td>
-                        </tr><tr>		<td><strong><?php echo __('Name'); ?></strong></td>
+                        <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
                             <td>
                                 <?php echo h($formOfTrainning['FormOfTrainning']['name']); ?>
                                 &nbsp;
@@ -47,10 +42,7 @@
 
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title"><?php echo __('Related Curriculumns'); ?></h3>
-                <div class="box-tools pull-right">
-                    <?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> ' . __('New Curriculumn'), array('controller' => 'curriculumns', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>                    </div><!-- /.actions -->
-            </div>
+                <h3 class="box-title"><?php echo __('Chương trình đào tạo'); ?></h3>
             <?php if (!empty($formOfTrainning['Curriculumn'])): ?>
 
                 <div class="box-body table-responsive">
@@ -92,22 +84,22 @@
                                     <td class="text-center"><?php echo $curriculumn['enrollment_subject']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['point_ladder']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['graduation_condition']; ?></td>
-                                    <td class="text-center"><?php echo $curriculumn['diploma']; ?></td>
+                                    <td class="text-center"><?php echo $curriculumn['diploma_id']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['created']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['modified']; ?></td>
                                     <td class="text-center"><?php echo $curriculumn['id']; ?></td>
                                     <td class="text-center">
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'curriculumns', 'action' => 'view', $curriculumn['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'curriculumns', 'action' => 'edit', $curriculumn['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'curriculumns', 'action' => 'delete', $curriculumn['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $curriculumn['id'])); ?>
+                                        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'curriculumns', 'action' => 'delete', $curriculumn['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $curriculumn['id'])); ?>
                                     </td>
                                 </tr>
-    <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table><!-- /.table table-striped table-bordered -->
                 </div><!-- /.table-responsive -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
 

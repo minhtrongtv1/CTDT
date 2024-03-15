@@ -26,14 +26,25 @@ class SubjectsUserTest extends CakeTestCase {
 		'app.message',
 		'app.messages_user',
 		'app.subject',
-		'app.semester',
 		'app.book',
 		'app.subjects_book',
 		'app.curriculumn',
 		'app.level',
 		'app.major',
 		'app.form_of_trainning',
-		'app.subjects_curriculumn'
+		'app.diploma',
+		'app.state',
+		'app.industryleader',
+		'app.role',
+		'app.infrastructure',
+		'app.device',
+		'app.room',
+		'app.program_objective',
+		'app.typeoutcome',
+		'app.program_outcome',
+		'app.knowledge',
+		'app.subjects_curriculumn',
+		'app.semester'
 	);
 
 /**

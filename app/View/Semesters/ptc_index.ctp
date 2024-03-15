@@ -89,7 +89,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/ptc/semesters/ptc_index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/ptc/semesters/index", data, function (response) {
             $("#datarows").html(response);
         });
 

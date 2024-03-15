@@ -6,10 +6,14 @@ App::uses('AppModel', 'Model');
  * Curriculumn Model
  *
  * @property Level $Level
+ * @property Department $Department
  * @property Major $Major
  * @property FormOfTrainning $FormOfTrainning
  * @property Diploma $Diploma
+ * @property State $State
+ * @property Industryleader $Industryleader
  * @property Infrastructure $Infrastructure
+ * @property ProgramObjective $ProgramObjective
  * @property ProgramOutcome $ProgramOutcome
  * @property SubjectsUser $SubjectsUser
  * @property Subject $Subject
@@ -22,6 +26,16 @@ class Curriculumn extends AppModel {
      * @var string
      */
     public $displayField = 'name_vn';
+    public $actsAs = array(
+        'Upload.Upload' => array(
+            'syllabus_filename' => array(
+                'fields' => array(
+                    'dir' => 'syllabus_path',
+                    'maxSize' => 200
+                )
+            )
+        )
+    );
 
     /**
      * Validation rules
@@ -40,7 +54,7 @@ class Curriculumn extends AppModel {
             ),
             'isUnique' => array(
                 'rule' => array('isUnique'),
-                'message' => 'Mã này đã tồn tại',
+                'message' => 'Mã chương trình này đã tồn tại',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -56,19 +70,24 @@ class Curriculumn extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            
+            array(
+                'rule' => array('isUnique'),
+                'message' => 'Tên chương trình này đã có',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
         ),
         'name_eng' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-                'message' => 'Bạn không được bỏ trống thông tin này',
-                //'allowEmpty' => false,
-                'required' => true,
-                
+                //'message' => 'Bạn không được bỏ trống thông tin này',
+                'allowEmpty' => true,
+                'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-           
         ),
         'level_id' => array(
             'numeric' => array(
@@ -170,7 +189,17 @@ class Curriculumn extends AppModel {
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
         ),
-        'approve' => array(
+        'state_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'year_of_curriculumn' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
                 'message' => 'Bạn không được bỏ trống thông tin này',
@@ -179,6 +208,20 @@ class Curriculumn extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
+        ),
+        'decision_number' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+                'message' => 'Bạn không được bỏ trống thông tin này',
+                //'allowEmpty' => false,
+                'required' => true,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'decision_filename' => array(
+            'rule' => array('isValidMimeType', array('application/pdf'), false),
+            'message' => 'Bạn phải nhập file PDF'
         ),
         'approve' => array(
             'notBlank' => array(
@@ -234,6 +277,13 @@ class Curriculumn extends AppModel {
             'conditions' => '',
             'fields' => '',
             'order' => ''
+        ),
+        'State' => array(
+            'className' => 'State',
+            'foreignKey' => 'state_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
         )
     );
 
@@ -243,8 +293,34 @@ class Curriculumn extends AppModel {
      * @var array
      */
     public $hasMany = array(
+        'Industryleader' => array(
+            'className' => 'Industryleader',
+            'foreignKey' => 'curriculumn_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
         'Infrastructure' => array(
             'className' => 'Infrastructure',
+            'foreignKey' => 'curriculumn_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
+        'ProgramObjective' => array(
+            'className' => 'ProgramObjective',
             'foreignKey' => 'curriculumn_id',
             'dependent' => false,
             'conditions' => '',

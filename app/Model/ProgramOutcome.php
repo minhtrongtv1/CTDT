@@ -7,10 +7,8 @@ App::uses('AppModel', 'Model');
  *
  * @property Typeoutcome $Typeoutcome
  * @property Curriculumn $Curriculumn
- * @property ProgramObjective $ProgramObjective
  */
 class ProgramOutcome extends AppModel {
-
 
     /**
      * Display field
@@ -28,15 +26,7 @@ class ProgramOutcome extends AppModel {
         'code' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            'isUnique' => array(
-                'rule' => array('isUnique'),
-                'message' => 'Mã này đã tồn tại',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -46,15 +36,7 @@ class ProgramOutcome extends AppModel {
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
-            //'allowEmpty' => false,
-            'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên mục tiêu này đã có',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -64,7 +46,7 @@ class ProgramOutcome extends AppModel {
         'content' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-            //'message' => 'Bạn không được bỏ trống thông tin này',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -74,9 +56,9 @@ class ProgramOutcome extends AppModel {
         'typeoutcome_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
-            'required' => true,
+            //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -84,9 +66,9 @@ class ProgramOutcome extends AppModel {
         'curriculumn_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            'message' => 'Bạn không được bỏ trống thông tin này',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
-            'required' => true,
+            //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -114,27 +96,6 @@ class ProgramOutcome extends AppModel {
             'conditions' => '',
             'fields' => '',
             'order' => ''
-        )
-    );
-
-    /**
-     * hasMany associations
-     *
-     * @var array
-     */
-    public $hasMany = array(
-        'ProgramObjective' => array(
-            'className' => 'ProgramObjective',
-            'foreignKey' => 'program_outcome_id',
-            'dependent' => false,
-            'conditions' => '',
-            'fields' => '',
-            'order' => '',
-            'limit' => '',
-            'offset' => '',
-            'exclusive' => '',
-            'finderQuery' => '',
-            'counterQuery' => ''
         )
     );
 }
