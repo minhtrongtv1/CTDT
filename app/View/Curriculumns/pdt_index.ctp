@@ -92,8 +92,11 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $curriculumn['Curriculumn']['id']), array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xem')); ?>
+
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-save"></i>'), array('action' => 'download', $curriculumn['Curriculumn']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Tải')); ?>
+
                                 </td>
-                                
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

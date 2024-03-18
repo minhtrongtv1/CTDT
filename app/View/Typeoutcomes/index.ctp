@@ -36,7 +36,7 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên mục tiêu đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên mục tiêu đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>

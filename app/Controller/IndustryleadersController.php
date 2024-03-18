@@ -52,7 +52,7 @@ class IndustryleadersController extends AppController {
      */
     public function view($id = null) {
         if (!$this->Industryleader->exists($id)) {
-            throw new NotFoundException(__('Invalid industryleader'));
+            throw new NotFoundException(__('Chủ trì ngành không hợp lệ'));
         }
         $options = array('conditions' => array('Industryleader.' . $this->Industryleader->primaryKey => $id));
         $this->set('industryleader', $this->Industryleader->find('first', $options));
@@ -65,15 +65,45 @@ class IndustryleadersController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
-            $this->Industryleader->create();
-            if ($this->Industryleader->save($this->request->data)) {
-                $this->Flash->success(__('The industryleader has been saved'));
-                $this->redirect(array('action' => 'index'));
-            } else {
+            // Lấy dữ liệu từ form
+            $userData = $this->request->data['Industryleader'];
 
-                $this->Flash->error(__('The industryleader could not be saved. Please, try again.'));
+            // Kiểm tra xem đã có giáo viên nào được lưu trong ngành này chưa
+            $existingUser = $this->Industryleader->findByUserId($userData['user_id']);
+
+            if (!$existingUser) {
+                // Nếu user chưa tồn tại, lưu dữ liệu mới
+                if ($this->Industryleader->save($this->request->data)) {
+                    $this->Flash->success(__('Chủ trì ngành đã được lưu'));
+                    return $this->redirect(array('action' => 'index'));
+                } else {
+                    $this->Flash->error(__('Không thể lưu chủ trì ngành. Vui lòng thử lại.'));
+                }
+            } else {
+                // Nếu user đã tồn tại, kiểm tra trình độ
+                $existingMajorId = $existingUser['Industryleader']['major_id'];
+                $existingLevelId = $existingUser['Industryleader']['level_id'];
+                $majorId = $userData['major_id'];
+                $levelId = $userData['level_id'];
+
+                if ($majorId != $existingMajorId) {
+                    // Nếu khác ngành, không lưu và hiển thị thông báo lỗi
+                    $this->Flash->error(__('Giáo viên này đã được lưu trong một ngành khác. Vui lòng chọn giáo viên khác.'));
+                } elseif ($levelId == $existingLevelId) {
+                    // Nếu cùng trình độ, không lưu và hiển thị thông báo lỗi
+                    $this->Flash->error(__('Giáo viên này đã được lưu cùng ngành và cùng trình độ. Vui lòng thay đổi ngành hoặc trình độ.'));
+                } else {
+                    // Nếu cùng ngành và khác trình độ, tiến hành lưu
+                    if ($this->Industryleader->save($this->request->data)) {
+                        $this->Flash->success(__('Chủ trì ngành đã được lưu'));
+                        return $this->redirect(array('action' => 'index'));
+                    } else {
+                        $this->Flash->error(__('Không thể lưu chủ trì ngành. Vui lòng thử lại.'));
+                    }
+                }
             }
         }
+        // Lấy danh sách các dữ liệu cần thiết cho form
         $users = $this->Industryleader->User->find('list');
         $curriculumns = $this->Industryleader->Curriculumn->find('list');
         $roles = $this->Industryleader->Role->find('list');

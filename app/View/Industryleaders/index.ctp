@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2><?php echo __('Industryleaders'); ?></h2>
+            <h2><?php echo __('Chủ trì ngành'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -18,11 +18,9 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('Industryleader', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('user_id', array('placeholder' => 'user_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'curriculumn_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('role_id', array('placeholder' => 'role_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('level_id', array('placeholder' => 'level_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('major_id', array('placeholder' => 'major_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('user_id', array('empty' => '--Tên giáo viên--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('empty' => '--Chương trình đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('role_id', array('empty' => '--Vai trò--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -40,19 +38,19 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('user_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('user_id','Tên giáo viên'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('role_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('role_id','Vai trò'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('level_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('level_id','Trình độ đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('major_id'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -85,7 +83,9 @@ $this->Paginator->options(array(
                                 </td>
                                 <td class=""><?php echo h($industryleader['Industryleader']['id']); ?>&nbsp;</td>
                                 <td>
-                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $industryleader['Industryleader']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('action' => 'view', $industryleader['Industryleader']['id']), array('class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xem')); ?>
+
+                                    <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $industryleader['Industryleader']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Sửa')); ?>
                                 </td>
                                 <td>
                                     <input type = "checkbox" class = "flat" name = "selete-item" value="<?php echo $industryleader['Industryleader']['id'] ?>">
@@ -95,7 +95,7 @@ $this->Paginator->options(array(
                     </tbody>
                     <tfoot>
                     <span class="pull-right">
-                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/admin/industryleaders/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
+                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-plus"></i>Thêm mới'), "/industryleaders/add", ['class' => 'btn btn-info btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'Xóa các dòng đã chọn']); ?>                        <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-trash"></i>Xóa dòng chọn'), "#", array("id" => "delete-seleted", "class" => "btn btn-danger btn-xs", "escape" => false, "data-toggle" => "tooltip", "title" => "Xóa các dòng đã chọ")); ?>                    </span>
                     </tfoot>
                 </table>
                 <?php echo $this->element("pagination"); ?>  
@@ -115,7 +115,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("http://celri.tvu.edu.local/admin/industryleaders/index", data, function (response) {
+        $.post("<?php echo BASE_URL ?>/industryleaders/index", data, function (response) {
             $("#datarows").html(response);
         });
 
@@ -135,7 +135,7 @@ $this->Paginator->options(array(
         }
         if (confirm("Thao tác này không thể phục hồi, bạn chắc chắn muốn thực hiện ?")) {
             var selectedRecord = $(".has-checked-item input[name='selete-item']:checked").serializeArray();
-            $.post('http://celri.tvu.edu.local/admin/industryleaders/delete', {selectedRecord: selectedRecord}, function (response) {
+            $.post('http://celri.tvu.edu.local/industryleaders/delete', {selectedRecord: selectedRecord}, function (response) {
                 if (response) {
                     $.each(response, function (arrayID, rowId) {
                         $("#row-" + rowId).fadeOutAndRemove('fast');

@@ -13,7 +13,7 @@
             <div class="box-body table-responsive">
                 <table id="Typeoutcomes" class="table table-bordered table-striped">
                     <tbody>
-                        <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
+                        <tr>		<td><strong><?php echo __('Têm loại mục tiêu'); ?></strong></td>
                             <td>
                                 <?php echo h($typeoutcome['Typeoutcome']['name']); ?>
                                 &nbsp;
@@ -80,15 +80,15 @@
                                     <td class="text-center">
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'program_outcomes', 'action' => 'view', $programOutcome['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('controller' => 'program_outcomes', 'action' => 'edit', $programOutcome['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
-        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'program_outcomes', 'action' => 'delete', $programOutcome['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $programOutcome['id'])); ?>
+                                        <?php echo $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), array('controller' => 'program_outcomes', 'action' => 'delete', $programOutcome['id']), array('class' => 'btn btn-danger btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'delete'), __('Are you sure you want to delete # %s?', $programOutcome['id'])); ?>
                                     </td>
                                 </tr>
-    <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table><!-- /.table table-striped table-bordered -->
                 </div><!-- /.table-responsive -->
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
 

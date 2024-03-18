@@ -13,7 +13,6 @@ App::uses('AppModel', 'Model');
  */
 class Industryleader extends AppModel {
 
-
     /**
      * Validation rules
      *
@@ -63,14 +62,40 @@ class Industryleader extends AppModel {
         'major_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            'unique' => array(
+                'rule' => 'validateUniqueMajorId',
+                'message' => 'Tên ngành đào tạo này đã có'
             ),
         ),
     );
+
+    // Trả về true nếu tên giáo viên đã tồn tại trong ngành, ngược lại trả về false
+
+    public function validateUniqueMajorId($data) {
+        $majorId = $data['major_id'];
+        $levelId = $data['level_id'];
+
+        $conditions = array(
+            'Industryleader.major_id' => $majorId,
+            'Industryleader.level_id' => $levelId
+        );
+
+        if (!empty($this->id)) {
+            // Make sure we exclude the current record.
+            $conditions[$this->alias . '.' . $this->primaryKey . ' !='] = $this->id;
+        }
+
+        $recordCount = $this->find('count', array('conditions' => $conditions));
+
+        // Kiểm tra nếu có ít nhất một bản ghi khác có cùng major_id và level_id
+        if ($recordCount > 0) {
+            // Trả về false để hiển thị thông báo lỗi
+            return false;
+        }
+
+        return true;
+    }
 
     // The Associations below have been created with all possible keys, those that are not needed can be removed
 
