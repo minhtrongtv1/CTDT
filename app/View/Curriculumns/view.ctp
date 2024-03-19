@@ -727,12 +727,12 @@
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['Semester']['name']; ?></td>
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['SubjectsCurriculumn']['typesubject']; ?></td>
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['Id']; ?></td>
-                                                                                
-                                                                                
+
+
                                                                                 <td>
                                                                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsBook['SubjectsBook']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                                                                 </td>
-                                                                                
+
                                                                                 </tr>
                                                                             <?php endforeach; ?>
                                                                         </table>
@@ -744,7 +744,7 @@
 
 
                                                             </div><!-- /.related -->
-
+                                                            <?php echo $this->Html->link('Xuất danh sách', array('admin' => false, 'controller' => 'curriculumns', 'action' => 'xuat_danh_sach_ctdt', $curriculumn['Curriculumn']['id']), array('escape' => false, 'class' => 'btn btn-info btn-xs')); ?>
 
                                                         </div><!-- /#page-content .span9 -->
 
