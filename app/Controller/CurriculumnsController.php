@@ -170,6 +170,7 @@ class CurriculumnsController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
     }
+
     public function pdt_index() {
         $conditions = array();
         $contain = array();
@@ -192,6 +193,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
+
     public function pdt_view($id = null) {
         if (!$this->Curriculumn->exists($id)) {
             throw new NotFoundException(__('Invalid curriculumn'));
@@ -199,6 +201,7 @@ class CurriculumnsController extends AppController {
         $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
         $this->set('curriculumn', $this->Curriculumn->find('first', $options));
     }
+
     public function pkt_index() {
         $conditions = array();
         $contain = array();
@@ -221,6 +224,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
+
     public function pkt_view($id = null) {
         if (!$this->Curriculumn->exists($id)) {
             throw new NotFoundException(__('Invalid curriculumn'));
@@ -228,6 +232,7 @@ class CurriculumnsController extends AppController {
         $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
         $this->set('curriculumn', $this->Curriculumn->find('first', $options));
     }
+
     public function ptc_index() {
         $conditions = array();
         $contain = array();
@@ -250,6 +255,7 @@ class CurriculumnsController extends AppController {
             $this->set(compact('levels', 'departments', 'majors', 'formOfTrainnings', 'diplomas', 'states', 'subjects'));
         }
     }
+
     public function ptc_view($id = null) {
         if (!$this->Curriculumn->exists($id)) {
             throw new NotFoundException(__('Invalid curriculumn'));
@@ -257,6 +263,7 @@ class CurriculumnsController extends AppController {
         $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id));
         $this->set('curriculumn', $this->Curriculumn->find('first', $options));
     }
+
     public function dvcm_index() {
         $conditions = array();
         $contain = array();
@@ -404,5 +411,17 @@ class CurriculumnsController extends AppController {
             $this->Flash->error(__('Curriculumn xóa không thành công'));
             $this->redirect(array('action' => 'index'));
         }
+    }
+
+    public function xuat_danh_sach_ctdt($id = null) {
+
+        $contain = array('Curriculumn' => array('Department' => array('fields'=> array('title'))), 'Level', 'Major' => array('name', 'code'), 'FormOfTrainning' => array('name'));
+        //debug($contain);
+        if (!$this->Curriculumn->exists($id)) {
+            throw new NotFoundException(__('Invalid Curriculumn'));
+        }
+        $options = array('conditions' => array('Curriculumn.' . $this->Curriculumn->primaryKey => $id), 'contain' => $contain);
+        //debug($this->Curriculumn->find('first', $options));die;
+        $this->set('curriculumn', $this->Curriculumn->find('first', $options));
     }
 }

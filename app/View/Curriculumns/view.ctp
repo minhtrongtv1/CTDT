@@ -721,7 +721,7 @@
 
 
                                                             </div><!-- /.related -->
-
+                                                            <?php echo $this->Html->link('Xuất danh sách', array('admin' => false, 'controller' => 'curriculumns', 'action' => 'xuat_danh_sach_ctdt', $curriculumn['Curriculumn']['id']), array('escape' => false, 'class' => 'btn btn-info btn-xs')); ?>
 
                                                         </div><!-- /#page-content .span9 -->
 
