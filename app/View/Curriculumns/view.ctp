@@ -103,16 +103,6 @@
                                 <?php echo h($curriculumn['Curriculumn']['approve']); ?>
                                 &nbsp;
                             </td>
-                        </tr><tr>		<td><strong><?php echo __('Created'); ?></strong></td>
-                            <td>
-                                <?php echo h($curriculumn['Curriculumn']['created']); ?>
-                                &nbsp;
-                            </td>
-                        </tr><tr>		<td><strong><?php echo __('Modified'); ?></strong></td>
-                            <td>
-                                <?php echo h($curriculumn['Curriculumn']['modified']); ?>
-                                &nbsp;
-                            </td>
                         </tr><tr>		<td><strong><?php echo __('Id'); ?></strong></td>
                             <td>
                                 <?php echo h($curriculumn['Curriculumn']['id']); ?>
@@ -126,11 +116,12 @@
 
 
 
-        <div class="box box-primary">
+<!--        <div class="box box-primary">
             <div class="box-header">
                 <h3 class="box-title"><?php echo __('Chương trình đào tạo tham khảo'); ?></h3>
                 <div class="box-tools pull-right">
-                </div>
+                    <?php echo $this->Html->link('<i class="glyphicon glyphicon-plus"></i> ' . __('Thêm mới chương trình đào tạo tham khảo'), array('controller' => 'CurriculumnsReferences', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>                    </div> /.actions 
+            </div>
                 <?php if (!empty($curriculumn['CurriculumnsReference'])): ?>
                     <div class="box-body table-responsive">
                         <table class="table table-bordered table-striped">
@@ -158,10 +149,10 @@
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
-                        </table><!-- /.table table-striped table-bordered -->
-                    </div> <!-- /.table-responsive -->
+                        </table> /.table table-striped table-bordered 
+                    </div>  /.table-responsive 
                 <?php endif; ?>
-            </div><!-- /.related --> 
+            </div> /.related  -->
 
 
             <div class="box box-primary">
@@ -181,8 +172,7 @@
                                         <th class="text-center"><?php echo __('Miêu tả'); ?></th>
                                         <th class="text-center"><?php echo __('Trình độ'); ?></th>
                                         <th class="text-center"><?php echo __('Loại nhóm chuẩn đầu ra'); ?></th>
-                                        <th class="text-center"><?php echo __('Created'); ?></th>
-                                        <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                         <th class="text-center"><?php echo __('Id'); ?></th>
                                         <th class="text-center"><?php echo __('Actions'); ?></th>
                                     </tr>
@@ -199,8 +189,7 @@
                                             <td class="text-center"><?php echo $programObjective['describe']; ?></td>
                                             <td class="text-center"><?php echo $programObjective['level']; ?></td>
                                             <td class="text-center"><?php echo $programObjective['group_type']; ?></td>
-                                            <td class="text-center"><?php echo $programObjective['created']; ?></td>
-                                            <td class="text-center"><?php echo $programObjective['modified']; ?></td>
+
                                             <td class="text-center"><?php echo $programObjective['id']; ?></td>
                                             <td class="text-center">
                                                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'program_objectives', 'action' => 'view', $programObjective['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -233,8 +222,7 @@
                                             <th class="text-center"><?php echo __('Nội dung'); ?></th>
                                             <th class="text-center"><?php echo __('Loại mục tiêu đào tạo'); ?></th>
                                             <th class="text-center"><?php echo __('Id chương trình đào tạo'); ?></th>
-                                            <th class="text-center"><?php echo __('Created'); ?></th>
-                                            <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                             <th class="text-center"><?php echo __('Id'); ?></th>
                                             <th class="text-center"><?php echo __('Actions'); ?></th>
                                         </tr>
@@ -250,8 +238,7 @@
                                                 <td class="text-center"><?php echo $programOutcome['content']; ?></td>
                                                 <td class="text-center"><?php echo $programOutcome['typeoutcome_id']; ?></td>
                                                 <td class="text-center"><?php echo $programOutcome['curriculumn_id']; ?></td>
-                                                <td class="text-center"><?php echo $programOutcome['created']; ?></td>
-                                                <td class="text-center"><?php echo $programOutcome['modified']; ?></td>
+
                                                 <td class="text-center"><?php echo $programOutcome['id']; ?></td>
                                                 <td class="text-center">
                                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'program_outcomes', 'action' => 'view', $programOutcome['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -281,8 +268,7 @@
                                                 <th class="text-center"><?php echo __('Name'); ?></th>
                                                 <th class="text-center"><?php echo __('Program Objective Id'); ?></th>
                                                 <th class="text-center"><?php echo __('Describe'); ?></th>
-                                                <th class="text-center"><?php echo __('Created'); ?></th>
-                                                <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                                 <th class="text-center"><?php echo __('Id'); ?></th>
                                                 <th class="text-center"><?php echo __('Actions'); ?></th>
                                             </tr>
@@ -297,8 +283,7 @@
                                                     <td class="text-center"><?php echo $knowledge['name']; ?></td>
                                                     <td class="text-center"><?php echo $knowledge['program_objective_id']; ?></td>
                                                     <td class="text-center"><?php echo $knowledge['describe']; ?></td>
-                                                    <td class="text-center"><?php echo $knowledge['created']; ?></td>
-                                                    <td class="text-center"><?php echo $knowledge['modified']; ?></td>
+
                                                     <td class="text-center"><?php echo $knowledge['id']; ?></td>
                                                     <td class="text-center">
                                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'knowledges', 'action' => 'view', $knowledge['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -338,8 +323,7 @@
                                                     <th class="text-center"><?php echo __('Miêu Tả'); ?></th>
                                                     <th class="text-center"><?php echo __('Đề Cương Chi Tiết'); ?></th>
                                                     <th class="text-center"><?php echo __('Id học kỳ'); ?></th>
-                                                    <th class="text-center"><?php echo __('Created'); ?></th>
-                                                    <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                                     <th class="text-center"><?php echo __('Id'); ?></th>
                                                     <th class="text-center"><?php echo __('Actions'); ?></th>
                                                 </tr>
@@ -361,8 +345,7 @@
                                                         <td class="text-center"><?php echo $subject['describe']; ?></td>
                                                         <td class="text-center"><?php echo $subject['syllabus_filename']; ?></td>
                                                         <td class="text-center"><?php echo $subject['semester_id']; ?></td>
-                                                        <td class="text-center"><?php echo $subject['created']; ?></td>
-                                                        <td class="text-center"><?php echo $subject['modified']; ?></td>
+
                                                         <td class="text-center"><?php echo $subject['id']; ?></td>
                                                         <td class="text-center">
                                                             <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'subjects', 'action' => 'view', $subject['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -396,8 +379,7 @@
                                                         <th class="text-center"><?php echo __('Id giáo viên'); ?></th>
                                                         <th class="text-center"><?php echo __('Id học phần'); ?></th>
                                                         <th class="text-center"><?php echo __('Id chương trình đào tạo'); ?></th>
-                                                        <th class="text-center"><?php echo __('Created'); ?></th>
-                                                        <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                                         <th class="text-center"><?php echo __('Id'); ?></th>
                                                         <th class="text-center"><?php echo __('Actions'); ?></th>
                                                     </tr>
@@ -411,8 +393,7 @@
                                                             <td class="text-center"><?php echo $subjectsUser['user_id']; ?></td>
                                                             <td class="text-center"><?php echo $subjectsUser['subject_id']; ?></td>
                                                             <td class="text-center"><?php echo $subjectsUser['curriculumn_id']; ?></td>
-                                                            <td class="text-center"><?php echo $subjectsUser['created']; ?></td>
-                                                            <td class="text-center"><?php echo $subjectsUser['modified']; ?></td>
+
                                                             <td class="text-center"><?php echo $subjectsUser['id']; ?></td>
                                                             <td class="text-center">
                                                                 <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'subjects_users', 'action' => 'view', $subjectsUser['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -446,8 +427,7 @@
                                                             <th class="text-center"><?php echo __('Id giáo viên'); ?></th>
                                                             <th class="text-center"><?php echo __('Id chương trình đào tạo'); ?></th>
                                                             <th class="text-center"><?php echo __('Id vai trò'); ?></th>
-                                                            <th class="text-center"><?php echo __('Created'); ?></th>
-                                                            <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                                             <th class="text-center"><?php echo __('Id'); ?></th>
                                                             <th class="text-center"><?php echo __('Actions'); ?></th>
                                                         </tr>
@@ -461,8 +441,7 @@
                                                                 <td class="text-center"><?php echo $industryleader['user_id']; ?></td>
                                                                 <td class="text-center"><?php echo $industryleader['curriculumn_id']; ?></td>
                                                                 <td class="text-center"><?php echo $industryleader['role_id']; ?></td>
-                                                                <td class="text-center"><?php echo $industryleader['created']; ?></td>
-                                                                <td class="text-center"><?php echo $industryleader['modified']; ?></td>
+
                                                                 <td class="text-center"><?php echo $industryleader['id']; ?></td>
                                                                 <td class="text-center">
                                                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'industryleaders', 'action' => 'view', $industryleader['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -496,8 +475,7 @@
                                                                 <th class="text-center"><?php echo __('Id thiết bị'); ?></th>
                                                                 <th class="text-center"><?php echo __('Id phòng'); ?></th>
                                                                 <th class="text-center"><?php echo __('Id chương trình đào tạo'); ?></th>
-                                                                <th class="text-center"><?php echo __('Created'); ?></th>
-                                                                <th class="text-center"><?php echo __('Modified'); ?></th>
+
                                                                 <th class="text-center"><?php echo __('Id'); ?></th>
                                                                 <th class="text-center"><?php echo __('Actions'); ?></th>
                                                             </tr>
@@ -512,8 +490,7 @@
                                                                     <td class="text-center"><?php echo $infrastructure['device_id']; ?></td>
                                                                     <td class="text-center"><?php echo $infrastructure['room_id']; ?></td>
                                                                     <td class="text-center"><?php echo $infrastructure['curriculumn_id']; ?></td>
-                                                                    <td class="text-center"><?php echo $infrastructure['created']; ?></td>
-                                                                    <td class="text-center"><?php echo $infrastructure['modified']; ?></td>
+
                                                                     <td class="text-center"><?php echo $infrastructure['id']; ?></td>
                                                                     <td class="text-center">
                                                                         <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), array('controller' => 'infrastructures', 'action' => 'view', $infrastructure['id']), array('class' => 'btn btn-primary btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'view')); ?>
@@ -727,12 +704,12 @@
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['Semester']['name']; ?></td>
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['SubjectsCurriculumn']['typesubject']; ?></td>
                                                                                 <td class="text-center"><?php echo $subjectsCurriculumn['Id']; ?></td>
-                                                                                
-                                                                                
+
+
                                                                                 <td>
                                                                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $subjectsBook['SubjectsBook']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
                                                                                 </td>
-                                                                                
+
                                                                                 </tr>
                                                                             <?php endforeach; ?>
                                                                         </table>

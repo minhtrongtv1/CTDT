@@ -20,7 +20,7 @@
                             </td>
                         </tr><tr>		<td><strong><?php echo __('Program Outcome'); ?></strong></td>
                             <td>
-                                <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'program_outcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id']), array('class' => '')); ?>
+                                <?php echo $this->Html->link($programObjective['ProgramOutcome']['name'], array('controller' => 'programoutcomes', 'action' => 'view', $programObjective['ProgramOutcome']['id']), array('class' => '')); ?>
                                 &nbsp;
                             </td>
                         </tr><tr>		<td><strong><?php echo __('Code'); ?></strong></td>
