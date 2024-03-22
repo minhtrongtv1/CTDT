@@ -20,7 +20,7 @@ $this->Paginator->options(array(
 
                     <?php echo $this->Form->input('code', array('placeholder' => 'Mã khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('name', array('placeholder' => 'Tên khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('program_objective_id', array('placeholder' => 'Chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -44,7 +44,7 @@ $this->Paginator->options(array(
                             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên khối kiến thức'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('program_objective_id','Chuẩn đầu ra'); ?></th>
+                           
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('describe','Miêu tả'); ?></th>
@@ -64,9 +64,7 @@ $this->Paginator->options(array(
 
                                 <td class=""><?php echo h($knowledge['Knowledge']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['name']); ?>&nbsp;</td>
-                                <td class="">
-                                    <?php echo $this->Html->link($knowledge['ProgramObjective']['code'], array('controller' => 'program_objectives', 'action' => 'view', $knowledge['ProgramObjective']['id'])); ?>
-                                </td>
+                               
                                 <td class=""><?php echo h($knowledge['Knowledge']['describe']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($knowledge['Knowledge']['id']); ?>&nbsp;</td>
                                 <td>

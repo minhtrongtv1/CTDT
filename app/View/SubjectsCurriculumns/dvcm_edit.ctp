@@ -20,6 +20,7 @@
     <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
     <?php echo $this->Form->input('subject_id', ['label' => 'Học phần']); ?>
     <?php echo $this->Form->input('knowledge_id', ['label' => 'Khối kiến thức']); ?>
+    <?php echo $this->Form->input('programobjective_id', ['label' => 'Chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
     <?php
     echo $this->Form->radio('typesubject', array(

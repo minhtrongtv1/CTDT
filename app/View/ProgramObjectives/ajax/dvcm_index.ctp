@@ -19,10 +19,10 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id', 'Mục tiêu đào tạo'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('programoutcome_id', 'Mục tiêu đào tạo'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chuẩn đầu ra'); ?></th>
+
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
@@ -31,7 +31,7 @@ $this->Paginator->options(array(
             <th class="column-title"><?php echo $this->Paginator->sort('level', 'Trình độ'); ?></th>
 
 
-            <th class="column-title"><?php echo $this->Paginator->sort('group_type', 'Loại nhóm chuẩn đầu ra'); ?></th>
+            <th class="column-title"><?php echo $this->Paginator->sort('typeobjective_id', 'Loại chuẩn đầu ra'); ?></th>
 
 
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -50,11 +50,10 @@ $this->Paginator->options(array(
                 <td class="">
                     <?php echo $this->Html->link($programObjective['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['Curriculumn']['id'])); ?>
                 </td>
-                <td class=""><?php echo h($programObjective['Typeoutcome']['name']); ?>&nbsp;</td>
-                <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
+                <td class=""><?php echo h($programObjective['Programoutcome']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
-                <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>
+                <td class=""><?php echo h($programObjective['Typeobjective']['name']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['id']); ?>&nbsp;</td>
                 <td>
                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $programObjective['ProgramObjective']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>

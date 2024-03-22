@@ -21,6 +21,8 @@ $this->Paginator->options(array(
                     <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'Chương trình đào tạo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('subject_id', array('placeholder' => 'Học phần', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
                     <?php echo $this->Form->input('knowledge_id', array('placeholder' => 'Khối kiến thức', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('programobjective_id', array('placeholder' => 'Chuẩn đầu ra', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+
                     <?php echo $this->Form->input('semester_id', array('placeholder' => 'Học kỳ', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
@@ -47,6 +49,7 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('knowledge_id', 'Khối kiến thức'); ?></th>
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('programobjective_id', 'Khối kiến thức'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('semester_id', 'Học kỳ'); ?></th>
 
@@ -75,6 +78,9 @@ $this->Paginator->options(array(
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsCurriculumn['Knowledge']['name'], array('controller' => 'knowledges', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
+                                </td>
+                                   <td class="">
+                                    <?php echo $this->Html->link($subjectsCurriculumn['Programobjective']['typeobjective_id'], array('controller' => 'programobjectives', 'action' => 'view', $subjectsCurriculumn['Knowledge']['id'])); ?>
                                 </td>
                                 <td class="">
                                     <?php echo $this->Html->link($subjectsCurriculumn['Semester']['name'], array('controller' => 'semesters', 'action' => 'view', $subjectsCurriculumn['Semester']['id'])); ?>

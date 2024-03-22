@@ -39,10 +39,10 @@ class KnowledgesController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('knowledges', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-            $this->set(compact('programObjectives'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//            $this->set(compact('programObjectives'));
+//        }
     }
 
     public function ptc_index() {
@@ -62,10 +62,10 @@ class KnowledgesController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('knowledges', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-            $this->set(compact('programObjectives'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//            $this->set(compact('programObjectives'));
+//        }
     }
 
     /**
@@ -99,8 +99,8 @@ class KnowledgesController extends AppController {
                 $this->Flash->error(__('The knowledge could not be saved. Please, try again.'));
             }
         }
-        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-        $this->set(compact('programObjectives'));
+//        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//        $this->set(compact('programObjectives'));
     }
 
     /**
@@ -126,8 +126,8 @@ class KnowledgesController extends AppController {
             $options = array('conditions' => array('Knowledge.' . $this->Knowledge->primaryKey => $id));
             $this->request->data = $this->Knowledge->find('first', $options);
         }
-        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-        $this->set(compact('programObjectives'));
+//        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//        $this->set(compact('programObjectives'));
     }
 
     /**
@@ -184,10 +184,10 @@ class KnowledgesController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('knowledges', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-            $this->set(compact('programObjectives'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//            $this->set(compact('programObjectives'));
+//        }
     }
 
     /**
@@ -213,10 +213,10 @@ class KnowledgesController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('knowledges', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-            $this->set(compact('programObjectives'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//            $this->set(compact('programObjectives'));
+//        }
     }
 
     public function dvcm_index() {
@@ -236,10 +236,10 @@ class KnowledgesController extends AppController {
         $this->Paginator->settings = $settings;
 
         $this->set('knowledges', $this->paginate());
-        if (!$this->request->is('ajax')) {
-            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-            $this->set(compact('programObjectives'));
-        }
+//        if (!$this->request->is('ajax')) {
+//            $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//            $this->set(compact('programObjectives'));
+//        }
     }
 
     /**
@@ -273,8 +273,8 @@ class KnowledgesController extends AppController {
                 $this->Flash->error(__('The knowledge could not be saved. Please, try again.'));
             }
         }
-        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-        $this->set(compact('programObjectives'));
+//        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//        $this->set(compact('programObjectives'));
     }
 
     /**
@@ -300,8 +300,8 @@ class KnowledgesController extends AppController {
             $options = array('conditions' => array('Knowledge.' . $this->Knowledge->primaryKey => $id));
             $this->request->data = $this->Knowledge->find('first', $options);
         }
-        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
-        $this->set(compact('programObjectives'));
+//        $programObjectives = $this->Knowledge->ProgramObjective->find('list');
+//        $this->set(compact('programObjectives'));
     }
 
     /**

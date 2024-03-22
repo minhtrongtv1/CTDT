@@ -1,10 +1,10 @@
 <?php
-App::uses('SubjectsCurriculumn', 'Model');
+App::uses('Typeobjective', 'Model');
 
 /**
- * SubjectsCurriculumn Test Case
+ * Typeobjective Test Case
  */
-class SubjectsCurriculumnTest extends CakeTestCase {
+class TypeobjectiveTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,7 +12,8 @@ class SubjectsCurriculumnTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.subjects_curriculumn',
+		'app.typeobjective',
+		'app.program_objective',
 		'app.curriculumn',
 		'app.level',
 		'app.department',
@@ -36,16 +37,14 @@ class SubjectsCurriculumnTest extends CakeTestCase {
 		'app.infrastructure',
 		'app.device',
 		'app.room',
-		'app.program_objective',
 		'app.program_outcome',
 		'app.typeoutcome',
-		'app.typeobjective',
 		'app.subjects_user',
 		'app.subject',
 		'app.book',
 		'app.subjects_book',
-		'app.knowledge',
-		'app.semester'
+		'app.subjects_curriculumn',
+		'app.knowledge'
 	);
 
 /**
@@ -55,7 +54,7 @@ class SubjectsCurriculumnTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->SubjectsCurriculumn = ClassRegistry::init('SubjectsCurriculumn');
+		$this->Typeobjective = ClassRegistry::init('Typeobjective');
 	}
 
 /**
@@ -64,7 +63,7 @@ class SubjectsCurriculumnTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->SubjectsCurriculumn);
+		unset($this->Typeobjective);
 
 		parent::tearDown();
 	}
