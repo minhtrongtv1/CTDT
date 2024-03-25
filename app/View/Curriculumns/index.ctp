@@ -50,8 +50,6 @@ $this->Paginator->options(array(
 
                             <th class="column-title"><?php echo $this->Paginator->sort('form_of_trainning_id', 'Hình thức đào tạo'); ?></th>
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('graduation_condition', 'Điều kiện tốt nghiệp'); ?></th>
-
                             <th class="column-title"><?php echo $this->Paginator->sort('diploma_id', 'Văn bằng tốt nghiệp'); ?></th>
 
                             <th class="column-title"><?php echo $this->Paginator->sort('department_id', 'Đơn vị quản lý'); ?></th>
@@ -81,7 +79,6 @@ $this->Paginator->options(array(
                                 <td class=""><?php echo h($curriculumn['Level']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Major']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['FormOfTrainning']['name']); ?>&nbsp;</td>
-                                <td class=""><?php echo h($curriculumn['Curriculumn']['graduation_condition']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Diploma']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Department']['title']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumn['Curriculumn']['year_of_curriculumn']); ?>&nbsp;</td>

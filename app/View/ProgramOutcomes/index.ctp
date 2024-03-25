@@ -38,7 +38,6 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('code','Mã mục tiêu đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('name','Tên mục tiêu đào tạo'); ?></th>
@@ -66,7 +65,6 @@ $this->Paginator->options(array(
                             <tr id="row-<?php echo $programOutcome['ProgramOutcome']['id'] ?>">
                                 <td><?php echo $stt++; ?></td>
 
-                                <td class=""><?php echo h($programOutcome['ProgramOutcome']['code']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['name']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($programOutcome['ProgramOutcome']['content']); ?>&nbsp;</td>
                                 <td class="">

@@ -38,13 +38,12 @@ class CurriculumnTest extends CakeTestCase {
 		'app.program_objective',
 		'app.program_outcome',
 		'app.typeoutcome',
-		'app.knowledge',
-		'app.subjects_curriculumn',
+		'app.typeobjective',
+		'app.subjects_user',
 		'app.subject',
 		'app.book',
 		'app.subjects_book',
-		'app.subjects_user',
-		'app.semester'
+		'app.subjects_curriculumn'
 	);
 
 /**

@@ -2,7 +2,7 @@
 <div class="col-md-9 col-md-offset-1 well">
     <h4 class="pink">
         <i class="ace-icon fa fa-hand-o-right green"></i>
-        <a href="#" class="blue"> <?php echo __('Thay đổi thông tin chương trình đào tạo tham khảo'); ?> </a>
+        <a href="#" class="blue"> <?php echo __('Edit Curriculumns Reference'); ?> </a>
     </h4>
     <div class="hr hr-18 dotted hr-double"></div>
 
@@ -17,8 +17,17 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('name', ['label' => 'Tên chương trình đào tạo tham khảo']); ?>
-    <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
+    <?php echo $this->Form->input('name'); ?>
+    <?php echo $this->Form->input('curriculumn_id'); ?>
+    <?php echo $this->Form->input('major_id'); ?>
+    <?php echo $this->Form->input('school'); ?>
+    <?php echo $this->Form->input('address'); ?>
+    <?php
+    echo $this->Form->radio('typereference', array(
+        'Trong nước' => 'Trong nước',
+        'Ngoài nước' => 'Ngoài nước'
+            ), ['legend' => 'Loại đào tạo tham khảo', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
+    ?>
     <?php echo $this->Form->input('id'); ?>
 
     <div class="clearfix form-actions">

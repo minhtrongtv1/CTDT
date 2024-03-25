@@ -15,7 +15,6 @@ class CurriculumnsReferenceTest extends CakeTestCase {
 		'app.curriculumns_reference',
 		'app.curriculumn',
 		'app.level',
-		'app.major',
 		'app.department',
 		'app.course',
 		'app.evaluation_result',
@@ -28,13 +27,24 @@ class CurriculumnsReferenceTest extends CakeTestCase {
 		'app.messages_user',
 		'app.teaching',
 		'app.department_supporter',
+		'app.major',
 		'app.form_of_trainning',
+		'app.diploma',
+		'app.state',
+		'app.industryleader',
+		'app.role',
+		'app.infrastructure',
+		'app.device',
+		'app.room',
+		'app.program_objective',
+		'app.typeobjective',
+		'app.program_outcome',
+		'app.typeoutcome',
+		'app.subjects_user',
 		'app.subject',
-		'app.semester',
 		'app.book',
 		'app.subjects_book',
-		'app.subjects_curriculumn',
-		'app.subjects_user'
+		'app.subjects_curriculumn'
 	);
 
 /**

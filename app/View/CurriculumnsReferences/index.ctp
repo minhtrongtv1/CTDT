@@ -9,7 +9,7 @@ $this->Paginator->options(array(
 ?><div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         <div class="x_title">
-            <h2><?php echo __('Chương trình đào tạo tham khảo'); ?></h2>
+            <h2><?php echo __('Curriculumns References'); ?></h2>
             <div class="clearfix"></div>
         </div>
 
@@ -18,8 +18,12 @@ $this->Paginator->options(array(
                 <?php echo $this->Form->create('CurriculumnsReference', array('url' => array('action' => 'index'), 'id' => 'filter-form', 'class' => 'form-inline', 'role' => 'form', 'novalidate')); ?>
                 <div class="col-md-12">
 
-                    <?php echo $this->Form->input('name', array('placeholder' => 'Tên chương trình đào tạo tham khảo', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
-                    <?php echo $this->Form->input('curriculumn_id', array('empty' => '--Chương trình đào tạo--', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('name', array('placeholder' => 'name', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('curriculumn_id', array('placeholder' => 'curriculumn_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('major_id', array('placeholder' => 'major_id', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('typereference', array('placeholder' => 'typereference', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('school', array('placeholder' => 'school', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
+                    <?php echo $this->Form->input('address', array('placeholder' => 'address', 'class' => 'form-control', 'div' => 'form-group', 'label' => array('class' => 'sr-only'))); ?>
 
                     <div class="form-group">
                         <?php echo $this->Form->button('Lọc', array('type' => 'submit', 'class' => 'btn btn-primary btn-xs')); ?>
@@ -37,12 +41,22 @@ $this->Paginator->options(array(
                             <th>#</th>
 
 
+                            <th class="column-title"><?php echo $this->Paginator->sort('name','Tên chương trình đào tạo tham khảo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('name', 'Tên chương trình đào tạo tham khảo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('major_id','Ngành đào tạo'); ?></th>
 
 
-                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
+                            <th class="column-title"><?php echo $this->Paginator->sort('typereference','Loại đào tạo tham khảo'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('school','Trường đào tạo'); ?></th>
+
+
+                            <th class="column-title"><?php echo $this->Paginator->sort('address','Địa chỉ'); ?></th>
+                            
+                            
+                            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id','Chương trình đào tạo'); ?></th>
 
 
                             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
@@ -62,6 +76,12 @@ $this->Paginator->options(array(
                                 <td class="">
                                     <?php echo $this->Html->link($curriculumnsReference['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $curriculumnsReference['Curriculumn']['id'])); ?>
                                 </td>
+                                <td class="">
+                                    <?php echo $this->Html->link($curriculumnsReference['Major']['name'], array('controller' => 'majors', 'action' => 'view', $curriculumnsReference['Major']['id'])); ?>
+                                </td>
+                                <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['typereference']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['school']); ?>&nbsp;</td>
+                                <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['address']); ?>&nbsp;</td>
                                 <td class=""><?php echo h($curriculumnsReference['CurriculumnsReference']['id']); ?>&nbsp;</td>
                                 <td>
                                     <?php echo $this->Html->link(__('<i class="glyphicon glyphicon-pencil"></i>'), array('action' => 'edit', $curriculumnsReference['CurriculumnsReference']['id']), array('class' => 'btn btn-warning btn-xs', 'escape' => false, 'data-toggle' => 'tooltip', 'title' => 'edit')); ?>
@@ -94,7 +114,7 @@ $this->Paginator->options(array(
     $('#filter-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post("<?php echo BASE_URL ?>/curriculumnsReferences/index", data, function (response) {
+        $.post("http://celri.tvu.edu.local/curriculumnsReferences/index", data, function (response) {
             $("#datarows").html(response);
         });
 

@@ -9,6 +9,7 @@
 
     <?php
     echo $this->Form->create('Curriculumn', array(
+        'type' => 'file',
         'role' => 'form',
         'class' => 'form-horizontal',
         'inputDefaults' => array(
@@ -39,10 +40,10 @@
     ?>
 
     <?php
-    echo $this->Form->radio('approve', [
+    echo $this->Form->radio('approve', array(
         'Đã duyệt' => 'Đã duyệt',
         'Chưa duyệt' => 'Chưa duyệt'
-    ]);
+            ), ['legend' => 'Phê duyệt', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
     ?>
 
     <div class="clearfix form-actions">

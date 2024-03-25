@@ -13,12 +13,7 @@
             <div class="box-body table-responsive">
                 <table id="ProgramOutcomes" class="table table-bordered table-striped">
                     <tbody>
-                        <tr>		<td><strong><?php echo __('Code'); ?></strong></td>
-                            <td>
-                                <?php echo h($programOutcome['ProgramOutcome']['code']); ?>
-                                &nbsp;
-                            </td>
-                        </tr><tr>		<td><strong><?php echo __('Name'); ?></strong></td>
+                        <tr>		<td><strong><?php echo __('Name'); ?></strong></td>
                             <td>
                                 <?php echo h($programOutcome['ProgramOutcome']['name']); ?>
                                 &nbsp;

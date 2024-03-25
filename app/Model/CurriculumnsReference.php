@@ -6,8 +6,16 @@ App::uses('AppModel', 'Model');
  * CurriculumnsReference Model
  *
  * @property Curriculumn $Curriculumn
+ * @property Major $Major
  */
 class CurriculumnsReference extends AppModel {
+
+    /**
+     * Use database config
+     *
+     * @var string
+     */
+    public $useDbConfig = 'offline';
 
     /**
      * Display field
@@ -22,19 +30,10 @@ class CurriculumnsReference extends AppModel {
      * @var array
      */
     public $validate = array(
-        
         'name' => array(
             'notBlank' => array(
                 'rule' => array('notBlank'),
-                'message' => 'Bạn không được bỏ trống thông tin này',
-                //'allowEmpty' => false,
-                'required' => true,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            array(
-                'rule' => array('isUnique'),
-                'message' => 'Tên chương trình này đã có',
+            //'message' => 'Your custom message here',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -44,9 +43,49 @@ class CurriculumnsReference extends AppModel {
         'curriculumn_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
-                'message' => 'Bạn không được bỏ trống thông tin này',
-                //'allowEmpty' => false,
-                'required' => true,
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'major_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'typereference' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'school' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'address' => array(
+            'notBlank' => array(
+                'rule' => array('notBlank'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
@@ -64,6 +103,13 @@ class CurriculumnsReference extends AppModel {
         'Curriculumn' => array(
             'className' => 'Curriculumn',
             'foreignKey' => 'curriculumn_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'Major' => array(
+            'className' => 'Major',
+            'foreignKey' => 'major_id',
             'conditions' => '',
             'fields' => '',
             'order' => ''

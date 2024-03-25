@@ -28,9 +28,9 @@ class Curriculumn extends AppModel {
     public $displayField = 'name_vn';
     public $actsAs = array(
         'Upload.Upload' => array(
-            'syllabus_filename' => array(
+            'decision_filename' => array(
                 'fields' => array(
-                    'dir' => 'syllabus_path',
+                    'dir' => 'decision_path',
                     'maxSize' => 200
                 )
             )

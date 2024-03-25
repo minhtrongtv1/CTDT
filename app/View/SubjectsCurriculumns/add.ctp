@@ -24,26 +24,23 @@
     <?php echo $this->Form->input('programobjective_id', ['label' => 'Chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('semester_id', ['label' => 'Học kỳ']); ?>
     <?php
-
-  
-
     echo $this->Form->radio('typesubject', array(
         'Học phần bắt buộc' => 'Học phần bắt buộc',
         'Học phần tự chọn' => 'Học phần tự chọn'
-    ),['legend'=>'Loại học phần','separator' => '&nbsp &nbsp &nbsp &nbsp','class' => 'kichthuocchu']);
+            ), ['legend' => 'Loại học phần', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
     ?>
 
 
     <div class="clearfix form-actions">
         <div class="pull-right">
-            <?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
+<?php echo $this->Form->button('<i class="ace-icon fa fa-check bigger-110"></i>Lưu', array('class' => 'btn btn-info', 'type' => 'submit')); ?>
             &nbsp; &nbsp; &nbsp;
             <?php echo $this->Html->link('<i class="ace-icon fa fa-undo bigger-110"></i>Hủy thao tác', array('action' => 'index'), array('class' => 'btn btn-warning', 'escape' => false)); ?>
 
         </div>
     </div>
     <div class="hr hr-24"></div>
-    <?php echo $this->Form->end(); ?>
+<?php echo $this->Form->end(); ?>
 
 </div>
 

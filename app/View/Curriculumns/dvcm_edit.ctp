@@ -39,10 +39,10 @@
     ?>
 
     <?php
-    echo $this->Form->radio('approve', [
+    echo $this->Form->radio('approve', array(
         'Đã duyệt' => 'Đã duyệt',
         'Chưa duyệt' => 'Chưa duyệt'
-    ]);
+            ), ['legend' => 'Phê duyệt', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
     ?>
     <?php echo $this->Form->input('id'); ?>
 

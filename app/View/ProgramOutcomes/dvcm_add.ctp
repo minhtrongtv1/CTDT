@@ -17,7 +17,6 @@
             )
     );
     ?>
-    <?php echo $this->Form->input('code', ['label' => 'Mã mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('name', ['label' => 'Tên mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('content', ['label' => 'Nội dung']); ?>
     <?php echo $this->Form->input('typeoutcome_id', ['label' => 'Loại mục tiêu đào tạo']); ?>

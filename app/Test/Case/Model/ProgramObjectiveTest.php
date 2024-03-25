@@ -43,8 +43,7 @@ class ProgramObjectiveTest extends CakeTestCase {
 		'app.book',
 		'app.subjects_book',
 		'app.subjects_curriculumn',
-		'app.typeobjective',
-		'app.knowledge'
+		'app.typeobjective'
 	);
 
 /**
