@@ -18,7 +18,7 @@
     );
     ?>
     <?php echo $this->Form->input('curriculumn_id', ['label' => 'Chương trình đào tạo']); ?>
-    <?php echo $this->Form->input('typeoutcome_id', ['label' => 'Mục tiêu đào tạo']); ?>
+    <?php echo $this->Form->input('programoutcome_id', ['label' => 'Mục tiêu đào tạo']); ?>
     <?php echo $this->Form->input('code', ['label' => 'Mã chuẩn đầu ra']); ?>
     <?php echo $this->Form->input('describe', ['label' => 'Miêu tả']); ?>
     <?php echo $this->Form->input('level', ['label' => 'Trình độ']); ?>

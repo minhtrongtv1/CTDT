@@ -14,12 +14,21 @@ $this->Paginator->options(array(
 
         <tr class="headings">
             <th>#</th>
-            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn', 'Tên chương trình'); ?></th>
-            <th class="column-title"><?php echo $this->Paginator->sort('typeoutcome_id', 'Mục tiêu chuẩn đầu ra'); ?></th>
-            <th class="column-title"><?php echo $this->Paginator->sort('code', 'Mã chuẩn đầu ra'); ?></th>
+           
+            <th class="column-title"><?php echo $this->Paginator->sort('curriculumn_id', 'Chương trình đào tạo'); ?></th>
+
+
+            <th class="column-title"><?php echo $this->Paginator->sort('programoutcome_id', 'Mục tiêu đào tạo'); ?></th>
+
+
+
             <th class="column-title"><?php echo $this->Paginator->sort('describe', 'Miêu tả'); ?></th>
+
+
             <th class="column-title"><?php echo $this->Paginator->sort('level', 'Trình độ'); ?></th>
-            <th class="column-title"><?php echo $this->Paginator->sort('group_type', 'Loại nhóm chuẩn đầu ra'); ?></th>
+
+
+            <th class="column-title"><?php echo $this->Paginator->sort('typeobjective_id', 'Loại chuẩn đầu ra'); ?></th>
             <th class="column-title"><?php echo $this->Paginator->sort('id'); ?></th>
 
 
@@ -34,8 +43,8 @@ $this->Paginator->options(array(
                 <td class="">
                     <?php echo $this->Html->link($programObjective['Curriculumn']['name_vn'], array('controller' => 'curriculumns', 'action' => 'view', $programObjective['Curriculumn']['id'])); ?>
                 </td>
-                <td class=""><?php echo h($programObjective['Typeoutcome']['name']); ?>&nbsp;</td>
-                <td class=""><?php echo h($programObjective['ProgramObjective']['code']); ?>&nbsp;</td>
+               <td class=""><?php echo h($programObjective['ProgramOutcome']['name']); ?>&nbsp;</td>
+                
                 <td class=""><?php echo h($programObjective['ProgramObjective']['describe']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['level']); ?>&nbsp;</td>
                 <td class=""><?php echo h($programObjective['ProgramObjective']['group_type']); ?>&nbsp;</td>

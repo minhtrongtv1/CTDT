@@ -47,7 +47,8 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+            $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters', 'programobjectives'));
         }
     }
 
@@ -76,7 +77,9 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+            //  $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+            $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters', 'programobjectives'));
         }
     }
 
@@ -115,7 +118,8 @@ class SubjectsCurriculumnsController extends AppController {
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+        $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters', 'programobjectives'));
     }
 
     /**
@@ -145,7 +149,8 @@ class SubjectsCurriculumnsController extends AppController {
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+        $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
     }
 
     /**
@@ -210,7 +215,8 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+            $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
         }
     }
 
@@ -240,7 +246,8 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+           $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
         }
     }
 
@@ -269,7 +276,8 @@ class SubjectsCurriculumnsController extends AppController {
             $subjects = $this->SubjectsCurriculumn->Subject->find('list');
             $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
             $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+           $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
         }
     }
 
@@ -308,7 +316,8 @@ class SubjectsCurriculumnsController extends AppController {
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+       $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
     }
 
     /**
@@ -338,7 +347,8 @@ class SubjectsCurriculumnsController extends AppController {
         $subjects = $this->SubjectsCurriculumn->Subject->find('list');
         $knowledges = $this->SubjectsCurriculumn->Knowledge->find('list');
         $semesters = $this->SubjectsCurriculumn->Semester->find('list');
-        $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters'));
+       $programobjectives = $this->SubjectsCurriculumn->Programobjective->find('list');
+            $this->set(compact('curriculumns', 'subjects', 'knowledges', 'semesters','programobjectives'));
     }
 
     /**

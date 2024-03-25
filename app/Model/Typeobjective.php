@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Knowledge Model
+ * Typeobjective Model
  *
- * @property SubjectsCurriculumn $SubjectsCurriculumn
+ * @property ProgramObjective $ProgramObjective
  */
-class Knowledge extends AppModel {
+class Typeobjective extends AppModel {
 
 /**
  * Display field
@@ -20,27 +20,7 @@ class Knowledge extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'code' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'name' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'describe' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
@@ -60,9 +40,9 @@ class Knowledge extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'SubjectsCurriculumn' => array(
-			'className' => 'SubjectsCurriculumn',
-			'foreignKey' => 'knowledge_id',
+		'ProgramObjective' => array(
+			'className' => 'ProgramObjective',
+			'foreignKey' => 'typeobjective_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
