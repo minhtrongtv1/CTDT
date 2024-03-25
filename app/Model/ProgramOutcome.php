@@ -83,8 +83,8 @@ class ProgramOutcome extends AppModel {
      * @var array
      */
     public $belongsTo = array(
-        'Typeoutcome' => array(
-            'className' => 'Typeoutcome',
+        'ProgramObjective' => array(
+            'className' => 'ProgramObjective',
             'foreignKey' => 'typeoutcome_id',
             'conditions' => '',
             'fields' => '',
