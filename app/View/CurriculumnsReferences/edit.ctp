@@ -24,8 +24,8 @@
     <?php echo $this->Form->input('address'); ?>
     <?php
     echo $this->Form->radio('typereference', array(
-        'Trong nước' => 'Trong nước',
-        'Ngoài nước' => 'Ngoài nước'
+        '0' => 'Trong nước',
+        '1' => 'Ngoài nước'
             ), ['legend' => 'Loại đào tạo tham khảo', 'separator' => '&nbsp &nbsp &nbsp &nbsp', 'class' => 'kichthuocchu']);
     ?>
     <?php echo $this->Form->input('id'); ?>

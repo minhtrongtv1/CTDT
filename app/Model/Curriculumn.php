@@ -357,6 +357,19 @@ class Curriculumn extends AppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
+        ),
+        'CurriculumnsReference' => array(
+            'className' => 'CurriculumnsReference',
+            'foreignKey' => 'curriculumn_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         )
     );
 
